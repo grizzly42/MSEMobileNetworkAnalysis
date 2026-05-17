@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b0e6d3897b7a79a4b66a23b3bad76f69 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    <div style="position: fixed; bottom: 50px; right: 50px;width: 300px; background:white; border:2px solid grey;
+        padding:10px; z-index:9999;"><b>Technologie + pásmo</b><br><i style="color:red;">●</i> 4G L3 (1800 MHz)<br><i style="color:blue;">●</i> 4G L8 (900 MHz)<br></div>
+    
+            <div class="folium-map" id="map_b0e6d3897b7a79a4b66a23b3bad76f69" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b0e6d3897b7a79a4b66a23b3bad76f69 = L.map(
+                "map_b0e6d3897b7a79a4b66a23b3bad76f69",
+                {
+                    center: [49.21830237, 16.58166936],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_77e2c681070a602ad107a4992f51a3c2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_77e2c681070a602ad107a4992f51a3c2.addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+            map_b0e6d3897b7a79a4b66a23b3bad76f69.fitBounds(
+                [[49.21647429, 16.57943403], [49.2201631, 16.58417626]],
+                {}
+            );
+        
+    
+            var circle_marker_76a7dd43df8cd509ca662839db9917f7 = L.circleMarker(
+                [49.21682199, 16.58241578],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_73ecbf040b441f9c19b81c5849342bbb = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d4f97cc6a8c488841e59956175c3ba52 = $(`<div id="html_d4f97cc6a8c488841e59956175c3ba52" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -91 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_73ecbf040b441f9c19b81c5849342bbb.setContent(html_d4f97cc6a8c488841e59956175c3ba52);
+            
+        
+
+        circle_marker_76a7dd43df8cd509ca662839db9917f7.bindPopup(popup_73ecbf040b441f9c19b81c5849342bbb)
+        ;
+
+        
+    
+    
+            var circle_marker_e1bed78a7cd6b8936a146a4d1341f6a2 = L.circleMarker(
+                [49.21682199, 16.58241578],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_458e95628de59bdba7e05d4f423a645d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c30fe96346f0ce65ce4943cc240cad81 = $(`<div id="html_c30fe96346f0ce65ce4943cc240cad81" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -91 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_458e95628de59bdba7e05d4f423a645d.setContent(html_c30fe96346f0ce65ce4943cc240cad81);
+            
+        
+
+        circle_marker_e1bed78a7cd6b8936a146a4d1341f6a2.bindPopup(popup_458e95628de59bdba7e05d4f423a645d)
+        ;
+
+        
+    
+    
+            var circle_marker_c3c1c392e97c5c633f8d6c86999e75bb = L.circleMarker(
+                [49.2169529, 16.5826986],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_d8e787c50cc37c15f317957dcc4cda17 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_48194474aae731deed40b68c798d873f = $(`<div id="html_48194474aae731deed40b68c798d873f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -92 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_d8e787c50cc37c15f317957dcc4cda17.setContent(html_48194474aae731deed40b68c798d873f);
+            
+        
+
+        circle_marker_c3c1c392e97c5c633f8d6c86999e75bb.bindPopup(popup_d8e787c50cc37c15f317957dcc4cda17)
+        ;
+
+        
+    
+    
+            var circle_marker_94c67280bda6e7b28ae0c3e0488de596 = L.circleMarker(
+                [49.21704244, 16.58301429],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_576d08628b0ee74abdc36a80f2a0d5bf = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_85646e0a575535e45f393d4a59b09803 = $(`<div id="html_85646e0a575535e45f393d4a59b09803" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -101 dBm<br>  <b>RSRQ:</b> -18 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_576d08628b0ee74abdc36a80f2a0d5bf.setContent(html_85646e0a575535e45f393d4a59b09803);
+            
+        
+
+        circle_marker_94c67280bda6e7b28ae0c3e0488de596.bindPopup(popup_576d08628b0ee74abdc36a80f2a0d5bf)
+        ;
+
+        
+    
+    
+            var circle_marker_fb55238eb03ceb981d4e19ab5ef609c4 = L.circleMarker(
+                [49.21704244, 16.58301429],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_01ab136bd06d0aa279fb2cefb9aea87e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9624cf7c04541ffbada467d91117cd8c = $(`<div id="html_9624cf7c04541ffbada467d91117cd8c" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -102 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_01ab136bd06d0aa279fb2cefb9aea87e.setContent(html_9624cf7c04541ffbada467d91117cd8c);
+            
+        
+
+        circle_marker_fb55238eb03ceb981d4e19ab5ef609c4.bindPopup(popup_01ab136bd06d0aa279fb2cefb9aea87e)
+        ;
+
+        
+    
+    
+            var circle_marker_c579636657b39d91967fd87f38becac2 = L.circleMarker(
+                [49.21714567, 16.58332392],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_c5c2be4790b3cfbe0a90787103eeb7c2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c9ef3e4313ec88029a770fecb6c4d67b = $(`<div id="html_c9ef3e4313ec88029a770fecb6c4d67b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -102 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_c5c2be4790b3cfbe0a90787103eeb7c2.setContent(html_c9ef3e4313ec88029a770fecb6c4d67b);
+            
+        
+
+        circle_marker_c579636657b39d91967fd87f38becac2.bindPopup(popup_c5c2be4790b3cfbe0a90787103eeb7c2)
+        ;
+
+        
+    
+    
+            var circle_marker_324a5c77cc954adac0e627338c6a5732 = L.circleMarker(
+                [49.21723852, 16.58364949],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_f1a219e177edab42e52aa6f10b832b90 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bbb0e70f8693d0d94e294a05333f03f6 = $(`<div id="html_bbb0e70f8693d0d94e294a05333f03f6" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -96 dBm<br>  <b>RSRQ:</b> -7 dB<br><b>SNR:</b> 4.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_f1a219e177edab42e52aa6f10b832b90.setContent(html_bbb0e70f8693d0d94e294a05333f03f6);
+            
+        
+
+        circle_marker_324a5c77cc954adac0e627338c6a5732.bindPopup(popup_f1a219e177edab42e52aa6f10b832b90)
+        ;
+
+        
+    
+    
+            var circle_marker_09769ffd878bd326aa00f1c156a0be29 = L.circleMarker(
+                [49.21733377, 16.58397367],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_fc61e3224b8797c063a7942b26dfe1d7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bfd5d123bd7156d5ed14fdc23381c930 = $(`<div id="html_bfd5d123bd7156d5ed14fdc23381c930" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -94 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 12.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_fc61e3224b8797c063a7942b26dfe1d7.setContent(html_bfd5d123bd7156d5ed14fdc23381c930);
+            
+        
+
+        circle_marker_09769ffd878bd326aa00f1c156a0be29.bindPopup(popup_fc61e3224b8797c063a7942b26dfe1d7)
+        ;
+
+        
+    
+    
+            var circle_marker_7e28260e1be31bd8716e678bd4288f0a = L.circleMarker(
+                [49.21754126, 16.58415303],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_135cdab9b7e7452a2fa21f278108e09d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0cd1aa117ba7e324fe9a685d3d96ffdc = $(`<div id="html_0cd1aa117ba7e324fe9a685d3d96ffdc" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -85 dBm<br>  <b>RSRQ:</b> -7 dB<br><b>SNR:</b> 12.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_135cdab9b7e7452a2fa21f278108e09d.setContent(html_0cd1aa117ba7e324fe9a685d3d96ffdc);
+            
+        
+
+        circle_marker_7e28260e1be31bd8716e678bd4288f0a.bindPopup(popup_135cdab9b7e7452a2fa21f278108e09d)
+        ;
+
+        
+    
+    
+            var circle_marker_6c7582a15cd93db66591e3bea6fddecf = L.circleMarker(
+                [49.21776886, 16.58417626],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_a2e619bff2909e2816541a8b23cf6ebb = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_890affe24942f864bfaf18f464073ff7 = $(`<div id="html_890affe24942f864bfaf18f464073ff7" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -86 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 12.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_a2e619bff2909e2816541a8b23cf6ebb.setContent(html_890affe24942f864bfaf18f464073ff7);
+            
+        
+
+        circle_marker_6c7582a15cd93db66591e3bea6fddecf.bindPopup(popup_a2e619bff2909e2816541a8b23cf6ebb)
+        ;
+
+        
+    
+    
+            var circle_marker_f2dd06e33147e2fca984f86e729f0507 = L.circleMarker(
+                [49.21799545, 16.58413243],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_6603450f5b82dc74a33cade1ad074c55 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7652934bf85eb03299531775761f9305 = $(`<div id="html_7652934bf85eb03299531775761f9305" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -82 dBm<br>  <b>RSRQ:</b> -8 dB<br><b>SNR:</b> 13.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_6603450f5b82dc74a33cade1ad074c55.setContent(html_7652934bf85eb03299531775761f9305);
+            
+        
+
+        circle_marker_f2dd06e33147e2fca984f86e729f0507.bindPopup(popup_6603450f5b82dc74a33cade1ad074c55)
+        ;
+
+        
+    
+    
+            var circle_marker_0b70e837f52978907d2335e87847c697 = L.circleMarker(
+                [49.21821749, 16.58403217],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_b6bdc0107c55d25bba5a81c26fa1bb2c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_37c87ef79a04ea11901885fea1665ea0 = $(`<div id="html_37c87ef79a04ea11901885fea1665ea0" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -92 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 13.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_b6bdc0107c55d25bba5a81c26fa1bb2c.setContent(html_37c87ef79a04ea11901885fea1665ea0);
+            
+        
+
+        circle_marker_0b70e837f52978907d2335e87847c697.bindPopup(popup_b6bdc0107c55d25bba5a81c26fa1bb2c)
+        ;
+
+        
+    
+    
+            var circle_marker_1f10052509dcb228bd5188496bd49bb5 = L.circleMarker(
+                [49.21842747, 16.58389002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_9ea64d1ef1c5d5e90e42e4a7788fbd02 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_18a7f3d668b7c06f9b5fa22adf44279b = $(`<div id="html_18a7f3d668b7c06f9b5fa22adf44279b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -92 dBm<br>  <b>RSRQ:</b> -15 dB<br><b>SNR:</b> 13.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_9ea64d1ef1c5d5e90e42e4a7788fbd02.setContent(html_18a7f3d668b7c06f9b5fa22adf44279b);
+            
+        
+
+        circle_marker_1f10052509dcb228bd5188496bd49bb5.bindPopup(popup_9ea64d1ef1c5d5e90e42e4a7788fbd02)
+        ;
+
+        
+    
+    
+            var circle_marker_b917598beba957e90ac9d024d5f3e3b7 = L.circleMarker(
+                [49.21842747, 16.58389002],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_34a9040527104b9a83215f66b3b13146 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_71baf9a13b672b25eafd2d4844617b53 = $(`<div id="html_71baf9a13b672b25eafd2d4844617b53" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -71 dBm<br>  <b>RSRQ:</b> -7 dB<br><b>SNR:</b> 5.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L8 (900 MHz)</div>`)[0];
+                popup_34a9040527104b9a83215f66b3b13146.setContent(html_71baf9a13b672b25eafd2d4844617b53);
+            
+        
+
+        circle_marker_b917598beba957e90ac9d024d5f3e3b7.bindPopup(popup_34a9040527104b9a83215f66b3b13146)
+        ;
+
+        
+    
+    
+            var circle_marker_53d37014563ad7db160c93d305b1b294 = L.circleMarker(
+                [49.21863859, 16.58373365],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_818fa50648caafc47a5fd1726fd419d2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_00cb3c8298749a574e71d22745022474 = $(`<div id="html_00cb3c8298749a574e71d22745022474" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -71 dBm<br>  <b>RSRQ:</b> -7 dB<br><b>SNR:</b> 5.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L8 (900 MHz)</div>`)[0];
+                popup_818fa50648caafc47a5fd1726fd419d2.setContent(html_00cb3c8298749a574e71d22745022474);
+            
+        
+
+        circle_marker_53d37014563ad7db160c93d305b1b294.bindPopup(popup_818fa50648caafc47a5fd1726fd419d2)
+        ;
+
+        
+    
+    
+            var circle_marker_5004ab036840fe28155576387ed29ca6 = L.circleMarker(
+                [49.21863859, 16.58373365],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_67f93692d2800adb3c804f5dc1e74489 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_03896621f02a7ab84f3b7b952514407f = $(`<div id="html_03896621f02a7ab84f3b7b952514407f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -90 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 18.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_67f93692d2800adb3c804f5dc1e74489.setContent(html_03896621f02a7ab84f3b7b952514407f);
+            
+        
+
+        circle_marker_5004ab036840fe28155576387ed29ca6.bindPopup(popup_67f93692d2800adb3c804f5dc1e74489)
+        ;
+
+        
+    
+    
+            var circle_marker_9ca3cd9b90de3cb50c31290841dfdb5e = L.circleMarker(
+                [49.2188478, 16.5835851],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_8ea65e350cfa69096c32d25f86e0f94f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b7a95399b3f8da250727944b03fdd70f = $(`<div id="html_b7a95399b3f8da250727944b03fdd70f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -90 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 18.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_8ea65e350cfa69096c32d25f86e0f94f.setContent(html_b7a95399b3f8da250727944b03fdd70f);
+            
+        
+
+        circle_marker_9ca3cd9b90de3cb50c31290841dfdb5e.bindPopup(popup_8ea65e350cfa69096c32d25f86e0f94f)
+        ;
+
+        
+    
+    
+            var circle_marker_7a8547433b2612e7a83e6d2acee59ef5 = L.circleMarker(
+                [49.21905575, 16.583418],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_cdc1ac9e2f385fd4645c80bf58affb53 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_04c7912607cf423d0cf83ae831377531 = $(`<div id="html_04c7912607cf423d0cf83ae831377531" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -89 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_cdc1ac9e2f385fd4645c80bf58affb53.setContent(html_04c7912607cf423d0cf83ae831377531);
+            
+        
+
+        circle_marker_7a8547433b2612e7a83e6d2acee59ef5.bindPopup(popup_cdc1ac9e2f385fd4645c80bf58affb53)
+        ;
+
+        
+    
+    
+            var circle_marker_d100c07112155be09167f8a92aab2c62 = L.circleMarker(
+                [49.21926361, 16.58326323],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_3bda0f9caec6ef939dd8748c4c3efd43 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_472bba677f3b261dc87765df66a682ea = $(`<div id="html_472bba677f3b261dc87765df66a682ea" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -89 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_3bda0f9caec6ef939dd8748c4c3efd43.setContent(html_472bba677f3b261dc87765df66a682ea);
+            
+        
+
+        circle_marker_d100c07112155be09167f8a92aab2c62.bindPopup(popup_3bda0f9caec6ef939dd8748c4c3efd43)
+        ;
+
+        
+    
+    
+            var circle_marker_81b4159049f01518baafcc6858318055 = L.circleMarker(
+                [49.21947837, 16.58310946],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_7c0f5f7534137053817db800d67d6dcb = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_87322259f5db37bfa88106b29613d03e = $(`<div id="html_87322259f5db37bfa88106b29613d03e" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -88 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 3.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_7c0f5f7534137053817db800d67d6dcb.setContent(html_87322259f5db37bfa88106b29613d03e);
+            
+        
+
+        circle_marker_81b4159049f01518baafcc6858318055.bindPopup(popup_7c0f5f7534137053817db800d67d6dcb)
+        ;
+
+        
+    
+    
+            var circle_marker_848d9f877c0a45108c200a324e038f5c = L.circleMarker(
+                [49.2196818, 16.58295925],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_2ecec2c8080502529eb82488abaf1157 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_462aa22d01d24f0b5157701b5eea49d7 = $(`<div id="html_462aa22d01d24f0b5157701b5eea49d7" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -93 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 2.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_2ecec2c8080502529eb82488abaf1157.setContent(html_462aa22d01d24f0b5157701b5eea49d7);
+            
+        
+
+        circle_marker_848d9f877c0a45108c200a324e038f5c.bindPopup(popup_2ecec2c8080502529eb82488abaf1157)
+        ;
+
+        
+    
+    
+            var circle_marker_a2a36e9de1c0f65bdc08de5599305c05 = L.circleMarker(
+                [49.2196818, 16.58295925],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_5a5f0d36ba820d3be0484c17f08867b5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3ae8b321b03bdce5a821ca5cb82a946a = $(`<div id="html_3ae8b321b03bdce5a821ca5cb82a946a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -94 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 4.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_5a5f0d36ba820d3be0484c17f08867b5.setContent(html_3ae8b321b03bdce5a821ca5cb82a946a);
+            
+        
+
+        circle_marker_a2a36e9de1c0f65bdc08de5599305c05.bindPopup(popup_5a5f0d36ba820d3be0484c17f08867b5)
+        ;
+
+        
+    
+    
+            var circle_marker_f3955c2c643c39e43a0810ef7982c638 = L.circleMarker(
+                [49.2198926, 16.5827976],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_98cacb2d1eeea421342da920bcc751c4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6f06890622984d759e0a69bdb45f6666 = $(`<div id="html_6f06890622984d759e0a69bdb45f6666" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -94 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 4.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_98cacb2d1eeea421342da920bcc751c4.setContent(html_6f06890622984d759e0a69bdb45f6666);
+            
+        
+
+        circle_marker_f3955c2c643c39e43a0810ef7982c638.bindPopup(popup_98cacb2d1eeea421342da920bcc751c4)
+        ;
+
+        
+    
+    
+            var circle_marker_db5ef5b99d82c918fbc51620c644f8f3 = L.circleMarker(
+                [49.22010728, 16.58264408],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_f185cdadd27fc47406e8e6aeb5e14cc3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a62f2fd1e2e39167807d35038aa7217b = $(`<div id="html_a62f2fd1e2e39167807d35038aa7217b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -88 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 4.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_f185cdadd27fc47406e8e6aeb5e14cc3.setContent(html_a62f2fd1e2e39167807d35038aa7217b);
+            
+        
+
+        circle_marker_db5ef5b99d82c918fbc51620c644f8f3.bindPopup(popup_f185cdadd27fc47406e8e6aeb5e14cc3)
+        ;
+
+        
+    
+    
+            var circle_marker_a39acb0a4e045565f4d62385514e9f9c = L.circleMarker(
+                [49.2201631, 16.58231106],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_f4a2d69b689e36afcc34c4b3b3bf0322 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d844dc21162aa8fb7ce8d4bf402a4e0a = $(`<div id="html_d844dc21162aa8fb7ce8d4bf402a4e0a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -85 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 13.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_f4a2d69b689e36afcc34c4b3b3bf0322.setContent(html_d844dc21162aa8fb7ce8d4bf402a4e0a);
+            
+        
+
+        circle_marker_a39acb0a4e045565f4d62385514e9f9c.bindPopup(popup_f4a2d69b689e36afcc34c4b3b3bf0322)
+        ;
+
+        
+    
+    
+            var circle_marker_95b178afcf7bdc0c8faf0b47032098e1 = L.circleMarker(
+                [49.2200412, 16.58200292],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_933a927f374962a2e10a0006a0cf8989 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a3a5ca328ce79c08489c821d6dcc8268 = $(`<div id="html_a3a5ca328ce79c08489c821d6dcc8268" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -81 dBm<br>  <b>RSRQ:</b> -8 dB<br><b>SNR:</b> 19.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_933a927f374962a2e10a0006a0cf8989.setContent(html_a3a5ca328ce79c08489c821d6dcc8268);
+            
+        
+
+        circle_marker_95b178afcf7bdc0c8faf0b47032098e1.bindPopup(popup_933a927f374962a2e10a0006a0cf8989)
+        ;
+
+        
+    
+    
+            var circle_marker_831e32b3ae871d8cef0c61e4ec7f5fae = L.circleMarker(
+                [49.21995404, 16.5816715],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_ded2b56f03133a08b8bfb2863923557d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_458731faa7074c821727ecc30f4b0fa5 = $(`<div id="html_458731faa7074c821727ecc30f4b0fa5" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -87 dBm<br>  <b>RSRQ:</b> -7 dB<br><b>SNR:</b> 21.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_ded2b56f03133a08b8bfb2863923557d.setContent(html_458731faa7074c821727ecc30f4b0fa5);
+            
+        
+
+        circle_marker_831e32b3ae871d8cef0c61e4ec7f5fae.bindPopup(popup_ded2b56f03133a08b8bfb2863923557d)
+        ;
+
+        
+    
+    
+            var circle_marker_3f97bd1698b23acffd001e68f4cf9b66 = L.circleMarker(
+                [49.21986302, 16.5813377],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_4245a9cf1fb0f547e50ebadf317f939f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_84400563961a1b803c7e0c20a5fd5beb = $(`<div id="html_84400563961a1b803c7e0c20a5fd5beb" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -93 dBm<br>  <b>RSRQ:</b> -8 dB<br><b>SNR:</b> 15.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_4245a9cf1fb0f547e50ebadf317f939f.setContent(html_84400563961a1b803c7e0c20a5fd5beb);
+            
+        
+
+        circle_marker_3f97bd1698b23acffd001e68f4cf9b66.bindPopup(popup_4245a9cf1fb0f547e50ebadf317f939f)
+        ;
+
+        
+    
+    
+            var circle_marker_c7bdf8e6dda7a183702487c505b20129 = L.circleMarker(
+                [49.21980967, 16.58100362],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_a1f5bb170eacbde307fe542afe10a5e7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_252f8f942b4867fd27b1bbe7efbbf3ea = $(`<div id="html_252f8f942b4867fd27b1bbe7efbbf3ea" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -100 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 9.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_a1f5bb170eacbde307fe542afe10a5e7.setContent(html_252f8f942b4867fd27b1bbe7efbbf3ea);
+            
+        
+
+        circle_marker_c7bdf8e6dda7a183702487c505b20129.bindPopup(popup_a1f5bb170eacbde307fe542afe10a5e7)
+        ;
+
+        
+    
+    
+            var circle_marker_5620d960d53c276d3ec1abd78d410194 = L.circleMarker(
+                [49.21973276, 16.58067585],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_36284fdf2e5ad786b9f8be5c510fd0da = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d9a862a6c8018c0b90b60ec93c5db7e4 = $(`<div id="html_d9a862a6c8018c0b90b60ec93c5db7e4" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -100 dBm<br>  <b>RSRQ:</b> -14 dB<br><b>SNR:</b> 4.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_36284fdf2e5ad786b9f8be5c510fd0da.setContent(html_d9a862a6c8018c0b90b60ec93c5db7e4);
+            
+        
+
+        circle_marker_5620d960d53c276d3ec1abd78d410194.bindPopup(popup_36284fdf2e5ad786b9f8be5c510fd0da)
+        ;
+
+        
+    
+    
+            var circle_marker_4c9e0fd259df5d4ba44f2e491f067cae = L.circleMarker(
+                [49.2196759, 16.5803397],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_d1e9b46baf361977e46f901a89bc65b0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_afa005b57f1264df0b7551624faf5bf7 = $(`<div id="html_afa005b57f1264df0b7551624faf5bf7" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -99 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 4.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_d1e9b46baf361977e46f901a89bc65b0.setContent(html_afa005b57f1264df0b7551624faf5bf7);
+            
+        
+
+        circle_marker_4c9e0fd259df5d4ba44f2e491f067cae.bindPopup(popup_d1e9b46baf361977e46f901a89bc65b0)
+        ;
+
+        
+    
+    
+            var circle_marker_712409f0c89c1702ad4cd21a24fe1c5a = L.circleMarker(
+                [49.2196759, 16.5803397],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_386ffe39c2c0682c3b3dc822a259d60d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a95f7ba107d7e7be28792ad7208ae8b0 = $(`<div id="html_a95f7ba107d7e7be28792ad7208ae8b0" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -97 dBm<br>  <b>RSRQ:</b> -17 dB<br><b>SNR:</b> 4.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_386ffe39c2c0682c3b3dc822a259d60d.setContent(html_a95f7ba107d7e7be28792ad7208ae8b0);
+            
+        
+
+        circle_marker_712409f0c89c1702ad4cd21a24fe1c5a.bindPopup(popup_386ffe39c2c0682c3b3dc822a259d60d)
+        ;
+
+        
+    
+    
+            var circle_marker_c6de76aa335035ecc54b850e95030d8b = L.circleMarker(
+                [49.21958863, 16.58000172],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_357cee463df67e93d9e84375a62fe84b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ce4d5f1d31a226ee18b68be1203feec6 = $(`<div id="html_ce4d5f1d31a226ee18b68be1203feec6" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -97 dBm<br>  <b>RSRQ:</b> -17 dB<br><b>SNR:</b> 4.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_357cee463df67e93d9e84375a62fe84b.setContent(html_ce4d5f1d31a226ee18b68be1203feec6);
+            
+        
+
+        circle_marker_c6de76aa335035ecc54b850e95030d8b.bindPopup(popup_357cee463df67e93d9e84375a62fe84b)
+        ;
+
+        
+    
+    
+            var circle_marker_3c6dd6407f73f22f737b25aee132e5b1 = L.circleMarker(
+                [49.21936617, 16.579924],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_79ecd8cb0280f89f91976104c87a2b79 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e4b76bf88b552f78e9c2fb03eff167df = $(`<div id="html_e4b76bf88b552f78e9c2fb03eff167df" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -98 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 4.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_79ecd8cb0280f89f91976104c87a2b79.setContent(html_e4b76bf88b552f78e9c2fb03eff167df);
+            
+        
+
+        circle_marker_3c6dd6407f73f22f737b25aee132e5b1.bindPopup(popup_79ecd8cb0280f89f91976104c87a2b79)
+        ;
+
+        
+    
+    
+            var circle_marker_94c83d0c435f171a35f6dd92f97e51c6 = L.circleMarker(
+                [49.21914057, 16.57998775],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_fbdec0dd6874118386b0d083f8b7bf44 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_301bd1d5dd7b5f4336ec59e2af4669f0 = $(`<div id="html_301bd1d5dd7b5f4336ec59e2af4669f0" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -94 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 4.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_fbdec0dd6874118386b0d083f8b7bf44.setContent(html_301bd1d5dd7b5f4336ec59e2af4669f0);
+            
+        
+
+        circle_marker_94c83d0c435f171a35f6dd92f97e51c6.bindPopup(popup_fbdec0dd6874118386b0d083f8b7bf44)
+        ;
+
+        
+    
+    
+            var circle_marker_a37a55257dabfb33961a513a507e70d8 = L.circleMarker(
+                [49.21891497, 16.57991048],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_e9ddbd85e0821716f3f0cdf2126581d6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_33de77954d47c2d526d7dea5b6cd0673 = $(`<div id="html_33de77954d47c2d526d7dea5b6cd0673" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -81 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 17.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_e9ddbd85e0821716f3f0cdf2126581d6.setContent(html_33de77954d47c2d526d7dea5b6cd0673);
+            
+        
+
+        circle_marker_a37a55257dabfb33961a513a507e70d8.bindPopup(popup_e9ddbd85e0821716f3f0cdf2126581d6)
+        ;
+
+        
+    
+    
+            var circle_marker_a785a350cd2d1859b9fda98a6bf3e7db = L.circleMarker(
+                [49.21871527, 16.57973937],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_41ad0083a1a86306e38042a78cd036ef = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d07ace989c3bcde8d5bf945e3f621f82 = $(`<div id="html_d07ace989c3bcde8d5bf945e3f621f82" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -77 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 17.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_41ad0083a1a86306e38042a78cd036ef.setContent(html_d07ace989c3bcde8d5bf945e3f621f82);
+            
+        
+
+        circle_marker_a785a350cd2d1859b9fda98a6bf3e7db.bindPopup(popup_41ad0083a1a86306e38042a78cd036ef)
+        ;
+
+        
+    
+    
+            var circle_marker_54417d445dedbbf74429be232bf51c20 = L.circleMarker(
+                [49.21851666, 16.57956734],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_c2fe13249572b1c987995a3867ee71bb = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_323484f95bf3ee328dacae229c69e56b = $(`<div id="html_323484f95bf3ee328dacae229c69e56b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -77 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_c2fe13249572b1c987995a3867ee71bb.setContent(html_323484f95bf3ee328dacae229c69e56b);
+            
+        
+
+        circle_marker_54417d445dedbbf74429be232bf51c20.bindPopup(popup_c2fe13249572b1c987995a3867ee71bb)
+        ;
+
+        
+    
+    
+            var circle_marker_6168ebd0a6b5788376b1bb8cd7c8b4ce = L.circleMarker(
+                [49.21830237, 16.57945775],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_11d61cf97e300a288bbede657cc48bb0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a249b39e48793ac69f41d1a19101e63b = $(`<div id="html_a249b39e48793ac69f41d1a19101e63b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -74 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 12.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_11d61cf97e300a288bbede657cc48bb0.setContent(html_a249b39e48793ac69f41d1a19101e63b);
+            
+        
+
+        circle_marker_6168ebd0a6b5788376b1bb8cd7c8b4ce.bindPopup(popup_11d61cf97e300a288bbede657cc48bb0)
+        ;
+
+        
+    
+    
+            var circle_marker_da440a302d16de238cdf566b67dde616 = L.circleMarker(
+                [49.21807254, 16.57943403],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_7b510968d68b53531badd1e920187a9d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_705c7d319f1655b96bb89d9431e1ddfa = $(`<div id="html_705c7d319f1655b96bb89d9431e1ddfa" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -70 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 11.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_7b510968d68b53531badd1e920187a9d.setContent(html_705c7d319f1655b96bb89d9431e1ddfa);
+            
+        
+
+        circle_marker_da440a302d16de238cdf566b67dde616.bindPopup(popup_7b510968d68b53531badd1e920187a9d)
+        ;
+
+        
+    
+    
+            var circle_marker_2a9964dd92be79ac03c9fad36ea0d3a3 = L.circleMarker(
+                [49.21783495, 16.57944531],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_5349a385a452c2199c3c08fd11659356 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_179643aa6d0ef2b9483badf6cbb568c2 = $(`<div id="html_179643aa6d0ef2b9483badf6cbb568c2" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -75 dBm<br>  <b>RSRQ:</b> -17 dB<br><b>SNR:</b> 5.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_5349a385a452c2199c3c08fd11659356.setContent(html_179643aa6d0ef2b9483badf6cbb568c2);
+            
+        
+
+        circle_marker_2a9964dd92be79ac03c9fad36ea0d3a3.bindPopup(popup_5349a385a452c2199c3c08fd11659356)
+        ;
+
+        
+    
+    
+            var circle_marker_8916db040449bf1921113022d1c1f0a7 = L.circleMarker(
+                [49.21783495, 16.57944531],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_c1f327260d1f3357792bbee7390ee9a9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fd16987a0249ff8091784496451ecd89 = $(`<div id="html_fd16987a0249ff8091784496451ecd89" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -70 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 5.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_c1f327260d1f3357792bbee7390ee9a9.setContent(html_fd16987a0249ff8091784496451ecd89);
+            
+        
+
+        circle_marker_8916db040449bf1921113022d1c1f0a7.bindPopup(popup_c1f327260d1f3357792bbee7390ee9a9)
+        ;
+
+        
+    
+    
+            var circle_marker_530c7d278413c5ab42f7992e7df5ffda = L.circleMarker(
+                [49.21762771, 16.57960298],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_ae095cd5d4bfec823c827a1c51a7d78c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e4fb28f877779d519cad3d6449ebe2ff = $(`<div id="html_e4fb28f877779d519cad3d6449ebe2ff" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -70 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 5.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_ae095cd5d4bfec823c827a1c51a7d78c.setContent(html_e4fb28f877779d519cad3d6449ebe2ff);
+            
+        
+
+        circle_marker_530c7d278413c5ab42f7992e7df5ffda.bindPopup(popup_ae095cd5d4bfec823c827a1c51a7d78c)
+        ;
+
+        
+    
+    
+            var circle_marker_e6b9e05f90bf2f2840464d7c7303e81c = L.circleMarker(
+                [49.21739026, 16.57959354],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_25b6405862d2a4f5dd2622d86d34e7e1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_db197e30588e17364450e1fd6c6a2933 = $(`<div id="html_db197e30588e17364450e1fd6c6a2933" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -71 dBm<br>  <b>RSRQ:</b> -16 dB<br><b>SNR:</b> 4.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_25b6405862d2a4f5dd2622d86d34e7e1.setContent(html_db197e30588e17364450e1fd6c6a2933);
+            
+        
+
+        circle_marker_e6b9e05f90bf2f2840464d7c7303e81c.bindPopup(popup_25b6405862d2a4f5dd2622d86d34e7e1)
+        ;
+
+        
+    
+    
+            var circle_marker_6fd7a9b76dc18a733c26cba2eb8aaa40 = L.circleMarker(
+                [49.21715664, 16.57959465],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_297d3f126f8029ac3a8a09789a83a8e8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_eeb3b2d279ebe842139463d3012d664f = $(`<div id="html_eeb3b2d279ebe842139463d3012d664f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -77 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 8.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_297d3f126f8029ac3a8a09789a83a8e8.setContent(html_eeb3b2d279ebe842139463d3012d664f);
+            
+        
+
+        circle_marker_6fd7a9b76dc18a733c26cba2eb8aaa40.bindPopup(popup_297d3f126f8029ac3a8a09789a83a8e8)
+        ;
+
+        
+    
+    
+            var circle_marker_ba4dd053d77150fb0b46006d344f769d = L.circleMarker(
+                [49.21692552, 16.57958512],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_81005809e165258dbac2221613762c91 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5747b5c76b5b208837ccdad68a5ea751 = $(`<div id="html_5747b5c76b5b208837ccdad68a5ea751" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -82 dBm<br>  <b>RSRQ:</b> -15 dB<br><b>SNR:</b> 8.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_81005809e165258dbac2221613762c91.setContent(html_5747b5c76b5b208837ccdad68a5ea751);
+            
+        
+
+        circle_marker_ba4dd053d77150fb0b46006d344f769d.bindPopup(popup_81005809e165258dbac2221613762c91)
+        ;
+
+        
+    
+    
+            var circle_marker_915a64b65bcbaae5bea6808f8a676e17 = L.circleMarker(
+                [49.21670631, 16.57967209],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_c0583abe78ce86ef3ab654cbfc1b4b7f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_37d8131617e9b32f588dc4f807d95ec5 = $(`<div id="html_37d8131617e9b32f588dc4f807d95ec5" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -87 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_c0583abe78ce86ef3ab654cbfc1b4b7f.setContent(html_37d8131617e9b32f588dc4f807d95ec5);
+            
+        
+
+        circle_marker_915a64b65bcbaae5bea6808f8a676e17.bindPopup(popup_c0583abe78ce86ef3ab654cbfc1b4b7f)
+        ;
+
+        
+    
+    
+            var circle_marker_88455fc84ad496e7b49b734fd593af43 = L.circleMarker(
+                [49.21657771, 16.57995857],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_806aa922a3b4721b9fbcd86dab87296a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_896deddd796ad0231f12dcd2c2db4323 = $(`<div id="html_896deddd796ad0231f12dcd2c2db4323" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -87 dBm<br>  <b>RSRQ:</b> -16 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_806aa922a3b4721b9fbcd86dab87296a.setContent(html_896deddd796ad0231f12dcd2c2db4323);
+            
+        
+
+        circle_marker_88455fc84ad496e7b49b734fd593af43.bindPopup(popup_806aa922a3b4721b9fbcd86dab87296a)
+        ;
+
+        
+    
+    
+            var circle_marker_6b538d54a26b75090c75da83c72615ce = L.circleMarker(
+                [49.21648093, 16.58028747],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_e6b81075a3c064a0f14c1f6ed6ce3f3d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c9fafecb6d027f6f9f9fc2d876772711 = $(`<div id="html_c9fafecb6d027f6f9f9fc2d876772711" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -83 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_e6b81075a3c064a0f14c1f6ed6ce3f3d.setContent(html_c9fafecb6d027f6f9f9fc2d876772711);
+            
+        
+
+        circle_marker_6b538d54a26b75090c75da83c72615ce.bindPopup(popup_e6b81075a3c064a0f14c1f6ed6ce3f3d)
+        ;
+
+        
+    
+    
+            var circle_marker_fb35a0ef6dc7ad8347394cd36c19895b = L.circleMarker(
+                [49.21647429, 16.58064128],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_cc269ef4312786e5aea5029965afc75e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_60b8bece1fb9152476b83d6fd965eb58 = $(`<div id="html_60b8bece1fb9152476b83d6fd965eb58" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -79 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_cc269ef4312786e5aea5029965afc75e.setContent(html_60b8bece1fb9152476b83d6fd965eb58);
+            
+        
+
+        circle_marker_fb35a0ef6dc7ad8347394cd36c19895b.bindPopup(popup_cc269ef4312786e5aea5029965afc75e)
+        ;
+
+        
+    
+    
+            var circle_marker_050d1107c142dc67ed115409ca3d4cc1 = L.circleMarker(
+                [49.21647782, 16.58100421],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_155653353be39eb66db23c4fc2af1c84 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1a63385dd8cf66f87a05d032d8b102d6 = $(`<div id="html_1a63385dd8cf66f87a05d032d8b102d6" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -88 dBm<br>  <b>RSRQ:</b> -16 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_155653353be39eb66db23c4fc2af1c84.setContent(html_1a63385dd8cf66f87a05d032d8b102d6);
+            
+        
+
+        circle_marker_050d1107c142dc67ed115409ca3d4cc1.bindPopup(popup_155653353be39eb66db23c4fc2af1c84)
+        ;
+
+        
+    
+    
+            var circle_marker_2857620ff49babc30f0bde913dd3458a = L.circleMarker(
+                [49.21651943, 16.58134642],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_d4b317d717878cbc2788c469fdfacba6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_118f796badcdc7d3a19d1fee1f2ca9de = $(`<div id="html_118f796badcdc7d3a19d1fee1f2ca9de" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -90 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_d4b317d717878cbc2788c469fdfacba6.setContent(html_118f796badcdc7d3a19d1fee1f2ca9de);
+            
+        
+
+        circle_marker_2857620ff49babc30f0bde913dd3458a.bindPopup(popup_d4b317d717878cbc2788c469fdfacba6)
+        ;
+
+        
+    
+    
+            var circle_marker_81d21a762d3a14635d387e67895eae1f = L.circleMarker(
+                [49.21662327, 16.58166936],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_05ede936d703a5d0e078c03aef01ec1b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2e035ca0e12c2b3dfde52c4e25a2a2d0 = $(`<div id="html_2e035ca0e12c2b3dfde52c4e25a2a2d0" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -88 dBm<br>  <b>RSRQ:</b> -17 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_05ede936d703a5d0e078c03aef01ec1b.setContent(html_2e035ca0e12c2b3dfde52c4e25a2a2d0);
+            
+        
+
+        circle_marker_81d21a762d3a14635d387e67895eae1f.bindPopup(popup_05ede936d703a5d0e078c03aef01ec1b)
+        ;
+
+        
+    
+    
+            var circle_marker_f1a9f30175d6e42ce219bc8d18cf43aa = L.circleMarker(
+                [49.21672505, 16.58198136],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_7f4307b5475ffb9d2efcd22c0a660d71 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e12cc59c0e04b9767d6cf766ec6ef023 = $(`<div id="html_e12cc59c0e04b9767d6cf766ec6ef023" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -87 dBm<br>  <b>RSRQ:</b> -17 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_7f4307b5475ffb9d2efcd22c0a660d71.setContent(html_e12cc59c0e04b9767d6cf766ec6ef023);
+            
+        
+
+        circle_marker_f1a9f30175d6e42ce219bc8d18cf43aa.bindPopup(popup_7f4307b5475ffb9d2efcd22c0a660d71)
+        ;
+
+        
+    
+    
+            var circle_marker_ab17503b5deb020cef02d5964a6128af = L.circleMarker(
+                [49.2169455, 16.58205566],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_9c27bf2575ef67a9397a7b1aea715782 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_10e0203c9c38ea7fde6875cdfad20f44 = $(`<div id="html_10e0203c9c38ea7fde6875cdfad20f44" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -93 dBm<br>  <b>RSRQ:</b> -19 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_9c27bf2575ef67a9397a7b1aea715782.setContent(html_10e0203c9c38ea7fde6875cdfad20f44);
+            
+        
+
+        circle_marker_ab17503b5deb020cef02d5964a6128af.bindPopup(popup_9c27bf2575ef67a9397a7b1aea715782)
+        ;
+
+        
+    
+    
+            var circle_marker_e4ab6805f6d0737c3036960cbdea00db = L.circleMarker(
+                [49.21717296, 16.58209925],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_8bacefeabb639d74c1cc3fd650d1739a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ec73a0531e6e9ab6a9ec470f6e5f672d = $(`<div id="html_ec73a0531e6e9ab6a9ec470f6e5f672d" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -89 dBm<br>  <b>RSRQ:</b> -16 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_8bacefeabb639d74c1cc3fd650d1739a.setContent(html_ec73a0531e6e9ab6a9ec470f6e5f672d);
+            
+        
+
+        circle_marker_e4ab6805f6d0737c3036960cbdea00db.bindPopup(popup_8bacefeabb639d74c1cc3fd650d1739a)
+        ;
+
+        
+    
+    
+            var circle_marker_186324a350c6706c7eae8e709e343217 = L.circleMarker(
+                [49.21740803, 16.58207534],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_22a78634268509ac55a6d95f3d323d7e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bb9e68b4c169bed3ce580de613cb2241 = $(`<div id="html_bb9e68b4c169bed3ce580de613cb2241" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -93 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_22a78634268509ac55a6d95f3d323d7e.setContent(html_bb9e68b4c169bed3ce580de613cb2241);
+            
+        
+
+        circle_marker_186324a350c6706c7eae8e709e343217.bindPopup(popup_22a78634268509ac55a6d95f3d323d7e)
+        ;
+
+        
+    
+    
+            var circle_marker_5b36e7a4e3d7a42165394397ff54f5b6 = L.circleMarker(
+                [49.21763743, 16.58213277],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_2d5b4fed231f0e9524bc4e9a7132536d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_77453ab396f115518cd8aa68d461ca86 = $(`<div id="html_77453ab396f115518cd8aa68d461ca86" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -96 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_2d5b4fed231f0e9524bc4e9a7132536d.setContent(html_77453ab396f115518cd8aa68d461ca86);
+            
+        
+
+        circle_marker_5b36e7a4e3d7a42165394397ff54f5b6.bindPopup(popup_2d5b4fed231f0e9524bc4e9a7132536d)
+        ;
+
+        
+    
+    
+            var circle_marker_f91f8a1764599358cc8d358498ae565a = L.circleMarker(
+                [49.21785512, 16.58202801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_3de056bc3afde7998db8477e68de0723 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_927a8d007d02ebc65828fb9a95d9e842 = $(`<div id="html_927a8d007d02ebc65828fb9a95d9e842" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -99 dBm<br>  <b>RSRQ:</b> -16 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_3de056bc3afde7998db8477e68de0723.setContent(html_927a8d007d02ebc65828fb9a95d9e842);
+            
+        
+
+        circle_marker_f91f8a1764599358cc8d358498ae565a.bindPopup(popup_3de056bc3afde7998db8477e68de0723)
+        ;
+
+        
+    
+    
+            var circle_marker_41497653a946ded2fad2d526e0459d14 = L.circleMarker(
+                [49.21801263, 16.58176329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_b380e61991ecc5c684aa2cf1de459390 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_05fedc8c71e23b67ef3dd61795ce2ccd = $(`<div id="html_05fedc8c71e23b67ef3dd61795ce2ccd" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -106 dBm<br>  <b>RSRQ:</b> -16 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_b380e61991ecc5c684aa2cf1de459390.setContent(html_05fedc8c71e23b67ef3dd61795ce2ccd);
+            
+        
+
+        circle_marker_41497653a946ded2fad2d526e0459d14.bindPopup(popup_b380e61991ecc5c684aa2cf1de459390)
+        ;
+
+        
+    
+    
+            var circle_marker_64d90498df835386f51dd8238b7b69a1 = L.circleMarker(
+                [49.21801263, 16.58176329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_552de7d7b4cdf8194e91c6ad3c513874 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fe64d38a19cc22b8565deeaddc33b398 = $(`<div id="html_fe64d38a19cc22b8565deeaddc33b398" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -104 dBm<br>  <b>RSRQ:</b> -15 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_552de7d7b4cdf8194e91c6ad3c513874.setContent(html_fe64d38a19cc22b8565deeaddc33b398);
+            
+        
+
+        circle_marker_64d90498df835386f51dd8238b7b69a1.bindPopup(popup_552de7d7b4cdf8194e91c6ad3c513874)
+        ;
+
+        
+    
+    
+            var circle_marker_12e0b76352577e9588927d1292e38f66 = L.circleMarker(
+                [49.2181297, 16.58146287],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_2d2543dddca7d85ad3f7f525ec8ef762 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f939c6f2efb798f2d5b65d78ba43bea0 = $(`<div id="html_f939c6f2efb798f2d5b65d78ba43bea0" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -104 dBm<br>  <b>RSRQ:</b> -18 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_2d2543dddca7d85ad3f7f525ec8ef762.setContent(html_f939c6f2efb798f2d5b65d78ba43bea0);
+            
+        
+
+        circle_marker_12e0b76352577e9588927d1292e38f66.bindPopup(popup_2d2543dddca7d85ad3f7f525ec8ef762)
+        ;
+
+        
+    
+    
+            var circle_marker_150d3e0271c87e443164cd14d0f4f53a = L.circleMarker(
+                [49.21831499, 16.58124682],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_8e3d727b0ebd2ab4d0e1557b78b8bce9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_76f206a7e63f1558e26527e2445f187b = $(`<div id="html_76f206a7e63f1558e26527e2445f187b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -95 dBm<br>  <b>RSRQ:</b> -17 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_8e3d727b0ebd2ab4d0e1557b78b8bce9.setContent(html_76f206a7e63f1558e26527e2445f187b);
+            
+        
+
+        circle_marker_150d3e0271c87e443164cd14d0f4f53a.bindPopup(popup_8e3d727b0ebd2ab4d0e1557b78b8bce9)
+        ;
+
+        
+    
+    
+            var circle_marker_791540ace886dedc9c5c3bc2f7621917 = L.circleMarker(
+                [49.21854405, 16.58124249],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_33843863517f2271305693ee5283f729 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fc961974df40e72af389697148cadc47 = $(`<div id="html_fc961974df40e72af389697148cadc47" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -95 dBm<br>  <b>RSRQ:</b> -20 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_33843863517f2271305693ee5283f729.setContent(html_fc961974df40e72af389697148cadc47);
+            
+        
+
+        circle_marker_791540ace886dedc9c5c3bc2f7621917.bindPopup(popup_33843863517f2271305693ee5283f729)
+        ;
+
+        
+    
+    
+            var circle_marker_c99821c0e6a0177959c78303c6ea64da = L.circleMarker(
+                [49.21877192, 16.58118294],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_43a1dd85b86152ed0793c744d59a3384 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0844d1a34da7bb41c9de549cb1f9da2e = $(`<div id="html_0844d1a34da7bb41c9de549cb1f9da2e" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -98 dBm<br>  <b>RSRQ:</b> -17 dB<br><b>SNR:</b> 3.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_43a1dd85b86152ed0793c744d59a3384.setContent(html_0844d1a34da7bb41c9de549cb1f9da2e);
+            
+        
+
+        circle_marker_c99821c0e6a0177959c78303c6ea64da.bindPopup(popup_43a1dd85b86152ed0793c744d59a3384)
+        ;
+
+        
+    
+    
+            var circle_marker_e516c341abb7d879d2bfdbe6d2e93707 = L.circleMarker(
+                [49.21877192, 16.58118294],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_bfb5fc05c2e215e229d2fd99e4f71182 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0efd267e111142fe74433ae2e04f83e1 = $(`<div id="html_0efd267e111142fe74433ae2e04f83e1" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -98 dBm<br>  <b>RSRQ:</b> -16 dB<br><b>SNR:</b> 3.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_bfb5fc05c2e215e229d2fd99e4f71182.setContent(html_0efd267e111142fe74433ae2e04f83e1);
+            
+        
+
+        circle_marker_e516c341abb7d879d2bfdbe6d2e93707.bindPopup(popup_bfb5fc05c2e215e229d2fd99e4f71182)
+        ;
+
+        
+    
+    
+            var circle_marker_64ba4d8575454d3d6729516dadf23dff = L.circleMarker(
+                [49.21899453, 16.58106434],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_91226340067a4db5610658338bebded2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_db19320d19c2e9031d217d692e8f9f06 = $(`<div id="html_db19320d19c2e9031d217d692e8f9f06" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -98 dBm<br>  <b>RSRQ:</b> -16 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_91226340067a4db5610658338bebded2.setContent(html_db19320d19c2e9031d217d692e8f9f06);
+            
+        
+
+        circle_marker_64ba4d8575454d3d6729516dadf23dff.bindPopup(popup_91226340067a4db5610658338bebded2)
+        ;
+
+        
+    
+    
+            var circle_marker_de090ad2a67c4f0e80f8fa23f7e036c3 = L.circleMarker(
+                [49.21899453, 16.58106434],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_1c9082d87f80a3caf88add5552abe254 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5a2e4e8ffac3d18a7955f050beb4ffc9 = $(`<div id="html_5a2e4e8ffac3d18a7955f050beb4ffc9" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -93 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_1c9082d87f80a3caf88add5552abe254.setContent(html_5a2e4e8ffac3d18a7955f050beb4ffc9);
+            
+        
+
+        circle_marker_de090ad2a67c4f0e80f8fa23f7e036c3.bindPopup(popup_1c9082d87f80a3caf88add5552abe254)
+        ;
+
+        
+    
+    
+            var circle_marker_5d82925b0751b9d03d965516f05ddb6b = L.circleMarker(
+                [49.21919515, 16.58088814],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_f0403d2d6e8f0814e4322ebae485e8fd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_21c9dc74ab3c543c3b389f49d5366fec = $(`<div id="html_21c9dc74ab3c543c3b389f49d5366fec" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -100 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 1.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_f0403d2d6e8f0814e4322ebae485e8fd.setContent(html_21c9dc74ab3c543c3b389f49d5366fec);
+            
+        
+
+        circle_marker_5d82925b0751b9d03d965516f05ddb6b.bindPopup(popup_f0403d2d6e8f0814e4322ebae485e8fd)
+        ;
+
+        
+    
+    
+            var circle_marker_62e36235b1619e61d08c4e1fded3d581 = L.circleMarker(
+                [49.21940889, 16.58072629],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_9dee823e428085b60c8bf1496b0a0e10 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_25a7d620d989d08cfcc9292ff485d327 = $(`<div id="html_25a7d620d989d08cfcc9292ff485d327" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -104 dBm<br>  <b>RSRQ:</b> -19 dB<br><b>SNR:</b> -2.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_9dee823e428085b60c8bf1496b0a0e10.setContent(html_25a7d620d989d08cfcc9292ff485d327);
+            
+        
+
+        circle_marker_62e36235b1619e61d08c4e1fded3d581.bindPopup(popup_9dee823e428085b60c8bf1496b0a0e10)
+        ;
+
+        
+    
+    
+            var circle_marker_c2c415179d097fc2be78dbb8b86358dd = L.circleMarker(
+                [49.21962305, 16.58059613],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0e6d3897b7a79a4b66a23b3bad76f69);
+        
+    
+        var popup_53428892d78b53a7180438c0eee1294f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_533b36acf3c2a2f61e4d4fdd72e89c26 = $(`<div id="html_533b36acf3c2a2f61e4d4fdd72e89c26" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> O2<br><b>RSRP:</b> -97 dBm<br>  <b>RSRQ:</b> -16 dB<br><b>SNR:</b> -2.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_53428892d78b53a7180438c0eee1294f.setContent(html_533b36acf3c2a2f61e4d4fdd72e89c26);
+            
+        
+
+        circle_marker_c2c415179d097fc2be78dbb8b86358dd.bindPopup(popup_53428892d78b53a7180438c0eee1294f)
+        ;
+
+        
+    
+</script>
+</html>

@@ -1,0 +1,3588 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9ee87637d0de10b4c7f1dfec99ab4e11 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; bottom: 50px; left: 50px;width: 260px; background-color: white; border:2px solid grey; z-index:9999; padding: 10px; font-size:14px;">
+    <b>RSRP [dBm]</b><br>
+    <div style="width: 220px; height: 20px; background: linear-gradient(to right, #440154,#440256,#450457,#450559,#46075a,#46085c,#460a5d,#460b5e,#470d60,#470e61,#471063,#471164,#471365,#481467,#481668,#481769,#48186a,#481a6c,#481b6d,#481c6e,#481d6f,#481f70,#482071,#482173,#482374,#482475,#482576,#482677,#482878,#482979,#472a7a,#472c7a,#472d7b,#472e7c,#472f7d,#46307e,#46327e,#46337f,#463480,#453581,#453781,#453882,#443983,#443a83,#443b84,#433d84,#433e85,#423f85,#424086,#424186,#414287,#414487,#404588,#404688,#3f4788,#3f4889,#3e4989,#3e4a89,#3e4c8a,#3d4d8a,#3d4e8a,#3c4f8a,#3c508b,#3b518b,#3b528b,#3a538b,#3a548c,#39558c,#39568c,#38588c,#38598c,#375a8c,#375b8d,#365c8d,#365d8d,#355e8d,#355f8d,#34608d,#34618d,#33628d,#33638d,#32648e,#32658e,#31668e,#31678e,#31688e,#30698e,#306a8e,#2f6b8e,#2f6c8e,#2e6d8e,#2e6e8e,#2e6f8e,#2d708e,#2d718e,#2c718e,#2c728e,#2c738e,#2b748e,#2b758e,#2a768e,#2a778e,#2a788e,#29798e,#297a8e,#297b8e,#287c8e,#287d8e,#277e8e,#277f8e,#27808e,#26818e,#26828e,#26828e,#25838e,#25848e,#25858e,#24868e,#24878e,#23888e,#23898e,#238a8d,#228b8d,#228c8d,#228d8d,#218e8d,#218f8d,#21908d,#21918c,#20928c,#20928c,#20938c,#1f948c,#1f958b,#1f968b,#1f978b,#1f988b,#1f998a,#1f9a8a,#1e9b8a,#1e9c89,#1e9d89,#1f9e89,#1f9f88,#1fa088,#1fa188,#1fa187,#1fa287,#20a386,#20a486,#21a585,#21a685,#22a785,#22a884,#23a983,#24aa83,#25ab82,#25ac82,#26ad81,#27ad81,#28ae80,#29af7f,#2ab07f,#2cb17e,#2db27d,#2eb37c,#2fb47c,#31b57b,#32b67a,#34b679,#35b779,#37b878,#38b977,#3aba76,#3bbb75,#3dbc74,#3fbc73,#40bd72,#42be71,#44bf70,#46c06f,#48c16e,#4ac16d,#4cc26c,#4ec36b,#50c46a,#52c569,#54c568,#56c667,#58c765,#5ac864,#5cc863,#5ec962,#60ca60,#63cb5f,#65cb5e,#67cc5c,#69cd5b,#6ccd5a,#6ece58,#70cf57,#73d056,#75d054,#77d153,#7ad151,#7cd250,#7fd34e,#81d34d,#84d44b,#86d549,#89d548,#8bd646,#8ed645,#90d743,#93d741,#95d840,#98d83e,#9bd93c,#9dd93b,#a0da39,#a2da37,#a5db36,#a8db34,#aadc32,#addc30,#b0dd2f,#b2dd2d,#b5de2b,#b8de29,#bade28,#bddf26,#c0df25,#c2df23,#c5e021,#c8e020,#cae11f,#cde11d,#d0e11c,#d2e21b,#d5e21a,#d8e219,#dae319,#dde318,#dfe318,#e2e418,#e5e419,#e7e419,#eae51a,#ece51b,#efe51c,#f1e51d,#f4e61e,#f6e620,#f8e621,#fbe723,#fde725);"></div>
+    <div style="display:flex; justify-content:space-between;">
+    <span>-130</span><span>-110</span><span>-90</span>
+    <span>-70</span><span>-50</span></div></div>
+    
+    
+            <div class="folium-map" id="map_9ee87637d0de10b4c7f1dfec99ab4e11" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9ee87637d0de10b4c7f1dfec99ab4e11 = L.map(
+                "map_9ee87637d0de10b4c7f1dfec99ab4e11",
+                {
+                    center: [49.22722518, 16.5720731],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5d3a7ad0c5a28d28a5c7dbf81965a766 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5d3a7ad0c5a28d28a5c7dbf81965a766.addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+            map_9ee87637d0de10b4c7f1dfec99ab4e11.fitBounds(
+                [[49.22308336, 16.56717644], [49.23318223, 16.5795195]],
+                {}
+            );
+        
+    
+            var circle_marker_4e317b4d4c0e4636755aa66c27d93a88 = L.circleMarker(
+                [49.2320433, 16.56994149],
+                {"bubblingMouseEvents": true, "color": "#1fa088", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa088", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_e00ec03d6fb71e933094e79f1d7177d1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ec42601fef6f5fda2db8ad0c67f79bb2 = $(`<div id="html_ec42601fef6f5fda2db8ad0c67f79bb2" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -85 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 13 dB<br></div>`)[0];
+                popup_e00ec03d6fb71e933094e79f1d7177d1.setContent(html_ec42601fef6f5fda2db8ad0c67f79bb2);
+            
+        
+
+        circle_marker_4e317b4d4c0e4636755aa66c27d93a88.bindPopup(popup_e00ec03d6fb71e933094e79f1d7177d1)
+        ;
+
+        
+    
+    
+            var circle_marker_a459b602c5b8551eaecad06b944a3e4e = L.circleMarker(
+                [49.23221905, 16.56969329],
+                {"bubblingMouseEvents": true, "color": "#238a8d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#238a8d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_041e9f1b4f1e445cde5807ed2eec0623 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0eaec81b9777de5ff282d1d6631efc59 = $(`<div id="html_0eaec81b9777de5ff282d1d6631efc59" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -92 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 13 dB<br></div>`)[0];
+                popup_041e9f1b4f1e445cde5807ed2eec0623.setContent(html_0eaec81b9777de5ff282d1d6631efc59);
+            
+        
+
+        circle_marker_a459b602c5b8551eaecad06b944a3e4e.bindPopup(popup_041e9f1b4f1e445cde5807ed2eec0623)
+        ;
+
+        
+    
+    
+            var circle_marker_4dc5fe8348f5a941b2b0aaeb5f614834 = L.circleMarker(
+                [49.23238902, 16.56945863],
+                {"bubblingMouseEvents": true, "color": "#297b8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#297b8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_09c68c671dae1aa536f68c3c594f8e40 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_85c03903c79f4efb068145cab7c56a57 = $(`<div id="html_85c03903c79f4efb068145cab7c56a57" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -97 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 13 dB<br></div>`)[0];
+                popup_09c68c671dae1aa536f68c3c594f8e40.setContent(html_85c03903c79f4efb068145cab7c56a57);
+            
+        
+
+        circle_marker_4dc5fe8348f5a941b2b0aaeb5f614834.bindPopup(popup_09c68c671dae1aa536f68c3c594f8e40)
+        ;
+
+        
+    
+    
+            var circle_marker_f3c9a8e3895580db17cf26c4586efab9 = L.circleMarker(
+                [49.23254235, 16.56919128],
+                {"bubblingMouseEvents": true, "color": "#2b758e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b758e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_5384d3ef11ddf8b400f94692e34f5021 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_78438d5598845e65c99ba56d833bf43e = $(`<div id="html_78438d5598845e65c99ba56d833bf43e" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -99 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 13 dB<br></div>`)[0];
+                popup_5384d3ef11ddf8b400f94692e34f5021.setContent(html_78438d5598845e65c99ba56d833bf43e);
+            
+        
+
+        circle_marker_f3c9a8e3895580db17cf26c4586efab9.bindPopup(popup_5384d3ef11ddf8b400f94692e34f5021)
+        ;
+
+        
+    
+    
+            var circle_marker_61a7c6fc8245949591293cb4e2af3528 = L.circleMarker(
+                [49.23269899, 16.56894159],
+                {"bubblingMouseEvents": true, "color": "#277e8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#277e8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_125ebb2b83d885f7967a0318820f4d44 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9b8dfb9e77aa42b9c9b9e0bbe69fff15 = $(`<div id="html_9b8dfb9e77aa42b9c9b9e0bbe69fff15" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -96 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 13 dB<br></div>`)[0];
+                popup_125ebb2b83d885f7967a0318820f4d44.setContent(html_9b8dfb9e77aa42b9c9b9e0bbe69fff15);
+            
+        
+
+        circle_marker_61a7c6fc8245949591293cb4e2af3528.bindPopup(popup_125ebb2b83d885f7967a0318820f4d44)
+        ;
+
+        
+    
+    
+            var circle_marker_aa99d8bab8469d7f2165fb2ea37d4262 = L.circleMarker(
+                [49.23286716, 16.56869592],
+                {"bubblingMouseEvents": true, "color": "#2f6c8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2f6c8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_80284dea1553d5f41bbb18fb07e5299f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_909e0870cccf28815daab45f275fe762 = $(`<div id="html_909e0870cccf28815daab45f275fe762" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -102 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 13 dB<br></div>`)[0];
+                popup_80284dea1553d5f41bbb18fb07e5299f.setContent(html_909e0870cccf28815daab45f275fe762);
+            
+        
+
+        circle_marker_aa99d8bab8469d7f2165fb2ea37d4262.bindPopup(popup_80284dea1553d5f41bbb18fb07e5299f)
+        ;
+
+        
+    
+    
+            var circle_marker_e26a70c32090b9358d13c61caa7cc906 = L.circleMarker(
+                [49.23295086, 16.56837428],
+                {"bubblingMouseEvents": true, "color": "#2e6f8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e6f8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_1c9c5f7193d7496175ad0a2df8ecaefe = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6dc0f8c7fbcbf779ed6b9501055b830e = $(`<div id="html_6dc0f8c7fbcbf779ed6b9501055b830e" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -101 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 13 dB<br></div>`)[0];
+                popup_1c9c5f7193d7496175ad0a2df8ecaefe.setContent(html_6dc0f8c7fbcbf779ed6b9501055b830e);
+            
+        
+
+        circle_marker_e26a70c32090b9358d13c61caa7cc906.bindPopup(popup_1c9c5f7193d7496175ad0a2df8ecaefe)
+        ;
+
+        
+    
+    
+            var circle_marker_131ba271115fa69a18341a0252793ae4 = L.circleMarker(
+                [49.23303636, 16.56803922],
+                {"bubblingMouseEvents": true, "color": "#2f6c8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2f6c8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_27cbd8ec28a74c59ab4e58fe3f03a1f4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_21d1cbee4b247a4a1541a840142790fc = $(`<div id="html_21d1cbee4b247a4a1541a840142790fc" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -102 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 13 dB<br></div>`)[0];
+                popup_27cbd8ec28a74c59ab4e58fe3f03a1f4.setContent(html_21d1cbee4b247a4a1541a840142790fc);
+            
+        
+
+        circle_marker_131ba271115fa69a18341a0252793ae4.bindPopup(popup_27cbd8ec28a74c59ab4e58fe3f03a1f4)
+        ;
+
+        
+    
+    
+            var circle_marker_38017e0b4f8bd1227606e87d6ec96aa5 = L.circleMarker(
+                [49.23310068, 16.5677051],
+                {"bubblingMouseEvents": true, "color": "#2f6c8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2f6c8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_44a7f692dcecb253f2cce34c0da8c7ed = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9c865360646d7ef3359efc1d765d7b2e = $(`<div id="html_9c865360646d7ef3359efc1d765d7b2e" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -102 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 13 dB<br></div>`)[0];
+                popup_44a7f692dcecb253f2cce34c0da8c7ed.setContent(html_9c865360646d7ef3359efc1d765d7b2e);
+            
+        
+
+        circle_marker_38017e0b4f8bd1227606e87d6ec96aa5.bindPopup(popup_44a7f692dcecb253f2cce34c0da8c7ed)
+        ;
+
+        
+    
+    
+            var circle_marker_07b1cdf13a217b499e063c5e0ce1a7c3 = L.circleMarker(
+                [49.23318223, 16.56738221],
+                {"bubblingMouseEvents": true, "color": "#38598c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#38598c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_fc5a43f8766c42633346c69c2c5d755c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9d540c3cf874b0ed697f684eb32f4bf4 = $(`<div id="html_9d540c3cf874b0ed697f684eb32f4bf4" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -108 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 2 dB<br></div>`)[0];
+                popup_fc5a43f8766c42633346c69c2c5d755c.setContent(html_9d540c3cf874b0ed697f684eb32f4bf4);
+            
+        
+
+        circle_marker_07b1cdf13a217b499e063c5e0ce1a7c3.bindPopup(popup_fc5a43f8766c42633346c69c2c5d755c)
+        ;
+
+        
+    
+    
+            var circle_marker_67600a837df135cc5aa0cbfdbc32b88f = L.circleMarker(
+                [49.23299647, 16.56717644],
+                {"bubblingMouseEvents": true, "color": "#2e6f8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e6f8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_a2bfae6243540250715c2f9be66f4778 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1e234b07933d786a87e31bd37ba18e38 = $(`<div id="html_1e234b07933d786a87e31bd37ba18e38" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -101 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 2 dB<br></div>`)[0];
+                popup_a2bfae6243540250715c2f9be66f4778.setContent(html_1e234b07933d786a87e31bd37ba18e38);
+            
+        
+
+        circle_marker_67600a837df135cc5aa0cbfdbc32b88f.bindPopup(popup_a2bfae6243540250715c2f9be66f4778)
+        ;
+
+        
+    
+    
+            var circle_marker_cac4f0ff717e8f766c34ea65fd011adf = L.circleMarker(
+                [49.23277395, 16.56727084],
+                {"bubblingMouseEvents": true, "color": "#228d8d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228d8d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_40e5a05e95b02c8e3c243f96c9290e55 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_069a348f55d6c546a8fbb4f500ad5215 = $(`<div id="html_069a348f55d6c546a8fbb4f500ad5215" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -91 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_40e5a05e95b02c8e3c243f96c9290e55.setContent(html_069a348f55d6c546a8fbb4f500ad5215);
+            
+        
+
+        circle_marker_cac4f0ff717e8f766c34ea65fd011adf.bindPopup(popup_40e5a05e95b02c8e3c243f96c9290e55)
+        ;
+
+        
+    
+    
+            var circle_marker_a77736e485d3c397945ec8ceff8ee4dd = L.circleMarker(
+                [49.23254562, 16.56734112],
+                {"bubblingMouseEvents": true, "color": "#1f968b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f968b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_d21703c512a9d5f9c466009db56f0c8a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_717a21a538d75d0ca29410b3a14421aa = $(`<div id="html_717a21a538d75d0ca29410b3a14421aa" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -88 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_d21703c512a9d5f9c466009db56f0c8a.setContent(html_717a21a538d75d0ca29410b3a14421aa);
+            
+        
+
+        circle_marker_a77736e485d3c397945ec8ceff8ee4dd.bindPopup(popup_d21703c512a9d5f9c466009db56f0c8a)
+        ;
+
+        
+    
+    
+            var circle_marker_bf6ea7e705b3c4478f3c27d204055114 = L.circleMarker(
+                [49.23230852, 16.56739089],
+                {"bubblingMouseEvents": true, "color": "#1f998a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f998a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_3ec746e2bbeebd888d8d1f9ac4ce35b2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b08700c993088c7fadf6758eb6e2c538 = $(`<div id="html_b08700c993088c7fadf6758eb6e2c538" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -87 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_3ec746e2bbeebd888d8d1f9ac4ce35b2.setContent(html_b08700c993088c7fadf6758eb6e2c538);
+            
+        
+
+        circle_marker_bf6ea7e705b3c4478f3c27d204055114.bindPopup(popup_3ec746e2bbeebd888d8d1f9ac4ce35b2)
+        ;
+
+        
+    
+    
+            var circle_marker_2a760d067cc0bc79a659137d60f40aeb = L.circleMarker(
+                [49.2320709, 16.56740028],
+                {"bubblingMouseEvents": true, "color": "#228d8d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228d8d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_5f299a54e1c05a631b68d76407ffc185 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_dfda2c24130663495cbdf41af09978b8 = $(`<div id="html_dfda2c24130663495cbdf41af09978b8" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -91 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_5f299a54e1c05a631b68d76407ffc185.setContent(html_dfda2c24130663495cbdf41af09978b8);
+            
+        
+
+        circle_marker_2a760d067cc0bc79a659137d60f40aeb.bindPopup(popup_5f299a54e1c05a631b68d76407ffc185)
+        ;
+
+        
+    
+    
+            var circle_marker_57dec29e9e89ec7f430a0df302ba204e = L.circleMarker(
+                [49.23185281, 16.56749089],
+                {"bubblingMouseEvents": true, "color": "#25848e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25848e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_ce3de8ec046e9b045fbf9b619b30d9c1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_502257dea9fb2cdcad6942e6695f5a98 = $(`<div id="html_502257dea9fb2cdcad6942e6695f5a98" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -94 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_ce3de8ec046e9b045fbf9b619b30d9c1.setContent(html_502257dea9fb2cdcad6942e6695f5a98);
+            
+        
+
+        circle_marker_57dec29e9e89ec7f430a0df302ba204e.bindPopup(popup_ce3de8ec046e9b045fbf9b619b30d9c1)
+        ;
+
+        
+    
+    
+            var circle_marker_974af36bde5b6a56a488630b54a6f25f = L.circleMarker(
+                [49.23163192, 16.56755508],
+                {"bubblingMouseEvents": true, "color": "#20938c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#20938c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_8e1f2cfb43e0afd330e507f0edaba7b7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_91c307a267e34822a9d9fadabc8ab54e = $(`<div id="html_91c307a267e34822a9d9fadabc8ab54e" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -89 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_8e1f2cfb43e0afd330e507f0edaba7b7.setContent(html_91c307a267e34822a9d9fadabc8ab54e);
+            
+        
+
+        circle_marker_974af36bde5b6a56a488630b54a6f25f.bindPopup(popup_8e1f2cfb43e0afd330e507f0edaba7b7)
+        ;
+
+        
+    
+    
+            var circle_marker_f3a039e4aba3e9ede60f2606c4a8e723 = L.circleMarker(
+                [49.23163192, 16.56755508],
+                {"bubblingMouseEvents": true, "color": "#24878e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#24878e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_da2a87d44f33773709b33c0520a7e577 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f8a45e0f1edbb3405e19440ba2a0fd1d = $(`<div id="html_f8a45e0f1edbb3405e19440ba2a0fd1d" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -93 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_da2a87d44f33773709b33c0520a7e577.setContent(html_f8a45e0f1edbb3405e19440ba2a0fd1d);
+            
+        
+
+        circle_marker_f3a039e4aba3e9ede60f2606c4a8e723.bindPopup(popup_da2a87d44f33773709b33c0520a7e577)
+        ;
+
+        
+    
+    
+            var circle_marker_da22025dc0c58eefaa91d7b03a93313a = L.circleMarker(
+                [49.23139921, 16.56760449],
+                {"bubblingMouseEvents": true, "color": "#277e8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#277e8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_3fa53e918d9ccbe35fe1ad8f73d47da9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_28b7ffd58223abeffef0a359bd0d3394 = $(`<div id="html_28b7ffd58223abeffef0a359bd0d3394" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -96 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_3fa53e918d9ccbe35fe1ad8f73d47da9.setContent(html_28b7ffd58223abeffef0a359bd0d3394);
+            
+        
+
+        circle_marker_da22025dc0c58eefaa91d7b03a93313a.bindPopup(popup_3fa53e918d9ccbe35fe1ad8f73d47da9)
+        ;
+
+        
+    
+    
+            var circle_marker_538242182b05a0d37ee201845cb2a6d1 = L.circleMarker(
+                [49.23117009, 16.56767316],
+                {"bubblingMouseEvents": true, "color": "#25848e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25848e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_b8669a489531c5e992d58849d66b51d3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_628032aece427da07cae4cea6b1d6cf9 = $(`<div id="html_628032aece427da07cae4cea6b1d6cf9" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -94 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 6 dB<br></div>`)[0];
+                popup_b8669a489531c5e992d58849d66b51d3.setContent(html_628032aece427da07cae4cea6b1d6cf9);
+            
+        
+
+        circle_marker_538242182b05a0d37ee201845cb2a6d1.bindPopup(popup_b8669a489531c5e992d58849d66b51d3)
+        ;
+
+        
+    
+    
+            var circle_marker_14ddab5d97cbabbc6c19c6bdb97d918f = L.circleMarker(
+                [49.23094801, 16.56775963],
+                {"bubblingMouseEvents": true, "color": "#20938c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#20938c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_c23fb586e4de4c58f582ce41c7358e7a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_48733960eab8d12605c51f376ca672e3 = $(`<div id="html_48733960eab8d12605c51f376ca672e3" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -89 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 6 dB<br></div>`)[0];
+                popup_c23fb586e4de4c58f582ce41c7358e7a.setContent(html_48733960eab8d12605c51f376ca672e3);
+            
+        
+
+        circle_marker_14ddab5d97cbabbc6c19c6bdb97d918f.bindPopup(popup_c23fb586e4de4c58f582ce41c7358e7a)
+        ;
+
+        
+    
+    
+            var circle_marker_8613a0033443450c50914b005b672bd5 = L.circleMarker(
+                [49.2307261, 16.56783706],
+                {"bubblingMouseEvents": true, "color": "#1f998a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f998a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_45ad396448d9a7ca7381e8d3312aab7d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_32050121957aac04f8300f2ac00564c6 = $(`<div id="html_32050121957aac04f8300f2ac00564c6" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -87 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 6 dB<br></div>`)[0];
+                popup_45ad396448d9a7ca7381e8d3312aab7d.setContent(html_32050121957aac04f8300f2ac00564c6);
+            
+        
+
+        circle_marker_8613a0033443450c50914b005b672bd5.bindPopup(popup_45ad396448d9a7ca7381e8d3312aab7d)
+        ;
+
+        
+    
+    
+            var circle_marker_02a4358d823cff7f372e875db20f4ba8 = L.circleMarker(
+                [49.23048946, 16.56790509],
+                {"bubblingMouseEvents": true, "color": "#1fa287", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa287", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_442a6f291c178e82083bf2b67c07fe9a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a12e7662c1a8a679d8d3857251525eb5 = $(`<div id="html_a12e7662c1a8a679d8d3857251525eb5" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -84 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 6 dB<br></div>`)[0];
+                popup_442a6f291c178e82083bf2b67c07fe9a.setContent(html_a12e7662c1a8a679d8d3857251525eb5);
+            
+        
+
+        circle_marker_02a4358d823cff7f372e875db20f4ba8.bindPopup(popup_442a6f291c178e82083bf2b67c07fe9a)
+        ;
+
+        
+    
+    
+            var circle_marker_87fbf515ecbb45545fb764b5b8415ad1 = L.circleMarker(
+                [49.23026386, 16.56800232],
+                {"bubblingMouseEvents": true, "color": "#21918c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21918c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_37474b02a18641ee354da38f761623c4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_63990351567cd87b92ad43a4e770b305 = $(`<div id="html_63990351567cd87b92ad43a4e770b305" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -90 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 6 dB<br></div>`)[0];
+                popup_37474b02a18641ee354da38f761623c4.setContent(html_63990351567cd87b92ad43a4e770b305);
+            
+        
+
+        circle_marker_87fbf515ecbb45545fb764b5b8415ad1.bindPopup(popup_37474b02a18641ee354da38f761623c4)
+        ;
+
+        
+    
+    
+            var circle_marker_eef8bba405da6fee5718fc140ec3d3a9 = L.circleMarker(
+                [49.2300321, 16.56808422],
+                {"bubblingMouseEvents": true, "color": "#20938c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#20938c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_ba8ca5033bf67e533034585b70c448fa = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e278c709c57cb5af2b409383aa17e8cf = $(`<div id="html_e278c709c57cb5af2b409383aa17e8cf" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -89 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 6 dB<br></div>`)[0];
+                popup_ba8ca5033bf67e533034585b70c448fa.setContent(html_e278c709c57cb5af2b409383aa17e8cf);
+            
+        
+
+        circle_marker_eef8bba405da6fee5718fc140ec3d3a9.bindPopup(popup_ba8ca5033bf67e533034585b70c448fa)
+        ;
+
+        
+    
+    
+            var circle_marker_8f0ea080888e6944a1bad7579d13c8c9 = L.circleMarker(
+                [49.22980687, 16.56812364],
+                {"bubblingMouseEvents": true, "color": "#24878e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#24878e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_4a860d534a1e5ffcccb51d2ef7c1e781 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c80108e7db07e175ebda7ca463892883 = $(`<div id="html_c80108e7db07e175ebda7ca463892883" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -93 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 6 dB<br></div>`)[0];
+                popup_4a860d534a1e5ffcccb51d2ef7c1e781.setContent(html_c80108e7db07e175ebda7ca463892883);
+            
+        
+
+        circle_marker_8f0ea080888e6944a1bad7579d13c8c9.bindPopup(popup_4a860d534a1e5ffcccb51d2ef7c1e781)
+        ;
+
+        
+    
+    
+            var circle_marker_16f8f396f68c37f74037f0b5dd3a6964 = L.circleMarker(
+                [49.22960675, 16.56828127],
+                {"bubblingMouseEvents": true, "color": "#26828e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#26828e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_ae87d396cad527e3166bcc7fcc526ba7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3d63e2d2c7a6d3b79d24ee07c54f3009 = $(`<div id="html_3d63e2d2c7a6d3b79d24ee07c54f3009" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -95 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 6 dB<br></div>`)[0];
+                popup_ae87d396cad527e3166bcc7fcc526ba7.setContent(html_3d63e2d2c7a6d3b79d24ee07c54f3009);
+            
+        
+
+        circle_marker_16f8f396f68c37f74037f0b5dd3a6964.bindPopup(popup_ae87d396cad527e3166bcc7fcc526ba7)
+        ;
+
+        
+    
+    
+            var circle_marker_15158fbc8b530798959d9bfaf7c6a9ec = L.circleMarker(
+                [49.22940516, 16.56845751],
+                {"bubblingMouseEvents": true, "color": "#2e6f8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e6f8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_c0371b1d4631ffcf5a3978ec64c6f56e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c357ea77d8c89d5ac26d34f91ef608fd = $(`<div id="html_c357ea77d8c89d5ac26d34f91ef608fd" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -101 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_c0371b1d4631ffcf5a3978ec64c6f56e.setContent(html_c357ea77d8c89d5ac26d34f91ef608fd);
+            
+        
+
+        circle_marker_15158fbc8b530798959d9bfaf7c6a9ec.bindPopup(popup_c0371b1d4631ffcf5a3978ec64c6f56e)
+        ;
+
+        
+    
+    
+            var circle_marker_9bf6a69c6208b22b36e332623a186776 = L.circleMarker(
+                [49.22923296, 16.56869564],
+                {"bubblingMouseEvents": true, "color": "#2e6f8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e6f8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_e483ce9dee15630a06ea788f9bbcdb08 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_511052955f693bd929baacb3c25547bd = $(`<div id="html_511052955f693bd929baacb3c25547bd" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -101 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_e483ce9dee15630a06ea788f9bbcdb08.setContent(html_511052955f693bd929baacb3c25547bd);
+            
+        
+
+        circle_marker_9bf6a69c6208b22b36e332623a186776.bindPopup(popup_e483ce9dee15630a06ea788f9bbcdb08)
+        ;
+
+        
+    
+    
+            var circle_marker_40febe1f8469efa0d0fd8171a7a2c679 = L.circleMarker(
+                [49.22923296, 16.56869564],
+                {"bubblingMouseEvents": true, "color": "#2c728e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2c728e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_49461156bd8c63bb0ba5f0b610dead2d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_76ad3cc37b8ab788ecff0ad4082c0118 = $(`<div id="html_76ad3cc37b8ab788ecff0ad4082c0118" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -100 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_49461156bd8c63bb0ba5f0b610dead2d.setContent(html_76ad3cc37b8ab788ecff0ad4082c0118);
+            
+        
+
+        circle_marker_40febe1f8469efa0d0fd8171a7a2c679.bindPopup(popup_49461156bd8c63bb0ba5f0b610dead2d)
+        ;
+
+        
+    
+    
+            var circle_marker_73759195231386d04de809a7d59d4413 = L.circleMarker(
+                [49.22908629, 16.56896059],
+                {"bubblingMouseEvents": true, "color": "#355f8d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#355f8d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_480a0d5afbad25eea004fd8f718c393f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1c505ddeeb7cc807c4d64e62b57fffd8 = $(`<div id="html_1c505ddeeb7cc807c4d64e62b57fffd8" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -106 dBm<br> <b>RSRQ:</b> -18 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_480a0d5afbad25eea004fd8f718c393f.setContent(html_1c505ddeeb7cc807c4d64e62b57fffd8);
+            
+        
+
+        circle_marker_73759195231386d04de809a7d59d4413.bindPopup(popup_480a0d5afbad25eea004fd8f718c393f)
+        ;
+
+        
+    
+    
+            var circle_marker_77128b7fdb94d28e8cf7c446fc7a3d26 = L.circleMarker(
+                [49.22908629, 16.56896059],
+                {"bubblingMouseEvents": true, "color": "#31668e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#31668e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_94fa71bccb5ee0ad16038f5e84dacb78 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0b382fa341200d72a768db3f355a8b26 = $(`<div id="html_0b382fa341200d72a768db3f355a8b26" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -104 dBm<br> <b>RSRQ:</b> -18 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_94fa71bccb5ee0ad16038f5e84dacb78.setContent(html_0b382fa341200d72a768db3f355a8b26);
+            
+        
+
+        circle_marker_77128b7fdb94d28e8cf7c446fc7a3d26.bindPopup(popup_94fa71bccb5ee0ad16038f5e84dacb78)
+        ;
+
+        
+    
+    
+            var circle_marker_9e45fadf95d8054623240642e33b86e2 = L.circleMarker(
+                [49.22891615, 16.56920055],
+                {"bubblingMouseEvents": true, "color": "#31668e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#31668e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_64f03342b7fa9fb256b4090c6d1e361e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_86e4f7cffd9c0b976647ce9647011128 = $(`<div id="html_86e4f7cffd9c0b976647ce9647011128" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -104 dBm<br> <b>RSRQ:</b> -18 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_64f03342b7fa9fb256b4090c6d1e361e.setContent(html_86e4f7cffd9c0b976647ce9647011128);
+            
+        
+
+        circle_marker_9e45fadf95d8054623240642e33b86e2.bindPopup(popup_64f03342b7fa9fb256b4090c6d1e361e)
+        ;
+
+        
+    
+    
+            var circle_marker_a0df949142ad4a25701e8d799f3ab83c = L.circleMarker(
+                [49.22889202, 16.56924878],
+                {"bubblingMouseEvents": true, "color": "#2e6f8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e6f8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_893df952fae4a2777a9404675db84541 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5e0dcfb82816a5835bd99b14b91ee4c9 = $(`<div id="html_5e0dcfb82816a5835bd99b14b91ee4c9" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -101 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_893df952fae4a2777a9404675db84541.setContent(html_5e0dcfb82816a5835bd99b14b91ee4c9);
+            
+        
+
+        circle_marker_a0df949142ad4a25701e8d799f3ab83c.bindPopup(popup_893df952fae4a2777a9404675db84541)
+        ;
+
+        
+    
+    
+            var circle_marker_83a22d2b699370cfcb38260b11181390 = L.circleMarker(
+                [49.22877597, 16.56947324],
+                {"bubblingMouseEvents": true, "color": "#2c728e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2c728e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_928ee1a6ac32132ef87b6c9f6b5d3080 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_673db33a172b9b4dfac7d1b72bc948e7 = $(`<div id="html_673db33a172b9b4dfac7d1b72bc948e7" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -100 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_928ee1a6ac32132ef87b6c9f6b5d3080.setContent(html_673db33a172b9b4dfac7d1b72bc948e7);
+            
+        
+
+        circle_marker_83a22d2b699370cfcb38260b11181390.bindPopup(popup_928ee1a6ac32132ef87b6c9f6b5d3080)
+        ;
+
+        
+    
+    
+            var circle_marker_fe696eb9a8f0cf532e0d6bbca436fad5 = L.circleMarker(
+                [49.22863264, 16.56975471],
+                {"bubblingMouseEvents": true, "color": "#31668e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#31668e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_44070bd12bd748cef6d74e093f9b84be = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_97004afc4b3ea2674b19bb12fd84b5cc = $(`<div id="html_97004afc4b3ea2674b19bb12fd84b5cc" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -104 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_44070bd12bd748cef6d74e093f9b84be.setContent(html_97004afc4b3ea2674b19bb12fd84b5cc);
+            
+        
+
+        circle_marker_fe696eb9a8f0cf532e0d6bbca436fad5.bindPopup(popup_44070bd12bd748cef6d74e093f9b84be)
+        ;
+
+        
+    
+    
+            var circle_marker_68f1a5ae045ee730688dd938d6740bc4 = L.circleMarker(
+                [49.22848926, 16.57003083],
+                {"bubblingMouseEvents": true, "color": "#365c8d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#365c8d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_6d2edb822a63e8454572f811aede042a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4d7ed19431c06bb65ab78e19067fd588 = $(`<div id="html_4d7ed19431c06bb65ab78e19067fd588" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -107 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_6d2edb822a63e8454572f811aede042a.setContent(html_4d7ed19431c06bb65ab78e19067fd588);
+            
+        
+
+        circle_marker_68f1a5ae045ee730688dd938d6740bc4.bindPopup(popup_6d2edb822a63e8454572f811aede042a)
+        ;
+
+        
+    
+    
+            var circle_marker_b2689d85c1a9c290ab370a57f9cbb6e3 = L.circleMarker(
+                [49.22834105, 16.57030032],
+                {"bubblingMouseEvents": true, "color": "#277e8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#277e8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_0353197770431b9537624b1ec301d427 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_769dd13962ef574f79e834b24d7de786 = $(`<div id="html_769dd13962ef574f79e834b24d7de786" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -96 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_0353197770431b9537624b1ec301d427.setContent(html_769dd13962ef574f79e834b24d7de786);
+            
+        
+
+        circle_marker_b2689d85c1a9c290ab370a57f9cbb6e3.bindPopup(popup_0353197770431b9537624b1ec301d427)
+        ;
+
+        
+    
+    
+            var circle_marker_55e76d9bc2e012f42aada92bfd12766b = L.circleMarker(
+                [49.2281075, 16.57025209],
+                {"bubblingMouseEvents": true, "color": "#277e8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#277e8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_ea9a9c3c09b365e2d55225a0463e968a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0acc1f98b551b579a510f1dbc7aeb0b7 = $(`<div id="html_0acc1f98b551b579a510f1dbc7aeb0b7" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -96 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_ea9a9c3c09b365e2d55225a0463e968a.setContent(html_0acc1f98b551b579a510f1dbc7aeb0b7);
+            
+        
+
+        circle_marker_55e76d9bc2e012f42aada92bfd12766b.bindPopup(popup_ea9a9c3c09b365e2d55225a0463e968a)
+        ;
+
+        
+    
+    
+            var circle_marker_d44098c4f019f5563f517487ab3e285e = L.circleMarker(
+                [49.22790291, 16.5700788],
+                {"bubblingMouseEvents": true, "color": "#297b8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#297b8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_293dff42d8a86d05bba2e0411949fd1b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0ec718679fbd87c76b94e3439a83c649 = $(`<div id="html_0ec718679fbd87c76b94e3439a83c649" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -97 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_293dff42d8a86d05bba2e0411949fd1b.setContent(html_0ec718679fbd87c76b94e3439a83c649);
+            
+        
+
+        circle_marker_d44098c4f019f5563f517487ab3e285e.bindPopup(popup_293dff42d8a86d05bba2e0411949fd1b)
+        ;
+
+        
+    
+    
+            var circle_marker_bcd64c715567f51e044a3e2087a1ea6d = L.circleMarker(
+                [49.22790291, 16.5700788],
+                {"bubblingMouseEvents": true, "color": "#20938c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#20938c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_87654ba847bdf78cec9efec794869266 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d26db2e3eeb35b7c63045c94641f47c9 = $(`<div id="html_d26db2e3eeb35b7c63045c94641f47c9" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -89 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_87654ba847bdf78cec9efec794869266.setContent(html_d26db2e3eeb35b7c63045c94641f47c9);
+            
+        
+
+        circle_marker_bcd64c715567f51e044a3e2087a1ea6d.bindPopup(popup_87654ba847bdf78cec9efec794869266)
+        ;
+
+        
+    
+    
+            var circle_marker_8e7f183125b4631403c2c4a7fcbfafd0 = L.circleMarker(
+                [49.22766995, 16.57002613],
+                {"bubblingMouseEvents": true, "color": "#25848e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25848e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_06957d640a6741fc458aa58d51de23c8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cb564adf3b780e34ba3c2f217801cae7 = $(`<div id="html_cb564adf3b780e34ba3c2f217801cae7" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -94 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_06957d640a6741fc458aa58d51de23c8.setContent(html_cb564adf3b780e34ba3c2f217801cae7);
+            
+        
+
+        circle_marker_8e7f183125b4631403c2c4a7fcbfafd0.bindPopup(popup_06957d640a6741fc458aa58d51de23c8)
+        ;
+
+        
+    
+    
+            var circle_marker_996565b819f4dd3aacd208afa0b5b31a = L.circleMarker(
+                [49.22766995, 16.57002613],
+                {"bubblingMouseEvents": true, "color": "#25848e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25848e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_984cc455c05c9a38fddebbc0fde61427 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_89698d81071dd94b91d4ad89a33a0d0a = $(`<div id="html_89698d81071dd94b91d4ad89a33a0d0a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -94 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> -1 dB<br></div>`)[0];
+                popup_984cc455c05c9a38fddebbc0fde61427.setContent(html_89698d81071dd94b91d4ad89a33a0d0a);
+            
+        
+
+        circle_marker_996565b819f4dd3aacd208afa0b5b31a.bindPopup(popup_984cc455c05c9a38fddebbc0fde61427)
+        ;
+
+        
+    
+    
+            var circle_marker_b1f8b9f91ead3ea7ff86a11517b169ed = L.circleMarker(
+                [49.22744628, 16.57013016],
+                {"bubblingMouseEvents": true, "color": "#25848e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25848e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_696d3d0c5b0a6243678636ab16d92806 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_58a140124a9c3560a5ca7cf3ac990f32 = $(`<div id="html_58a140124a9c3560a5ca7cf3ac990f32" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -94 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> -1 dB<br></div>`)[0];
+                popup_696d3d0c5b0a6243678636ab16d92806.setContent(html_58a140124a9c3560a5ca7cf3ac990f32);
+            
+        
+
+        circle_marker_b1f8b9f91ead3ea7ff86a11517b169ed.bindPopup(popup_696d3d0c5b0a6243678636ab16d92806)
+        ;
+
+        
+    
+    
+            var circle_marker_98169a013c8503774984e9ddf08a1086 = L.circleMarker(
+                [49.22721827, 16.57018798],
+                {"bubblingMouseEvents": true, "color": "#2c728e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2c728e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_f6dab5fb74fd6e100fc6e3015b4c4c96 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e8dbc67d283cbccae0a88238968a777e = $(`<div id="html_e8dbc67d283cbccae0a88238968a777e" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -100 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_f6dab5fb74fd6e100fc6e3015b4c4c96.setContent(html_e8dbc67d283cbccae0a88238968a777e);
+            
+        
+
+        circle_marker_98169a013c8503774984e9ddf08a1086.bindPopup(popup_f6dab5fb74fd6e100fc6e3015b4c4c96)
+        ;
+
+        
+    
+    
+            var circle_marker_fbee3318eb864719d652245bf796e8e6 = L.circleMarker(
+                [49.22721827, 16.57018798],
+                {"bubblingMouseEvents": true, "color": "#355f8d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#355f8d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_9097c0e0d1995a8cde5a7cf293deb386 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_80b86fa4e5f55f886f3c1fc509da53bc = $(`<div id="html_80b86fa4e5f55f886f3c1fc509da53bc" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -106 dBm<br> <b>RSRQ:</b> -19 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_9097c0e0d1995a8cde5a7cf293deb386.setContent(html_80b86fa4e5f55f886f3c1fc509da53bc);
+            
+        
+
+        circle_marker_fbee3318eb864719d652245bf796e8e6.bindPopup(popup_9097c0e0d1995a8cde5a7cf293deb386)
+        ;
+
+        
+    
+    
+            var circle_marker_080d9fa15ce2a462dd5285dd29cf4a24 = L.circleMarker(
+                [49.22721827, 16.57018798],
+                {"bubblingMouseEvents": true, "color": "#33638d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#33638d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_89b856b091865e2a31c79db6d247eff7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8ebf50af54cb2775716b03c843645963 = $(`<div id="html_8ebf50af54cb2775716b03c843645963" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -105 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_89b856b091865e2a31c79db6d247eff7.setContent(html_8ebf50af54cb2775716b03c843645963);
+            
+        
+
+        circle_marker_080d9fa15ce2a462dd5285dd29cf4a24.bindPopup(popup_89b856b091865e2a31c79db6d247eff7)
+        ;
+
+        
+    
+    
+            var circle_marker_d65cf5c16ad0a209d85ab211a168effa = L.circleMarker(
+                [49.22699604, 16.57025348],
+                {"bubblingMouseEvents": true, "color": "#33638d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#33638d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_0312a61cf7f753b13d05257b88773e9e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fb7e87f361ef0e8d2e470b1c40b9c0c9 = $(`<div id="html_fb7e87f361ef0e8d2e470b1c40b9c0c9" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -105 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_0312a61cf7f753b13d05257b88773e9e.setContent(html_fb7e87f361ef0e8d2e470b1c40b9c0c9);
+            
+        
+
+        circle_marker_d65cf5c16ad0a209d85ab211a168effa.bindPopup(popup_0312a61cf7f753b13d05257b88773e9e)
+        ;
+
+        
+    
+    
+            var circle_marker_9fc0dc5af1ce629d02a24dcb7f6afc61 = L.circleMarker(
+                [49.22678145, 16.57038718],
+                {"bubblingMouseEvents": true, "color": "#30698e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#30698e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_06a0bf64df44d1975dc05f3a145e074a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9a89f8b8c3d62457f361e12509181e20 = $(`<div id="html_9a89f8b8c3d62457f361e12509181e20" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -103 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> -2 dB<br></div>`)[0];
+                popup_06a0bf64df44d1975dc05f3a145e074a.setContent(html_9a89f8b8c3d62457f361e12509181e20);
+            
+        
+
+        circle_marker_9fc0dc5af1ce629d02a24dcb7f6afc61.bindPopup(popup_06a0bf64df44d1975dc05f3a145e074a)
+        ;
+
+        
+    
+    
+            var circle_marker_0833a7f6033a243aed6ded8264e8e4f6 = L.circleMarker(
+                [49.22657063, 16.57054186],
+                {"bubblingMouseEvents": true, "color": "#33638d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#33638d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_6501109b562ee13eaf92fc09517551db = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e06bb24f8e70bbbe612d11cbd246bb34 = $(`<div id="html_e06bb24f8e70bbbe612d11cbd246bb34" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -105 dBm<br> <b>RSRQ:</b> -19 dB<br> <b>SNR:</b> -2 dB<br></div>`)[0];
+                popup_6501109b562ee13eaf92fc09517551db.setContent(html_e06bb24f8e70bbbe612d11cbd246bb34);
+            
+        
+
+        circle_marker_0833a7f6033a243aed6ded8264e8e4f6.bindPopup(popup_6501109b562ee13eaf92fc09517551db)
+        ;
+
+        
+    
+    
+            var circle_marker_33b3246105957730b4582407e7d174d0 = L.circleMarker(
+                [49.22636151, 16.57067806],
+                {"bubblingMouseEvents": true, "color": "#24878e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#24878e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_72908d008753a5ff6652eced773e1289 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_18d3c883e513f92c428e002c5ca2ac4d = $(`<div id="html_18d3c883e513f92c428e002c5ca2ac4d" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -93 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> -5 dB<br></div>`)[0];
+                popup_72908d008753a5ff6652eced773e1289.setContent(html_18d3c883e513f92c428e002c5ca2ac4d);
+            
+        
+
+        circle_marker_33b3246105957730b4582407e7d174d0.bindPopup(popup_72908d008753a5ff6652eced773e1289)
+        ;
+
+        
+    
+    
+            var circle_marker_11e8dec25b6ad8cfe17fe503c6ee7c23 = L.circleMarker(
+                [49.22613551, 16.57075183],
+                {"bubblingMouseEvents": true, "color": "#297b8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#297b8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_1bb16471d559330735cd28ef482e0217 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0dbd84b8ec41b3c3e5dd3f62ae95bf55 = $(`<div id="html_0dbd84b8ec41b3c3e5dd3f62ae95bf55" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -97 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> -5 dB<br></div>`)[0];
+                popup_1bb16471d559330735cd28ef482e0217.setContent(html_0dbd84b8ec41b3c3e5dd3f62ae95bf55);
+            
+        
+
+        circle_marker_11e8dec25b6ad8cfe17fe503c6ee7c23.bindPopup(popup_1bb16471d559330735cd28ef482e0217)
+        ;
+
+        
+    
+    
+            var circle_marker_45c2e4eab64b93d4d6de4d333ef7be05 = L.circleMarker(
+                [49.22613551, 16.57075183],
+                {"bubblingMouseEvents": true, "color": "#2f6c8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2f6c8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_ddad94303cd0ac2965c22a34deeffcc5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9d7069b3305c10a0483549bdd69c084e = $(`<div id="html_9d7069b3305c10a0483549bdd69c084e" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -102 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> -3 dB<br></div>`)[0];
+                popup_ddad94303cd0ac2965c22a34deeffcc5.setContent(html_9d7069b3305c10a0483549bdd69c084e);
+            
+        
+
+        circle_marker_45c2e4eab64b93d4d6de4d333ef7be05.bindPopup(popup_ddad94303cd0ac2965c22a34deeffcc5)
+        ;
+
+        
+    
+    
+            var circle_marker_e88e341ffcad1fc4f4002d47378fc83c = L.circleMarker(
+                [49.22595963, 16.57052046],
+                {"bubblingMouseEvents": true, "color": "#2f6c8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2f6c8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_3956c07867ca354c1124708011e03c71 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fc3b649f18c9135624af2501c2022d4c = $(`<div id="html_fc3b649f18c9135624af2501c2022d4c" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -102 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> -3 dB<br></div>`)[0];
+                popup_3956c07867ca354c1124708011e03c71.setContent(html_fc3b649f18c9135624af2501c2022d4c);
+            
+        
+
+        circle_marker_e88e341ffcad1fc4f4002d47378fc83c.bindPopup(popup_3956c07867ca354c1124708011e03c71)
+        ;
+
+        
+    
+    
+            var circle_marker_847c75460887e0d8a952a410f6bd13d4 = L.circleMarker(
+                [49.22595963, 16.57052046],
+                {"bubblingMouseEvents": true, "color": "#31668e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#31668e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_fb516073c756f5ff9aea1f9986426802 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_56c131a9fa1dd9b3b2b114d566e193c8 = $(`<div id="html_56c131a9fa1dd9b3b2b114d566e193c8" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -104 dBm<br> <b>RSRQ:</b> -19 dB<br> <b>SNR:</b> -3 dB<br></div>`)[0];
+                popup_fb516073c756f5ff9aea1f9986426802.setContent(html_56c131a9fa1dd9b3b2b114d566e193c8);
+            
+        
+
+        circle_marker_847c75460887e0d8a952a410f6bd13d4.bindPopup(popup_fb516073c756f5ff9aea1f9986426802)
+        ;
+
+        
+    
+    
+            var circle_marker_4e9684b424cc8d77a740ec0c58b85d88 = L.circleMarker(
+                [49.22576733, 16.5703278],
+                {"bubblingMouseEvents": true, "color": "#31668e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#31668e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_1b71a2b1bf3edd6ebc1dc6c4ce81c340 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5fc61af100e365f0a4e825011d0f4003 = $(`<div id="html_5fc61af100e365f0a4e825011d0f4003" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -104 dBm<br> <b>RSRQ:</b> -19 dB<br> <b>SNR:</b> -4 dB<br></div>`)[0];
+                popup_1b71a2b1bf3edd6ebc1dc6c4ce81c340.setContent(html_5fc61af100e365f0a4e825011d0f4003);
+            
+        
+
+        circle_marker_4e9684b424cc8d77a740ec0c58b85d88.bindPopup(popup_1b71a2b1bf3edd6ebc1dc6c4ce81c340)
+        ;
+
+        
+    
+    
+            var circle_marker_ca1a7754aff6227f74db3463d80b40a4 = L.circleMarker(
+                [49.2255636, 16.57047603],
+                {"bubblingMouseEvents": true, "color": "#2f6c8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2f6c8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_d2f0cc30fd583879eea998077f80886f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_351bdc267dc0bf2c73c3a42b853cd456 = $(`<div id="html_351bdc267dc0bf2c73c3a42b853cd456" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -102 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_d2f0cc30fd583879eea998077f80886f.setContent(html_351bdc267dc0bf2c73c3a42b853cd456);
+            
+        
+
+        circle_marker_ca1a7754aff6227f74db3463d80b40a4.bindPopup(popup_d2f0cc30fd583879eea998077f80886f)
+        ;
+
+        
+    
+    
+            var circle_marker_e4bc4af3bc44c4d4e2b2bedbe1a635d8 = L.circleMarker(
+                [49.22542787, 16.57076061],
+                {"bubblingMouseEvents": true, "color": "#277e8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#277e8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_c056a2bcd65a2e6ac7b109dcc026dcb3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_94439aaa67b2c610672a4fbb3e4a5fc4 = $(`<div id="html_94439aaa67b2c610672a4fbb3e4a5fc4" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -96 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_c056a2bcd65a2e6ac7b109dcc026dcb3.setContent(html_94439aaa67b2c610672a4fbb3e4a5fc4);
+            
+        
+
+        circle_marker_e4bc4af3bc44c4d4e2b2bedbe1a635d8.bindPopup(popup_c056a2bcd65a2e6ac7b109dcc026dcb3)
+        ;
+
+        
+    
+    
+            var circle_marker_760d7339aa981e25597b98dab789633e = L.circleMarker(
+                [49.22529243, 16.57104759],
+                {"bubblingMouseEvents": true, "color": "#228d8d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228d8d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_6f6461d0d27b336fab4c631c72a44679 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_722d161c18faf02e70c8384de4632d9a = $(`<div id="html_722d161c18faf02e70c8384de4632d9a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -91 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_6f6461d0d27b336fab4c631c72a44679.setContent(html_722d161c18faf02e70c8384de4632d9a);
+            
+        
+
+        circle_marker_760d7339aa981e25597b98dab789633e.bindPopup(popup_6f6461d0d27b336fab4c631c72a44679)
+        ;
+
+        
+    
+    
+            var circle_marker_ad2b8eb875b1a5671d72637690982bf8 = L.circleMarker(
+                [49.22510863, 16.57124631],
+                {"bubblingMouseEvents": true, "color": "#25848e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25848e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_b4e949ecc21eecf55b9e806bb7ff0da3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ba5b9bdfb74fc1c8e54f75198e78c684 = $(`<div id="html_ba5b9bdfb74fc1c8e54f75198e78c684" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -94 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> -1 dB<br></div>`)[0];
+                popup_b4e949ecc21eecf55b9e806bb7ff0da3.setContent(html_ba5b9bdfb74fc1c8e54f75198e78c684);
+            
+        
+
+        circle_marker_ad2b8eb875b1a5671d72637690982bf8.bindPopup(popup_b4e949ecc21eecf55b9e806bb7ff0da3)
+        ;
+
+        
+    
+    
+            var circle_marker_1c6f934935b97ce03131a41c8040434c = L.circleMarker(
+                [49.22490105, 16.5713904],
+                {"bubblingMouseEvents": true, "color": "#238a8d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#238a8d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_e1915636b349a0c39f1940ce2db3f2da = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2136c70498401bfab1d32a9bd3a56e5a = $(`<div id="html_2136c70498401bfab1d32a9bd3a56e5a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -92 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> -1 dB<br></div>`)[0];
+                popup_e1915636b349a0c39f1940ce2db3f2da.setContent(html_2136c70498401bfab1d32a9bd3a56e5a);
+            
+        
+
+        circle_marker_1c6f934935b97ce03131a41c8040434c.bindPopup(popup_e1915636b349a0c39f1940ce2db3f2da)
+        ;
+
+        
+    
+    
+            var circle_marker_8ca48108f35b0ef22ec91c3fc280153b = L.circleMarker(
+                [49.22469818, 16.57154375],
+                {"bubblingMouseEvents": true, "color": "#2a788e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a788e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_e674efd38ebefef34bbe967b245add48 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5f933fdd03678407967fe0371cd0eca6 = $(`<div id="html_5f933fdd03678407967fe0371cd0eca6" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -98 dBm<br> <b>RSRQ:</b> -19 dB<br> <b>SNR:</b> -1 dB<br></div>`)[0];
+                popup_e674efd38ebefef34bbe967b245add48.setContent(html_5f933fdd03678407967fe0371cd0eca6);
+            
+        
+
+        circle_marker_8ca48108f35b0ef22ec91c3fc280153b.bindPopup(popup_e674efd38ebefef34bbe967b245add48)
+        ;
+
+        
+    
+    
+            var circle_marker_b66e791e695fbd760c08c42f432b25bd = L.circleMarker(
+                [49.22469818, 16.57154375],
+                {"bubblingMouseEvents": true, "color": "#2e6f8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e6f8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_e2fb2ae2ac5201e99b6bdc6ec047186e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c15d3c7bae29c8cf80729e34adaaa25d = $(`<div id="html_c15d3c7bae29c8cf80729e34adaaa25d" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -101 dBm<br> <b>RSRQ:</b> -18 dB<br> <b>SNR:</b> -5 dB<br></div>`)[0];
+                popup_e2fb2ae2ac5201e99b6bdc6ec047186e.setContent(html_c15d3c7bae29c8cf80729e34adaaa25d);
+            
+        
+
+        circle_marker_b66e791e695fbd760c08c42f432b25bd.bindPopup(popup_e2fb2ae2ac5201e99b6bdc6ec047186e)
+        ;
+
+        
+    
+    
+            var circle_marker_c29336fe70f71cc9bd7a25290f5a2779 = L.circleMarker(
+                [49.22450274, 16.57172147],
+                {"bubblingMouseEvents": true, "color": "#2e6f8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e6f8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_a951209109eaf895d805d25cc19527ef = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b2f37e4766be56998035d4702ea4e838 = $(`<div id="html_b2f37e4766be56998035d4702ea4e838" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -101 dBm<br> <b>RSRQ:</b> -18 dB<br> <b>SNR:</b> -5 dB<br></div>`)[0];
+                popup_a951209109eaf895d805d25cc19527ef.setContent(html_b2f37e4766be56998035d4702ea4e838);
+            
+        
+
+        circle_marker_c29336fe70f71cc9bd7a25290f5a2779.bindPopup(popup_a951209109eaf895d805d25cc19527ef)
+        ;
+
+        
+    
+    
+            var circle_marker_d9a8c38503d7b93acad40fa2daede459 = L.circleMarker(
+                [49.22450274, 16.57172147],
+                {"bubblingMouseEvents": true, "color": "#26828e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#26828e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_4a1b5fe97909cfe43b5816fc342f47ff = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ce8cf3a4987c6e7e8a5a0041050959f1 = $(`<div id="html_ce8cf3a4987c6e7e8a5a0041050959f1" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -95 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> -5 dB<br></div>`)[0];
+                popup_4a1b5fe97909cfe43b5816fc342f47ff.setContent(html_ce8cf3a4987c6e7e8a5a0041050959f1);
+            
+        
+
+        circle_marker_d9a8c38503d7b93acad40fa2daede459.bindPopup(popup_4a1b5fe97909cfe43b5816fc342f47ff)
+        ;
+
+        
+    
+    
+            var circle_marker_1dae27116802219e72bbc97715ac3a07 = L.circleMarker(
+                [49.22437096, 16.57200929],
+                {"bubblingMouseEvents": true, "color": "#21918c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21918c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_9387905d47a63771c26307838165befe = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7ada1a5d6daf4a8f9d2a84425482c569 = $(`<div id="html_7ada1a5d6daf4a8f9d2a84425482c569" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -90 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_9387905d47a63771c26307838165befe.setContent(html_7ada1a5d6daf4a8f9d2a84425482c569);
+            
+        
+
+        circle_marker_1dae27116802219e72bbc97715ac3a07.bindPopup(popup_9387905d47a63771c26307838165befe)
+        ;
+
+        
+    
+    
+            var circle_marker_49b2e7486258bbdce4b0d4d29c1fda06 = L.circleMarker(
+                [49.22428636, 16.57233029],
+                {"bubblingMouseEvents": true, "color": "#26828e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#26828e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_020b7bf948e3ce16c4dc1660ef0f4967 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_923a063cfc30e408bf71957d4339d910 = $(`<div id="html_923a063cfc30e408bf71957d4339d910" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -95 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_020b7bf948e3ce16c4dc1660ef0f4967.setContent(html_923a063cfc30e408bf71957d4339d910);
+            
+        
+
+        circle_marker_49b2e7486258bbdce4b0d4d29c1fda06.bindPopup(popup_020b7bf948e3ce16c4dc1660ef0f4967)
+        ;
+
+        
+    
+    
+            var circle_marker_b0bfdd63cb2bb0ceadafba0eb56fdb80 = L.circleMarker(
+                [49.22422472, 16.57266046],
+                {"bubblingMouseEvents": true, "color": "#2fb47c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2fb47c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_94aa99821fa60dfba8b0d62590fcc806 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5d5a2581edf8e88b3a150de3e38d4037 = $(`<div id="html_5d5a2581edf8e88b3a150de3e38d4037" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -78 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_94aa99821fa60dfba8b0d62590fcc806.setContent(html_5d5a2581edf8e88b3a150de3e38d4037);
+            
+        
+
+        circle_marker_b0bfdd63cb2bb0ceadafba0eb56fdb80.bindPopup(popup_94aa99821fa60dfba8b0d62590fcc806)
+        ;
+
+        
+    
+    
+            var circle_marker_46899c5ec33d421638525cec4cca7029 = L.circleMarker(
+                [49.22412423, 16.57296808],
+                {"bubblingMouseEvents": true, "color": "#20938c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#20938c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_c6c4120128c90d7c8e127e6bc8739989 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_df5ed788d79b235d6344a77a1addd211 = $(`<div id="html_df5ed788d79b235d6344a77a1addd211" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -89 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_c6c4120128c90d7c8e127e6bc8739989.setContent(html_df5ed788d79b235d6344a77a1addd211);
+            
+        
+
+        circle_marker_46899c5ec33d421638525cec4cca7029.bindPopup(popup_c6c4120128c90d7c8e127e6bc8739989)
+        ;
+
+        
+    
+    
+            var circle_marker_d7dde781206bad9a598b3fa6e9b85275 = L.circleMarker(
+                [49.22401872, 16.57328777],
+                {"bubblingMouseEvents": true, "color": "#21a585", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21a585", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_a910894aa01c13a727836c05bc1858e9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cf86b6ed2b9bebd4254516bf3549d3c8 = $(`<div id="html_cf86b6ed2b9bebd4254516bf3549d3c8" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -83 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_a910894aa01c13a727836c05bc1858e9.setContent(html_cf86b6ed2b9bebd4254516bf3549d3c8);
+            
+        
+
+        circle_marker_d7dde781206bad9a598b3fa6e9b85275.bindPopup(popup_a910894aa01c13a727836c05bc1858e9)
+        ;
+
+        
+    
+    
+            var circle_marker_a165708f372614038646e1a2461041eb = L.circleMarker(
+                [49.22392921, 16.57360882],
+                {"bubblingMouseEvents": true, "color": "#1f998a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f998a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_cea7cd43e9e33b04c20a8c85074e2d90 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b143b7cc7a530f6f9fa7b0d107346a36 = $(`<div id="html_b143b7cc7a530f6f9fa7b0d107346a36" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -87 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 9 dB<br></div>`)[0];
+                popup_cea7cd43e9e33b04c20a8c85074e2d90.setContent(html_b143b7cc7a530f6f9fa7b0d107346a36);
+            
+        
+
+        circle_marker_a165708f372614038646e1a2461041eb.bindPopup(popup_cea7cd43e9e33b04c20a8c85074e2d90)
+        ;
+
+        
+    
+    
+            var circle_marker_6314fefe1d8b8d484b0ddc3d7cee1019 = L.circleMarker(
+                [49.22395188, 16.57396037],
+                {"bubblingMouseEvents": true, "color": "#1fa088", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa088", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_f7cc79bb3c456a590785885766315f42 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_362ab20d0f7a480b68c1027d55fc8cd9 = $(`<div id="html_362ab20d0f7a480b68c1027d55fc8cd9" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -85 dBm<br> <b>RSRQ:</b> -8 dB<br> <b>SNR:</b> 9 dB<br></div>`)[0];
+                popup_f7cc79bb3c456a590785885766315f42.setContent(html_362ab20d0f7a480b68c1027d55fc8cd9);
+            
+        
+
+        circle_marker_6314fefe1d8b8d484b0ddc3d7cee1019.bindPopup(popup_f7cc79bb3c456a590785885766315f42)
+        ;
+
+        
+    
+    
+            var circle_marker_322f5776deeb4fd0d4bd3a3e0cf35715 = L.circleMarker(
+                [49.22395188, 16.57396037],
+                {"bubblingMouseEvents": true, "color": "#238a8d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#238a8d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_163ce49304617f07fff811bf50a7a833 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1b255193de24bdbc9f5a175740f02d99 = $(`<div id="html_1b255193de24bdbc9f5a175740f02d99" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -92 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 13 dB<br></div>`)[0];
+                popup_163ce49304617f07fff811bf50a7a833.setContent(html_1b255193de24bdbc9f5a175740f02d99);
+            
+        
+
+        circle_marker_322f5776deeb4fd0d4bd3a3e0cf35715.bindPopup(popup_163ce49304617f07fff811bf50a7a833)
+        ;
+
+        
+    
+    
+            var circle_marker_5862fac72df2d21d95558ded544c1800 = L.circleMarker(
+                [49.223997, 16.5742983],
+                {"bubblingMouseEvents": true, "color": "#238a8d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#238a8d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_c0471a0628909fc9198f6100236ba706 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6afd1846efe13234f069e3aa83098316 = $(`<div id="html_6afd1846efe13234f069e3aa83098316" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -92 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 13 dB<br></div>`)[0];
+                popup_c0471a0628909fc9198f6100236ba706.setContent(html_6afd1846efe13234f069e3aa83098316);
+            
+        
+
+        circle_marker_5862fac72df2d21d95558ded544c1800.bindPopup(popup_c0471a0628909fc9198f6100236ba706)
+        ;
+
+        
+    
+    
+            var circle_marker_88b133c5579f3b347dc6c958a2cad4fc = L.circleMarker(
+                [49.22387609, 16.57459749],
+                {"bubblingMouseEvents": true, "color": "#1f998a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f998a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_6b50f5c09908c5a5b0dda1575a254c16 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bb3d599fca6351261c3678090593230a = $(`<div id="html_bb3d599fca6351261c3678090593230a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -87 dBm<br> <b>RSRQ:</b> -8 dB<br> <b>SNR:</b> 13 dB<br></div>`)[0];
+                popup_6b50f5c09908c5a5b0dda1575a254c16.setContent(html_bb3d599fca6351261c3678090593230a);
+            
+        
+
+        circle_marker_88b133c5579f3b347dc6c958a2cad4fc.bindPopup(popup_6b50f5c09908c5a5b0dda1575a254c16)
+        ;
+
+        
+    
+    
+            var circle_marker_a563f88519ce47da40eeaf4c6ff04333 = L.circleMarker(
+                [49.22387609, 16.57459749],
+                {"bubblingMouseEvents": true, "color": "#2cb17e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2cb17e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_355e8b32fef37e199ea7d472259f2d37 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1bc43e023c2d0486f9b619cc399945e8 = $(`<div id="html_1bc43e023c2d0486f9b619cc399945e8" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -79 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 14 dB<br></div>`)[0];
+                popup_355e8b32fef37e199ea7d472259f2d37.setContent(html_1bc43e023c2d0486f9b619cc399945e8);
+            
+        
+
+        circle_marker_a563f88519ce47da40eeaf4c6ff04333.bindPopup(popup_355e8b32fef37e199ea7d472259f2d37)
+        ;
+
+        
+    
+    
+            var circle_marker_80d9d7d5c76e1e88190a45a270bece1e = L.circleMarker(
+                [49.22373293, 16.57488229],
+                {"bubblingMouseEvents": true, "color": "#2cb17e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2cb17e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_8d82f0eb7919ad703eddcf6e91d8a625 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_441ef5f03425cef27a012832bedbfe6e = $(`<div id="html_441ef5f03425cef27a012832bedbfe6e" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -79 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 14 dB<br></div>`)[0];
+                popup_8d82f0eb7919ad703eddcf6e91d8a625.setContent(html_441ef5f03425cef27a012832bedbfe6e);
+            
+        
+
+        circle_marker_80d9d7d5c76e1e88190a45a270bece1e.bindPopup(popup_8d82f0eb7919ad703eddcf6e91d8a625)
+        ;
+
+        
+    
+    
+            var circle_marker_8079f4ebc04e5c47a4ea5a0f5f5c7ade = L.circleMarker(
+                [49.22360008, 16.57517527],
+                {"bubblingMouseEvents": true, "color": "#28ae80", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#28ae80", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_3d3d17e711fae7a79d7c3fae4a037ac9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0c82f1ed953d25f102a85c7784aee5b6 = $(`<div id="html_0c82f1ed953d25f102a85c7784aee5b6" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -80 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 14 dB<br></div>`)[0];
+                popup_3d3d17e711fae7a79d7c3fae4a037ac9.setContent(html_0c82f1ed953d25f102a85c7784aee5b6);
+            
+        
+
+        circle_marker_8079f4ebc04e5c47a4ea5a0f5f5c7ade.bindPopup(popup_3d3d17e711fae7a79d7c3fae4a037ac9)
+        ;
+
+        
+    
+    
+            var circle_marker_d9a1374685b4ae927832326f09f66861 = L.circleMarker(
+                [49.22347905, 16.57548353],
+                {"bubblingMouseEvents": true, "color": "#3fbc73", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3fbc73", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_6cebedaa7cd9d570563462c72e5dc9a2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_97bd62626c737a6beeaec97fe7c83268 = $(`<div id="html_97bd62626c737a6beeaec97fe7c83268" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -75 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 14 dB<br></div>`)[0];
+                popup_6cebedaa7cd9d570563462c72e5dc9a2.setContent(html_97bd62626c737a6beeaec97fe7c83268);
+            
+        
+
+        circle_marker_d9a1374685b4ae927832326f09f66861.bindPopup(popup_6cebedaa7cd9d570563462c72e5dc9a2)
+        ;
+
+        
+    
+    
+            var circle_marker_49d3d5d989aaf533a71b00930a8cc5d8 = L.circleMarker(
+                [49.22338008, 16.57580636],
+                {"bubblingMouseEvents": true, "color": "#22a884", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#22a884", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_fa61b5f1713f042303931e663459bda4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_de284028eac29c7059a368dd5804f382 = $(`<div id="html_de284028eac29c7059a368dd5804f382" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -82 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 14 dB<br></div>`)[0];
+                popup_fa61b5f1713f042303931e663459bda4.setContent(html_de284028eac29c7059a368dd5804f382);
+            
+        
+
+        circle_marker_49d3d5d989aaf533a71b00930a8cc5d8.bindPopup(popup_fa61b5f1713f042303931e663459bda4)
+        ;
+
+        
+    
+    
+            var circle_marker_e1a9bdff0dd2b6155af88bb16605b41d = L.circleMarker(
+                [49.22328825, 16.57612803],
+                {"bubblingMouseEvents": true, "color": "#20938c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#20938c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_76637daa3cd08637af60d6ddf9322b9e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_224e0080f2e7b753b446d93ae1439dcb = $(`<div id="html_224e0080f2e7b753b446d93ae1439dcb" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -89 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 14 dB<br></div>`)[0];
+                popup_76637daa3cd08637af60d6ddf9322b9e.setContent(html_224e0080f2e7b753b446d93ae1439dcb);
+            
+        
+
+        circle_marker_e1a9bdff0dd2b6155af88bb16605b41d.bindPopup(popup_76637daa3cd08637af60d6ddf9322b9e)
+        ;
+
+        
+    
+    
+            var circle_marker_57ecd6e4e4ec3db61206186f072be62c = L.circleMarker(
+                [49.22322142, 16.57647013],
+                {"bubblingMouseEvents": true, "color": "#228d8d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228d8d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_a71c4c0d611459ef92ec8ad40b15454c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0631be2fe88631025f24c7e36b9eabe8 = $(`<div id="html_0631be2fe88631025f24c7e36b9eabe8" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -91 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_a71c4c0d611459ef92ec8ad40b15454c.setContent(html_0631be2fe88631025f24c7e36b9eabe8);
+            
+        
+
+        circle_marker_57ecd6e4e4ec3db61206186f072be62c.bindPopup(popup_a71c4c0d611459ef92ec8ad40b15454c)
+        ;
+
+        
+    
+    
+            var circle_marker_c48ec437ec5ee7aab8ce3fa64a28ce1c = L.circleMarker(
+                [49.22322142, 16.57647013],
+                {"bubblingMouseEvents": true, "color": "#2cb17e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2cb17e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_88185b1f6c2c32275efd75661d8ccb70 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bb83b7cf026a55ef3b61fd3032dffa77 = $(`<div id="html_bb83b7cf026a55ef3b61fd3032dffa77" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -79 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> -3 dB<br></div>`)[0];
+                popup_88185b1f6c2c32275efd75661d8ccb70.setContent(html_bb83b7cf026a55ef3b61fd3032dffa77);
+            
+        
+
+        circle_marker_c48ec437ec5ee7aab8ce3fa64a28ce1c.bindPopup(popup_88185b1f6c2c32275efd75661d8ccb70)
+        ;
+
+        
+    
+    
+            var circle_marker_f647b6e5086dad1df03f57854a26c67f = L.circleMarker(
+                [49.2231745, 16.57681469],
+                {"bubblingMouseEvents": true, "color": "#2cb17e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2cb17e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_ebfea0c0d69bf0a042e1cd3071e0bf87 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bcff07652957a46bc1aea4163471a34a = $(`<div id="html_bcff07652957a46bc1aea4163471a34a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -79 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> -3 dB<br></div>`)[0];
+                popup_ebfea0c0d69bf0a042e1cd3071e0bf87.setContent(html_bcff07652957a46bc1aea4163471a34a);
+            
+        
+
+        circle_marker_f647b6e5086dad1df03f57854a26c67f.bindPopup(popup_ebfea0c0d69bf0a042e1cd3071e0bf87)
+        ;
+
+        
+    
+    
+            var circle_marker_ba0d3ac450d335129e40204a54165b5c = L.circleMarker(
+                [49.2231745, 16.57681469],
+                {"bubblingMouseEvents": true, "color": "#2cb17e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2cb17e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_02bc99edef86860f3bb00afafb33f7cd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bf2e9bfc064397b9e533d59ac7cfd92c = $(`<div id="html_bf2e9bfc064397b9e533d59ac7cfd92c" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -79 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 7 dB<br></div>`)[0];
+                popup_02bc99edef86860f3bb00afafb33f7cd.setContent(html_bf2e9bfc064397b9e533d59ac7cfd92c);
+            
+        
+
+        circle_marker_ba0d3ac450d335129e40204a54165b5c.bindPopup(popup_02bc99edef86860f3bb00afafb33f7cd)
+        ;
+
+        
+    
+    
+            var circle_marker_25260d09b6f0228290b8f4204749b97c = L.circleMarker(
+                [49.22317211, 16.57716502],
+                {"bubblingMouseEvents": true, "color": "#2cb17e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2cb17e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_62fee0a698d31dfecb4168afdf5fa2f3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c1b07e1dc344380db4082209fa2fa4c1 = $(`<div id="html_c1b07e1dc344380db4082209fa2fa4c1" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -79 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 7 dB<br></div>`)[0];
+                popup_62fee0a698d31dfecb4168afdf5fa2f3.setContent(html_c1b07e1dc344380db4082209fa2fa4c1);
+            
+        
+
+        circle_marker_25260d09b6f0228290b8f4204749b97c.bindPopup(popup_62fee0a698d31dfecb4168afdf5fa2f3)
+        ;
+
+        
+    
+    
+            var circle_marker_0057b440eea84b9a2f41ef4601abb14a = L.circleMarker(
+                [49.22317211, 16.57716502],
+                {"bubblingMouseEvents": true, "color": "#1fa088", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa088", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_ae2d77ca0ec76f205db8ba7ca7285243 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e79c72b5519321a83c80c339d5b5265d = $(`<div id="html_e79c72b5519321a83c80c339d5b5265d" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -85 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> -2 dB<br></div>`)[0];
+                popup_ae2d77ca0ec76f205db8ba7ca7285243.setContent(html_e79c72b5519321a83c80c339d5b5265d);
+            
+        
+
+        circle_marker_0057b440eea84b9a2f41ef4601abb14a.bindPopup(popup_ae2d77ca0ec76f205db8ba7ca7285243)
+        ;
+
+        
+    
+    
+            var circle_marker_08f890fde2066c14951c48e594b2cdfd = L.circleMarker(
+                [49.22317211, 16.57716502],
+                {"bubblingMouseEvents": true, "color": "#25ab82", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25ab82", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_5ba94ce3082cbe74c9dbf78415b83dba = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_60e37a6e1175d0780f64174f91a9dfd6 = $(`<div id="html_60e37a6e1175d0780f64174f91a9dfd6" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -81 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_5ba94ce3082cbe74c9dbf78415b83dba.setContent(html_60e37a6e1175d0780f64174f91a9dfd6);
+            
+        
+
+        circle_marker_08f890fde2066c14951c48e594b2cdfd.bindPopup(popup_5ba94ce3082cbe74c9dbf78415b83dba)
+        ;
+
+        
+    
+    
+            var circle_marker_30efe852b353400d451aea28876bdea9 = L.circleMarker(
+                [49.22311571, 16.57750312],
+                {"bubblingMouseEvents": true, "color": "#25ab82", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25ab82", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_0c5b87b5159c62b98ee4c2b91d3c2195 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_85fe16d3193c7f11f614723f02d35f09 = $(`<div id="html_85fe16d3193c7f11f614723f02d35f09" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -81 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_0c5b87b5159c62b98ee4c2b91d3c2195.setContent(html_85fe16d3193c7f11f614723f02d35f09);
+            
+        
+
+        circle_marker_30efe852b353400d451aea28876bdea9.bindPopup(popup_0c5b87b5159c62b98ee4c2b91d3c2195)
+        ;
+
+        
+    
+    
+            var circle_marker_1cb741ae66cc55557226024d548a0041 = L.circleMarker(
+                [49.22309353, 16.57786224],
+                {"bubblingMouseEvents": true, "color": "#1e9c89", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1e9c89", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_fdb89d71bc2fd4ab96d5533a2ad6e3c1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4636ad6940a6dc8032f3e5357836bc12 = $(`<div id="html_4636ad6940a6dc8032f3e5357836bc12" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -86 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_fdb89d71bc2fd4ab96d5533a2ad6e3c1.setContent(html_4636ad6940a6dc8032f3e5357836bc12);
+            
+        
+
+        circle_marker_1cb741ae66cc55557226024d548a0041.bindPopup(popup_fdb89d71bc2fd4ab96d5533a2ad6e3c1)
+        ;
+
+        
+    
+    
+            var circle_marker_2c92894fbeada27dc38f1399da47eab0 = L.circleMarker(
+                [49.22308336, 16.57821355],
+                {"bubblingMouseEvents": true, "color": "#277e8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#277e8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_e57fe44df77223945cd8c974de88fc10 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6dda325b2797312a1025589b551f9086 = $(`<div id="html_6dda325b2797312a1025589b551f9086" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -96 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_e57fe44df77223945cd8c974de88fc10.setContent(html_6dda325b2797312a1025589b551f9086);
+            
+        
+
+        circle_marker_2c92894fbeada27dc38f1399da47eab0.bindPopup(popup_e57fe44df77223945cd8c974de88fc10)
+        ;
+
+        
+    
+    
+            var circle_marker_f8248af24fdbdf0b95e0590ea1d52727 = L.circleMarker(
+                [49.22309317, 16.57855879],
+                {"bubblingMouseEvents": true, "color": "#1e9c89", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1e9c89", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_86c305b09e27b8da4ce50af3e3c1abe9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f72e620924cfc51fc99d571363689774 = $(`<div id="html_f72e620924cfc51fc99d571363689774" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -86 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_86c305b09e27b8da4ce50af3e3c1abe9.setContent(html_f72e620924cfc51fc99d571363689774);
+            
+        
+
+        circle_marker_f8248af24fdbdf0b95e0590ea1d52727.bindPopup(popup_86c305b09e27b8da4ce50af3e3c1abe9)
+        ;
+
+        
+    
+    
+            var circle_marker_34772f0b215791fe0352e5dbc9b9a169 = L.circleMarker(
+                [49.22313582, 16.57890592],
+                {"bubblingMouseEvents": true, "color": "#238a8d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#238a8d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_9e84ca6181c63afef6940447740f079e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_07d1aa2a80f11d1bf86e5ccc69a8fd79 = $(`<div id="html_07d1aa2a80f11d1bf86e5ccc69a8fd79" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -92 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_9e84ca6181c63afef6940447740f079e.setContent(html_07d1aa2a80f11d1bf86e5ccc69a8fd79);
+            
+        
+
+        circle_marker_34772f0b215791fe0352e5dbc9b9a169.bindPopup(popup_9e84ca6181c63afef6940447740f079e)
+        ;
+
+        
+    
+    
+            var circle_marker_356fc6c5c5f8179ad561bdaeeb69676a = L.circleMarker(
+                [49.22324847, 16.57921347],
+                {"bubblingMouseEvents": true, "color": "#1fa088", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa088", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_1d8e33e9fdd9b238ac124c5f3315e01d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_86d3d21702e610600cd20b0b3c3dc2ff = $(`<div id="html_86d3d21702e610600cd20b0b3c3dc2ff" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -85 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_1d8e33e9fdd9b238ac124c5f3315e01d.setContent(html_86d3d21702e610600cd20b0b3c3dc2ff);
+            
+        
+
+        circle_marker_356fc6c5c5f8179ad561bdaeeb69676a.bindPopup(popup_1d8e33e9fdd9b238ac124c5f3315e01d)
+        ;
+
+        
+    
+    
+            var circle_marker_dc9e6055cb5abf77391ed79fe085f028 = L.circleMarker(
+                [49.2233676, 16.57951813],
+                {"bubblingMouseEvents": true, "color": "#1fa287", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa287", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_be071296b790f2aea3abda423b8aeebb = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3a5edde6dd166bcfea1c56fd7e92e663 = $(`<div id="html_3a5edde6dd166bcfea1c56fd7e92e663" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -84 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_be071296b790f2aea3abda423b8aeebb.setContent(html_3a5edde6dd166bcfea1c56fd7e92e663);
+            
+        
+
+        circle_marker_dc9e6055cb5abf77391ed79fe085f028.bindPopup(popup_be071296b790f2aea3abda423b8aeebb)
+        ;
+
+        
+    
+    
+            var circle_marker_699853867c78e9378461d537658f45ac = L.circleMarker(
+                [49.22359901, 16.5795195],
+                {"bubblingMouseEvents": true, "color": "#22a884", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#22a884", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_de4ce40de1cbe5750d44defb50aa2a7f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_83cc6748c13ce64c34997cfa2273843a = $(`<div id="html_83cc6748c13ce64c34997cfa2273843a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -82 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_de4ce40de1cbe5750d44defb50aa2a7f.setContent(html_83cc6748c13ce64c34997cfa2273843a);
+            
+        
+
+        circle_marker_699853867c78e9378461d537658f45ac.bindPopup(popup_de4ce40de1cbe5750d44defb50aa2a7f)
+        ;
+
+        
+    
+    
+            var circle_marker_b1a8d6cdd4cb872a7c71b5c38f5c6c0e = L.circleMarker(
+                [49.22377829, 16.57930298],
+                {"bubblingMouseEvents": true, "color": "#21a585", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21a585", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_36b9dffd0a160a2452c48da59eceb50d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_19e54c814d6131112a179ccefd1ececc = $(`<div id="html_19e54c814d6131112a179ccefd1ececc" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -83 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_36b9dffd0a160a2452c48da59eceb50d.setContent(html_19e54c814d6131112a179ccefd1ececc);
+            
+        
+
+        circle_marker_b1a8d6cdd4cb872a7c71b5c38f5c6c0e.bindPopup(popup_36b9dffd0a160a2452c48da59eceb50d)
+        ;
+
+        
+    
+    
+            var circle_marker_870ee0e7f3e3688d6f74c52498ef9211 = L.circleMarker(
+                [49.22401353, 16.57926505],
+                {"bubblingMouseEvents": true, "color": "#21a585", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21a585", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_ed4deea936bb2196828b24fcd584c091 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_06026a7685cdbcddf59205b330c76dfd = $(`<div id="html_06026a7685cdbcddf59205b330c76dfd" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -83 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_ed4deea936bb2196828b24fcd584c091.setContent(html_06026a7685cdbcddf59205b330c76dfd);
+            
+        
+
+        circle_marker_870ee0e7f3e3688d6f74c52498ef9211.bindPopup(popup_ed4deea936bb2196828b24fcd584c091)
+        ;
+
+        
+    
+    
+            var circle_marker_7ad87daac3d231ab896b0c373512f531 = L.circleMarker(
+                [49.2242238, 16.57910207],
+                {"bubblingMouseEvents": true, "color": "#21a585", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21a585", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_a4141060d86d219cf5174336c9b6c2ab = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3dd0ba4e733ed7b2d53b597a8c376b88 = $(`<div id="html_3dd0ba4e733ed7b2d53b597a8c376b88" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -83 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_a4141060d86d219cf5174336c9b6c2ab.setContent(html_3dd0ba4e733ed7b2d53b597a8c376b88);
+            
+        
+
+        circle_marker_7ad87daac3d231ab896b0c373512f531.bindPopup(popup_a4141060d86d219cf5174336c9b6c2ab)
+        ;
+
+        
+    
+    
+            var circle_marker_8c18888793043dc73a8670dd31cb2713 = L.circleMarker(
+                [49.22442795, 16.57892076],
+                {"bubblingMouseEvents": true, "color": "#20938c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#20938c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_96ccf81075c00f65dcb19d5fe256a7e5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0dc562cc3643e2e9d2b2624bb34eed0f = $(`<div id="html_0dc562cc3643e2e9d2b2624bb34eed0f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -89 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_96ccf81075c00f65dcb19d5fe256a7e5.setContent(html_0dc562cc3643e2e9d2b2624bb34eed0f);
+            
+        
+
+        circle_marker_8c18888793043dc73a8670dd31cb2713.bindPopup(popup_96ccf81075c00f65dcb19d5fe256a7e5)
+        ;
+
+        
+    
+    
+            var circle_marker_35001db8e1bc82a440ad6e1be24cf86d = L.circleMarker(
+                [49.22462933, 16.57876719],
+                {"bubblingMouseEvents": true, "color": "#1e9c89", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1e9c89", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_fec530581cf69c5bfcbbe45fdd9fe43c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6ee544dcde98f46d58a7483919b92a53 = $(`<div id="html_6ee544dcde98f46d58a7483919b92a53" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -86 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_fec530581cf69c5bfcbbe45fdd9fe43c.setContent(html_6ee544dcde98f46d58a7483919b92a53);
+            
+        
+
+        circle_marker_35001db8e1bc82a440ad6e1be24cf86d.bindPopup(popup_fec530581cf69c5bfcbbe45fdd9fe43c)
+        ;
+
+        
+    
+    
+            var circle_marker_4c3493bdea162977d02fd52e4f615cb8 = L.circleMarker(
+                [49.22485381, 16.57865442],
+                {"bubblingMouseEvents": true, "color": "#238a8d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#238a8d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_7acff5c4ed2f78e1ffeae43b72a90774 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2e4b8c23017c3b1374588c5e1cef81ed = $(`<div id="html_2e4b8c23017c3b1374588c5e1cef81ed" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -92 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_7acff5c4ed2f78e1ffeae43b72a90774.setContent(html_2e4b8c23017c3b1374588c5e1cef81ed);
+            
+        
+
+        circle_marker_4c3493bdea162977d02fd52e4f615cb8.bindPopup(popup_7acff5c4ed2f78e1ffeae43b72a90774)
+        ;
+
+        
+    
+    
+            var circle_marker_d462629a487ef8ade07e133a43d8b9fe = L.circleMarker(
+                [49.22506486, 16.57851899],
+                {"bubblingMouseEvents": true, "color": "#26828e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#26828e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_3cc71cd905b97ce7845357128cda24e0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_565f2fb7c758a46532d0211c44cf8184 = $(`<div id="html_565f2fb7c758a46532d0211c44cf8184" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -95 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_3cc71cd905b97ce7845357128cda24e0.setContent(html_565f2fb7c758a46532d0211c44cf8184);
+            
+        
+
+        circle_marker_d462629a487ef8ade07e133a43d8b9fe.bindPopup(popup_3cc71cd905b97ce7845357128cda24e0)
+        ;
+
+        
+    
+    
+            var circle_marker_ccda07d3adc177eb10ec40736c9fced8 = L.circleMarker(
+                [49.22506486, 16.57851899],
+                {"bubblingMouseEvents": true, "color": "#22a884", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#22a884", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_9f406243f2e9b306ab4d38bdbf2fcfb2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b2fe35d4ef0ef9c9f0ecd8db5879b357 = $(`<div id="html_b2fe35d4ef0ef9c9f0ecd8db5879b357" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -82 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_9f406243f2e9b306ab4d38bdbf2fcfb2.setContent(html_b2fe35d4ef0ef9c9f0ecd8db5879b357);
+            
+        
+
+        circle_marker_ccda07d3adc177eb10ec40736c9fced8.bindPopup(popup_9f406243f2e9b306ab4d38bdbf2fcfb2)
+        ;
+
+        
+    
+    
+            var circle_marker_c1da26650f96ae663c2d2b43c4b23c9e = L.circleMarker(
+                [49.22524801, 16.57831638],
+                {"bubblingMouseEvents": true, "color": "#1f998a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f998a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_a91dd2b02fbce6d5281cb00052ed9d83 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6e3fb0e867847d6832414c2265b60b45 = $(`<div id="html_6e3fb0e867847d6832414c2265b60b45" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -87 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_a91dd2b02fbce6d5281cb00052ed9d83.setContent(html_6e3fb0e867847d6832414c2265b60b45);
+            
+        
+
+        circle_marker_c1da26650f96ae663c2d2b43c4b23c9e.bindPopup(popup_a91dd2b02fbce6d5281cb00052ed9d83)
+        ;
+
+        
+    
+    
+            var circle_marker_7d4db6aa561317bf4cad31fc62e87da9 = L.circleMarker(
+                [49.2254583, 16.57816081],
+                {"bubblingMouseEvents": true, "color": "#228d8d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228d8d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_5eea7f0332bfa0a94a76158edd23dcbd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e0d46a460aa534c20e69bb4ab96e1a81 = $(`<div id="html_e0d46a460aa534c20e69bb4ab96e1a81" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -91 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_5eea7f0332bfa0a94a76158edd23dcbd.setContent(html_e0d46a460aa534c20e69bb4ab96e1a81);
+            
+        
+
+        circle_marker_7d4db6aa561317bf4cad31fc62e87da9.bindPopup(popup_5eea7f0332bfa0a94a76158edd23dcbd)
+        ;
+
+        
+    
+    
+            var circle_marker_340f115d5d5dcb8924088c00a2ad8be4 = L.circleMarker(
+                [49.2256756, 16.57803391],
+                {"bubblingMouseEvents": true, "color": "#20938c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#20938c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_60ab18bed69441a42fc6b7313db48893 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_218c2f6d53fa9a5cb60b2cbd16d83e9a = $(`<div id="html_218c2f6d53fa9a5cb60b2cbd16d83e9a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -89 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_60ab18bed69441a42fc6b7313db48893.setContent(html_218c2f6d53fa9a5cb60b2cbd16d83e9a);
+            
+        
+
+        circle_marker_340f115d5d5dcb8924088c00a2ad8be4.bindPopup(popup_60ab18bed69441a42fc6b7313db48893)
+        ;
+
+        
+    
+    
+            var circle_marker_0a78da99b29d845ca27dfdbad2ddfb03 = L.circleMarker(
+                [49.22588062, 16.57786437],
+                {"bubblingMouseEvents": true, "color": "#1fa088", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa088", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_5909ec62e800818717b6eb972d6cb797 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c02a49909828b40af264d2a64f2e994f = $(`<div id="html_c02a49909828b40af264d2a64f2e994f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -85 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_5909ec62e800818717b6eb972d6cb797.setContent(html_c02a49909828b40af264d2a64f2e994f);
+            
+        
+
+        circle_marker_0a78da99b29d845ca27dfdbad2ddfb03.bindPopup(popup_5909ec62e800818717b6eb972d6cb797)
+        ;
+
+        
+    
+    
+            var circle_marker_8b8baa4dc8a4026ba1b374c5e11b5f86 = L.circleMarker(
+                [49.22609644, 16.57771486],
+                {"bubblingMouseEvents": true, "color": "#1fa287", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa287", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_1ae9cd29ccba705642e037c1ae8b9327 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5fe65ba6b6e0949ebef1b675cde8d7db = $(`<div id="html_5fe65ba6b6e0949ebef1b675cde8d7db" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -84 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_1ae9cd29ccba705642e037c1ae8b9327.setContent(html_5fe65ba6b6e0949ebef1b675cde8d7db);
+            
+        
+
+        circle_marker_8b8baa4dc8a4026ba1b374c5e11b5f86.bindPopup(popup_1ae9cd29ccba705642e037c1ae8b9327)
+        ;
+
+        
+    
+    
+            var circle_marker_bd4eb049b8a07addbaef8ad3758378f7 = L.circleMarker(
+                [49.22622515, 16.57740771],
+                {"bubblingMouseEvents": true, "color": "#1e9c89", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1e9c89", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_af99ba1505f2904005e8223bd7e6d4cf = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_18a41a0e941d66ec7274f10e507bc032 = $(`<div id="html_18a41a0e941d66ec7274f10e507bc032" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -86 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 9 dB<br></div>`)[0];
+                popup_af99ba1505f2904005e8223bd7e6d4cf.setContent(html_18a41a0e941d66ec7274f10e507bc032);
+            
+        
+
+        circle_marker_bd4eb049b8a07addbaef8ad3758378f7.bindPopup(popup_af99ba1505f2904005e8223bd7e6d4cf)
+        ;
+
+        
+    
+    
+            var circle_marker_2edd1032d43fe98f7c9fca5fffe89cfb = L.circleMarker(
+                [49.22618156, 16.5770596],
+                {"bubblingMouseEvents": true, "color": "#21a585", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21a585", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_fd6a536f86ed42eb571c223e7cdf9eac = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_91d20635b919ad7108a8cf24dcde5891 = $(`<div id="html_91d20635b919ad7108a8cf24dcde5891" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -83 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 9 dB<br></div>`)[0];
+                popup_fd6a536f86ed42eb571c223e7cdf9eac.setContent(html_91d20635b919ad7108a8cf24dcde5891);
+            
+        
+
+        circle_marker_2edd1032d43fe98f7c9fca5fffe89cfb.bindPopup(popup_fd6a536f86ed42eb571c223e7cdf9eac)
+        ;
+
+        
+    
+    
+            var circle_marker_d9d3459bcafe55347b87532437595306 = L.circleMarker(
+                [49.22622787, 16.5767184],
+                {"bubblingMouseEvents": true, "color": "#1fa287", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa287", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_d920c7868ab42819e119c4722c9bc3d3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0745a47f0682fde102142c8e4f18a02b = $(`<div id="html_0745a47f0682fde102142c8e4f18a02b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -84 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 3 dB<br></div>`)[0];
+                popup_d920c7868ab42819e119c4722c9bc3d3.setContent(html_0745a47f0682fde102142c8e4f18a02b);
+            
+        
+
+        circle_marker_d9d3459bcafe55347b87532437595306.bindPopup(popup_d920c7868ab42819e119c4722c9bc3d3)
+        ;
+
+        
+    
+    
+            var circle_marker_673f6c2b3846127a40b29ad6ebb08613 = L.circleMarker(
+                [49.22622787, 16.5767184],
+                {"bubblingMouseEvents": true, "color": "#56c667", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#56c667", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_0ecee5ac600097040ba48583b1fe5867 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6cf06fefbb368d641c037355cadc3981 = $(`<div id="html_6cf06fefbb368d641c037355cadc3981" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -71 dBm<br> <b>RSRQ:</b> -7 dB<br> <b>SNR:</b> 3 dB<br></div>`)[0];
+                popup_0ecee5ac600097040ba48583b1fe5867.setContent(html_6cf06fefbb368d641c037355cadc3981);
+            
+        
+
+        circle_marker_673f6c2b3846127a40b29ad6ebb08613.bindPopup(popup_0ecee5ac600097040ba48583b1fe5867)
+        ;
+
+        
+    
+    
+            var circle_marker_48efff4b14efd53369369cbe032eaad5 = L.circleMarker(
+                [49.22636022, 16.57642969],
+                {"bubblingMouseEvents": true, "color": "#34b679", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34b679", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_f62ea78e00ac07e3c6cca43caf874a40 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f01e89229821fe219764df1f43d602eb = $(`<div id="html_f01e89229821fe219764df1f43d602eb" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -77 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 3 dB<br></div>`)[0];
+                popup_f62ea78e00ac07e3c6cca43caf874a40.setContent(html_f01e89229821fe219764df1f43d602eb);
+            
+        
+
+        circle_marker_48efff4b14efd53369369cbe032eaad5.bindPopup(popup_f62ea78e00ac07e3c6cca43caf874a40)
+        ;
+
+        
+    
+    
+            var circle_marker_3220627108f65ed3fcaf3d258d96d073 = L.circleMarker(
+                [49.22652794, 16.57619058],
+                {"bubblingMouseEvents": true, "color": "#2fb47c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2fb47c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_8a7fec7bf040312da4872771b11d42f1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3539184caf7c25d32dfd7ee2c4929efa = $(`<div id="html_3539184caf7c25d32dfd7ee2c4929efa" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -78 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 3 dB<br></div>`)[0];
+                popup_8a7fec7bf040312da4872771b11d42f1.setContent(html_3539184caf7c25d32dfd7ee2c4929efa);
+            
+        
+
+        circle_marker_3220627108f65ed3fcaf3d258d96d073.bindPopup(popup_8a7fec7bf040312da4872771b11d42f1)
+        ;
+
+        
+    
+    
+            var circle_marker_3f7834b329ffd06a269215bf09568fb3 = L.circleMarker(
+                [49.22652794, 16.57619058],
+                {"bubblingMouseEvents": true, "color": "#1fa287", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa287", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_c62c99df6e18fd6dcb0d1e75d8ab65e9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d42f93110f29c89aac630c93d1280fad = $(`<div id="html_d42f93110f29c89aac630c93d1280fad" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -84 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_c62c99df6e18fd6dcb0d1e75d8ab65e9.setContent(html_d42f93110f29c89aac630c93d1280fad);
+            
+        
+
+        circle_marker_3f7834b329ffd06a269215bf09568fb3.bindPopup(popup_c62c99df6e18fd6dcb0d1e75d8ab65e9)
+        ;
+
+        
+    
+    
+            var circle_marker_b0f853bbf807c098fc2bde9b98d3b4bd = L.circleMarker(
+                [49.22660788, 16.57586792],
+                {"bubblingMouseEvents": true, "color": "#1fa287", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa287", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_6c0752e8d20b0cba5d9fe1972e56e900 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3f99228d25074b9fcab989f0be9f67e0 = $(`<div id="html_3f99228d25074b9fcab989f0be9f67e0" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -84 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_6c0752e8d20b0cba5d9fe1972e56e900.setContent(html_3f99228d25074b9fcab989f0be9f67e0);
+            
+        
+
+        circle_marker_b0f853bbf807c098fc2bde9b98d3b4bd.bindPopup(popup_6c0752e8d20b0cba5d9fe1972e56e900)
+        ;
+
+        
+    
+    
+            var circle_marker_5e43f35a90cce622b3a8a0faedda5599 = L.circleMarker(
+                [49.22682467, 16.57572012],
+                {"bubblingMouseEvents": true, "color": "#1f998a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f998a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_2fff44d44a2118e4bfee2fa03ca67b02 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e0ce773c6433c0645f0f9c5436e238b0 = $(`<div id="html_e0ce773c6433c0645f0f9c5436e238b0" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -87 dBm<br> <b>RSRQ:</b> -18 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_2fff44d44a2118e4bfee2fa03ca67b02.setContent(html_e0ce773c6433c0645f0f9c5436e238b0);
+            
+        
+
+        circle_marker_5e43f35a90cce622b3a8a0faedda5599.bindPopup(popup_2fff44d44a2118e4bfee2fa03ca67b02)
+        ;
+
+        
+    
+    
+            var circle_marker_f4d2469c49482f5a4074ecd24bb70c04 = L.circleMarker(
+                [49.22702234, 16.57555287],
+                {"bubblingMouseEvents": true, "color": "#1e9c89", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1e9c89", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_82a5ef8439edd0de0a629ae95e2d4622 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_013acfcbd72cd9bab2b6eb04c668ec0f = $(`<div id="html_013acfcbd72cd9bab2b6eb04c668ec0f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -86 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_82a5ef8439edd0de0a629ae95e2d4622.setContent(html_013acfcbd72cd9bab2b6eb04c668ec0f);
+            
+        
+
+        circle_marker_f4d2469c49482f5a4074ecd24bb70c04.bindPopup(popup_82a5ef8439edd0de0a629ae95e2d4622)
+        ;
+
+        
+    
+    
+            var circle_marker_aa272da48482b0db2a0b0df60fdb5201 = L.circleMarker(
+                [49.22722518, 16.57539124],
+                {"bubblingMouseEvents": true, "color": "#1e9c89", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1e9c89", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_33fa1a7de11190501cdedc9dce3bf476 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d65f9c41b6cc980f7c16285a28890adc = $(`<div id="html_d65f9c41b6cc980f7c16285a28890adc" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -86 dBm<br> <b>RSRQ:</b> -18 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_33fa1a7de11190501cdedc9dce3bf476.setContent(html_d65f9c41b6cc980f7c16285a28890adc);
+            
+        
+
+        circle_marker_aa272da48482b0db2a0b0df60fdb5201.bindPopup(popup_33fa1a7de11190501cdedc9dce3bf476)
+        ;
+
+        
+    
+    
+            var circle_marker_7e41ea262adc20556e6557842f81b48a = L.circleMarker(
+                [49.22743969, 16.57524446],
+                {"bubblingMouseEvents": true, "color": "#1fa088", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa088", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_f36cdfbd0f49329ecacb0e42aa92903e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a531b6c4e7ecb2315b9949e382b710c0 = $(`<div id="html_a531b6c4e7ecb2315b9949e382b710c0" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -85 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_f36cdfbd0f49329ecacb0e42aa92903e.setContent(html_a531b6c4e7ecb2315b9949e382b710c0);
+            
+        
+
+        circle_marker_7e41ea262adc20556e6557842f81b48a.bindPopup(popup_f36cdfbd0f49329ecacb0e42aa92903e)
+        ;
+
+        
+    
+    
+            var circle_marker_ac84aad0a90aaaee99f9213d981fe582 = L.circleMarker(
+                [49.22764613, 16.57509602],
+                {"bubblingMouseEvents": true, "color": "#28ae80", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#28ae80", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_d824ac896e94e8d200eec825645699b5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cb05e76159529d5523fd5d6e5bcea48a = $(`<div id="html_cb05e76159529d5523fd5d6e5bcea48a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -80 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_d824ac896e94e8d200eec825645699b5.setContent(html_cb05e76159529d5523fd5d6e5bcea48a);
+            
+        
+
+        circle_marker_ac84aad0a90aaaee99f9213d981fe582.bindPopup(popup_d824ac896e94e8d200eec825645699b5)
+        ;
+
+        
+    
+    
+            var circle_marker_34a732553bf05abbef14d0ead3dfd260 = L.circleMarker(
+                [49.22785225, 16.57492212],
+                {"bubblingMouseEvents": true, "color": "#1fa088", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa088", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_f5acb09ee72930bd3a52f5fa00877d92 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bfaee61c58a4fd5295d0529a31786cb3 = $(`<div id="html_bfaee61c58a4fd5295d0529a31786cb3" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -85 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_f5acb09ee72930bd3a52f5fa00877d92.setContent(html_bfaee61c58a4fd5295d0529a31786cb3);
+            
+        
+
+        circle_marker_34a732553bf05abbef14d0ead3dfd260.bindPopup(popup_f5acb09ee72930bd3a52f5fa00877d92)
+        ;
+
+        
+    
+    
+            var circle_marker_6cf4198cce281889c16aab469ea8446a = L.circleMarker(
+                [49.22805313, 16.57476801],
+                {"bubblingMouseEvents": true, "color": "#1f998a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f998a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_d8d17b4779a0bed57cf8ca69e1bae1da = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_39f4caaf120057124b2aa518a65d7507 = $(`<div id="html_39f4caaf120057124b2aa518a65d7507" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -87 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_d8d17b4779a0bed57cf8ca69e1bae1da.setContent(html_39f4caaf120057124b2aa518a65d7507);
+            
+        
+
+        circle_marker_6cf4198cce281889c16aab469ea8446a.bindPopup(popup_d8d17b4779a0bed57cf8ca69e1bae1da)
+        ;
+
+        
+    
+    
+            var circle_marker_6308a661b84dd1b31c9d17162a7a5705 = L.circleMarker(
+                [49.22825882, 16.57460662],
+                {"bubblingMouseEvents": true, "color": "#20938c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#20938c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_3645c569b34cb1629ce2f2b3a824b447 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f0376db611b07f2f314fe480d269ea0c = $(`<div id="html_f0376db611b07f2f314fe480d269ea0c" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -89 dBm<br> <b>RSRQ:</b> -20 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_3645c569b34cb1629ce2f2b3a824b447.setContent(html_f0376db611b07f2f314fe480d269ea0c);
+            
+        
+
+        circle_marker_6308a661b84dd1b31c9d17162a7a5705.bindPopup(popup_3645c569b34cb1629ce2f2b3a824b447)
+        ;
+
+        
+    
+    
+            var circle_marker_5adb67a5aa208ca16e55c57425cfe606 = L.circleMarker(
+                [49.22825882, 16.57460662],
+                {"bubblingMouseEvents": true, "color": "#277e8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#277e8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_a45ff090a2271bb0cd824eed6622edb1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1c02cc68f6dbe7cea3ed63a5f550d9a5 = $(`<div id="html_1c02cc68f6dbe7cea3ed63a5f550d9a5" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -96 dBm<br> <b>RSRQ:</b> -20 dB<br> <b>SNR:</b> -4 dB<br></div>`)[0];
+                popup_a45ff090a2271bb0cd824eed6622edb1.setContent(html_1c02cc68f6dbe7cea3ed63a5f550d9a5);
+            
+        
+
+        circle_marker_5adb67a5aa208ca16e55c57425cfe606.bindPopup(popup_a45ff090a2271bb0cd824eed6622edb1)
+        ;
+
+        
+    
+    
+            var circle_marker_a8921ad77df612d7a287f30f2373f185 = L.circleMarker(
+                [49.22846082, 16.57444563],
+                {"bubblingMouseEvents": true, "color": "#277e8e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#277e8e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_1eb04ca88159f84c910a6c1a6632368a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_72c367dfb1d2d8ffa4760bf4b09b92bf = $(`<div id="html_72c367dfb1d2d8ffa4760bf4b09b92bf" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -96 dBm<br> <b>RSRQ:</b> -20 dB<br> <b>SNR:</b> -2 dB<br></div>`)[0];
+                popup_1eb04ca88159f84c910a6c1a6632368a.setContent(html_72c367dfb1d2d8ffa4760bf4b09b92bf);
+            
+        
+
+        circle_marker_a8921ad77df612d7a287f30f2373f185.bindPopup(popup_1eb04ca88159f84c910a6c1a6632368a)
+        ;
+
+        
+    
+    
+            var circle_marker_e4ffea5a019b81f13f296d908122a665 = L.circleMarker(
+                [49.22846082, 16.57444563],
+                {"bubblingMouseEvents": true, "color": "#25848e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25848e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_4dfd2b4747e7cc76160c723ac37e130f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9279a6644ca70d0ea9a3c7f1465b2e20 = $(`<div id="html_9279a6644ca70d0ea9a3c7f1465b2e20" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -94 dBm<br> <b>RSRQ:</b> -19 dB<br> <b>SNR:</b> -2 dB<br></div>`)[0];
+                popup_4dfd2b4747e7cc76160c723ac37e130f.setContent(html_9279a6644ca70d0ea9a3c7f1465b2e20);
+            
+        
+
+        circle_marker_e4ffea5a019b81f13f296d908122a665.bindPopup(popup_4dfd2b4747e7cc76160c723ac37e130f)
+        ;
+
+        
+    
+    
+            var circle_marker_b9db6ea8d7e86c60dffa709f016a1c90 = L.circleMarker(
+                [49.22846082, 16.57444563],
+                {"bubblingMouseEvents": true, "color": "#1fa088", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa088", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_7c0099ec647a699a9b588d5f4d79ad06 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9f03d6ec39b352398e5f6befa087eff8 = $(`<div id="html_9f03d6ec39b352398e5f6befa087eff8" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -85 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> -2 dB<br></div>`)[0];
+                popup_7c0099ec647a699a9b588d5f4d79ad06.setContent(html_9f03d6ec39b352398e5f6befa087eff8);
+            
+        
+
+        circle_marker_b9db6ea8d7e86c60dffa709f016a1c90.bindPopup(popup_7c0099ec647a699a9b588d5f4d79ad06)
+        ;
+
+        
+    
+    
+            var circle_marker_053e6782a87c2230c668a553942971fb = L.circleMarker(
+                [49.22866493, 16.57429697],
+                {"bubblingMouseEvents": true, "color": "#1fa088", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa088", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_6c6855251f4577fe136b2e19b8ab9263 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_90ad109aa3b83ff68eaf83af32e8ebbf = $(`<div id="html_90ad109aa3b83ff68eaf83af32e8ebbf" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -85 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> -2 dB<br></div>`)[0];
+                popup_6c6855251f4577fe136b2e19b8ab9263.setContent(html_90ad109aa3b83ff68eaf83af32e8ebbf);
+            
+        
+
+        circle_marker_053e6782a87c2230c668a553942971fb.bindPopup(popup_6c6855251f4577fe136b2e19b8ab9263)
+        ;
+
+        
+    
+    
+            var circle_marker_6040a04e5d78d5c1deb6cf353ada1b27 = L.circleMarker(
+                [49.22887493, 16.57415753],
+                {"bubblingMouseEvents": true, "color": "#238a8d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#238a8d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_0c672f5b1c6a6d06c8aa672c2d4f3925 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b990391794e807cfad44c1475a9cca9e = $(`<div id="html_b990391794e807cfad44c1475a9cca9e" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -92 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> -2 dB<br></div>`)[0];
+                popup_0c672f5b1c6a6d06c8aa672c2d4f3925.setContent(html_b990391794e807cfad44c1475a9cca9e);
+            
+        
+
+        circle_marker_6040a04e5d78d5c1deb6cf353ada1b27.bindPopup(popup_0c672f5b1c6a6d06c8aa672c2d4f3925)
+        ;
+
+        
+    
+    
+            var circle_marker_94e97e1b6d26f6299b862f8d211c8343 = L.circleMarker(
+                [49.22908209, 16.57400697],
+                {"bubblingMouseEvents": true, "color": "#1f968b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f968b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_7cbf02cbc89193e6ce8eb2911751732f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_09a48e6d2c7fdf673a1a1bb0d1125354 = $(`<div id="html_09a48e6d2c7fdf673a1a1bb0d1125354" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -88 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> -2 dB<br></div>`)[0];
+                popup_7cbf02cbc89193e6ce8eb2911751732f.setContent(html_09a48e6d2c7fdf673a1a1bb0d1125354);
+            
+        
+
+        circle_marker_94e97e1b6d26f6299b862f8d211c8343.bindPopup(popup_7cbf02cbc89193e6ce8eb2911751732f)
+        ;
+
+        
+    
+    
+            var circle_marker_e432d76d8150a8987d2b16f0a879da5e = L.circleMarker(
+                [49.2292718, 16.57380624],
+                {"bubblingMouseEvents": true, "color": "#24878e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#24878e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_a5c5287747a8f06cd0321293d7700066 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b20442e3367297f1afb07145a5283ad4 = $(`<div id="html_b20442e3367297f1afb07145a5283ad4" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -93 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> -1 dB<br></div>`)[0];
+                popup_a5c5287747a8f06cd0321293d7700066.setContent(html_b20442e3367297f1afb07145a5283ad4);
+            
+        
+
+        circle_marker_e432d76d8150a8987d2b16f0a879da5e.bindPopup(popup_a5c5287747a8f06cd0321293d7700066)
+        ;
+
+        
+    
+    
+            var circle_marker_0f8af73152ea42b400b0c50787d85e64 = L.circleMarker(
+                [49.22943184, 16.57354812],
+                {"bubblingMouseEvents": true, "color": "#1e9c89", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1e9c89", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_b777feaadb3eb52f785a88013a5d3d10 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2db31a2c3d3de5ef2d983617dfb5f0e9 = $(`<div id="html_2db31a2c3d3de5ef2d983617dfb5f0e9" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -86 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> -1 dB<br></div>`)[0];
+                popup_b777feaadb3eb52f785a88013a5d3d10.setContent(html_2db31a2c3d3de5ef2d983617dfb5f0e9);
+            
+        
+
+        circle_marker_0f8af73152ea42b400b0c50787d85e64.bindPopup(popup_b777feaadb3eb52f785a88013a5d3d10)
+        ;
+
+        
+    
+    
+            var circle_marker_1cc90134c443d197fa17ada41e7c77c3 = L.circleMarker(
+                [49.22959757, 16.57331545],
+                {"bubblingMouseEvents": true, "color": "#1fa287", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa287", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_116cc21ef67626f2b0f38ff249cc1dd6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_65ecf6ef00408bf91e469964564d663e = $(`<div id="html_65ecf6ef00408bf91e469964564d663e" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -84 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> -1 dB<br></div>`)[0];
+                popup_116cc21ef67626f2b0f38ff249cc1dd6.setContent(html_65ecf6ef00408bf91e469964564d663e);
+            
+        
+
+        circle_marker_1cc90134c443d197fa17ada41e7c77c3.bindPopup(popup_116cc21ef67626f2b0f38ff249cc1dd6)
+        ;
+
+        
+    
+    
+            var circle_marker_28cb390c1331f185eae7acf578308081 = L.circleMarker(
+                [49.22976574, 16.57305962],
+                {"bubblingMouseEvents": true, "color": "#20938c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#20938c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_412680ea0d9dfe41ee87ce686ddaa830 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d0357e90db25556742db6edeeabbcaf6 = $(`<div id="html_d0357e90db25556742db6edeeabbcaf6" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -89 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> -1 dB<br></div>`)[0];
+                popup_412680ea0d9dfe41ee87ce686ddaa830.setContent(html_d0357e90db25556742db6edeeabbcaf6);
+            
+        
+
+        circle_marker_28cb390c1331f185eae7acf578308081.bindPopup(popup_412680ea0d9dfe41ee87ce686ddaa830)
+        ;
+
+        
+    
+    
+            var circle_marker_12b4b5cf52a046149b952954ed4be266 = L.circleMarker(
+                [49.22994196, 16.57281431],
+                {"bubblingMouseEvents": true, "color": "#21a585", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21a585", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_45753221cc4ff4c23e41e19b63610af8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_446739d912d77f42befc80e9cd3ad057 = $(`<div id="html_446739d912d77f42befc80e9cd3ad057" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -83 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> -1 dB<br></div>`)[0];
+                popup_45753221cc4ff4c23e41e19b63610af8.setContent(html_446739d912d77f42befc80e9cd3ad057);
+            
+        
+
+        circle_marker_12b4b5cf52a046149b952954ed4be266.bindPopup(popup_45753221cc4ff4c23e41e19b63610af8)
+        ;
+
+        
+    
+    
+            var circle_marker_c3334b9d634ea4bd4d7dc33774f4af00 = L.circleMarker(
+                [49.23010589, 16.57256201],
+                {"bubblingMouseEvents": true, "color": "#44bf70", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#44bf70", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_7cbbe7f8e053fc0de55db10c9b5adc6d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_28939e49652e2e3ed8c36ae96b633f57 = $(`<div id="html_28939e49652e2e3ed8c36ae96b633f57" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -74 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_7cbbe7f8e053fc0de55db10c9b5adc6d.setContent(html_28939e49652e2e3ed8c36ae96b633f57);
+            
+        
+
+        circle_marker_c3334b9d634ea4bd4d7dc33774f4af00.bindPopup(popup_7cbbe7f8e053fc0de55db10c9b5adc6d)
+        ;
+
+        
+    
+    
+            var circle_marker_7be3088344dfa03f9c7fef19b8ee628b = L.circleMarker(
+                [49.23010589, 16.57256201],
+                {"bubblingMouseEvents": true, "color": "#25ab82", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25ab82", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_44b3e255e8a53851a06d1887ea321754 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_dec24801ab031f371ca244959de0d396 = $(`<div id="html_dec24801ab031f371ca244959de0d396" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -81 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_44b3e255e8a53851a06d1887ea321754.setContent(html_dec24801ab031f371ca244959de0d396);
+            
+        
+
+        circle_marker_7be3088344dfa03f9c7fef19b8ee628b.bindPopup(popup_44b3e255e8a53851a06d1887ea321754)
+        ;
+
+        
+    
+    
+            var circle_marker_cfd1059c84953887458f15399f84511c = L.circleMarker(
+                [49.23026173, 16.57231061],
+                {"bubblingMouseEvents": true, "color": "#25ab82", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25ab82", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_87c30c4742f782c1aa4fdf8571c256c8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_65316a8b31e5ee5184fbfc8e16eeda9a = $(`<div id="html_65316a8b31e5ee5184fbfc8e16eeda9a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -81 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 1 dB<br></div>`)[0];
+                popup_87c30c4742f782c1aa4fdf8571c256c8.setContent(html_65316a8b31e5ee5184fbfc8e16eeda9a);
+            
+        
+
+        circle_marker_cfd1059c84953887458f15399f84511c.bindPopup(popup_87c30c4742f782c1aa4fdf8571c256c8)
+        ;
+
+        
+    
+    
+            var circle_marker_914aff414a257d003a44c48f40467cbc = L.circleMarker(
+                [49.23042663, 16.5720731],
+                {"bubblingMouseEvents": true, "color": "#44bf70", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#44bf70", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_ccad61a39043c30d04b9e865c14fdbf4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_166aacb4ad85a9b1faf3f589435915ab = $(`<div id="html_166aacb4ad85a9b1faf3f589435915ab" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -74 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 2 dB<br></div>`)[0];
+                popup_ccad61a39043c30d04b9e865c14fdbf4.setContent(html_166aacb4ad85a9b1faf3f589435915ab);
+            
+        
+
+        circle_marker_914aff414a257d003a44c48f40467cbc.bindPopup(popup_ccad61a39043c30d04b9e865c14fdbf4)
+        ;
+
+        
+    
+    
+            var circle_marker_c203866c326c8b7d96cdf7ed303307aa = L.circleMarker(
+                [49.23042663, 16.5720731],
+                {"bubblingMouseEvents": true, "color": "#56c667", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#56c667", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_65eb788c32cadb2ed5c009344635f089 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9e921c09f5d8345368301e50c8d42daf = $(`<div id="html_9e921c09f5d8345368301e50c8d42daf" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -71 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 2 dB<br></div>`)[0];
+                popup_65eb788c32cadb2ed5c009344635f089.setContent(html_9e921c09f5d8345368301e50c8d42daf);
+            
+        
+
+        circle_marker_c203866c326c8b7d96cdf7ed303307aa.bindPopup(popup_65eb788c32cadb2ed5c009344635f089)
+        ;
+
+        
+    
+    
+            var circle_marker_d0bec093df76eb265259c550ea428a95 = L.circleMarker(
+                [49.23058962, 16.57182918],
+                {"bubblingMouseEvents": true, "color": "#56c667", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#56c667", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_755b33b50c2afb0bbd5be4926e9c8283 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e288ca1d0384c63b651d5f310c457cac = $(`<div id="html_e288ca1d0384c63b651d5f310c457cac" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -71 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 2 dB<br></div>`)[0];
+                popup_755b33b50c2afb0bbd5be4926e9c8283.setContent(html_e288ca1d0384c63b651d5f310c457cac);
+            
+        
+
+        circle_marker_d0bec093df76eb265259c550ea428a95.bindPopup(popup_755b33b50c2afb0bbd5be4926e9c8283)
+        ;
+
+        
+    
+    
+            var circle_marker_939668b46d62519df789ebc5436b3f2b = L.circleMarker(
+                [49.23058962, 16.57182918],
+                {"bubblingMouseEvents": true, "color": "#2fb47c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2fb47c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_dd6b839cdb38ddd55fdb4911856e05ac = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8e45e63d213746a67a1d8199bab5e950 = $(`<div id="html_8e45e63d213746a67a1d8199bab5e950" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -78 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 5 dB<br></div>`)[0];
+                popup_dd6b839cdb38ddd55fdb4911856e05ac.setContent(html_8e45e63d213746a67a1d8199bab5e950);
+            
+        
+
+        circle_marker_939668b46d62519df789ebc5436b3f2b.bindPopup(popup_dd6b839cdb38ddd55fdb4911856e05ac)
+        ;
+
+        
+    
+    
+            var circle_marker_72fc983b29f45efe4c5cc60f1946e7e2 = L.circleMarker(
+                [49.23058962, 16.57182918],
+                {"bubblingMouseEvents": true, "color": "#3fbc73", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3fbc73", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_43e047a08549fba4f9ce41ed38f3a472 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5fea15f0c04ec8d0d7b458aff8fd58b2 = $(`<div id="html_5fea15f0c04ec8d0d7b458aff8fd58b2" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -75 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_43e047a08549fba4f9ce41ed38f3a472.setContent(html_5fea15f0c04ec8d0d7b458aff8fd58b2);
+            
+        
+
+        circle_marker_72fc983b29f45efe4c5cc60f1946e7e2.bindPopup(popup_43e047a08549fba4f9ce41ed38f3a472)
+        ;
+
+        
+    
+    
+            var circle_marker_18b44f271b82a4995232743d22248031 = L.circleMarker(
+                [49.23076724, 16.57158855],
+                {"bubblingMouseEvents": true, "color": "#3fbc73", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3fbc73", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_8a31d554e55a90064d086fd14d6dceec = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a2d080ab82170f70656cab50c19259fe = $(`<div id="html_a2d080ab82170f70656cab50c19259fe" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -75 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_8a31d554e55a90064d086fd14d6dceec.setContent(html_a2d080ab82170f70656cab50c19259fe);
+            
+        
+
+        circle_marker_18b44f271b82a4995232743d22248031.bindPopup(popup_8a31d554e55a90064d086fd14d6dceec)
+        ;
+
+        
+    
+    
+            var circle_marker_bd840627271f41eb4240de3507e1791f = L.circleMarker(
+                [49.23095769, 16.57139978],
+                {"bubblingMouseEvents": true, "color": "#56c667", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#56c667", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_ae456daae3ff4863899de357a3e13be9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_116ae87ed3e7ca49b8bc2043b2c7fec4 = $(`<div id="html_116ae87ed3e7ca49b8bc2043b2c7fec4" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -71 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 0 dB<br></div>`)[0];
+                popup_ae456daae3ff4863899de357a3e13be9.setContent(html_116ae87ed3e7ca49b8bc2043b2c7fec4);
+            
+        
+
+        circle_marker_bd840627271f41eb4240de3507e1791f.bindPopup(popup_ae456daae3ff4863899de357a3e13be9)
+        ;
+
+        
+    
+    
+            var circle_marker_5576acbd2a7a39627b399ab09f1e50ec = L.circleMarker(
+                [49.23095769, 16.57139978],
+                {"bubblingMouseEvents": true, "color": "#4ac16d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4ac16d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_02c0649cc8720cf890cfbc8e53887328 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_22a1e51979df280dcb29c42307abd098 = $(`<div id="html_22a1e51979df280dcb29c42307abd098" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -73 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_02c0649cc8720cf890cfbc8e53887328.setContent(html_22a1e51979df280dcb29c42307abd098);
+            
+        
+
+        circle_marker_5576acbd2a7a39627b399ab09f1e50ec.bindPopup(popup_02c0649cc8720cf890cfbc8e53887328)
+        ;
+
+        
+    
+    
+            var circle_marker_fd0bacf02c2660ce23833a05e2aabfd5 = L.circleMarker(
+                [49.23117149, 16.57125997],
+                {"bubblingMouseEvents": true, "color": "#4ac16d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4ac16d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_82ef87d7e5f83dc9beeb441767ac7b8a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ef3bfed906db9ddd495920292c9a80f3 = $(`<div id="html_ef3bfed906db9ddd495920292c9a80f3" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -73 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 4 dB<br></div>`)[0];
+                popup_82ef87d7e5f83dc9beeb441767ac7b8a.setContent(html_ef3bfed906db9ddd495920292c9a80f3);
+            
+        
+
+        circle_marker_fd0bacf02c2660ce23833a05e2aabfd5.bindPopup(popup_82ef87d7e5f83dc9beeb441767ac7b8a)
+        ;
+
+        
+    
+    
+            var circle_marker_c14f6982a1898bd1d01e152a380a5cb0 = L.circleMarker(
+                [49.23132782, 16.57101033],
+                {"bubblingMouseEvents": true, "color": "#4ac16d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4ac16d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_696e4e25c906355e61eeca209e986e7e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cd01c0152752aa012810f5236d8a4041 = $(`<div id="html_cd01c0152752aa012810f5236d8a4041" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -73 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 6 dB<br></div>`)[0];
+                popup_696e4e25c906355e61eeca209e986e7e.setContent(html_cd01c0152752aa012810f5236d8a4041);
+            
+        
+
+        circle_marker_c14f6982a1898bd1d01e152a380a5cb0.bindPopup(popup_696e4e25c906355e61eeca209e986e7e)
+        ;
+
+        
+    
+    
+            var circle_marker_24ccacd6ee8f21ba0a88a1390b871975 = L.circleMarker(
+                [49.23150404, 16.57077829],
+                {"bubblingMouseEvents": true, "color": "#38b977", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#38b977", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9ee87637d0de10b4c7f1dfec99ab4e11);
+        
+    
+        var popup_5ac28af12a6caef77b124c68a201effd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f7f9925f675018136d09016b1919d57d = $(`<div id="html_f7f9925f675018136d09016b1919d57d" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> T-Mobile<br> <b>RSRP:</b> -76 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 6 dB<br></div>`)[0];
+                popup_5ac28af12a6caef77b124c68a201effd.setContent(html_f7f9925f675018136d09016b1919d57d);
+            
+        
+
+        circle_marker_24ccacd6ee8f21ba0a88a1390b871975.bindPopup(popup_5ac28af12a6caef77b124c68a201effd)
+        ;
+
+        
+    
+</script>
+</html>
