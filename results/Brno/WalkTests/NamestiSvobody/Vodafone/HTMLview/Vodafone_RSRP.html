@@ -1,0 +1,3128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d8daf58abe8e55daf763e466ab9e6531 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; bottom: 50px; left: 50px;width: 260px; background-color: white; border:2px solid grey; z-index:9999; padding: 10px; font-size:14px;">
+    <b>RSRP [dBm]</b><br>
+    <div style="width: 220px; height: 20px; background: linear-gradient(to right, #440154,#440256,#450457,#450559,#46075a,#46085c,#460a5d,#460b5e,#470d60,#470e61,#471063,#471164,#471365,#481467,#481668,#481769,#48186a,#481a6c,#481b6d,#481c6e,#481d6f,#481f70,#482071,#482173,#482374,#482475,#482576,#482677,#482878,#482979,#472a7a,#472c7a,#472d7b,#472e7c,#472f7d,#46307e,#46327e,#46337f,#463480,#453581,#453781,#453882,#443983,#443a83,#443b84,#433d84,#433e85,#423f85,#424086,#424186,#414287,#414487,#404588,#404688,#3f4788,#3f4889,#3e4989,#3e4a89,#3e4c8a,#3d4d8a,#3d4e8a,#3c4f8a,#3c508b,#3b518b,#3b528b,#3a538b,#3a548c,#39558c,#39568c,#38588c,#38598c,#375a8c,#375b8d,#365c8d,#365d8d,#355e8d,#355f8d,#34608d,#34618d,#33628d,#33638d,#32648e,#32658e,#31668e,#31678e,#31688e,#30698e,#306a8e,#2f6b8e,#2f6c8e,#2e6d8e,#2e6e8e,#2e6f8e,#2d708e,#2d718e,#2c718e,#2c728e,#2c738e,#2b748e,#2b758e,#2a768e,#2a778e,#2a788e,#29798e,#297a8e,#297b8e,#287c8e,#287d8e,#277e8e,#277f8e,#27808e,#26818e,#26828e,#26828e,#25838e,#25848e,#25858e,#24868e,#24878e,#23888e,#23898e,#238a8d,#228b8d,#228c8d,#228d8d,#218e8d,#218f8d,#21908d,#21918c,#20928c,#20928c,#20938c,#1f948c,#1f958b,#1f968b,#1f978b,#1f988b,#1f998a,#1f9a8a,#1e9b8a,#1e9c89,#1e9d89,#1f9e89,#1f9f88,#1fa088,#1fa188,#1fa187,#1fa287,#20a386,#20a486,#21a585,#21a685,#22a785,#22a884,#23a983,#24aa83,#25ab82,#25ac82,#26ad81,#27ad81,#28ae80,#29af7f,#2ab07f,#2cb17e,#2db27d,#2eb37c,#2fb47c,#31b57b,#32b67a,#34b679,#35b779,#37b878,#38b977,#3aba76,#3bbb75,#3dbc74,#3fbc73,#40bd72,#42be71,#44bf70,#46c06f,#48c16e,#4ac16d,#4cc26c,#4ec36b,#50c46a,#52c569,#54c568,#56c667,#58c765,#5ac864,#5cc863,#5ec962,#60ca60,#63cb5f,#65cb5e,#67cc5c,#69cd5b,#6ccd5a,#6ece58,#70cf57,#73d056,#75d054,#77d153,#7ad151,#7cd250,#7fd34e,#81d34d,#84d44b,#86d549,#89d548,#8bd646,#8ed645,#90d743,#93d741,#95d840,#98d83e,#9bd93c,#9dd93b,#a0da39,#a2da37,#a5db36,#a8db34,#aadc32,#addc30,#b0dd2f,#b2dd2d,#b5de2b,#b8de29,#bade28,#bddf26,#c0df25,#c2df23,#c5e021,#c8e020,#cae11f,#cde11d,#d0e11c,#d2e21b,#d5e21a,#d8e219,#dae319,#dde318,#dfe318,#e2e418,#e5e419,#e7e419,#eae51a,#ece51b,#efe51c,#f1e51d,#f4e61e,#f6e620,#f8e621,#fbe723,#fde725);"></div>
+    <div style="display:flex; justify-content:space-between;">
+    <span>-130</span><span>-110</span><span>-90</span>
+    <span>-70</span><span>-50</span></div></div>
+    
+    
+            <div class="folium-map" id="map_d8daf58abe8e55daf763e466ab9e6531" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d8daf58abe8e55daf763e466ab9e6531 = L.map(
+                "map_d8daf58abe8e55daf763e466ab9e6531",
+                {
+                    center: [49.19480632, 16.60868801],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f1e7f3027a959d29da9d9a0c5ec85644 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f1e7f3027a959d29da9d9a0c5ec85644.addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+            map_d8daf58abe8e55daf763e466ab9e6531.fitBounds(
+                [[49.19162932, 16.60554081], [49.19765081, 16.6124171]],
+                {}
+            );
+        
+    
+            var circle_marker_dc83ff033d53ea18137ce0b23350a170 = L.circleMarker(
+                [49.19162932, 16.61035564],
+                {"bubblingMouseEvents": true, "color": "#3fbc73", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3fbc73", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_b318318a708f84b629399de7431a3480 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_dd166cc03bf88bb648b196c3dc541263 = $(`<div id="html_dd166cc03bf88bb648b196c3dc541263" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -75 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_b318318a708f84b629399de7431a3480.setContent(html_dd166cc03bf88bb648b196c3dc541263);
+            
+        
+
+        circle_marker_dc83ff033d53ea18137ce0b23350a170.bindPopup(popup_b318318a708f84b629399de7431a3480)
+        ;
+
+        
+    
+    
+            var circle_marker_4c21c61059f771fa75e3fa541092aaa5 = L.circleMarker(
+                [49.19162932, 16.61035564],
+                {"bubblingMouseEvents": true, "color": "#5ec962", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5ec962", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_45550e699448e3475ae81effe01d6ea9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ff70d10572f08a581d8ce18025572073 = $(`<div id="html_ff70d10572f08a581d8ce18025572073" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -70 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_45550e699448e3475ae81effe01d6ea9.setContent(html_ff70d10572f08a581d8ce18025572073);
+            
+        
+
+        circle_marker_4c21c61059f771fa75e3fa541092aaa5.bindPopup(popup_45550e699448e3475ae81effe01d6ea9)
+        ;
+
+        
+    
+    
+            var circle_marker_95ad41abf97c0fe634eac9e4857edec9 = L.circleMarker(
+                [49.19163185, 16.61000288],
+                {"bubblingMouseEvents": true, "color": "#44bf70", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#44bf70", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_6004da535fec9559d5fd31a390145c12 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ce52dba016c2ae098ae2a5d261b9f438 = $(`<div id="html_ce52dba016c2ae098ae2a5d261b9f438" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -74 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_6004da535fec9559d5fd31a390145c12.setContent(html_ce52dba016c2ae098ae2a5d261b9f438);
+            
+        
+
+        circle_marker_95ad41abf97c0fe634eac9e4857edec9.bindPopup(popup_6004da535fec9559d5fd31a390145c12)
+        ;
+
+        
+    
+    
+            var circle_marker_4f40e6328196db44ca6e4670f84ba669 = L.circleMarker(
+                [49.191713, 16.60967931],
+                {"bubblingMouseEvents": true, "color": "#4ac16d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4ac16d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_fde0d4d3b0bd7212b192cae1c2ba3bf6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_97abe18f19af58671961adf94e97351b = $(`<div id="html_97abe18f19af58671961adf94e97351b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -73 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_fde0d4d3b0bd7212b192cae1c2ba3bf6.setContent(html_97abe18f19af58671961adf94e97351b);
+            
+        
+
+        circle_marker_4f40e6328196db44ca6e4670f84ba669.bindPopup(popup_fde0d4d3b0bd7212b192cae1c2ba3bf6)
+        ;
+
+        
+    
+    
+            var circle_marker_2c78ab2f042de73a96b85167ee681692 = L.circleMarker(
+                [49.19187645, 16.60943523],
+                {"bubblingMouseEvents": true, "color": "#3fbc73", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3fbc73", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_9061405491c2721ece6e87b25399c4f2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_200c92d6a957a7884d65bcd171871caa = $(`<div id="html_200c92d6a957a7884d65bcd171871caa" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -75 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_9061405491c2721ece6e87b25399c4f2.setContent(html_200c92d6a957a7884d65bcd171871caa);
+            
+        
+
+        circle_marker_2c78ab2f042de73a96b85167ee681692.bindPopup(popup_9061405491c2721ece6e87b25399c4f2)
+        ;
+
+        
+    
+    
+            var circle_marker_0da19517d15087dfda18157e08846c2d = L.circleMarker(
+                [49.19200025, 16.609134],
+                {"bubblingMouseEvents": true, "color": "#22a884", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#22a884", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_a7b60b79ffdf6e33a4e9832d21ca48cc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fc8eddb314080a9f82fe44ed4a323375 = $(`<div id="html_fc8eddb314080a9f82fe44ed4a323375" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -82 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_a7b60b79ffdf6e33a4e9832d21ca48cc.setContent(html_fc8eddb314080a9f82fe44ed4a323375);
+            
+        
+
+        circle_marker_0da19517d15087dfda18157e08846c2d.bindPopup(popup_a7b60b79ffdf6e33a4e9832d21ca48cc)
+        ;
+
+        
+    
+    
+            var circle_marker_d8dc57ce0c5476dd76c405bce77fd2bb = L.circleMarker(
+                [49.19200025, 16.609134],
+                {"bubblingMouseEvents": true, "color": "#56c667", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#56c667", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_57cdee397e0d5ca1521c0c327382827d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7161c0b6f1cb3a74f3cc52525e3dcb94 = $(`<div id="html_7161c0b6f1cb3a74f3cc52525e3dcb94" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -71 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_57cdee397e0d5ca1521c0c327382827d.setContent(html_7161c0b6f1cb3a74f3cc52525e3dcb94);
+            
+        
+
+        circle_marker_d8dc57ce0c5476dd76c405bce77fd2bb.bindPopup(popup_57cdee397e0d5ca1521c0c327382827d)
+        ;
+
+        
+    
+    
+            var circle_marker_69d2c48f4f5b437a004f1b9ad5ce95d9 = L.circleMarker(
+                [49.19199963, 16.60879051],
+                {"bubblingMouseEvents": true, "color": "#7ad151", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7ad151", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_92037b164c8f24e5facef4b24b33cd19 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f2bd965f031790f18ef96765faa6920c = $(`<div id="html_f2bd965f031790f18ef96765faa6920c" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -66 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_92037b164c8f24e5facef4b24b33cd19.setContent(html_f2bd965f031790f18ef96765faa6920c);
+            
+        
+
+        circle_marker_69d2c48f4f5b437a004f1b9ad5ce95d9.bindPopup(popup_92037b164c8f24e5facef4b24b33cd19)
+        ;
+
+        
+    
+    
+            var circle_marker_371e4229f6507a59dcf0ea6453d3ccff = L.circleMarker(
+                [49.19211758, 16.60847716],
+                {"bubblingMouseEvents": true, "color": "#73d056", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#73d056", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_3746ece6d2e8b5c3f3503eb181894a04 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_362430e7a677827684218370fcad0037 = $(`<div id="html_362430e7a677827684218370fcad0037" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -67 dBm<br> <b>RSRQ:</b> -8 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_3746ece6d2e8b5c3f3503eb181894a04.setContent(html_362430e7a677827684218370fcad0037);
+            
+        
+
+        circle_marker_371e4229f6507a59dcf0ea6453d3ccff.bindPopup(popup_3746ece6d2e8b5c3f3503eb181894a04)
+        ;
+
+        
+    
+    
+            var circle_marker_85e9083c8da98a882e0dee9ace79d19e = L.circleMarker(
+                [49.19231354, 16.60828846],
+                {"bubblingMouseEvents": true, "color": "#84d44b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#84d44b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_10d1bb9366ace8d6e6184b987bad68ef = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7e1d6b2420828ed2e06a190097ae73ad = $(`<div id="html_7e1d6b2420828ed2e06a190097ae73ad" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -65 dBm<br> <b>RSRQ:</b> -8 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_10d1bb9366ace8d6e6184b987bad68ef.setContent(html_7e1d6b2420828ed2e06a190097ae73ad);
+            
+        
+
+        circle_marker_85e9083c8da98a882e0dee9ace79d19e.bindPopup(popup_10d1bb9366ace8d6e6184b987bad68ef)
+        ;
+
+        
+    
+    
+            var circle_marker_203044aabb327bf5d4dda7220b5dbf88 = L.circleMarker(
+                [49.19252127, 16.60813866],
+                {"bubblingMouseEvents": true, "color": "#b5de2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b5de2b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_0aa6e3188ac0206ee4bdba84aa4ab07d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fd098b53850747ef8818efd3a9fac984 = $(`<div id="html_fd098b53850747ef8818efd3a9fac984" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -59 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_0aa6e3188ac0206ee4bdba84aa4ab07d.setContent(html_fd098b53850747ef8818efd3a9fac984);
+            
+        
+
+        circle_marker_203044aabb327bf5d4dda7220b5dbf88.bindPopup(popup_0aa6e3188ac0206ee4bdba84aa4ab07d)
+        ;
+
+        
+    
+    
+            var circle_marker_c2e192e8fe9cef8f61f87ef0b1c1b951 = L.circleMarker(
+                [49.19271088, 16.6079271],
+                {"bubblingMouseEvents": true, "color": "#6ccd5a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6ccd5a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_5249a651339a17670f10d36eda2c7f64 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5add2da3ed4f2f1f72bc420b39d524f2 = $(`<div id="html_5add2da3ed4f2f1f72bc420b39d524f2" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -68 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_5249a651339a17670f10d36eda2c7f64.setContent(html_5add2da3ed4f2f1f72bc420b39d524f2);
+            
+        
+
+        circle_marker_c2e192e8fe9cef8f61f87ef0b1c1b951.bindPopup(popup_5249a651339a17670f10d36eda2c7f64)
+        ;
+
+        
+    
+    
+            var circle_marker_18151d0f1fe82909299a19e1c74a95f2 = L.circleMarker(
+                [49.19271088, 16.6079271],
+                {"bubblingMouseEvents": true, "color": "#2fb47c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2fb47c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_85348b2c8e48250c6b4cdc6bcec2acff = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6fa928350d210b0326f951b438318399 = $(`<div id="html_6fa928350d210b0326f951b438318399" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -78 dBm<br> <b>RSRQ:</b> -7 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_85348b2c8e48250c6b4cdc6bcec2acff.setContent(html_6fa928350d210b0326f951b438318399);
+            
+        
+
+        circle_marker_18151d0f1fe82909299a19e1c74a95f2.bindPopup(popup_85348b2c8e48250c6b4cdc6bcec2acff)
+        ;
+
+        
+    
+    
+            var circle_marker_e372174ecf3183d1d352ad3fee0cda69 = L.circleMarker(
+                [49.19293236, 16.60785271],
+                {"bubblingMouseEvents": true, "color": "#2fb47c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2fb47c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_5531a2f0bbf6335135cdffe0bf88284b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2f1eee51d78b8ef2b329a73643800361 = $(`<div id="html_2f1eee51d78b8ef2b329a73643800361" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -78 dBm<br> <b>RSRQ:</b> -7 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_5531a2f0bbf6335135cdffe0bf88284b.setContent(html_2f1eee51d78b8ef2b329a73643800361);
+            
+        
+
+        circle_marker_e372174ecf3183d1d352ad3fee0cda69.bindPopup(popup_5531a2f0bbf6335135cdffe0bf88284b)
+        ;
+
+        
+    
+    
+            var circle_marker_bc3369ac805cf979a95d3e9f96f2e8f0 = L.circleMarker(
+                [49.19315403, 16.60776234],
+                {"bubblingMouseEvents": true, "color": "#25ab82", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25ab82", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_683259f8eb5c2730eac72007c40b2f8f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e6f16c79bbd0ae8ef958b2e5c3dce2e8 = $(`<div id="html_e6f16c79bbd0ae8ef958b2e5c3dce2e8" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -81 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_683259f8eb5c2730eac72007c40b2f8f.setContent(html_e6f16c79bbd0ae8ef958b2e5c3dce2e8);
+            
+        
+
+        circle_marker_bc3369ac805cf979a95d3e9f96f2e8f0.bindPopup(popup_683259f8eb5c2730eac72007c40b2f8f)
+        ;
+
+        
+    
+    
+            var circle_marker_2c2fd37f6228652ee29fd02824253b6f = L.circleMarker(
+                [49.19335357, 16.60757344],
+                {"bubblingMouseEvents": true, "color": "#1fa287", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa287", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_50d0f1fd4c84d0560456c014dc53b512 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_353829e2e69f3785e114adcbc1560d99 = $(`<div id="html_353829e2e69f3785e114adcbc1560d99" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -84 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_50d0f1fd4c84d0560456c014dc53b512.setContent(html_353829e2e69f3785e114adcbc1560d99);
+            
+        
+
+        circle_marker_2c2fd37f6228652ee29fd02824253b6f.bindPopup(popup_50d0f1fd4c84d0560456c014dc53b512)
+        ;
+
+        
+    
+    
+            var circle_marker_44f89f52f045248c38aa97cfeffd6417 = L.circleMarker(
+                [49.19335357, 16.60757344],
+                {"bubblingMouseEvents": true, "color": "#4ac16d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4ac16d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_892366ddadab7ecb605156b40c4eab14 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4613142e9eed89f3077a6025e84fc148 = $(`<div id="html_4613142e9eed89f3077a6025e84fc148" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -73 dBm<br> <b>RSRQ:</b> -6 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_892366ddadab7ecb605156b40c4eab14.setContent(html_4613142e9eed89f3077a6025e84fc148);
+            
+        
+
+        circle_marker_44f89f52f045248c38aa97cfeffd6417.bindPopup(popup_892366ddadab7ecb605156b40c4eab14)
+        ;
+
+        
+    
+    
+            var circle_marker_0558f2bfaed86c8821b8f3837ec8d70b = L.circleMarker(
+                [49.19352444, 16.60730974],
+                {"bubblingMouseEvents": true, "color": "#4ac16d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4ac16d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_0c76a2b12344af3c5268ad5183ed5e66 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_36e96d17c38479ebe0028e21b2305b05 = $(`<div id="html_36e96d17c38479ebe0028e21b2305b05" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -73 dBm<br> <b>RSRQ:</b> -6 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_0c76a2b12344af3c5268ad5183ed5e66.setContent(html_36e96d17c38479ebe0028e21b2305b05);
+            
+        
+
+        circle_marker_0558f2bfaed86c8821b8f3837ec8d70b.bindPopup(popup_0c76a2b12344af3c5268ad5183ed5e66)
+        ;
+
+        
+    
+    
+            var circle_marker_2fb7b68d15c3162c468e02dfa6437471 = L.circleMarker(
+                [49.19369711, 16.60708429],
+                {"bubblingMouseEvents": true, "color": "#65cb5e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#65cb5e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_e5a8f67ba6e7cf6d666c85115999c38d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_46889232037a987e7d0195a68913a7fd = $(`<div id="html_46889232037a987e7d0195a68913a7fd" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -69 dBm<br> <b>RSRQ:</b> -6 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_e5a8f67ba6e7cf6d666c85115999c38d.setContent(html_46889232037a987e7d0195a68913a7fd);
+            
+        
+
+        circle_marker_2fb7b68d15c3162c468e02dfa6437471.bindPopup(popup_e5a8f67ba6e7cf6d666c85115999c38d)
+        ;
+
+        
+    
+    
+            var circle_marker_c6e80e0f0ca27ef90701d62a270ebac3 = L.circleMarker(
+                [49.19391832, 16.60696257],
+                {"bubblingMouseEvents": true, "color": "#73d056", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#73d056", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_25644d5c5cfbf2cef1acfda498846eda = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_725c91b1edfad2ae462f78f67fa33e70 = $(`<div id="html_725c91b1edfad2ae462f78f67fa33e70" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -67 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_25644d5c5cfbf2cef1acfda498846eda.setContent(html_725c91b1edfad2ae462f78f67fa33e70);
+            
+        
+
+        circle_marker_c6e80e0f0ca27ef90701d62a270ebac3.bindPopup(popup_25644d5c5cfbf2cef1acfda498846eda)
+        ;
+
+        
+    
+    
+            var circle_marker_9aa5e14433206ec077cc9c22c3db74f0 = L.circleMarker(
+                [49.19413874, 16.60689193],
+                {"bubblingMouseEvents": true, "color": "#84d44b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#84d44b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_396b3e1c2d9a65e27d28c476b600cbbe = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_eb5f6fb245b77fe55ab66a58bb359417 = $(`<div id="html_eb5f6fb245b77fe55ab66a58bb359417" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -65 dBm<br> <b>RSRQ:</b> -7 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_396b3e1c2d9a65e27d28c476b600cbbe.setContent(html_eb5f6fb245b77fe55ab66a58bb359417);
+            
+        
+
+        circle_marker_9aa5e14433206ec077cc9c22c3db74f0.bindPopup(popup_396b3e1c2d9a65e27d28c476b600cbbe)
+        ;
+
+        
+    
+    
+            var circle_marker_038d7abcf5d0067e664522597cf1cbc0 = L.circleMarker(
+                [49.19437236, 16.60692658],
+                {"bubblingMouseEvents": true, "color": "#84d44b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#84d44b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_5262f825ddd8fbc55c18078cbf40df31 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_73e3d7503d5a197f503c2b104b5ad8b3 = $(`<div id="html_73e3d7503d5a197f503c2b104b5ad8b3" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -65 dBm<br> <b>RSRQ:</b> -7 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_5262f825ddd8fbc55c18078cbf40df31.setContent(html_73e3d7503d5a197f503c2b104b5ad8b3);
+            
+        
+
+        circle_marker_038d7abcf5d0067e664522597cf1cbc0.bindPopup(popup_5262f825ddd8fbc55c18078cbf40df31)
+        ;
+
+        
+    
+    
+            var circle_marker_9202133eb1fa38566b8ed05a0209fa5e = L.circleMarker(
+                [49.19437236, 16.60692658],
+                {"bubblingMouseEvents": true, "color": "#7ad151", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7ad151", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_66e5d84084b207ec03c775ca9e1fe536 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6361e12072379476fc02d1539e306c1a = $(`<div id="html_6361e12072379476fc02d1539e306c1a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -66 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_66e5d84084b207ec03c775ca9e1fe536.setContent(html_6361e12072379476fc02d1539e306c1a);
+            
+        
+
+        circle_marker_9202133eb1fa38566b8ed05a0209fa5e.bindPopup(popup_66e5d84084b207ec03c775ca9e1fe536)
+        ;
+
+        
+    
+    
+            var circle_marker_f10673fa8248f9d02ab6c07b8934d326 = L.circleMarker(
+                [49.19458246, 16.60678019],
+                {"bubblingMouseEvents": true, "color": "#7ad151", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7ad151", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_ab26ce9f068795518ea861fb597a77b5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8f9f0b62287ac52473716917b0d91028 = $(`<div id="html_8f9f0b62287ac52473716917b0d91028" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -66 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_ab26ce9f068795518ea861fb597a77b5.setContent(html_8f9f0b62287ac52473716917b0d91028);
+            
+        
+
+        circle_marker_f10673fa8248f9d02ab6c07b8934d326.bindPopup(popup_ab26ce9f068795518ea861fb597a77b5)
+        ;
+
+        
+    
+    
+            var circle_marker_b8e1e8fafb78d1b5abe74e0225f7faf4 = L.circleMarker(
+                [49.19458246, 16.60678019],
+                {"bubblingMouseEvents": true, "color": "#84d44b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#84d44b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_ef06bc0fee973aa57438f793eb44ec46 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_27e7e38fded1b8ff6e55b2ac53d288dc = $(`<div id="html_27e7e38fded1b8ff6e55b2ac53d288dc" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -65 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_ef06bc0fee973aa57438f793eb44ec46.setContent(html_27e7e38fded1b8ff6e55b2ac53d288dc);
+            
+        
+
+        circle_marker_b8e1e8fafb78d1b5abe74e0225f7faf4.bindPopup(popup_ef06bc0fee973aa57438f793eb44ec46)
+        ;
+
+        
+    
+    
+            var circle_marker_46dec059caaa7fb36481c8a665f96f17 = L.circleMarker(
+                [49.19480632, 16.6066733],
+                {"bubblingMouseEvents": true, "color": "#84d44b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#84d44b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_fa72dac0bc1f0aa93458c89f3a6f6e41 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_eac6354860aa376e0335dc274c45c195 = $(`<div id="html_eac6354860aa376e0335dc274c45c195" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -65 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_fa72dac0bc1f0aa93458c89f3a6f6e41.setContent(html_eac6354860aa376e0335dc274c45c195);
+            
+        
+
+        circle_marker_46dec059caaa7fb36481c8a665f96f17.bindPopup(popup_fa72dac0bc1f0aa93458c89f3a6f6e41)
+        ;
+
+        
+    
+    
+            var circle_marker_cc7f55b1ada9d9766059e14c09c88f2a = L.circleMarker(
+                [49.19498789, 16.60646068],
+                {"bubblingMouseEvents": true, "color": "#3fbc73", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3fbc73", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_d3c27891d79532223f2afb0feeff793d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3776b01ac39d5dd91fb334578ff05671 = $(`<div id="html_3776b01ac39d5dd91fb334578ff05671" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -75 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_d3c27891d79532223f2afb0feeff793d.setContent(html_3776b01ac39d5dd91fb334578ff05671);
+            
+        
+
+        circle_marker_cc7f55b1ada9d9766059e14c09c88f2a.bindPopup(popup_d3c27891d79532223f2afb0feeff793d)
+        ;
+
+        
+    
+    
+            var circle_marker_60593834615e4cdd50d17c2e5aa75d33 = L.circleMarker(
+                [49.19498789, 16.60646068],
+                {"bubblingMouseEvents": true, "color": "#73d056", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#73d056", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_c9156d9f778da4c8c3f5a858bd4baffd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b865943c16fe04b177c0e31aa701bf5a = $(`<div id="html_b865943c16fe04b177c0e31aa701bf5a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -67 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_c9156d9f778da4c8c3f5a858bd4baffd.setContent(html_b865943c16fe04b177c0e31aa701bf5a);
+            
+        
+
+        circle_marker_60593834615e4cdd50d17c2e5aa75d33.bindPopup(popup_c9156d9f778da4c8c3f5a858bd4baffd)
+        ;
+
+        
+    
+    
+            var circle_marker_ebfe8a413963a2fc71e155393d7dbd0e = L.circleMarker(
+                [49.19521459, 16.60646278],
+                {"bubblingMouseEvents": true, "color": "#5ec962", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5ec962", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_56bf3437871353959db1ff697d78e471 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e42344e654409dfd3026e2344ad4422d = $(`<div id="html_e42344e654409dfd3026e2344ad4422d" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -70 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_56bf3437871353959db1ff697d78e471.setContent(html_e42344e654409dfd3026e2344ad4422d);
+            
+        
+
+        circle_marker_ebfe8a413963a2fc71e155393d7dbd0e.bindPopup(popup_56bf3437871353959db1ff697d78e471)
+        ;
+
+        
+    
+    
+            var circle_marker_b4a0eab68bb63abd7b25821e5d447b51 = L.circleMarker(
+                [49.19521459, 16.60646278],
+                {"bubblingMouseEvents": true, "color": "#38b977", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#38b977", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_598b7a4d1d614de9ba2ad179b580e9cb = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_39ac3a47be101c7952d9d549f90fe604 = $(`<div id="html_39ac3a47be101c7952d9d549f90fe604" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -76 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_598b7a4d1d614de9ba2ad179b580e9cb.setContent(html_39ac3a47be101c7952d9d549f90fe604);
+            
+        
+
+        circle_marker_b4a0eab68bb63abd7b25821e5d447b51.bindPopup(popup_598b7a4d1d614de9ba2ad179b580e9cb)
+        ;
+
+        
+    
+    
+            var circle_marker_1422b784197a4bab6c4102295059fd89 = L.circleMarker(
+                [49.19521459, 16.60646278],
+                {"bubblingMouseEvents": true, "color": "#50c46a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#50c46a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_2eea76dd0952b9090ca0d50a5ffe81b0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fcb17e9ee190025fa14b3d405c08fc58 = $(`<div id="html_fcb17e9ee190025fa14b3d405c08fc58" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -72 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_2eea76dd0952b9090ca0d50a5ffe81b0.setContent(html_fcb17e9ee190025fa14b3d405c08fc58);
+            
+        
+
+        circle_marker_1422b784197a4bab6c4102295059fd89.bindPopup(popup_2eea76dd0952b9090ca0d50a5ffe81b0)
+        ;
+
+        
+    
+    
+            var circle_marker_edde744f2b3ab7fe479bb313ed2962b0 = L.circleMarker(
+                [49.19541022, 16.60626796],
+                {"bubblingMouseEvents": true, "color": "#50c46a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#50c46a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_069fb42fc81d4361132b0c11db6f7b61 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d3219ccb06fd29433d6347fa8903dfa1 = $(`<div id="html_d3219ccb06fd29433d6347fa8903dfa1" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -72 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_069fb42fc81d4361132b0c11db6f7b61.setContent(html_d3219ccb06fd29433d6347fa8903dfa1);
+            
+        
+
+        circle_marker_edde744f2b3ab7fe479bb313ed2962b0.bindPopup(popup_069fb42fc81d4361132b0c11db6f7b61)
+        ;
+
+        
+    
+    
+            var circle_marker_97e3126a43274c13d8856923a85810ad = L.circleMarker(
+                [49.19562465, 16.60610634],
+                {"bubblingMouseEvents": true, "color": "#44bf70", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#44bf70", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_839abf3031f55190f25012c244257f1c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_482bc7bf2b7469ec9850af37917c5e7c = $(`<div id="html_482bc7bf2b7469ec9850af37917c5e7c" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -74 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_839abf3031f55190f25012c244257f1c.setContent(html_482bc7bf2b7469ec9850af37917c5e7c);
+            
+        
+
+        circle_marker_97e3126a43274c13d8856923a85810ad.bindPopup(popup_839abf3031f55190f25012c244257f1c)
+        ;
+
+        
+    
+    
+            var circle_marker_5ce1306d37e01f562ab013d6fe4c8ef0 = L.circleMarker(
+                [49.19562465, 16.60610634],
+                {"bubblingMouseEvents": true, "color": "#34b679", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34b679", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_8527f8090481e4588e28a7098f0984fa = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3a3ddbb55a1651406a6d6df8694e7437 = $(`<div id="html_3a3ddbb55a1651406a6d6df8694e7437" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -77 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_8527f8090481e4588e28a7098f0984fa.setContent(html_3a3ddbb55a1651406a6d6df8694e7437);
+            
+        
+
+        circle_marker_5ce1306d37e01f562ab013d6fe4c8ef0.bindPopup(popup_8527f8090481e4588e28a7098f0984fa)
+        ;
+
+        
+    
+    
+            var circle_marker_1b9c3ef888c898defe20ecfb1021ea20 = L.circleMarker(
+                [49.19585715, 16.60604405],
+                {"bubblingMouseEvents": true, "color": "#34b679", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34b679", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_dc5cc4397fd8ec5d82542084842cd5b1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_dae0b6a3d0f324036324ff130e47fab2 = $(`<div id="html_dae0b6a3d0f324036324ff130e47fab2" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -77 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_dc5cc4397fd8ec5d82542084842cd5b1.setContent(html_dae0b6a3d0f324036324ff130e47fab2);
+            
+        
+
+        circle_marker_1b9c3ef888c898defe20ecfb1021ea20.bindPopup(popup_dc5cc4397fd8ec5d82542084842cd5b1)
+        ;
+
+        
+    
+    
+            var circle_marker_eb9d580f1a69a676651ca554c015d752 = L.circleMarker(
+                [49.19607581, 16.60593372],
+                {"bubblingMouseEvents": true, "color": "#65cb5e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#65cb5e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_e59cef0ff98cbacf639446b6eab797e7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_83989e30ff344e6194b88038e91543cc = $(`<div id="html_83989e30ff344e6194b88038e91543cc" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -69 dBm<br> <b>RSRQ:</b> -7 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_e59cef0ff98cbacf639446b6eab797e7.setContent(html_83989e30ff344e6194b88038e91543cc);
+            
+        
+
+        circle_marker_eb9d580f1a69a676651ca554c015d752.bindPopup(popup_e59cef0ff98cbacf639446b6eab797e7)
+        ;
+
+        
+    
+    
+            var circle_marker_980d5f0d0c25f0fbf8c1e0d593837f27 = L.circleMarker(
+                [49.19629988, 16.60582682],
+                {"bubblingMouseEvents": true, "color": "#28ae80", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#28ae80", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_9805c49a011af725f1dd9098a42e48db = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_533dee7521606ab2fc2dfe0b2f943972 = $(`<div id="html_533dee7521606ab2fc2dfe0b2f943972" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -80 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_9805c49a011af725f1dd9098a42e48db.setContent(html_533dee7521606ab2fc2dfe0b2f943972);
+            
+        
+
+        circle_marker_980d5f0d0c25f0fbf8c1e0d593837f27.bindPopup(popup_9805c49a011af725f1dd9098a42e48db)
+        ;
+
+        
+    
+    
+            var circle_marker_5b150f5d709fa569a06b1b5ea4b96643 = L.circleMarker(
+                [49.19629988, 16.60582682],
+                {"bubblingMouseEvents": true, "color": "#38b977", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#38b977", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_2aca3832cd1397c2b293a8ba54d12ccd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fbf72b6c9e2c8f78474df63619b8e25a = $(`<div id="html_fbf72b6c9e2c8f78474df63619b8e25a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -76 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_2aca3832cd1397c2b293a8ba54d12ccd.setContent(html_fbf72b6c9e2c8f78474df63619b8e25a);
+            
+        
+
+        circle_marker_5b150f5d709fa569a06b1b5ea4b96643.bindPopup(popup_2aca3832cd1397c2b293a8ba54d12ccd)
+        ;
+
+        
+    
+    
+            var circle_marker_9e1667be63a8a5852ff2dedd4e1a169a = L.circleMarker(
+                [49.19651047, 16.60569594],
+                {"bubblingMouseEvents": true, "color": "#38b977", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#38b977", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_1d39669da7ea9d853fbb6e56c5f3492c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2cdc0e1c9346f42bcd7e7ac2e904badc = $(`<div id="html_2cdc0e1c9346f42bcd7e7ac2e904badc" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -76 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_1d39669da7ea9d853fbb6e56c5f3492c.setContent(html_2cdc0e1c9346f42bcd7e7ac2e904badc);
+            
+        
+
+        circle_marker_9e1667be63a8a5852ff2dedd4e1a169a.bindPopup(popup_1d39669da7ea9d853fbb6e56c5f3492c)
+        ;
+
+        
+    
+    
+            var circle_marker_ce5b993e777c9d26728b796e39459195 = L.circleMarker(
+                [49.19674238, 16.60565123],
+                {"bubblingMouseEvents": true, "color": "#2cb17e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2cb17e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_60d847e533d8998168c1400fb94a75e4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1c985df485e50dfab17f5f87fae8b52d = $(`<div id="html_1c985df485e50dfab17f5f87fae8b52d" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -79 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_60d847e533d8998168c1400fb94a75e4.setContent(html_1c985df485e50dfab17f5f87fae8b52d);
+            
+        
+
+        circle_marker_ce5b993e777c9d26728b796e39459195.bindPopup(popup_60d847e533d8998168c1400fb94a75e4)
+        ;
+
+        
+    
+    
+            var circle_marker_baca1cd4760dac18ab4e1940eea80733 = L.circleMarker(
+                [49.19696796, 16.60557813],
+                {"bubblingMouseEvents": true, "color": "#25ab82", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25ab82", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_b396a5f0c5904034236dd26e14646ca1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8988b0d6cc21e7b62db2e49d87ad26ab = $(`<div id="html_8988b0d6cc21e7b62db2e49d87ad26ab" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -81 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_b396a5f0c5904034236dd26e14646ca1.setContent(html_8988b0d6cc21e7b62db2e49d87ad26ab);
+            
+        
+
+        circle_marker_baca1cd4760dac18ab4e1940eea80733.bindPopup(popup_b396a5f0c5904034236dd26e14646ca1)
+        ;
+
+        
+    
+    
+            var circle_marker_511881c443e870ddbd8fe188ee815fbe = L.circleMarker(
+                [49.19696796, 16.60557813],
+                {"bubblingMouseEvents": true, "color": "#25ab82", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25ab82", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_35c73fdfbfa73b79a70ab26d924ee810 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_27f267a2c67d49145884ff13fc11ff05 = $(`<div id="html_27f267a2c67d49145884ff13fc11ff05" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -81 dBm<br> <b>RSRQ:</b> -8 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_35c73fdfbfa73b79a70ab26d924ee810.setContent(html_27f267a2c67d49145884ff13fc11ff05);
+            
+        
+
+        circle_marker_511881c443e870ddbd8fe188ee815fbe.bindPopup(popup_35c73fdfbfa73b79a70ab26d924ee810)
+        ;
+
+        
+    
+    
+            var circle_marker_416d4413da762540372033c25b70313a = L.circleMarker(
+                [49.19719408, 16.60554081],
+                {"bubblingMouseEvents": true, "color": "#25ab82", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25ab82", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_de4cd57942e700ca9a788838803201a9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_45d2fbf1a68cc1a54dada58e871505e6 = $(`<div id="html_45d2fbf1a68cc1a54dada58e871505e6" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -81 dBm<br> <b>RSRQ:</b> -8 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_de4cd57942e700ca9a788838803201a9.setContent(html_45d2fbf1a68cc1a54dada58e871505e6);
+            
+        
+
+        circle_marker_416d4413da762540372033c25b70313a.bindPopup(popup_de4cd57942e700ca9a788838803201a9)
+        ;
+
+        
+    
+    
+            var circle_marker_b4f6ffa2adb455bcae1284dde88b2d99 = L.circleMarker(
+                [49.19741886, 16.60558905],
+                {"bubblingMouseEvents": true, "color": "#2cb17e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2cb17e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_0bbc2c0ead15776a9c6e8de912d075f5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a152b3ad68e8a2f3255e4f8b3a18cb1a = $(`<div id="html_a152b3ad68e8a2f3255e4f8b3a18cb1a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -79 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_0bbc2c0ead15776a9c6e8de912d075f5.setContent(html_a152b3ad68e8a2f3255e4f8b3a18cb1a);
+            
+        
+
+        circle_marker_b4f6ffa2adb455bcae1284dde88b2d99.bindPopup(popup_0bbc2c0ead15776a9c6e8de912d075f5)
+        ;
+
+        
+    
+    
+            var circle_marker_234955fa81d3753e3ac7eb3afe71e255 = L.circleMarker(
+                [49.19748931, 16.60592703],
+                {"bubblingMouseEvents": true, "color": "#2fb47c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2fb47c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_5aac04459169394e080349d328f876b7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e6e2197c1abd35b0110e0958c7f55c5b = $(`<div id="html_e6e2197c1abd35b0110e0958c7f55c5b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -78 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_5aac04459169394e080349d328f876b7.setContent(html_e6e2197c1abd35b0110e0958c7f55c5b);
+            
+        
+
+        circle_marker_234955fa81d3753e3ac7eb3afe71e255.bindPopup(popup_5aac04459169394e080349d328f876b7)
+        ;
+
+        
+    
+    
+            var circle_marker_c5598e17eb9a08e0448d061edda212a0 = L.circleMarker(
+                [49.19748931, 16.60592703],
+                {"bubblingMouseEvents": true, "color": "#44bf70", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#44bf70", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_dfeeedb6185794d9d899fc6fdbaae0d4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a9a70893dfb958bbc4592e9989fec410 = $(`<div id="html_a9a70893dfb958bbc4592e9989fec410" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -74 dBm<br> <b>RSRQ:</b> -8 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_dfeeedb6185794d9d899fc6fdbaae0d4.setContent(html_a9a70893dfb958bbc4592e9989fec410);
+            
+        
+
+        circle_marker_c5598e17eb9a08e0448d061edda212a0.bindPopup(popup_dfeeedb6185794d9d899fc6fdbaae0d4)
+        ;
+
+        
+    
+    
+            var circle_marker_3037c8a52e7dae70ef455da1dbf9286d = L.circleMarker(
+                [49.19755433, 16.60627072],
+                {"bubblingMouseEvents": true, "color": "#6ccd5a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6ccd5a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_9d290cb6bad8143b7cff6a868f5ed835 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_37f396b2b7a18c92fa9a38fc1a3fac5b = $(`<div id="html_37f396b2b7a18c92fa9a38fc1a3fac5b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -68 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_9d290cb6bad8143b7cff6a868f5ed835.setContent(html_37f396b2b7a18c92fa9a38fc1a3fac5b);
+            
+        
+
+        circle_marker_3037c8a52e7dae70ef455da1dbf9286d.bindPopup(popup_9d290cb6bad8143b7cff6a868f5ed835)
+        ;
+
+        
+    
+    
+            var circle_marker_2839f23ec4a3208f228774b6b633a44b = L.circleMarker(
+                [49.19761957, 16.60660868],
+                {"bubblingMouseEvents": true, "color": "#6ccd5a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6ccd5a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_98d9919ac5573229598ea1d55c66c3e8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3551eb34b223403d74093bcb419fd408 = $(`<div id="html_3551eb34b223403d74093bcb419fd408" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -68 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_98d9919ac5573229598ea1d55c66c3e8.setContent(html_3551eb34b223403d74093bcb419fd408);
+            
+        
+
+        circle_marker_2839f23ec4a3208f228774b6b633a44b.bindPopup(popup_98d9919ac5573229598ea1d55c66c3e8)
+        ;
+
+        
+    
+    
+            var circle_marker_b0cf9e6d657267579cc890d7e4df203b = L.circleMarker(
+                [49.19760645, 16.60696795],
+                {"bubblingMouseEvents": true, "color": "#73d056", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#73d056", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_33e18061b345979846f9d6e4402ea4d4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a573c49509b4abc01711161b46f34030 = $(`<div id="html_a573c49509b4abc01711161b46f34030" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -67 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_33e18061b345979846f9d6e4402ea4d4.setContent(html_a573c49509b4abc01711161b46f34030);
+            
+        
+
+        circle_marker_b0cf9e6d657267579cc890d7e4df203b.bindPopup(popup_33e18061b345979846f9d6e4402ea4d4)
+        ;
+
+        
+    
+    
+            var circle_marker_f18f4922f2d102727659cd586d078659 = L.circleMarker(
+                [49.19750441, 16.60729733],
+                {"bubblingMouseEvents": true, "color": "#44bf70", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#44bf70", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_960b5569b239a656a77c3041af9e32a6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c0137d58a47bc335b4c9b0b14a48321b = $(`<div id="html_c0137d58a47bc335b4c9b0b14a48321b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -74 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_960b5569b239a656a77c3041af9e32a6.setContent(html_c0137d58a47bc335b4c9b0b14a48321b);
+            
+        
+
+        circle_marker_f18f4922f2d102727659cd586d078659.bindPopup(popup_960b5569b239a656a77c3041af9e32a6)
+        ;
+
+        
+    
+    
+            var circle_marker_d0c32e019d899485221d01c2138ba334 = L.circleMarker(
+                [49.19747543, 16.60764605],
+                {"bubblingMouseEvents": true, "color": "#38b977", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#38b977", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_de5ebf85c75f870f34db0e90da809a6b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_018cf24f2da759bb0658a1f87c3199b2 = $(`<div id="html_018cf24f2da759bb0658a1f87c3199b2" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -76 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_de5ebf85c75f870f34db0e90da809a6b.setContent(html_018cf24f2da759bb0658a1f87c3199b2);
+            
+        
+
+        circle_marker_d0c32e019d899485221d01c2138ba334.bindPopup(popup_de5ebf85c75f870f34db0e90da809a6b)
+        ;
+
+        
+    
+    
+            var circle_marker_fc937ae4e28c4f6ff036eaa80c346c47 = L.circleMarker(
+                [49.19747255, 16.60800323],
+                {"bubblingMouseEvents": true, "color": "#2cb17e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2cb17e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_40e6dfc743c7bfe8c43766a2d227c3af = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_afe8be74201fa6fe0a44851af24b80cd = $(`<div id="html_afe8be74201fa6fe0a44851af24b80cd" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -79 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_40e6dfc743c7bfe8c43766a2d227c3af.setContent(html_afe8be74201fa6fe0a44851af24b80cd);
+            
+        
+
+        circle_marker_fc937ae4e28c4f6ff036eaa80c346c47.bindPopup(popup_40e6dfc743c7bfe8c43766a2d227c3af)
+        ;
+
+        
+    
+    
+            var circle_marker_1b9ccc1145638395feb8ad7490b6634b = L.circleMarker(
+                [49.19747072, 16.60834965],
+                {"bubblingMouseEvents": true, "color": "#22a884", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#22a884", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_0519f7db544f4b2b8cf32f624a594ff3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_45b86b19ba64f44f0a3d18c0a01d2f1c = $(`<div id="html_45b86b19ba64f44f0a3d18c0a01d2f1c" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -82 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_0519f7db544f4b2b8cf32f624a594ff3.setContent(html_45b86b19ba64f44f0a3d18c0a01d2f1c);
+            
+        
+
+        circle_marker_1b9ccc1145638395feb8ad7490b6634b.bindPopup(popup_0519f7db544f4b2b8cf32f624a594ff3)
+        ;
+
+        
+    
+    
+            var circle_marker_cc22d6bcebfccd785af863c752681f9f = L.circleMarker(
+                [49.19752503, 16.60868801],
+                {"bubblingMouseEvents": true, "color": "#21918c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21918c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_be40b484d5a0e22e85edc469d2970f8b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fc4e35ecc6502738a711982950775daf = $(`<div id="html_fc4e35ecc6502738a711982950775daf" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -90 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_be40b484d5a0e22e85edc469d2970f8b.setContent(html_fc4e35ecc6502738a711982950775daf);
+            
+        
+
+        circle_marker_cc22d6bcebfccd785af863c752681f9f.bindPopup(popup_be40b484d5a0e22e85edc469d2970f8b)
+        ;
+
+        
+    
+    
+            var circle_marker_2348c691a777ca5b9265e3f0b0366169 = L.circleMarker(
+                [49.19752503, 16.60868801],
+                {"bubblingMouseEvents": true, "color": "#1fa088", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa088", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_2558778c60edb5c36b9645258e06f41d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6b6420cd3234cd8f7765d613376be1f5 = $(`<div id="html_6b6420cd3234cd8f7765d613376be1f5" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -85 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_2558778c60edb5c36b9645258e06f41d.setContent(html_6b6420cd3234cd8f7765d613376be1f5);
+            
+        
+
+        circle_marker_2348c691a777ca5b9265e3f0b0366169.bindPopup(popup_2558778c60edb5c36b9645258e06f41d)
+        ;
+
+        
+    
+    
+            var circle_marker_b07d6c2686093915d02cd18c347b4d44 = L.circleMarker(
+                [49.19736323, 16.60893117],
+                {"bubblingMouseEvents": true, "color": "#28ae80", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#28ae80", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_b3f556484fcf078abe1f55296f15e0bf = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0af0bc5b784288566c8f9cf1d5759d91 = $(`<div id="html_0af0bc5b784288566c8f9cf1d5759d91" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -80 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_b3f556484fcf078abe1f55296f15e0bf.setContent(html_0af0bc5b784288566c8f9cf1d5759d91);
+            
+        
+
+        circle_marker_b07d6c2686093915d02cd18c347b4d44.bindPopup(popup_b3f556484fcf078abe1f55296f15e0bf)
+        ;
+
+        
+    
+    
+            var circle_marker_2515d3c835c7b1896764b74303d0c515 = L.circleMarker(
+                [49.19714229, 16.60905831],
+                {"bubblingMouseEvents": true, "color": "#2fb47c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2fb47c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_b7dd3d91a14c531ddb449a6edd633095 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_aa3aa95a986a962e935d30b3b3f05387 = $(`<div id="html_aa3aa95a986a962e935d30b3b3f05387" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -78 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_b7dd3d91a14c531ddb449a6edd633095.setContent(html_aa3aa95a986a962e935d30b3b3f05387);
+            
+        
+
+        circle_marker_2515d3c835c7b1896764b74303d0c515.bindPopup(popup_b7dd3d91a14c531ddb449a6edd633095)
+        ;
+
+        
+    
+    
+            var circle_marker_2a5ab21289eaaadf62ad8cd2716cb494 = L.circleMarker(
+                [49.19690851, 16.60910675],
+                {"bubblingMouseEvents": true, "color": "#6ccd5a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6ccd5a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_b67c63660da22d708b0d18b6d9736a86 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4cdc2dbb6ad73ffb9585a841fc237cd4 = $(`<div id="html_4cdc2dbb6ad73ffb9585a841fc237cd4" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -68 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_b67c63660da22d708b0d18b6d9736a86.setContent(html_4cdc2dbb6ad73ffb9585a841fc237cd4);
+            
+        
+
+        circle_marker_2a5ab21289eaaadf62ad8cd2716cb494.bindPopup(popup_b67c63660da22d708b0d18b6d9736a86)
+        ;
+
+        
+    
+    
+            var circle_marker_a45ef1d537cac1f3f2bb3b0c4cbf3b35 = L.circleMarker(
+                [49.19670656, 16.60926292],
+                {"bubblingMouseEvents": true, "color": "#2fb47c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2fb47c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_35ac3091d7449abd5291fbb5609c9269 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ba79f2f9bbe2a1b31791e9b31c9abfbd = $(`<div id="html_ba79f2f9bbe2a1b31791e9b31c9abfbd" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -78 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_35ac3091d7449abd5291fbb5609c9269.setContent(html_ba79f2f9bbe2a1b31791e9b31c9abfbd);
+            
+        
+
+        circle_marker_a45ef1d537cac1f3f2bb3b0c4cbf3b35.bindPopup(popup_35ac3091d7449abd5291fbb5609c9269)
+        ;
+
+        
+    
+    
+            var circle_marker_8839d12ca7ac274aa202c035acd56ace = L.circleMarker(
+                [49.19670656, 16.60926292],
+                {"bubblingMouseEvents": true, "color": "#65cb5e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#65cb5e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_d64f14e0b8fc6a0752a489caa41f8565 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_992733568bd31423aa7b776e55744206 = $(`<div id="html_992733568bd31423aa7b776e55744206" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -69 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_d64f14e0b8fc6a0752a489caa41f8565.setContent(html_992733568bd31423aa7b776e55744206);
+            
+        
+
+        circle_marker_8839d12ca7ac274aa202c035acd56ace.bindPopup(popup_d64f14e0b8fc6a0752a489caa41f8565)
+        ;
+
+        
+    
+    
+            var circle_marker_1de3f20e286c852b37dd2b9dd7dd279d = L.circleMarker(
+                [49.19650266, 16.60941853],
+                {"bubblingMouseEvents": true, "color": "#65cb5e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#65cb5e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_dc015df768c9a3e12148c696ecabc101 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_17132c062f975f15239a3a1232673cd2 = $(`<div id="html_17132c062f975f15239a3a1232673cd2" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -69 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_dc015df768c9a3e12148c696ecabc101.setContent(html_17132c062f975f15239a3a1232673cd2);
+            
+        
+
+        circle_marker_1de3f20e286c852b37dd2b9dd7dd279d.bindPopup(popup_dc015df768c9a3e12148c696ecabc101)
+        ;
+
+        
+    
+    
+            var circle_marker_c0eadcaaf530b6d72b4f5568a6ebb518 = L.circleMarker(
+                [49.19626696, 16.60940865],
+                {"bubblingMouseEvents": true, "color": "#34b679", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34b679", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_0b59c6fa47063ba96ecee38152ed04a6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_625adf5922169d9bbffe9d625867a4ec = $(`<div id="html_625adf5922169d9bbffe9d625867a4ec" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -77 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_0b59c6fa47063ba96ecee38152ed04a6.setContent(html_625adf5922169d9bbffe9d625867a4ec);
+            
+        
+
+        circle_marker_c0eadcaaf530b6d72b4f5568a6ebb518.bindPopup(popup_0b59c6fa47063ba96ecee38152ed04a6)
+        ;
+
+        
+    
+    
+            var circle_marker_9baa75b5a54bac0597070c5f2f7a9010 = L.circleMarker(
+                [49.19603908, 16.60952098],
+                {"bubblingMouseEvents": true, "color": "#2fb47c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2fb47c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_4eba442a2a895badf68660e62ad5f937 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d8460cca1c30dc924e8f988ad78e1dc8 = $(`<div id="html_d8460cca1c30dc924e8f988ad78e1dc8" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -78 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_4eba442a2a895badf68660e62ad5f937.setContent(html_d8460cca1c30dc924e8f988ad78e1dc8);
+            
+        
+
+        circle_marker_9baa75b5a54bac0597070c5f2f7a9010.bindPopup(popup_4eba442a2a895badf68660e62ad5f937)
+        ;
+
+        
+    
+    
+            var circle_marker_ce2168d894742e851a3c4398461ad98d = L.circleMarker(
+                [49.19583208, 16.60969302],
+                {"bubblingMouseEvents": true, "color": "#2fb47c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2fb47c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_4b617a84b73ceb408ae2ebc54bdcf699 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_91cfc28be9b9310fa336a38134973017 = $(`<div id="html_91cfc28be9b9310fa336a38134973017" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -78 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_4b617a84b73ceb408ae2ebc54bdcf699.setContent(html_91cfc28be9b9310fa336a38134973017);
+            
+        
+
+        circle_marker_ce2168d894742e851a3c4398461ad98d.bindPopup(popup_4b617a84b73ceb408ae2ebc54bdcf699)
+        ;
+
+        
+    
+    
+            var circle_marker_c0ed1b04ac964fc42f2feb5fad9ffbb5 = L.circleMarker(
+                [49.19583208, 16.60969302],
+                {"bubblingMouseEvents": true, "color": "#2fb47c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2fb47c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_29f8dffe37f1cc291730d3fa4c09a64f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8defe66bb53314ec2990633ee043de26 = $(`<div id="html_8defe66bb53314ec2990633ee043de26" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -78 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_29f8dffe37f1cc291730d3fa4c09a64f.setContent(html_8defe66bb53314ec2990633ee043de26);
+            
+        
+
+        circle_marker_c0ed1b04ac964fc42f2feb5fad9ffbb5.bindPopup(popup_29f8dffe37f1cc291730d3fa4c09a64f)
+        ;
+
+        
+    
+    
+            var circle_marker_7d097030cf46344c6e831a47f015f078 = L.circleMarker(
+                [49.19560251, 16.60981525],
+                {"bubblingMouseEvents": true, "color": "#2fb47c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2fb47c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_10d78a71545c4e04b7ef6d8b8649ca26 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c5b86080b38b1b39fbc4b3c1fd49eeb6 = $(`<div id="html_c5b86080b38b1b39fbc4b3c1fd49eeb6" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -78 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_10d78a71545c4e04b7ef6d8b8649ca26.setContent(html_c5b86080b38b1b39fbc4b3c1fd49eeb6);
+            
+        
+
+        circle_marker_7d097030cf46344c6e831a47f015f078.bindPopup(popup_10d78a71545c4e04b7ef6d8b8649ca26)
+        ;
+
+        
+    
+    
+            var circle_marker_8eaea7ae3a78c80e43a346394d8be688 = L.circleMarker(
+                [49.19560251, 16.60981525],
+                {"bubblingMouseEvents": true, "color": "#6ccd5a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6ccd5a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_16589feae44945e5d5c13da2dcf2a29e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7359d84b806fe15ef6e3f2ebdc668b16 = $(`<div id="html_7359d84b806fe15ef6e3f2ebdc668b16" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -68 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_16589feae44945e5d5c13da2dcf2a29e.setContent(html_7359d84b806fe15ef6e3f2ebdc668b16);
+            
+        
+
+        circle_marker_8eaea7ae3a78c80e43a346394d8be688.bindPopup(popup_16589feae44945e5d5c13da2dcf2a29e)
+        ;
+
+        
+    
+    
+            var circle_marker_5441a60c1c04de4de62e85011afffdb9 = L.circleMarker(
+                [49.19536986, 16.60981035],
+                {"bubblingMouseEvents": true, "color": "#6ccd5a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6ccd5a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_da095b77c64f33abdc0dbb6f7031bb32 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8403f8c24769161ef67620f12c4dd294 = $(`<div id="html_8403f8c24769161ef67620f12c4dd294" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -68 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_da095b77c64f33abdc0dbb6f7031bb32.setContent(html_8403f8c24769161ef67620f12c4dd294);
+            
+        
+
+        circle_marker_5441a60c1c04de4de62e85011afffdb9.bindPopup(popup_da095b77c64f33abdc0dbb6f7031bb32)
+        ;
+
+        
+    
+    
+            var circle_marker_6ae72b5fa8376444cb5890d948b4e96f = L.circleMarker(
+                [49.19515114, 16.60995309],
+                {"bubblingMouseEvents": true, "color": "#44bf70", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#44bf70", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_dd46aa4664e3c8cc4a58ca01b4361f91 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_73f6e591756e60892d6bb7a0304d208b = $(`<div id="html_73f6e591756e60892d6bb7a0304d208b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -74 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 7.0 dB<br></div>`)[0];
+                popup_dd46aa4664e3c8cc4a58ca01b4361f91.setContent(html_73f6e591756e60892d6bb7a0304d208b);
+            
+        
+
+        circle_marker_6ae72b5fa8376444cb5890d948b4e96f.bindPopup(popup_dd46aa4664e3c8cc4a58ca01b4361f91)
+        ;
+
+        
+    
+    
+            var circle_marker_814826dadbce840859fdff9301e2c895 = L.circleMarker(
+                [49.19515114, 16.60995309],
+                {"bubblingMouseEvents": true, "color": "#2cb17e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2cb17e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_518239cffe8f319264051a665ca9af28 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1c9cafb992d40ae656764b7fcd56b49f = $(`<div id="html_1c9cafb992d40ae656764b7fcd56b49f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -79 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_518239cffe8f319264051a665ca9af28.setContent(html_1c9cafb992d40ae656764b7fcd56b49f);
+            
+        
+
+        circle_marker_814826dadbce840859fdff9301e2c895.bindPopup(popup_518239cffe8f319264051a665ca9af28)
+        ;
+
+        
+    
+    
+            var circle_marker_caf797264080ec1efec3afbbdc3068bf = L.circleMarker(
+                [49.19495139, 16.61014078],
+                {"bubblingMouseEvents": true, "color": "#2cb17e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2cb17e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_5322e62091704332cb6cc5af329852b1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d5e3f378b4597c8e4308ebcca9976efa = $(`<div id="html_d5e3f378b4597c8e4308ebcca9976efa" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -79 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_5322e62091704332cb6cc5af329852b1.setContent(html_d5e3f378b4597c8e4308ebcca9976efa);
+            
+        
+
+        circle_marker_caf797264080ec1efec3afbbdc3068bf.bindPopup(popup_5322e62091704332cb6cc5af329852b1)
+        ;
+
+        
+    
+    
+            var circle_marker_c1f7392e359e77688c3627954f150624 = L.circleMarker(
+                [49.19495139, 16.61014078],
+                {"bubblingMouseEvents": true, "color": "#1fa088", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa088", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_0584da1448e22c7588d5f8d188d09601 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e512338555fea4041e83ceb0bf5ce951 = $(`<div id="html_e512338555fea4041e83ceb0bf5ce951" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -85 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_0584da1448e22c7588d5f8d188d09601.setContent(html_e512338555fea4041e83ceb0bf5ce951);
+            
+        
+
+        circle_marker_c1f7392e359e77688c3627954f150624.bindPopup(popup_0584da1448e22c7588d5f8d188d09601)
+        ;
+
+        
+    
+    
+            var circle_marker_0b337c5fffc24c27ffd7aab4c42c99f0 = L.circleMarker(
+                [49.19475996, 16.61032238],
+                {"bubblingMouseEvents": true, "color": "#1fa088", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa088", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_2945a115c8780dfef950e195f492ccb7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_837d2c27a91b8e769d0d54cdfd1c943b = $(`<div id="html_837d2c27a91b8e769d0d54cdfd1c943b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -85 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_2945a115c8780dfef950e195f492ccb7.setContent(html_837d2c27a91b8e769d0d54cdfd1c943b);
+            
+        
+
+        circle_marker_0b337c5fffc24c27ffd7aab4c42c99f0.bindPopup(popup_2945a115c8780dfef950e195f492ccb7)
+        ;
+
+        
+    
+    
+            var circle_marker_5aebd3076c3b4d34b0cdaa6206495438 = L.circleMarker(
+                [49.19455114, 16.61050992],
+                {"bubblingMouseEvents": true, "color": "#21a585", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21a585", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_e612a0b5952522954431834b2de215c5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fc0e599c9317646d0ca4abe90a8de7e5 = $(`<div id="html_fc0e599c9317646d0ca4abe90a8de7e5" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -83 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_e612a0b5952522954431834b2de215c5.setContent(html_fc0e599c9317646d0ca4abe90a8de7e5);
+            
+        
+
+        circle_marker_5aebd3076c3b4d34b0cdaa6206495438.bindPopup(popup_e612a0b5952522954431834b2de215c5)
+        ;
+
+        
+    
+    
+            var circle_marker_1e4d1dd98708e34f4b4b094a5c1c75aa = L.circleMarker(
+                [49.19438432, 16.61074154],
+                {"bubblingMouseEvents": true, "color": "#22a884", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#22a884", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_84faa09019f0aa9dc1a58eed6e59efb1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f29a470c1a59843086b0e04d25c22e2c = $(`<div id="html_f29a470c1a59843086b0e04d25c22e2c" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -82 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_84faa09019f0aa9dc1a58eed6e59efb1.setContent(html_f29a470c1a59843086b0e04d25c22e2c);
+            
+        
+
+        circle_marker_1e4d1dd98708e34f4b4b094a5c1c75aa.bindPopup(popup_84faa09019f0aa9dc1a58eed6e59efb1)
+        ;
+
+        
+    
+    
+            var circle_marker_db91eb546e471f85859a960a30d50704 = L.circleMarker(
+                [49.19421008, 16.61096143],
+                {"bubblingMouseEvents": true, "color": "#21918c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21918c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_e5e394e7d8bcc4790fca95c129aac335 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c064489cdce079ceb4fe17a52436a3b3 = $(`<div id="html_c064489cdce079ceb4fe17a52436a3b3" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -90 dBm<br> <b>RSRQ:</b> -20 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_e5e394e7d8bcc4790fca95c129aac335.setContent(html_c064489cdce079ceb4fe17a52436a3b3);
+            
+        
+
+        circle_marker_db91eb546e471f85859a960a30d50704.bindPopup(popup_e5e394e7d8bcc4790fca95c129aac335)
+        ;
+
+        
+    
+    
+            var circle_marker_58c15734fb25e6ceafd3e208c6de7f2f = L.circleMarker(
+                [49.19421008, 16.61096143],
+                {"bubblingMouseEvents": true, "color": "#28ae80", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#28ae80", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_6336ac3462495a2d3592a47b6b25a221 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1e084ffdf73630d75a3beb4d612a0537 = $(`<div id="html_1e084ffdf73630d75a3beb4d612a0537" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -80 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_6336ac3462495a2d3592a47b6b25a221.setContent(html_1e084ffdf73630d75a3beb4d612a0537);
+            
+        
+
+        circle_marker_58c15734fb25e6ceafd3e208c6de7f2f.bindPopup(popup_6336ac3462495a2d3592a47b6b25a221)
+        ;
+
+        
+    
+    
+            var circle_marker_48f9d2893ac394a9c413f2ac2c083777 = L.circleMarker(
+                [49.19400782, 16.61114083],
+                {"bubblingMouseEvents": true, "color": "#28ae80", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#28ae80", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_3f8a1ba27828bb2dbfd20fc814acbc0d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_53687008089630391a66ab19379934d0 = $(`<div id="html_53687008089630391a66ab19379934d0" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -80 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_3f8a1ba27828bb2dbfd20fc814acbc0d.setContent(html_53687008089630391a66ab19379934d0);
+            
+        
+
+        circle_marker_48f9d2893ac394a9c413f2ac2c083777.bindPopup(popup_3f8a1ba27828bb2dbfd20fc814acbc0d)
+        ;
+
+        
+    
+    
+            var circle_marker_313149167e7f9256ee3efe78dc72c06a = L.circleMarker(
+                [49.19382479, 16.61135725],
+                {"bubblingMouseEvents": true, "color": "#1fa287", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa287", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_08031c818de7e99c104c11d9c260de34 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a5a7b4dfa26881c9b567ffb7db17e4ee = $(`<div id="html_a5a7b4dfa26881c9b567ffb7db17e4ee" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -84 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_08031c818de7e99c104c11d9c260de34.setContent(html_a5a7b4dfa26881c9b567ffb7db17e4ee);
+            
+        
+
+        circle_marker_313149167e7f9256ee3efe78dc72c06a.bindPopup(popup_08031c818de7e99c104c11d9c260de34)
+        ;
+
+        
+    
+    
+            var circle_marker_b1e161413c21546008db2bb9ea27b4e2 = L.circleMarker(
+                [49.1936238, 16.61152788],
+                {"bubblingMouseEvents": true, "color": "#20938c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#20938c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_e7666b513369f66d1671d777af4ec8a1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_55114f8de042d85761e96a73b920d177 = $(`<div id="html_55114f8de042d85761e96a73b920d177" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -89 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_e7666b513369f66d1671d777af4ec8a1.setContent(html_55114f8de042d85761e96a73b920d177);
+            
+        
+
+        circle_marker_b1e161413c21546008db2bb9ea27b4e2.bindPopup(popup_e7666b513369f66d1671d777af4ec8a1)
+        ;
+
+        
+    
+    
+            var circle_marker_4998afa7fa1bf560fe0f9eda2ea5fbb4 = L.circleMarker(
+                [49.1936238, 16.61152788],
+                {"bubblingMouseEvents": true, "color": "#1e9c89", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1e9c89", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_7153423933a74dc70803617113b7e245 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_42eba39ef47f700cdd6c13f11ac738f0 = $(`<div id="html_42eba39ef47f700cdd6c13f11ac738f0" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -86 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_7153423933a74dc70803617113b7e245.setContent(html_42eba39ef47f700cdd6c13f11ac738f0);
+            
+        
+
+        circle_marker_4998afa7fa1bf560fe0f9eda2ea5fbb4.bindPopup(popup_7153423933a74dc70803617113b7e245)
+        ;
+
+        
+    
+    
+            var circle_marker_ee84cae951d58fe52345f3645befa372 = L.circleMarker(
+                [49.19343212, 16.6117121],
+                {"bubblingMouseEvents": true, "color": "#2cb17e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2cb17e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_1ef0d97f4dc9087f4613ddf71ce84b6b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_016d0f1b56b38dc5e450aa59c091f005 = $(`<div id="html_016d0f1b56b38dc5e450aa59c091f005" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -79 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_1ef0d97f4dc9087f4613ddf71ce84b6b.setContent(html_016d0f1b56b38dc5e450aa59c091f005);
+            
+        
+
+        circle_marker_ee84cae951d58fe52345f3645befa372.bindPopup(popup_1ef0d97f4dc9087f4613ddf71ce84b6b)
+        ;
+
+        
+    
+    
+            var circle_marker_51c7a8148d794ef5119e82325dc0c35e = L.circleMarker(
+                [49.19322712, 16.61185495],
+                {"bubblingMouseEvents": true, "color": "#2cb17e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2cb17e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_4965d22c2a61652701db4d820f64df90 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_90bd10a185458657d2104bbe426dc5f9 = $(`<div id="html_90bd10a185458657d2104bbe426dc5f9" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -79 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_4965d22c2a61652701db4d820f64df90.setContent(html_90bd10a185458657d2104bbe426dc5f9);
+            
+        
+
+        circle_marker_51c7a8148d794ef5119e82325dc0c35e.bindPopup(popup_4965d22c2a61652701db4d820f64df90)
+        ;
+
+        
+    
+    
+            var circle_marker_96912c1ef0e32af8d08475fd3582f898 = L.circleMarker(
+                [49.19302619, 16.61202144],
+                {"bubblingMouseEvents": true, "color": "#34b679", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34b679", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_ec478e19e50cfc8e68f69e685680cce5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6341ff7922943c00bf8f4aacfa70fa8f = $(`<div id="html_6341ff7922943c00bf8f4aacfa70fa8f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -77 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_ec478e19e50cfc8e68f69e685680cce5.setContent(html_6341ff7922943c00bf8f4aacfa70fa8f);
+            
+        
+
+        circle_marker_96912c1ef0e32af8d08475fd3582f898.bindPopup(popup_ec478e19e50cfc8e68f69e685680cce5)
+        ;
+
+        
+    
+    
+            var circle_marker_a9b1364796c40ad430fe6f855656611b = L.circleMarker(
+                [49.19282033, 16.61217581],
+                {"bubblingMouseEvents": true, "color": "#44bf70", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#44bf70", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_023f27c2727bb41b74df248a1f1918d2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_aee6ffa55e22302355c8de17b58b6b14 = $(`<div id="html_aee6ffa55e22302355c8de17b58b6b14" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -74 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_023f27c2727bb41b74df248a1f1918d2.setContent(html_aee6ffa55e22302355c8de17b58b6b14);
+            
+        
+
+        circle_marker_a9b1364796c40ad430fe6f855656611b.bindPopup(popup_023f27c2727bb41b74df248a1f1918d2)
+        ;
+
+        
+    
+    
+            var circle_marker_794efd0a53da71b9e8a04802b42d2514 = L.circleMarker(
+                [49.19262258, 16.61234013],
+                {"bubblingMouseEvents": true, "color": "#3fbc73", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3fbc73", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_9810d885c377b5bca58e6c8b1e7c4980 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_89689c8f03827a191c143b9f9163b512 = $(`<div id="html_89689c8f03827a191c143b9f9163b512" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -75 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_9810d885c377b5bca58e6c8b1e7c4980.setContent(html_89689c8f03827a191c143b9f9163b512);
+            
+        
+
+        circle_marker_794efd0a53da71b9e8a04802b42d2514.bindPopup(popup_9810d885c377b5bca58e6c8b1e7c4980)
+        ;
+
+        
+    
+    
+            var circle_marker_e3e7b9f1b2baf5010c2a067018776cae = L.circleMarker(
+                [49.19239044, 16.6124171],
+                {"bubblingMouseEvents": true, "color": "#34b679", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34b679", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_003c5565eef72d2b26433f35fde9c4de = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_14c0ce25ae08eda0937c37003ed3d71a = $(`<div id="html_14c0ce25ae08eda0937c37003ed3d71a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -77 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_003c5565eef72d2b26433f35fde9c4de.setContent(html_14c0ce25ae08eda0937c37003ed3d71a);
+            
+        
+
+        circle_marker_e3e7b9f1b2baf5010c2a067018776cae.bindPopup(popup_003c5565eef72d2b26433f35fde9c4de)
+        ;
+
+        
+    
+    
+            var circle_marker_83db17d7e2f719bcf4830ff0f2aafaa6 = L.circleMarker(
+                [49.19215631, 16.6123929],
+                {"bubblingMouseEvents": true, "color": "#28ae80", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#28ae80", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_c01e52673e246e97339f7280db84606e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_698cb17d5fc00836fa9a8440d9d2af2b = $(`<div id="html_698cb17d5fc00836fa9a8440d9d2af2b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -80 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_c01e52673e246e97339f7280db84606e.setContent(html_698cb17d5fc00836fa9a8440d9d2af2b);
+            
+        
+
+        circle_marker_83db17d7e2f719bcf4830ff0f2aafaa6.bindPopup(popup_c01e52673e246e97339f7280db84606e)
+        ;
+
+        
+    
+    
+            var circle_marker_2ed676954bc87c76245aa7e8e8b09434 = L.circleMarker(
+                [49.19215631, 16.6123929],
+                {"bubblingMouseEvents": true, "color": "#4ac16d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4ac16d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_3a52b2406d0fd4e91d94b774b0c2b756 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_351a42543b852fd935f4095f269f4533 = $(`<div id="html_351a42543b852fd935f4095f269f4533" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -73 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_3a52b2406d0fd4e91d94b774b0c2b756.setContent(html_351a42543b852fd935f4095f269f4533);
+            
+        
+
+        circle_marker_2ed676954bc87c76245aa7e8e8b09434.bindPopup(popup_3a52b2406d0fd4e91d94b774b0c2b756)
+        ;
+
+        
+    
+    
+            var circle_marker_1b636db9df42524f7cc4f63ec6290b75 = L.circleMarker(
+                [49.19201911, 16.61209471],
+                {"bubblingMouseEvents": true, "color": "#56c667", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#56c667", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_2e6e01938ab402a9f66c75aef0ac33c9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8ab2e627e3e903167cc43b6687d0a7ef = $(`<div id="html_8ab2e627e3e903167cc43b6687d0a7ef" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -71 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_2e6e01938ab402a9f66c75aef0ac33c9.setContent(html_8ab2e627e3e903167cc43b6687d0a7ef);
+            
+        
+
+        circle_marker_1b636db9df42524f7cc4f63ec6290b75.bindPopup(popup_2e6e01938ab402a9f66c75aef0ac33c9)
+        ;
+
+        
+    
+    
+            var circle_marker_f1e450fe269ba0286372a67a6cc055fa = L.circleMarker(
+                [49.1919359, 16.61176537],
+                {"bubblingMouseEvents": true, "color": "#73d056", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#73d056", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_6ec6d1a2d47b5b76f0d24ada7c289466 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0e7a4ae6698dca85d033a857a59286fa = $(`<div id="html_0e7a4ae6698dca85d033a857a59286fa" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -67 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_6ec6d1a2d47b5b76f0d24ada7c289466.setContent(html_0e7a4ae6698dca85d033a857a59286fa);
+            
+        
+
+        circle_marker_f1e450fe269ba0286372a67a6cc055fa.bindPopup(popup_6ec6d1a2d47b5b76f0d24ada7c289466)
+        ;
+
+        
+    
+    
+            var circle_marker_b12963d664da8f11a83896d63f4635b3 = L.circleMarker(
+                [49.19184851, 16.61143261],
+                {"bubblingMouseEvents": true, "color": "#6ccd5a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6ccd5a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_d09976804f5fcd93ac757bcb75da94af = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1c994a6e8c929d082a7cb3e77c127aa4 = $(`<div id="html_1c994a6e8c929d082a7cb3e77c127aa4" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -68 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_d09976804f5fcd93ac757bcb75da94af.setContent(html_1c994a6e8c929d082a7cb3e77c127aa4);
+            
+        
+
+        circle_marker_b12963d664da8f11a83896d63f4635b3.bindPopup(popup_d09976804f5fcd93ac757bcb75da94af)
+        ;
+
+        
+    
+    
+            var circle_marker_a663301e22b44f5d7a25baff560d33b5 = L.circleMarker(
+                [49.19178086, 16.61109573],
+                {"bubblingMouseEvents": true, "color": "#65cb5e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#65cb5e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_33d6b05103f2ab3dc971fbc4c2025fd0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f8df230511c3d8fcd5582b7f4ffafd1c = $(`<div id="html_f8df230511c3d8fcd5582b7f4ffafd1c" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -69 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_33d6b05103f2ab3dc971fbc4c2025fd0.setContent(html_f8df230511c3d8fcd5582b7f4ffafd1c);
+            
+        
+
+        circle_marker_a663301e22b44f5d7a25baff560d33b5.bindPopup(popup_33d6b05103f2ab3dc971fbc4c2025fd0)
+        ;
+
+        
+    
+    
+            var circle_marker_27cfd84c3658b7ddf2ebeb423e647260 = L.circleMarker(
+                [49.19171146, 16.61075795],
+                {"bubblingMouseEvents": true, "color": "#65cb5e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#65cb5e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_16c8291b9b0b9c7874f6147125262fbc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0c40309b3fa8a4813f4f49ce6bc66bf2 = $(`<div id="html_0c40309b3fa8a4813f4f49ce6bc66bf2" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -69 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_16c8291b9b0b9c7874f6147125262fbc.setContent(html_0c40309b3fa8a4813f4f49ce6bc66bf2);
+            
+        
+
+        circle_marker_27cfd84c3658b7ddf2ebeb423e647260.bindPopup(popup_16c8291b9b0b9c7874f6147125262fbc)
+        ;
+
+        
+    
+    
+            var circle_marker_540611df6b11e1a5e9d2f4b34aaecc53 = L.circleMarker(
+                [49.19192237, 16.61062794],
+                {"bubblingMouseEvents": true, "color": "#2fb47c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2fb47c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_029df307db350cdc5243c9d50e4b26ab = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_84c9368a3ac61438e57a226c5f24ee11 = $(`<div id="html_84c9368a3ac61438e57a226c5f24ee11" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -78 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_029df307db350cdc5243c9d50e4b26ab.setContent(html_84c9368a3ac61438e57a226c5f24ee11);
+            
+        
+
+        circle_marker_540611df6b11e1a5e9d2f4b34aaecc53.bindPopup(popup_029df307db350cdc5243c9d50e4b26ab)
+        ;
+
+        
+    
+    
+            var circle_marker_9d25414efc24387431a67caf8b7e8069 = L.circleMarker(
+                [49.19192237, 16.61062794],
+                {"bubblingMouseEvents": true, "color": "#38b977", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#38b977", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_9009a063ea164f91a7f4e68796345332 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d3b08b91e0867795b9320b1f8d176335 = $(`<div id="html_d3b08b91e0867795b9320b1f8d176335" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -76 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_9009a063ea164f91a7f4e68796345332.setContent(html_d3b08b91e0867795b9320b1f8d176335);
+            
+        
+
+        circle_marker_9d25414efc24387431a67caf8b7e8069.bindPopup(popup_9009a063ea164f91a7f4e68796345332)
+        ;
+
+        
+    
+    
+            var circle_marker_15cbab6c87cc7eb6fb3d14795d790bfb = L.circleMarker(
+                [49.19213261, 16.6104693],
+                {"bubblingMouseEvents": true, "color": "#28ae80", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#28ae80", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_cd12b1d1679f28327ed2ead941855e6a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cba10a6d592d7ebdb3857cecb2a22357 = $(`<div id="html_cba10a6d592d7ebdb3857cecb2a22357" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -80 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_cd12b1d1679f28327ed2ead941855e6a.setContent(html_cba10a6d592d7ebdb3857cecb2a22357);
+            
+        
+
+        circle_marker_15cbab6c87cc7eb6fb3d14795d790bfb.bindPopup(popup_cd12b1d1679f28327ed2ead941855e6a)
+        ;
+
+        
+    
+    
+            var circle_marker_cdcbbb36403cdbb6c39f04408e89981a = L.circleMarker(
+                [49.19237125, 16.61045887],
+                {"bubblingMouseEvents": true, "color": "#1fa287", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa287", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_a539453c236f774085f6efecdb9e986d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5a61387e2692a9f7051a8a8b829ab43a = $(`<div id="html_5a61387e2692a9f7051a8a8b829ab43a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -84 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_a539453c236f774085f6efecdb9e986d.setContent(html_5a61387e2692a9f7051a8a8b829ab43a);
+            
+        
+
+        circle_marker_cdcbbb36403cdbb6c39f04408e89981a.bindPopup(popup_a539453c236f774085f6efecdb9e986d)
+        ;
+
+        
+    
+    
+            var circle_marker_f535ef45d44ca8f120a7597a57110073 = L.circleMarker(
+                [49.1925881, 16.61034217],
+                {"bubblingMouseEvents": true, "color": "#20938c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#20938c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_71997c2b8f785d17752f35279dbc16d2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fe306a992689a611b4acfc65694a5793 = $(`<div id="html_fe306a992689a611b4acfc65694a5793" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -89 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_71997c2b8f785d17752f35279dbc16d2.setContent(html_fe306a992689a611b4acfc65694a5793);
+            
+        
+
+        circle_marker_f535ef45d44ca8f120a7597a57110073.bindPopup(popup_71997c2b8f785d17752f35279dbc16d2)
+        ;
+
+        
+    
+    
+            var circle_marker_c20d1cda589f820762c32c1b1934b1b8 = L.circleMarker(
+                [49.1925881, 16.61034217],
+                {"bubblingMouseEvents": true, "color": "#1fa088", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa088", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_f76e282340bd5ab922a8934a83858859 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_57b89d0cea7236eb80c27a27effec35e = $(`<div id="html_57b89d0cea7236eb80c27a27effec35e" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -85 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_f76e282340bd5ab922a8934a83858859.setContent(html_57b89d0cea7236eb80c27a27effec35e);
+            
+        
+
+        circle_marker_c20d1cda589f820762c32c1b1934b1b8.bindPopup(popup_f76e282340bd5ab922a8934a83858859)
+        ;
+
+        
+    
+    
+            var circle_marker_d82f27fa7479eb5c60b5dd91e3832fb8 = L.circleMarker(
+                [49.19279791, 16.61021193],
+                {"bubblingMouseEvents": true, "color": "#25ab82", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25ab82", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_418e75e32cf367b7044f917e84ee7539 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_143fa62079bfd473609a6a1cfdb1f5e7 = $(`<div id="html_143fa62079bfd473609a6a1cfdb1f5e7" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -81 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_418e75e32cf367b7044f917e84ee7539.setContent(html_143fa62079bfd473609a6a1cfdb1f5e7);
+            
+        
+
+        circle_marker_d82f27fa7479eb5c60b5dd91e3832fb8.bindPopup(popup_418e75e32cf367b7044f917e84ee7539)
+        ;
+
+        
+    
+    
+            var circle_marker_3023c10b254d058ddcf82b2366e22edc = L.circleMarker(
+                [49.19300027, 16.61002943],
+                {"bubblingMouseEvents": true, "color": "#21a585", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21a585", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_72b7832e63924551ac9ea8e43c05fc50 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_15af666c24b70777551c53013b35fd5c = $(`<div id="html_15af666c24b70777551c53013b35fd5c" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -83 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_72b7832e63924551ac9ea8e43c05fc50.setContent(html_15af666c24b70777551c53013b35fd5c);
+            
+        
+
+        circle_marker_3023c10b254d058ddcf82b2366e22edc.bindPopup(popup_72b7832e63924551ac9ea8e43c05fc50)
+        ;
+
+        
+    
+    
+            var circle_marker_3043661753f234f924ca56db84c1c0e0 = L.circleMarker(
+                [49.19300027, 16.61002943],
+                {"bubblingMouseEvents": true, "color": "#4ac16d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4ac16d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_e0c202e01824c5391ecb761115ee8bba = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_38166846ba9fe25744497ebc44298f29 = $(`<div id="html_38166846ba9fe25744497ebc44298f29" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -73 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_e0c202e01824c5391ecb761115ee8bba.setContent(html_38166846ba9fe25744497ebc44298f29);
+            
+        
+
+        circle_marker_3043661753f234f924ca56db84c1c0e0.bindPopup(popup_e0c202e01824c5391ecb761115ee8bba)
+        ;
+
+        
+    
+    
+            var circle_marker_652f3137a577bbeeb640dd0927a01dfc = L.circleMarker(
+                [49.19320624, 16.60989101],
+                {"bubblingMouseEvents": true, "color": "#4ac16d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4ac16d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_6cc8e3ba102d5858c91ddd066fe85f3a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0bdab2cff44991c949aee6d85b6e3620 = $(`<div id="html_0bdab2cff44991c949aee6d85b6e3620" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -73 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_6cc8e3ba102d5858c91ddd066fe85f3a.setContent(html_0bdab2cff44991c949aee6d85b6e3620);
+            
+        
+
+        circle_marker_652f3137a577bbeeb640dd0927a01dfc.bindPopup(popup_6cc8e3ba102d5858c91ddd066fe85f3a)
+        ;
+
+        
+    
+    
+            var circle_marker_c0057ca7793d3fa8be30771e8549c648 = L.circleMarker(
+                [49.19320624, 16.60989101],
+                {"bubblingMouseEvents": true, "color": "#25ab82", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25ab82", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_dabd84e938ecb22fefcbb468c901bc6f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1fabc6010daf0c3df8a1762a31d479a9 = $(`<div id="html_1fabc6010daf0c3df8a1762a31d479a9" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -81 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_dabd84e938ecb22fefcbb468c901bc6f.setContent(html_1fabc6010daf0c3df8a1762a31d479a9);
+            
+        
+
+        circle_marker_c0057ca7793d3fa8be30771e8549c648.bindPopup(popup_dabd84e938ecb22fefcbb468c901bc6f)
+        ;
+
+        
+    
+    
+            var circle_marker_eb977d9f63809dda01b9f5e5f8f0cc1e = L.circleMarker(
+                [49.19339009, 16.6096584],
+                {"bubblingMouseEvents": true, "color": "#25ab82", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25ab82", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_44a48ffd3d55a31b5a56049cd21934c0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ab36d5d01a4f9602ca8aa6fd72a93678 = $(`<div id="html_ab36d5d01a4f9602ca8aa6fd72a93678" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -81 dBm<br> <b>RSRQ:</b> -11 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_44a48ffd3d55a31b5a56049cd21934c0.setContent(html_ab36d5d01a4f9602ca8aa6fd72a93678);
+            
+        
+
+        circle_marker_eb977d9f63809dda01b9f5e5f8f0cc1e.bindPopup(popup_44a48ffd3d55a31b5a56049cd21934c0)
+        ;
+
+        
+    
+    
+            var circle_marker_ec1a2ccf90e0845819a67cac9d690926 = L.circleMarker(
+                [49.1935904, 16.60947922],
+                {"bubblingMouseEvents": true, "color": "#34b679", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#34b679", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_c031ddc125328bb41216df1cc0d95a87 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2322a6472ee08b8e54f0f07fc65cdeab = $(`<div id="html_2322a6472ee08b8e54f0f07fc65cdeab" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -77 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_c031ddc125328bb41216df1cc0d95a87.setContent(html_2322a6472ee08b8e54f0f07fc65cdeab);
+            
+        
+
+        circle_marker_ec1a2ccf90e0845819a67cac9d690926.bindPopup(popup_c031ddc125328bb41216df1cc0d95a87)
+        ;
+
+        
+    
+    
+            var circle_marker_98b3bdfc6f7f00e21c0e897fa07a0d33 = L.circleMarker(
+                [49.1937759, 16.60927907],
+                {"bubblingMouseEvents": true, "color": "#56c667", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#56c667", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_843c12b72dd76f184fe6e4edfe2dc4c3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1bda06a8a4ecbd2dc90198b5d51631c1 = $(`<div id="html_1bda06a8a4ecbd2dc90198b5d51631c1" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -71 dBm<br> <b>RSRQ:</b> -14 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_843c12b72dd76f184fe6e4edfe2dc4c3.setContent(html_1bda06a8a4ecbd2dc90198b5d51631c1);
+            
+        
+
+        circle_marker_98b3bdfc6f7f00e21c0e897fa07a0d33.bindPopup(popup_843c12b72dd76f184fe6e4edfe2dc4c3)
+        ;
+
+        
+    
+    
+            var circle_marker_6ac8df7e086117cabfdbd90b170569bd = L.circleMarker(
+                [49.19399563, 16.60913616],
+                {"bubblingMouseEvents": true, "color": "#5ec962", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5ec962", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_19ca4c8c58c9a4ce2507c88bf08090b3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_65e55c7edf015de429dfcfa153cb454a = $(`<div id="html_65e55c7edf015de429dfcfa153cb454a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -70 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_19ca4c8c58c9a4ce2507c88bf08090b3.setContent(html_65e55c7edf015de429dfcfa153cb454a);
+            
+        
+
+        circle_marker_6ac8df7e086117cabfdbd90b170569bd.bindPopup(popup_19ca4c8c58c9a4ce2507c88bf08090b3)
+        ;
+
+        
+    
+    
+            var circle_marker_e581e8f3434ee92a7aded56c0d6e1ef1 = L.circleMarker(
+                [49.19418199, 16.60893795],
+                {"bubblingMouseEvents": true, "color": "#7ad151", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7ad151", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_505e0882e26a1be25d06623f86f26939 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_27bd38afe3967b971c0c1f628c8eb767 = $(`<div id="html_27bd38afe3967b971c0c1f628c8eb767" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -66 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_505e0882e26a1be25d06623f86f26939.setContent(html_27bd38afe3967b971c0c1f628c8eb767);
+            
+        
+
+        circle_marker_e581e8f3434ee92a7aded56c0d6e1ef1.bindPopup(popup_505e0882e26a1be25d06623f86f26939)
+        ;
+
+        
+    
+    
+            var circle_marker_bd5003aeb9ec5c58c0d12cf42be21d99 = L.circleMarker(
+                [49.19439355, 16.60881361],
+                {"bubblingMouseEvents": true, "color": "#84d44b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#84d44b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_d10e30b4f7b398e8479748bba476a7cb = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_39eb4b0fe7b80ad8a3f36b65ca3e3467 = $(`<div id="html_39eb4b0fe7b80ad8a3f36b65ca3e3467" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -65 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_d10e30b4f7b398e8479748bba476a7cb.setContent(html_39eb4b0fe7b80ad8a3f36b65ca3e3467);
+            
+        
+
+        circle_marker_bd5003aeb9ec5c58c0d12cf42be21d99.bindPopup(popup_d10e30b4f7b398e8479748bba476a7cb)
+        ;
+
+        
+    
+    
+            var circle_marker_dad643bf986c4a3adbbdef67eb7692a0 = L.circleMarker(
+                [49.19460956, 16.60869779],
+                {"bubblingMouseEvents": true, "color": "#addc30", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#addc30", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_f901a64cf017c0778db45399b0eecd37 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e022915ef3c2d7a10b0c7b828e9cce54 = $(`<div id="html_e022915ef3c2d7a10b0c7b828e9cce54" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -60 dBm<br> <b>RSRQ:</b> -13 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_f901a64cf017c0778db45399b0eecd37.setContent(html_e022915ef3c2d7a10b0c7b828e9cce54);
+            
+        
+
+        circle_marker_dad643bf986c4a3adbbdef67eb7692a0.bindPopup(popup_f901a64cf017c0778db45399b0eecd37)
+        ;
+
+        
+    
+    
+            var circle_marker_f38f3f0377adf828518156a19d34906d = L.circleMarker(
+                [49.19481911, 16.60854694],
+                {"bubblingMouseEvents": true, "color": "#bddf26", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bddf26", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_32a05f9685be9953876d29410b6e1cd4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_00c5644cdf9712630853ec4d08716caf = $(`<div id="html_00c5644cdf9712630853ec4d08716caf" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -58 dBm<br> <b>RSRQ:</b> -8 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_32a05f9685be9953876d29410b6e1cd4.setContent(html_00c5644cdf9712630853ec4d08716caf);
+            
+        
+
+        circle_marker_f38f3f0377adf828518156a19d34906d.bindPopup(popup_32a05f9685be9953876d29410b6e1cd4)
+        ;
+
+        
+    
+    
+            var circle_marker_4aabafb4ad0f94d420a94bee4c2523eb = L.circleMarker(
+                [49.19503362, 16.60843678],
+                {"bubblingMouseEvents": true, "color": "#a2da37", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a2da37", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_a14f8a9ca81fbd438c2e6de947febb2a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_42874678ac094e250fabed8338128b8c = $(`<div id="html_42874678ac094e250fabed8338128b8c" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -61 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_a14f8a9ca81fbd438c2e6de947febb2a.setContent(html_42874678ac094e250fabed8338128b8c);
+            
+        
+
+        circle_marker_4aabafb4ad0f94d420a94bee4c2523eb.bindPopup(popup_a14f8a9ca81fbd438c2e6de947febb2a)
+        ;
+
+        
+    
+    
+            var circle_marker_d9b1499e580e31d448ebeb8824981f05 = L.circleMarker(
+                [49.19526196, 16.60835064],
+                {"bubblingMouseEvents": true, "color": "#73d056", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#73d056", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_746e67ce29edf680fa9d459d87335aa4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f59bb01cb5b824ffa140af21c66cb53e = $(`<div id="html_f59bb01cb5b824ffa140af21c66cb53e" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -67 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_746e67ce29edf680fa9d459d87335aa4.setContent(html_f59bb01cb5b824ffa140af21c66cb53e);
+            
+        
+
+        circle_marker_d9b1499e580e31d448ebeb8824981f05.bindPopup(popup_746e67ce29edf680fa9d459d87335aa4)
+        ;
+
+        
+    
+    
+            var circle_marker_dc9beb4557c2c690432f7ecfc46643b6 = L.circleMarker(
+                [49.19548163, 16.60822911],
+                {"bubblingMouseEvents": true, "color": "#6ccd5a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6ccd5a", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_c519f32f08192e415cd647109db40e6e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4a693f1df5ff464149277656ed035e1f = $(`<div id="html_4a693f1df5ff464149277656ed035e1f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -68 dBm<br> <b>RSRQ:</b> -18 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_c519f32f08192e415cd647109db40e6e.setContent(html_4a693f1df5ff464149277656ed035e1f);
+            
+        
+
+        circle_marker_dc9beb4557c2c690432f7ecfc46643b6.bindPopup(popup_c519f32f08192e415cd647109db40e6e)
+        ;
+
+        
+    
+    
+            var circle_marker_2b4e4612688f781652333138383d763c = L.circleMarker(
+                [49.19569959, 16.60812743],
+                {"bubblingMouseEvents": true, "color": "#38b977", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#38b977", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_50fe4abe90f5d1540f9367dfc9ea61a4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_09600e30fe59ba0ffecc601311098a58 = $(`<div id="html_09600e30fe59ba0ffecc601311098a58" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -76 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_50fe4abe90f5d1540f9367dfc9ea61a4.setContent(html_09600e30fe59ba0ffecc601311098a58);
+            
+        
+
+        circle_marker_2b4e4612688f781652333138383d763c.bindPopup(popup_50fe4abe90f5d1540f9367dfc9ea61a4)
+        ;
+
+        
+    
+    
+            var circle_marker_706be0a4f387f290be3b26495f9e5314 = L.circleMarker(
+                [49.19592308, 16.6080593],
+                {"bubblingMouseEvents": true, "color": "#1f968b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f968b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_c1a30cb40742d9822217186b3d6b9909 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4432a30de49f5dc0316bc0b1ee3bfe3d = $(`<div id="html_4432a30de49f5dc0316bc0b1ee3bfe3d" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -88 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_c1a30cb40742d9822217186b3d6b9909.setContent(html_4432a30de49f5dc0316bc0b1ee3bfe3d);
+            
+        
+
+        circle_marker_706be0a4f387f290be3b26495f9e5314.bindPopup(popup_c1a30cb40742d9822217186b3d6b9909)
+        ;
+
+        
+    
+    
+            var circle_marker_59fe0b92b7f4dbed2a30a56ad0b1f4c1 = L.circleMarker(
+                [49.19592308, 16.6080593],
+                {"bubblingMouseEvents": true, "color": "#1fa088", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa088", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_da43e0eee14a0576315e61a281fa7b3f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_979030a92a0b80eae823291f1dc99e88 = $(`<div id="html_979030a92a0b80eae823291f1dc99e88" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -85 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_da43e0eee14a0576315e61a281fa7b3f.setContent(html_979030a92a0b80eae823291f1dc99e88);
+            
+        
+
+        circle_marker_59fe0b92b7f4dbed2a30a56ad0b1f4c1.bindPopup(popup_da43e0eee14a0576315e61a281fa7b3f)
+        ;
+
+        
+    
+    
+            var circle_marker_1b4f6a5684b00ac93bc5f279c410b0d4 = L.circleMarker(
+                [49.19615419, 16.60798028],
+                {"bubblingMouseEvents": true, "color": "#1fa088", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa088", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_48c75999806286b7941b6b5329891500 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_644429121c09086a9eed84fd985b2f1e = $(`<div id="html_644429121c09086a9eed84fd985b2f1e" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -85 dBm<br> <b>RSRQ:</b> -12 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_48c75999806286b7941b6b5329891500.setContent(html_644429121c09086a9eed84fd985b2f1e);
+            
+        
+
+        circle_marker_1b4f6a5684b00ac93bc5f279c410b0d4.bindPopup(popup_48c75999806286b7941b6b5329891500)
+        ;
+
+        
+    
+    
+            var circle_marker_36ec5e8a5d9903024e6e70f1a0edefc2 = L.circleMarker(
+                [49.19615419, 16.60798028],
+                {"bubblingMouseEvents": true, "color": "#1fa287", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa287", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_bd6f00d6db5e508370f7fa2d77dc3fa1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ae618b80f1c85cfac1cae156c8e7662c = $(`<div id="html_ae618b80f1c85cfac1cae156c8e7662c" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -84 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_bd6f00d6db5e508370f7fa2d77dc3fa1.setContent(html_ae618b80f1c85cfac1cae156c8e7662c);
+            
+        
+
+        circle_marker_36ec5e8a5d9903024e6e70f1a0edefc2.bindPopup(popup_bd6f00d6db5e508370f7fa2d77dc3fa1)
+        ;
+
+        
+    
+    
+            var circle_marker_5f34a1db4d5c18d8617d01664d334330 = L.circleMarker(
+                [49.19638333, 16.60792405],
+                {"bubblingMouseEvents": true, "color": "#1fa287", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fa287", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_98cb94994be4f55155e3b21e442b7551 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_56865bc2ffe5f15e8ff6c21d38a56105 = $(`<div id="html_56865bc2ffe5f15e8ff6c21d38a56105" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -84 dBm<br> <b>RSRQ:</b> -17 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_98cb94994be4f55155e3b21e442b7551.setContent(html_56865bc2ffe5f15e8ff6c21d38a56105);
+            
+        
+
+        circle_marker_5f34a1db4d5c18d8617d01664d334330.bindPopup(popup_98cb94994be4f55155e3b21e442b7551)
+        ;
+
+        
+    
+    
+            var circle_marker_1727f4f82610b4969a46b0e88a14bf58 = L.circleMarker(
+                [49.19638333, 16.60792405],
+                {"bubblingMouseEvents": true, "color": "#21a585", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21a585", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_34914e98cad045f670480b96e961d2b8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3a12d235c4c0638b650e6d18d0987a19 = $(`<div id="html_3a12d235c4c0638b650e6d18d0987a19" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -83 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_34914e98cad045f670480b96e961d2b8.setContent(html_3a12d235c4c0638b650e6d18d0987a19);
+            
+        
+
+        circle_marker_1727f4f82610b4969a46b0e88a14bf58.bindPopup(popup_34914e98cad045f670480b96e961d2b8)
+        ;
+
+        
+    
+    
+            var circle_marker_9335d08f2cf8f66370a843d0344bc47c = L.circleMarker(
+                [49.19660297, 16.60780665],
+                {"bubblingMouseEvents": true, "color": "#21a585", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21a585", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_f6e5d1b5f6bee4611a5891a4cb356375 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7dfe587a124e081b9d5a1f42aea64179 = $(`<div id="html_7dfe587a124e081b9d5a1f42aea64179" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -83 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_f6e5d1b5f6bee4611a5891a4cb356375.setContent(html_7dfe587a124e081b9d5a1f42aea64179);
+            
+        
+
+        circle_marker_9335d08f2cf8f66370a843d0344bc47c.bindPopup(popup_f6e5d1b5f6bee4611a5891a4cb356375)
+        ;
+
+        
+    
+    
+            var circle_marker_ab7c0aebdd9ade3c6b46b2d2bcafbdd2 = L.circleMarker(
+                [49.19682192, 16.60770578],
+                {"bubblingMouseEvents": true, "color": "#2cb17e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2cb17e", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_76e22860632585d35a6962c0e514c0a5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9bd74c919e0d81b5b4b39d7fab963ee9 = $(`<div id="html_9bd74c919e0d81b5b4b39d7fab963ee9" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -79 dBm<br> <b>RSRQ:</b> -8 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_76e22860632585d35a6962c0e514c0a5.setContent(html_9bd74c919e0d81b5b4b39d7fab963ee9);
+            
+        
+
+        circle_marker_ab7c0aebdd9ade3c6b46b2d2bcafbdd2.bindPopup(popup_76e22860632585d35a6962c0e514c0a5)
+        ;
+
+        
+    
+    
+            var circle_marker_f0de3737867bdccdfaf440cb104eedd6 = L.circleMarker(
+                [49.19704381, 16.60760117],
+                {"bubblingMouseEvents": true, "color": "#21918c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21918c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_2b6b49f056979e26077be95c7a52d4fe = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a8ef4ba76e5866cdfa131633b2241e22 = $(`<div id="html_a8ef4ba76e5866cdfa131633b2241e22" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -90 dBm<br> <b>RSRQ:</b> -15 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_2b6b49f056979e26077be95c7a52d4fe.setContent(html_a8ef4ba76e5866cdfa131633b2241e22);
+            
+        
+
+        circle_marker_f0de3737867bdccdfaf440cb104eedd6.bindPopup(popup_2b6b49f056979e26077be95c7a52d4fe)
+        ;
+
+        
+    
+    
+            var circle_marker_105bf3c7629701417c4da5a123f1198e = L.circleMarker(
+                [49.19704381, 16.60760117],
+                {"bubblingMouseEvents": true, "color": "#21918c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21918c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_9700dc3d993a3336e9e7f8399b043073 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_65a107498bd1163ba3cc91a861787bcf = $(`<div id="html_65a107498bd1163ba3cc91a861787bcf" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -90 dBm<br> <b>RSRQ:</b> -16 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_9700dc3d993a3336e9e7f8399b043073.setContent(html_65a107498bd1163ba3cc91a861787bcf);
+            
+        
+
+        circle_marker_105bf3c7629701417c4da5a123f1198e.bindPopup(popup_9700dc3d993a3336e9e7f8399b043073)
+        ;
+
+        
+    
+    
+            var circle_marker_8a505cbd74b6f9d2cfdc8259977af2d2 = L.circleMarker(
+                [49.19726075, 16.60748518],
+                {"bubblingMouseEvents": true, "color": "#228d8d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228d8d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_b060cf243bf9b3052f4a291f23964d49 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_edbf9856504e45157017dd2294f4a8ea = $(`<div id="html_edbf9856504e45157017dd2294f4a8ea" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -91 dBm<br> <b>RSRQ:</b> -19 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_b060cf243bf9b3052f4a291f23964d49.setContent(html_edbf9856504e45157017dd2294f4a8ea);
+            
+        
+
+        circle_marker_8a505cbd74b6f9d2cfdc8259977af2d2.bindPopup(popup_b060cf243bf9b3052f4a291f23964d49)
+        ;
+
+        
+    
+    
+            var circle_marker_a468a0ac2fbea4568430148982c6cc3a = L.circleMarker(
+                [49.19726075, 16.60748518],
+                {"bubblingMouseEvents": true, "color": "#25ab82", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25ab82", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_d2a3f836f9a8896170d7e02ecc630cca = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cdfc51eacbb04b5f3ea48cf8d7d3b6e3 = $(`<div id="html_cdfc51eacbb04b5f3ea48cf8d7d3b6e3" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -81 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_d2a3f836f9a8896170d7e02ecc630cca.setContent(html_cdfc51eacbb04b5f3ea48cf8d7d3b6e3);
+            
+        
+
+        circle_marker_a468a0ac2fbea4568430148982c6cc3a.bindPopup(popup_d2a3f836f9a8896170d7e02ecc630cca)
+        ;
+
+        
+    
+    
+            var circle_marker_b0a8d72ac7e9fb1fe877b9f069a3b4d5 = L.circleMarker(
+                [49.19745465, 16.60730601],
+                {"bubblingMouseEvents": true, "color": "#25ab82", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25ab82", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_7ad6ebaf1339411c996229ace45a882a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_344bc3bb9e0005e0d2ab492f5100faa4 = $(`<div id="html_344bc3bb9e0005e0d2ab492f5100faa4" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -81 dBm<br> <b>RSRQ:</b> -9 dB<br> <b>SNR:</b> 0.0 dB<br></div>`)[0];
+                popup_7ad6ebaf1339411c996229ace45a882a.setContent(html_344bc3bb9e0005e0d2ab492f5100faa4);
+            
+        
+
+        circle_marker_b0a8d72ac7e9fb1fe877b9f069a3b4d5.bindPopup(popup_7ad6ebaf1339411c996229ace45a882a)
+        ;
+
+        
+    
+    
+            var circle_marker_31e1ecdd960c9c33a05e440015cf573c = L.circleMarker(
+                [49.19765081, 16.60713471],
+                {"bubblingMouseEvents": true, "color": "#4ac16d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4ac16d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d8daf58abe8e55daf763e466ab9e6531);
+        
+    
+        var popup_6bc6cd2d7ae6be29f73abad98e3d9b45 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_669d0af5fd0659d6824f887e2789fd49 = $(`<div id="html_669d0af5fd0659d6824f887e2789fd49" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br> <b>RSRP:</b> -73 dBm<br> <b>RSRQ:</b> -10 dB<br> <b>SNR:</b> 16.0 dB<br></div>`)[0];
+                popup_6bc6cd2d7ae6be29f73abad98e3d9b45.setContent(html_669d0af5fd0659d6824f887e2789fd49);
+            
+        
+
+        circle_marker_31e1ecdd960c9c33a05e440015cf573c.bindPopup(popup_6bc6cd2d7ae6be29f73abad98e3d9b45)
+        ;
+
+        
+    
+</script>
+</html>

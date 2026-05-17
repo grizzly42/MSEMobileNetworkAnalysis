@@ -1,0 +1,3122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3b1b8d8285534522548838f535593a5e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    <div style="position: fixed; bottom: 50px; right: 50px;width: 300px; background:white; border:2px solid grey;
+        padding:10px; z-index:9999;"><b>Technologie + pásmo</b><br><i style="color:red;">●</i> 4G L3 (1800 MHz)<br></div>
+    
+            <div class="folium-map" id="map_3b1b8d8285534522548838f535593a5e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3b1b8d8285534522548838f535593a5e = L.map(
+                "map_3b1b8d8285534522548838f535593a5e",
+                {
+                    center: [49.19480632, 16.60868801],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b55e9a4fb4d44cce2494d53d398551c9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b55e9a4fb4d44cce2494d53d398551c9.addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+            map_3b1b8d8285534522548838f535593a5e.fitBounds(
+                [[49.19162932, 16.60554081], [49.19765081, 16.6124171]],
+                {}
+            );
+        
+    
+            var circle_marker_cf1de49d081ca1964867ad753daad035 = L.circleMarker(
+                [49.19162932, 16.61035564],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_942694b4b04953ae8bd1597240238d85 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_85120c777a3a93a7203502e1451c0734 = $(`<div id="html_85120c777a3a93a7203502e1451c0734" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -75 dBm<br>  <b>RSRQ:</b> -15 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_942694b4b04953ae8bd1597240238d85.setContent(html_85120c777a3a93a7203502e1451c0734);
+            
+        
+
+        circle_marker_cf1de49d081ca1964867ad753daad035.bindPopup(popup_942694b4b04953ae8bd1597240238d85)
+        ;
+
+        
+    
+    
+            var circle_marker_c24a8592c5006c98cce970f120b50e94 = L.circleMarker(
+                [49.19162932, 16.61035564],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_58559c86987c83d0b957062bac43bc32 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_eec733fe6e4bbf88cca05ea8000f1e5a = $(`<div id="html_eec733fe6e4bbf88cca05ea8000f1e5a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -70 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_58559c86987c83d0b957062bac43bc32.setContent(html_eec733fe6e4bbf88cca05ea8000f1e5a);
+            
+        
+
+        circle_marker_c24a8592c5006c98cce970f120b50e94.bindPopup(popup_58559c86987c83d0b957062bac43bc32)
+        ;
+
+        
+    
+    
+            var circle_marker_3cf5dcbf648c17fb7d12e14313a88b74 = L.circleMarker(
+                [49.19163185, 16.61000288],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_e1188f30c54d017325c61506ca24eac3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4789b6ec39b2cee610654511e9d52a37 = $(`<div id="html_4789b6ec39b2cee610654511e9d52a37" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -74 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_e1188f30c54d017325c61506ca24eac3.setContent(html_4789b6ec39b2cee610654511e9d52a37);
+            
+        
+
+        circle_marker_3cf5dcbf648c17fb7d12e14313a88b74.bindPopup(popup_e1188f30c54d017325c61506ca24eac3)
+        ;
+
+        
+    
+    
+            var circle_marker_fa982fb54c51b4eb599e60203cb3a138 = L.circleMarker(
+                [49.191713, 16.60967931],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_2cc3f5365df93e8f5ef6b5ba7ff1b8a8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f8afa51c593a10a8355a83a7bb246d39 = $(`<div id="html_f8afa51c593a10a8355a83a7bb246d39" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -73 dBm<br>  <b>RSRQ:</b> -16 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_2cc3f5365df93e8f5ef6b5ba7ff1b8a8.setContent(html_f8afa51c593a10a8355a83a7bb246d39);
+            
+        
+
+        circle_marker_fa982fb54c51b4eb599e60203cb3a138.bindPopup(popup_2cc3f5365df93e8f5ef6b5ba7ff1b8a8)
+        ;
+
+        
+    
+    
+            var circle_marker_33dd28d8a8e611778c06464c1de95c1e = L.circleMarker(
+                [49.19187645, 16.60943523],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_3e86328d7a5220f70d57bf83949fe5c5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_86426d49661e825cc1f6e44b4baee5d6 = $(`<div id="html_86426d49661e825cc1f6e44b4baee5d6" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -75 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_3e86328d7a5220f70d57bf83949fe5c5.setContent(html_86426d49661e825cc1f6e44b4baee5d6);
+            
+        
+
+        circle_marker_33dd28d8a8e611778c06464c1de95c1e.bindPopup(popup_3e86328d7a5220f70d57bf83949fe5c5)
+        ;
+
+        
+    
+    
+            var circle_marker_bfbb83c512206b52fa66212b63bfb3fb = L.circleMarker(
+                [49.19200025, 16.609134],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_afb4ace5bbbc94ef68a99677b2e25266 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f20f543a160f0d200f8fae556ee77f42 = $(`<div id="html_f20f543a160f0d200f8fae556ee77f42" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -82 dBm<br>  <b>RSRQ:</b> -17 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_afb4ace5bbbc94ef68a99677b2e25266.setContent(html_f20f543a160f0d200f8fae556ee77f42);
+            
+        
+
+        circle_marker_bfbb83c512206b52fa66212b63bfb3fb.bindPopup(popup_afb4ace5bbbc94ef68a99677b2e25266)
+        ;
+
+        
+    
+    
+            var circle_marker_8a506e393a41c5b82f6558249389efd0 = L.circleMarker(
+                [49.19200025, 16.609134],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_0ff7803d48cb268b47f0567ea9b51662 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b700928fa4fbd79e98f10b5ee8706557 = $(`<div id="html_b700928fa4fbd79e98f10b5ee8706557" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -71 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_0ff7803d48cb268b47f0567ea9b51662.setContent(html_b700928fa4fbd79e98f10b5ee8706557);
+            
+        
+
+        circle_marker_8a506e393a41c5b82f6558249389efd0.bindPopup(popup_0ff7803d48cb268b47f0567ea9b51662)
+        ;
+
+        
+    
+    
+            var circle_marker_3336e07c25f4116188f248a7889dbe9a = L.circleMarker(
+                [49.19199963, 16.60879051],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_6ffd2842a5fab6230023652ddb982703 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8099e8c1ff6f11e10f4a81fe1f8a8e12 = $(`<div id="html_8099e8c1ff6f11e10f4a81fe1f8a8e12" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -66 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_6ffd2842a5fab6230023652ddb982703.setContent(html_8099e8c1ff6f11e10f4a81fe1f8a8e12);
+            
+        
+
+        circle_marker_3336e07c25f4116188f248a7889dbe9a.bindPopup(popup_6ffd2842a5fab6230023652ddb982703)
+        ;
+
+        
+    
+    
+            var circle_marker_a8665bd422ac4e27c3af37914bc10c6f = L.circleMarker(
+                [49.19211758, 16.60847716],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_17904117f609e932a3cdb4485e7f5cf6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a9ce00479d0d7fb425144fc4c3cb5826 = $(`<div id="html_a9ce00479d0d7fb425144fc4c3cb5826" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -67 dBm<br>  <b>RSRQ:</b> -8 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_17904117f609e932a3cdb4485e7f5cf6.setContent(html_a9ce00479d0d7fb425144fc4c3cb5826);
+            
+        
+
+        circle_marker_a8665bd422ac4e27c3af37914bc10c6f.bindPopup(popup_17904117f609e932a3cdb4485e7f5cf6)
+        ;
+
+        
+    
+    
+            var circle_marker_075060b6b0e68d3a4145797551a5352e = L.circleMarker(
+                [49.19231354, 16.60828846],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_c41aff09397d444e871682e9b847d2c5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_32e2b51f8980abe0c7f3d8c47f9c208c = $(`<div id="html_32e2b51f8980abe0c7f3d8c47f9c208c" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -65 dBm<br>  <b>RSRQ:</b> -8 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_c41aff09397d444e871682e9b847d2c5.setContent(html_32e2b51f8980abe0c7f3d8c47f9c208c);
+            
+        
+
+        circle_marker_075060b6b0e68d3a4145797551a5352e.bindPopup(popup_c41aff09397d444e871682e9b847d2c5)
+        ;
+
+        
+    
+    
+            var circle_marker_554a98e7d9e1a629638f2192417be5d8 = L.circleMarker(
+                [49.19252127, 16.60813866],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_39769ee8a5984a118955330ef52fa7ad = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d0dc5e4bbf3030e91cccb94842334c1a = $(`<div id="html_d0dc5e4bbf3030e91cccb94842334c1a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -59 dBm<br>  <b>RSRQ:</b> -17 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_39769ee8a5984a118955330ef52fa7ad.setContent(html_d0dc5e4bbf3030e91cccb94842334c1a);
+            
+        
+
+        circle_marker_554a98e7d9e1a629638f2192417be5d8.bindPopup(popup_39769ee8a5984a118955330ef52fa7ad)
+        ;
+
+        
+    
+    
+            var circle_marker_124594da1632ee5c64b9323b62e6efe1 = L.circleMarker(
+                [49.19271088, 16.6079271],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_8a006fa75af89ca8a454590515377138 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_78b17d8542067bedd0722029023bdddb = $(`<div id="html_78b17d8542067bedd0722029023bdddb" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -68 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_8a006fa75af89ca8a454590515377138.setContent(html_78b17d8542067bedd0722029023bdddb);
+            
+        
+
+        circle_marker_124594da1632ee5c64b9323b62e6efe1.bindPopup(popup_8a006fa75af89ca8a454590515377138)
+        ;
+
+        
+    
+    
+            var circle_marker_6e24087dabed72a88413de2d839c7d02 = L.circleMarker(
+                [49.19271088, 16.6079271],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_e32d2a9944ecc4b55de62ab751b4f9ee = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_30c55195c6f14b0b984c68a5a71d41d2 = $(`<div id="html_30c55195c6f14b0b984c68a5a71d41d2" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -78 dBm<br>  <b>RSRQ:</b> -7 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_e32d2a9944ecc4b55de62ab751b4f9ee.setContent(html_30c55195c6f14b0b984c68a5a71d41d2);
+            
+        
+
+        circle_marker_6e24087dabed72a88413de2d839c7d02.bindPopup(popup_e32d2a9944ecc4b55de62ab751b4f9ee)
+        ;
+
+        
+    
+    
+            var circle_marker_c1622569190810ed53de1d3f074d01bb = L.circleMarker(
+                [49.19293236, 16.60785271],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_7ea8bdc4ab0aa10b87f0542b68cf80a0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ea21fa913756f116844bb95451f4f642 = $(`<div id="html_ea21fa913756f116844bb95451f4f642" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -78 dBm<br>  <b>RSRQ:</b> -7 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_7ea8bdc4ab0aa10b87f0542b68cf80a0.setContent(html_ea21fa913756f116844bb95451f4f642);
+            
+        
+
+        circle_marker_c1622569190810ed53de1d3f074d01bb.bindPopup(popup_7ea8bdc4ab0aa10b87f0542b68cf80a0)
+        ;
+
+        
+    
+    
+            var circle_marker_107190961ddb0cb1d1244fae830cbe0e = L.circleMarker(
+                [49.19315403, 16.60776234],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_1771b51309d9d7c01ad647e59a27fc0d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b9602edd07f419fac736c6c5c890ce34 = $(`<div id="html_b9602edd07f419fac736c6c5c890ce34" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -81 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_1771b51309d9d7c01ad647e59a27fc0d.setContent(html_b9602edd07f419fac736c6c5c890ce34);
+            
+        
+
+        circle_marker_107190961ddb0cb1d1244fae830cbe0e.bindPopup(popup_1771b51309d9d7c01ad647e59a27fc0d)
+        ;
+
+        
+    
+    
+            var circle_marker_20232b62000a95964e937506a1d87d23 = L.circleMarker(
+                [49.19335357, 16.60757344],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_9f587cb81032db535af0a1b7b73d900c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_99628582bd56f5e6004edffa8f7f7142 = $(`<div id="html_99628582bd56f5e6004edffa8f7f7142" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -84 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_9f587cb81032db535af0a1b7b73d900c.setContent(html_99628582bd56f5e6004edffa8f7f7142);
+            
+        
+
+        circle_marker_20232b62000a95964e937506a1d87d23.bindPopup(popup_9f587cb81032db535af0a1b7b73d900c)
+        ;
+
+        
+    
+    
+            var circle_marker_d60b6232e40e83ca73f79cacebc600ba = L.circleMarker(
+                [49.19335357, 16.60757344],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_2357b46c8b11b47f4396a4dfe4a10f8c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c3ca0fc3bdfa0194c430d4b4ec78a9a1 = $(`<div id="html_c3ca0fc3bdfa0194c430d4b4ec78a9a1" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -73 dBm<br>  <b>RSRQ:</b> -6 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_2357b46c8b11b47f4396a4dfe4a10f8c.setContent(html_c3ca0fc3bdfa0194c430d4b4ec78a9a1);
+            
+        
+
+        circle_marker_d60b6232e40e83ca73f79cacebc600ba.bindPopup(popup_2357b46c8b11b47f4396a4dfe4a10f8c)
+        ;
+
+        
+    
+    
+            var circle_marker_6ce4bb91e896c866825cd1f09b99c31e = L.circleMarker(
+                [49.19352444, 16.60730974],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_2c04e4ee4bbae3505a2e1eedd6c505bc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_44f3ab380a7f0542adb68d3002eb1b39 = $(`<div id="html_44f3ab380a7f0542adb68d3002eb1b39" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -73 dBm<br>  <b>RSRQ:</b> -6 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_2c04e4ee4bbae3505a2e1eedd6c505bc.setContent(html_44f3ab380a7f0542adb68d3002eb1b39);
+            
+        
+
+        circle_marker_6ce4bb91e896c866825cd1f09b99c31e.bindPopup(popup_2c04e4ee4bbae3505a2e1eedd6c505bc)
+        ;
+
+        
+    
+    
+            var circle_marker_bb75ad58a636206689485714cfeff042 = L.circleMarker(
+                [49.19369711, 16.60708429],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_7aff31995906d7a5f4d9ca62b93478ec = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6f8124521e4b68d8c4176d04ad5f500b = $(`<div id="html_6f8124521e4b68d8c4176d04ad5f500b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -69 dBm<br>  <b>RSRQ:</b> -6 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_7aff31995906d7a5f4d9ca62b93478ec.setContent(html_6f8124521e4b68d8c4176d04ad5f500b);
+            
+        
+
+        circle_marker_bb75ad58a636206689485714cfeff042.bindPopup(popup_7aff31995906d7a5f4d9ca62b93478ec)
+        ;
+
+        
+    
+    
+            var circle_marker_31404a58a1fc8ca1970205b5f693c6b6 = L.circleMarker(
+                [49.19391832, 16.60696257],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_cef315d7f53ea5caa375db603d1ebe40 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_002f4db35a77bf019169b0c606f5ab27 = $(`<div id="html_002f4db35a77bf019169b0c606f5ab27" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -67 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_cef315d7f53ea5caa375db603d1ebe40.setContent(html_002f4db35a77bf019169b0c606f5ab27);
+            
+        
+
+        circle_marker_31404a58a1fc8ca1970205b5f693c6b6.bindPopup(popup_cef315d7f53ea5caa375db603d1ebe40)
+        ;
+
+        
+    
+    
+            var circle_marker_8e5464acf9ec890d40b540f5a1c1e25a = L.circleMarker(
+                [49.19413874, 16.60689193],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_dc2d4c8750ef50bf51ffa44d12597a85 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_914fe3999ed4e353e0b1b04ca8ff2b73 = $(`<div id="html_914fe3999ed4e353e0b1b04ca8ff2b73" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -65 dBm<br>  <b>RSRQ:</b> -7 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_dc2d4c8750ef50bf51ffa44d12597a85.setContent(html_914fe3999ed4e353e0b1b04ca8ff2b73);
+            
+        
+
+        circle_marker_8e5464acf9ec890d40b540f5a1c1e25a.bindPopup(popup_dc2d4c8750ef50bf51ffa44d12597a85)
+        ;
+
+        
+    
+    
+            var circle_marker_82132e7ac6b7a977f0741100658d5366 = L.circleMarker(
+                [49.19437236, 16.60692658],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_37c172eedebedceb6952190c89840380 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_df6b50b2df5a4c0249440e3e1144fdaf = $(`<div id="html_df6b50b2df5a4c0249440e3e1144fdaf" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -65 dBm<br>  <b>RSRQ:</b> -7 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_37c172eedebedceb6952190c89840380.setContent(html_df6b50b2df5a4c0249440e3e1144fdaf);
+            
+        
+
+        circle_marker_82132e7ac6b7a977f0741100658d5366.bindPopup(popup_37c172eedebedceb6952190c89840380)
+        ;
+
+        
+    
+    
+            var circle_marker_5e77ff465ada84e0855313d722e48cc1 = L.circleMarker(
+                [49.19437236, 16.60692658],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_d7b3c4ecbd78f6c200e805f3e07a7907 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cecfe04c2ec7f2d7b8663d8f1e5a5db1 = $(`<div id="html_cecfe04c2ec7f2d7b8663d8f1e5a5db1" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -66 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_d7b3c4ecbd78f6c200e805f3e07a7907.setContent(html_cecfe04c2ec7f2d7b8663d8f1e5a5db1);
+            
+        
+
+        circle_marker_5e77ff465ada84e0855313d722e48cc1.bindPopup(popup_d7b3c4ecbd78f6c200e805f3e07a7907)
+        ;
+
+        
+    
+    
+            var circle_marker_4583530d32cc43040646b73f88785a99 = L.circleMarker(
+                [49.19458246, 16.60678019],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_4a94e6d2562df1a13792e3730a5518d6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bb07a8b1f79a4767c39062ddb4c9ce77 = $(`<div id="html_bb07a8b1f79a4767c39062ddb4c9ce77" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -66 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_4a94e6d2562df1a13792e3730a5518d6.setContent(html_bb07a8b1f79a4767c39062ddb4c9ce77);
+            
+        
+
+        circle_marker_4583530d32cc43040646b73f88785a99.bindPopup(popup_4a94e6d2562df1a13792e3730a5518d6)
+        ;
+
+        
+    
+    
+            var circle_marker_5e5270f450acc6fcfdeeece082f56c64 = L.circleMarker(
+                [49.19458246, 16.60678019],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_a383d9f14c1d00d02772f788f380e858 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_397297e6ea325ec321f0ea63eb99fb4b = $(`<div id="html_397297e6ea325ec321f0ea63eb99fb4b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -65 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_a383d9f14c1d00d02772f788f380e858.setContent(html_397297e6ea325ec321f0ea63eb99fb4b);
+            
+        
+
+        circle_marker_5e5270f450acc6fcfdeeece082f56c64.bindPopup(popup_a383d9f14c1d00d02772f788f380e858)
+        ;
+
+        
+    
+    
+            var circle_marker_f5583572a65a1efc600a91facecb480d = L.circleMarker(
+                [49.19480632, 16.6066733],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_bfe92f03485abab03fb5b05c0a6478ad = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3cfa435a6dd1635a83468300105cf4d7 = $(`<div id="html_3cfa435a6dd1635a83468300105cf4d7" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -65 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_bfe92f03485abab03fb5b05c0a6478ad.setContent(html_3cfa435a6dd1635a83468300105cf4d7);
+            
+        
+
+        circle_marker_f5583572a65a1efc600a91facecb480d.bindPopup(popup_bfe92f03485abab03fb5b05c0a6478ad)
+        ;
+
+        
+    
+    
+            var circle_marker_47a4d364af7807c3bba3cbbf6a1d94dd = L.circleMarker(
+                [49.19498789, 16.60646068],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_a0ee3b210c765c48b652da2ecf1311fb = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_18611be18ff687a38e69f7b96956d192 = $(`<div id="html_18611be18ff687a38e69f7b96956d192" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -75 dBm<br>  <b>RSRQ:</b> -16 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_a0ee3b210c765c48b652da2ecf1311fb.setContent(html_18611be18ff687a38e69f7b96956d192);
+            
+        
+
+        circle_marker_47a4d364af7807c3bba3cbbf6a1d94dd.bindPopup(popup_a0ee3b210c765c48b652da2ecf1311fb)
+        ;
+
+        
+    
+    
+            var circle_marker_75e9b329de5366fdb234acaf767a09d1 = L.circleMarker(
+                [49.19498789, 16.60646068],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_736ee40129d8b48ff08112983976b6ba = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d8e9557181d631c096cecc00654a05e1 = $(`<div id="html_d8e9557181d631c096cecc00654a05e1" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -67 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_736ee40129d8b48ff08112983976b6ba.setContent(html_d8e9557181d631c096cecc00654a05e1);
+            
+        
+
+        circle_marker_75e9b329de5366fdb234acaf767a09d1.bindPopup(popup_736ee40129d8b48ff08112983976b6ba)
+        ;
+
+        
+    
+    
+            var circle_marker_d2f13554c2081f4426fe93a2236e7c16 = L.circleMarker(
+                [49.19521459, 16.60646278],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_598f83fae3044ec27fe19e5e4b1aa6a1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_902f463c2c731c5ad5c2438902dd19d0 = $(`<div id="html_902f463c2c731c5ad5c2438902dd19d0" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -70 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_598f83fae3044ec27fe19e5e4b1aa6a1.setContent(html_902f463c2c731c5ad5c2438902dd19d0);
+            
+        
+
+        circle_marker_d2f13554c2081f4426fe93a2236e7c16.bindPopup(popup_598f83fae3044ec27fe19e5e4b1aa6a1)
+        ;
+
+        
+    
+    
+            var circle_marker_54f15c36985cc580e37e4558f5349aab = L.circleMarker(
+                [49.19521459, 16.60646278],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_81ad5446dfd308174f8b96d577517961 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_80cc4902cc7b114c19c9e738004e5926 = $(`<div id="html_80cc4902cc7b114c19c9e738004e5926" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -76 dBm<br>  <b>RSRQ:</b> -15 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_81ad5446dfd308174f8b96d577517961.setContent(html_80cc4902cc7b114c19c9e738004e5926);
+            
+        
+
+        circle_marker_54f15c36985cc580e37e4558f5349aab.bindPopup(popup_81ad5446dfd308174f8b96d577517961)
+        ;
+
+        
+    
+    
+            var circle_marker_27c2dfca37d5c6d4204af0dd2288a3ed = L.circleMarker(
+                [49.19521459, 16.60646278],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_85c6f303e4768dc9a40ddb01525024ca = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7c5d01a24b0b68b1c4fcb0667a53e81b = $(`<div id="html_7c5d01a24b0b68b1c4fcb0667a53e81b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -72 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_85c6f303e4768dc9a40ddb01525024ca.setContent(html_7c5d01a24b0b68b1c4fcb0667a53e81b);
+            
+        
+
+        circle_marker_27c2dfca37d5c6d4204af0dd2288a3ed.bindPopup(popup_85c6f303e4768dc9a40ddb01525024ca)
+        ;
+
+        
+    
+    
+            var circle_marker_eefecb71a1a8d7255775967dbec4ead9 = L.circleMarker(
+                [49.19541022, 16.60626796],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_4fca15cb66ebb2636b5054e94a762ba5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_705001842bb0be9c48240f27edf8ae98 = $(`<div id="html_705001842bb0be9c48240f27edf8ae98" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -72 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_4fca15cb66ebb2636b5054e94a762ba5.setContent(html_705001842bb0be9c48240f27edf8ae98);
+            
+        
+
+        circle_marker_eefecb71a1a8d7255775967dbec4ead9.bindPopup(popup_4fca15cb66ebb2636b5054e94a762ba5)
+        ;
+
+        
+    
+    
+            var circle_marker_c6fe1460347be010b8fc81576e3a5a44 = L.circleMarker(
+                [49.19562465, 16.60610634],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_7084a1cebb2a442ef97faab3606b86db = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_dcad77be14caadf03b073d07df5f62c6 = $(`<div id="html_dcad77be14caadf03b073d07df5f62c6" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -74 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_7084a1cebb2a442ef97faab3606b86db.setContent(html_dcad77be14caadf03b073d07df5f62c6);
+            
+        
+
+        circle_marker_c6fe1460347be010b8fc81576e3a5a44.bindPopup(popup_7084a1cebb2a442ef97faab3606b86db)
+        ;
+
+        
+    
+    
+            var circle_marker_fde13a1abb17669d9e41b99ab9b8f8ca = L.circleMarker(
+                [49.19562465, 16.60610634],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_b01c8ac44bdf87fa8fd54581eb522a99 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_12664825fa893b9190e55f5511bdc1a5 = $(`<div id="html_12664825fa893b9190e55f5511bdc1a5" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -77 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_b01c8ac44bdf87fa8fd54581eb522a99.setContent(html_12664825fa893b9190e55f5511bdc1a5);
+            
+        
+
+        circle_marker_fde13a1abb17669d9e41b99ab9b8f8ca.bindPopup(popup_b01c8ac44bdf87fa8fd54581eb522a99)
+        ;
+
+        
+    
+    
+            var circle_marker_4cd8169407d511389d307900ba0e6e39 = L.circleMarker(
+                [49.19585715, 16.60604405],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_66915ba83965a93404fd84746f74fe47 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c8670da67736821f8154e3791b0e4894 = $(`<div id="html_c8670da67736821f8154e3791b0e4894" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -77 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_66915ba83965a93404fd84746f74fe47.setContent(html_c8670da67736821f8154e3791b0e4894);
+            
+        
+
+        circle_marker_4cd8169407d511389d307900ba0e6e39.bindPopup(popup_66915ba83965a93404fd84746f74fe47)
+        ;
+
+        
+    
+    
+            var circle_marker_23b6b957aa48642bb6a090addc033413 = L.circleMarker(
+                [49.19607581, 16.60593372],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_0ebcec02a917cc2d1fbe24d1190b121b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fccc97f5830c207f222cbd890aac7471 = $(`<div id="html_fccc97f5830c207f222cbd890aac7471" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -69 dBm<br>  <b>RSRQ:</b> -7 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_0ebcec02a917cc2d1fbe24d1190b121b.setContent(html_fccc97f5830c207f222cbd890aac7471);
+            
+        
+
+        circle_marker_23b6b957aa48642bb6a090addc033413.bindPopup(popup_0ebcec02a917cc2d1fbe24d1190b121b)
+        ;
+
+        
+    
+    
+            var circle_marker_648309dd34058554a1a3797a53a18b1e = L.circleMarker(
+                [49.19629988, 16.60582682],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_c09e143cbdcb31b706892cf85941b6e5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8714ee76eda253b0e7b3422aee26c3f2 = $(`<div id="html_8714ee76eda253b0e7b3422aee26c3f2" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -80 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_c09e143cbdcb31b706892cf85941b6e5.setContent(html_8714ee76eda253b0e7b3422aee26c3f2);
+            
+        
+
+        circle_marker_648309dd34058554a1a3797a53a18b1e.bindPopup(popup_c09e143cbdcb31b706892cf85941b6e5)
+        ;
+
+        
+    
+    
+            var circle_marker_3e5fb01e11b49371a22dec227bc6aefc = L.circleMarker(
+                [49.19629988, 16.60582682],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_2ef1f24e236137685b8326ce02eaaf70 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_774a919fe96cb07a1326709a0d45fb06 = $(`<div id="html_774a919fe96cb07a1326709a0d45fb06" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -76 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_2ef1f24e236137685b8326ce02eaaf70.setContent(html_774a919fe96cb07a1326709a0d45fb06);
+            
+        
+
+        circle_marker_3e5fb01e11b49371a22dec227bc6aefc.bindPopup(popup_2ef1f24e236137685b8326ce02eaaf70)
+        ;
+
+        
+    
+    
+            var circle_marker_ac7c9a1bb4cde05305036a9d5cdc7fce = L.circleMarker(
+                [49.19651047, 16.60569594],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_2c6ec4c9340a6ae9af349a9136fbfc9e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_49c0206971f688210efaac4fec4d950b = $(`<div id="html_49c0206971f688210efaac4fec4d950b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -76 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_2c6ec4c9340a6ae9af349a9136fbfc9e.setContent(html_49c0206971f688210efaac4fec4d950b);
+            
+        
+
+        circle_marker_ac7c9a1bb4cde05305036a9d5cdc7fce.bindPopup(popup_2c6ec4c9340a6ae9af349a9136fbfc9e)
+        ;
+
+        
+    
+    
+            var circle_marker_5e60ac5eb1fe6d625f371a0f256ce7a2 = L.circleMarker(
+                [49.19674238, 16.60565123],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_863a670b75b00adae870394979000057 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_41e99ffa8fa77126fe58b1b5914e60d6 = $(`<div id="html_41e99ffa8fa77126fe58b1b5914e60d6" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -79 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_863a670b75b00adae870394979000057.setContent(html_41e99ffa8fa77126fe58b1b5914e60d6);
+            
+        
+
+        circle_marker_5e60ac5eb1fe6d625f371a0f256ce7a2.bindPopup(popup_863a670b75b00adae870394979000057)
+        ;
+
+        
+    
+    
+            var circle_marker_3fd991d86526f5e0d6510c44358f0e3b = L.circleMarker(
+                [49.19696796, 16.60557813],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_9019cae84bd62af04f17c15fcc24ef6e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2f73114e051e425e8f6a3e6513422022 = $(`<div id="html_2f73114e051e425e8f6a3e6513422022" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -81 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_9019cae84bd62af04f17c15fcc24ef6e.setContent(html_2f73114e051e425e8f6a3e6513422022);
+            
+        
+
+        circle_marker_3fd991d86526f5e0d6510c44358f0e3b.bindPopup(popup_9019cae84bd62af04f17c15fcc24ef6e)
+        ;
+
+        
+    
+    
+            var circle_marker_cb12c846766cf2631ce1c16f6474bc52 = L.circleMarker(
+                [49.19696796, 16.60557813],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_0f82c129674df66929f355ba01b00f6e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_dac3745a9b8281bc1d508250592e8725 = $(`<div id="html_dac3745a9b8281bc1d508250592e8725" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -81 dBm<br>  <b>RSRQ:</b> -8 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_0f82c129674df66929f355ba01b00f6e.setContent(html_dac3745a9b8281bc1d508250592e8725);
+            
+        
+
+        circle_marker_cb12c846766cf2631ce1c16f6474bc52.bindPopup(popup_0f82c129674df66929f355ba01b00f6e)
+        ;
+
+        
+    
+    
+            var circle_marker_a962688ca2ecc423f5a3a487865eabdf = L.circleMarker(
+                [49.19719408, 16.60554081],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_50c03e19a97b56a1a74dd889c036606e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a748e213f2b423ddc7084fd86a646edc = $(`<div id="html_a748e213f2b423ddc7084fd86a646edc" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -81 dBm<br>  <b>RSRQ:</b> -8 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_50c03e19a97b56a1a74dd889c036606e.setContent(html_a748e213f2b423ddc7084fd86a646edc);
+            
+        
+
+        circle_marker_a962688ca2ecc423f5a3a487865eabdf.bindPopup(popup_50c03e19a97b56a1a74dd889c036606e)
+        ;
+
+        
+    
+    
+            var circle_marker_0ff6da4c64d3267a2380edf9f79676be = L.circleMarker(
+                [49.19741886, 16.60558905],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_d033b9124f3c3b7c40a8ca8d8f4c72df = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e6f0b81c8caaedded77f06943c88a38b = $(`<div id="html_e6f0b81c8caaedded77f06943c88a38b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -79 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_d033b9124f3c3b7c40a8ca8d8f4c72df.setContent(html_e6f0b81c8caaedded77f06943c88a38b);
+            
+        
+
+        circle_marker_0ff6da4c64d3267a2380edf9f79676be.bindPopup(popup_d033b9124f3c3b7c40a8ca8d8f4c72df)
+        ;
+
+        
+    
+    
+            var circle_marker_7c2c87ba81ebb93a895e893187dbef69 = L.circleMarker(
+                [49.19748931, 16.60592703],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_9a032c5f7bf8a6bd7e85acba376a932a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1a0d5a322365a5dbe958a586d84a4458 = $(`<div id="html_1a0d5a322365a5dbe958a586d84a4458" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -78 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_9a032c5f7bf8a6bd7e85acba376a932a.setContent(html_1a0d5a322365a5dbe958a586d84a4458);
+            
+        
+
+        circle_marker_7c2c87ba81ebb93a895e893187dbef69.bindPopup(popup_9a032c5f7bf8a6bd7e85acba376a932a)
+        ;
+
+        
+    
+    
+            var circle_marker_50599b2cda71347c30af2c50dbcf765a = L.circleMarker(
+                [49.19748931, 16.60592703],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_6bb65f8b2776318e8602fcb59634490f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3d9b0d5c19275e9bef30887c925511c4 = $(`<div id="html_3d9b0d5c19275e9bef30887c925511c4" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -74 dBm<br>  <b>RSRQ:</b> -8 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_6bb65f8b2776318e8602fcb59634490f.setContent(html_3d9b0d5c19275e9bef30887c925511c4);
+            
+        
+
+        circle_marker_50599b2cda71347c30af2c50dbcf765a.bindPopup(popup_6bb65f8b2776318e8602fcb59634490f)
+        ;
+
+        
+    
+    
+            var circle_marker_5c3d929e1a45e8f8dbaec62c39a33b45 = L.circleMarker(
+                [49.19755433, 16.60627072],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_01df021292480a4eeaa667edb0129e6e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a5861e634af6f6cb3ba7667877ca0acd = $(`<div id="html_a5861e634af6f6cb3ba7667877ca0acd" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -68 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_01df021292480a4eeaa667edb0129e6e.setContent(html_a5861e634af6f6cb3ba7667877ca0acd);
+            
+        
+
+        circle_marker_5c3d929e1a45e8f8dbaec62c39a33b45.bindPopup(popup_01df021292480a4eeaa667edb0129e6e)
+        ;
+
+        
+    
+    
+            var circle_marker_296767103cea0065af86e26d38235c34 = L.circleMarker(
+                [49.19761957, 16.60660868],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_8c13da050807e1ca1268c9f466d3fa1d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d7b12ca4a1e78a4d70143e811847b865 = $(`<div id="html_d7b12ca4a1e78a4d70143e811847b865" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -68 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_8c13da050807e1ca1268c9f466d3fa1d.setContent(html_d7b12ca4a1e78a4d70143e811847b865);
+            
+        
+
+        circle_marker_296767103cea0065af86e26d38235c34.bindPopup(popup_8c13da050807e1ca1268c9f466d3fa1d)
+        ;
+
+        
+    
+    
+            var circle_marker_2dc3cd4ea3bef6f8585366ca2ec9c428 = L.circleMarker(
+                [49.19760645, 16.60696795],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_6445420c2aaf9c99341bcc225262dbb1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8e346eddac4c129ac0c1589897d07c80 = $(`<div id="html_8e346eddac4c129ac0c1589897d07c80" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -67 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_6445420c2aaf9c99341bcc225262dbb1.setContent(html_8e346eddac4c129ac0c1589897d07c80);
+            
+        
+
+        circle_marker_2dc3cd4ea3bef6f8585366ca2ec9c428.bindPopup(popup_6445420c2aaf9c99341bcc225262dbb1)
+        ;
+
+        
+    
+    
+            var circle_marker_71c8633495d81e1f371851998bd6ab8c = L.circleMarker(
+                [49.19750441, 16.60729733],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_b101dfad70145022e5000ca4084c7fa4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a6a34c8baaa6d081b8c85e32a2b51106 = $(`<div id="html_a6a34c8baaa6d081b8c85e32a2b51106" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -74 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_b101dfad70145022e5000ca4084c7fa4.setContent(html_a6a34c8baaa6d081b8c85e32a2b51106);
+            
+        
+
+        circle_marker_71c8633495d81e1f371851998bd6ab8c.bindPopup(popup_b101dfad70145022e5000ca4084c7fa4)
+        ;
+
+        
+    
+    
+            var circle_marker_4961fd9d42070a73da742eedf59d029d = L.circleMarker(
+                [49.19747543, 16.60764605],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_a7867f4aa3dd05b71703fe756bbfa707 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c92c5b07cd895dc33e4acf394450cc14 = $(`<div id="html_c92c5b07cd895dc33e4acf394450cc14" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -76 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_a7867f4aa3dd05b71703fe756bbfa707.setContent(html_c92c5b07cd895dc33e4acf394450cc14);
+            
+        
+
+        circle_marker_4961fd9d42070a73da742eedf59d029d.bindPopup(popup_a7867f4aa3dd05b71703fe756bbfa707)
+        ;
+
+        
+    
+    
+            var circle_marker_7b15352efd1a9ad7ca1e43d0408fba5a = L.circleMarker(
+                [49.19747255, 16.60800323],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_59a873e6b39d4602f19cbad944fc2948 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_52c1df4bdbef997f737c238c44ad3dd9 = $(`<div id="html_52c1df4bdbef997f737c238c44ad3dd9" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -79 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_59a873e6b39d4602f19cbad944fc2948.setContent(html_52c1df4bdbef997f737c238c44ad3dd9);
+            
+        
+
+        circle_marker_7b15352efd1a9ad7ca1e43d0408fba5a.bindPopup(popup_59a873e6b39d4602f19cbad944fc2948)
+        ;
+
+        
+    
+    
+            var circle_marker_b837a3de0e19d51f8a0cf465292d746a = L.circleMarker(
+                [49.19747072, 16.60834965],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_5b9bc007d9d7960ed5988cde5c944058 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8b69a2aab74def45872bb6b961c80210 = $(`<div id="html_8b69a2aab74def45872bb6b961c80210" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -82 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_5b9bc007d9d7960ed5988cde5c944058.setContent(html_8b69a2aab74def45872bb6b961c80210);
+            
+        
+
+        circle_marker_b837a3de0e19d51f8a0cf465292d746a.bindPopup(popup_5b9bc007d9d7960ed5988cde5c944058)
+        ;
+
+        
+    
+    
+            var circle_marker_47cf6877a63a7efd03301d40a92af465 = L.circleMarker(
+                [49.19752503, 16.60868801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_a69b686063981fcf6336a62d330124cc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7605ff296f953fda9aca856ef8bd4f11 = $(`<div id="html_7605ff296f953fda9aca856ef8bd4f11" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -90 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_a69b686063981fcf6336a62d330124cc.setContent(html_7605ff296f953fda9aca856ef8bd4f11);
+            
+        
+
+        circle_marker_47cf6877a63a7efd03301d40a92af465.bindPopup(popup_a69b686063981fcf6336a62d330124cc)
+        ;
+
+        
+    
+    
+            var circle_marker_2da988b5284e9cb36057fba4acc84c5c = L.circleMarker(
+                [49.19752503, 16.60868801],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_a5ada0a9a8a8edb46b7c56a5c4d484d2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6cc507b811f62bdd3ced471d60e3d14f = $(`<div id="html_6cc507b811f62bdd3ced471d60e3d14f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -85 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_a5ada0a9a8a8edb46b7c56a5c4d484d2.setContent(html_6cc507b811f62bdd3ced471d60e3d14f);
+            
+        
+
+        circle_marker_2da988b5284e9cb36057fba4acc84c5c.bindPopup(popup_a5ada0a9a8a8edb46b7c56a5c4d484d2)
+        ;
+
+        
+    
+    
+            var circle_marker_da8bdfe79bc3d81ed1e44e15d8414c8e = L.circleMarker(
+                [49.19736323, 16.60893117],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_dfe4f9692656d795a17e0977d69de3c5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4644d7ed0e2563b8d6e20b10811546af = $(`<div id="html_4644d7ed0e2563b8d6e20b10811546af" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -80 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_dfe4f9692656d795a17e0977d69de3c5.setContent(html_4644d7ed0e2563b8d6e20b10811546af);
+            
+        
+
+        circle_marker_da8bdfe79bc3d81ed1e44e15d8414c8e.bindPopup(popup_dfe4f9692656d795a17e0977d69de3c5)
+        ;
+
+        
+    
+    
+            var circle_marker_bbde37709904ec05a6404bab6e6b6b30 = L.circleMarker(
+                [49.19714229, 16.60905831],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_45a2163c8ff761a6fdf9bcbf26ccce83 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_288f78ddaf3486a41adc0d04c9088604 = $(`<div id="html_288f78ddaf3486a41adc0d04c9088604" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -78 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_45a2163c8ff761a6fdf9bcbf26ccce83.setContent(html_288f78ddaf3486a41adc0d04c9088604);
+            
+        
+
+        circle_marker_bbde37709904ec05a6404bab6e6b6b30.bindPopup(popup_45a2163c8ff761a6fdf9bcbf26ccce83)
+        ;
+
+        
+    
+    
+            var circle_marker_ee246a73710f02d3f375e4dc1e6b9ad6 = L.circleMarker(
+                [49.19690851, 16.60910675],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_096f943f94ecb065e84056b8d876275b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_251cad1e51f3b5057e3a5f24e73ab382 = $(`<div id="html_251cad1e51f3b5057e3a5f24e73ab382" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -68 dBm<br>  <b>RSRQ:</b> -15 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_096f943f94ecb065e84056b8d876275b.setContent(html_251cad1e51f3b5057e3a5f24e73ab382);
+            
+        
+
+        circle_marker_ee246a73710f02d3f375e4dc1e6b9ad6.bindPopup(popup_096f943f94ecb065e84056b8d876275b)
+        ;
+
+        
+    
+    
+            var circle_marker_787d8a669c641f3df92877d5622f3aa6 = L.circleMarker(
+                [49.19670656, 16.60926292],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_f037957a998716c9dadaa03054be456d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a5eba586d7d79f0e1813def629375ff8 = $(`<div id="html_a5eba586d7d79f0e1813def629375ff8" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -78 dBm<br>  <b>RSRQ:</b> -14 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_f037957a998716c9dadaa03054be456d.setContent(html_a5eba586d7d79f0e1813def629375ff8);
+            
+        
+
+        circle_marker_787d8a669c641f3df92877d5622f3aa6.bindPopup(popup_f037957a998716c9dadaa03054be456d)
+        ;
+
+        
+    
+    
+            var circle_marker_55bbf59159cba4f1c08982cfd6cd9acd = L.circleMarker(
+                [49.19670656, 16.60926292],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_a8f7b0254cae9d371b5f892f5ec82d28 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d3b1201f7a40ea83785aba40115c7d8f = $(`<div id="html_d3b1201f7a40ea83785aba40115c7d8f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -69 dBm<br>  <b>RSRQ:</b> -16 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_a8f7b0254cae9d371b5f892f5ec82d28.setContent(html_d3b1201f7a40ea83785aba40115c7d8f);
+            
+        
+
+        circle_marker_55bbf59159cba4f1c08982cfd6cd9acd.bindPopup(popup_a8f7b0254cae9d371b5f892f5ec82d28)
+        ;
+
+        
+    
+    
+            var circle_marker_c379e2314482440af6879a1a2e27b61a = L.circleMarker(
+                [49.19650266, 16.60941853],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_ce141ca43f6f3af89c903ecf51302af5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_272c41cad82c53e84872e60fe689ad22 = $(`<div id="html_272c41cad82c53e84872e60fe689ad22" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -69 dBm<br>  <b>RSRQ:</b> -16 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_ce141ca43f6f3af89c903ecf51302af5.setContent(html_272c41cad82c53e84872e60fe689ad22);
+            
+        
+
+        circle_marker_c379e2314482440af6879a1a2e27b61a.bindPopup(popup_ce141ca43f6f3af89c903ecf51302af5)
+        ;
+
+        
+    
+    
+            var circle_marker_637145a861cef3fce1ca6a4a5f7baf83 = L.circleMarker(
+                [49.19626696, 16.60940865],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_74676694a98ad0cbbdd5a810071de3e6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4b4a248d2a16cdbe1ccf6806216c3a34 = $(`<div id="html_4b4a248d2a16cdbe1ccf6806216c3a34" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -77 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_74676694a98ad0cbbdd5a810071de3e6.setContent(html_4b4a248d2a16cdbe1ccf6806216c3a34);
+            
+        
+
+        circle_marker_637145a861cef3fce1ca6a4a5f7baf83.bindPopup(popup_74676694a98ad0cbbdd5a810071de3e6)
+        ;
+
+        
+    
+    
+            var circle_marker_22e04572f31f316044ec264d2ba712c9 = L.circleMarker(
+                [49.19603908, 16.60952098],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_e98f6e34ea46e5fa74e1557b4eaae0b5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2b344ad754a60676a2b9e0ba667be768 = $(`<div id="html_2b344ad754a60676a2b9e0ba667be768" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -78 dBm<br>  <b>RSRQ:</b> -14 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_e98f6e34ea46e5fa74e1557b4eaae0b5.setContent(html_2b344ad754a60676a2b9e0ba667be768);
+            
+        
+
+        circle_marker_22e04572f31f316044ec264d2ba712c9.bindPopup(popup_e98f6e34ea46e5fa74e1557b4eaae0b5)
+        ;
+
+        
+    
+    
+            var circle_marker_162f4f8846d83e6ea7cadd229e23de3c = L.circleMarker(
+                [49.19583208, 16.60969302],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_0a21ab002db72db511cfe6271175332e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4369506ca86d0dd33e504c701d7d6630 = $(`<div id="html_4369506ca86d0dd33e504c701d7d6630" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -78 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_0a21ab002db72db511cfe6271175332e.setContent(html_4369506ca86d0dd33e504c701d7d6630);
+            
+        
+
+        circle_marker_162f4f8846d83e6ea7cadd229e23de3c.bindPopup(popup_0a21ab002db72db511cfe6271175332e)
+        ;
+
+        
+    
+    
+            var circle_marker_bc8497985c5ec8f563000cfe768c50ea = L.circleMarker(
+                [49.19583208, 16.60969302],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_a2d31c8749fea66f49591c0a6c86a8e8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_517b947147d487d9b4c99303ccf90f3f = $(`<div id="html_517b947147d487d9b4c99303ccf90f3f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -78 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_a2d31c8749fea66f49591c0a6c86a8e8.setContent(html_517b947147d487d9b4c99303ccf90f3f);
+            
+        
+
+        circle_marker_bc8497985c5ec8f563000cfe768c50ea.bindPopup(popup_a2d31c8749fea66f49591c0a6c86a8e8)
+        ;
+
+        
+    
+    
+            var circle_marker_c1ae5f94604bc4c54f9f1a67f0e587b6 = L.circleMarker(
+                [49.19560251, 16.60981525],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_5eb01dc194768991512783e7e2456969 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0e7004ca9143952b19b2cdcbdd5c6300 = $(`<div id="html_0e7004ca9143952b19b2cdcbdd5c6300" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -78 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_5eb01dc194768991512783e7e2456969.setContent(html_0e7004ca9143952b19b2cdcbdd5c6300);
+            
+        
+
+        circle_marker_c1ae5f94604bc4c54f9f1a67f0e587b6.bindPopup(popup_5eb01dc194768991512783e7e2456969)
+        ;
+
+        
+    
+    
+            var circle_marker_f3f026bc35a58f0b039884374460aa71 = L.circleMarker(
+                [49.19560251, 16.60981525],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_5de402e4e0d56a1a3711735888a4b85d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a0dcd4677d92a2d2164b54ef7ee154b7 = $(`<div id="html_a0dcd4677d92a2d2164b54ef7ee154b7" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -68 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_5de402e4e0d56a1a3711735888a4b85d.setContent(html_a0dcd4677d92a2d2164b54ef7ee154b7);
+            
+        
+
+        circle_marker_f3f026bc35a58f0b039884374460aa71.bindPopup(popup_5de402e4e0d56a1a3711735888a4b85d)
+        ;
+
+        
+    
+    
+            var circle_marker_8e378925392bb21213e459034dbd17b7 = L.circleMarker(
+                [49.19536986, 16.60981035],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_6999e83f558276b00b02b9715e4b5c9e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9def771a8cf5dec1e26d302a888740fa = $(`<div id="html_9def771a8cf5dec1e26d302a888740fa" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -68 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_6999e83f558276b00b02b9715e4b5c9e.setContent(html_9def771a8cf5dec1e26d302a888740fa);
+            
+        
+
+        circle_marker_8e378925392bb21213e459034dbd17b7.bindPopup(popup_6999e83f558276b00b02b9715e4b5c9e)
+        ;
+
+        
+    
+    
+            var circle_marker_5934b41af01ee6e28650503fbed55872 = L.circleMarker(
+                [49.19515114, 16.60995309],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_9a03435c1a2ba3f6aedf1f2efc25d7b7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8c0e521c1a3b5127125b06369755a87f = $(`<div id="html_8c0e521c1a3b5127125b06369755a87f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -74 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 7.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_9a03435c1a2ba3f6aedf1f2efc25d7b7.setContent(html_8c0e521c1a3b5127125b06369755a87f);
+            
+        
+
+        circle_marker_5934b41af01ee6e28650503fbed55872.bindPopup(popup_9a03435c1a2ba3f6aedf1f2efc25d7b7)
+        ;
+
+        
+    
+    
+            var circle_marker_7e6bc4d9e09dd24abe76e8dd4243421f = L.circleMarker(
+                [49.19515114, 16.60995309],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_33366d46b918ae903b8029b40657f845 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_df6cb37b109a02ef8a8d03e1c817d464 = $(`<div id="html_df6cb37b109a02ef8a8d03e1c817d464" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -79 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_33366d46b918ae903b8029b40657f845.setContent(html_df6cb37b109a02ef8a8d03e1c817d464);
+            
+        
+
+        circle_marker_7e6bc4d9e09dd24abe76e8dd4243421f.bindPopup(popup_33366d46b918ae903b8029b40657f845)
+        ;
+
+        
+    
+    
+            var circle_marker_a5658358481de7c452b76d3e9d2ac843 = L.circleMarker(
+                [49.19495139, 16.61014078],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_6603975454195d923ae93d05f760b745 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cb86c7ab9e81b857be90c2317653a985 = $(`<div id="html_cb86c7ab9e81b857be90c2317653a985" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -79 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_6603975454195d923ae93d05f760b745.setContent(html_cb86c7ab9e81b857be90c2317653a985);
+            
+        
+
+        circle_marker_a5658358481de7c452b76d3e9d2ac843.bindPopup(popup_6603975454195d923ae93d05f760b745)
+        ;
+
+        
+    
+    
+            var circle_marker_c67648216d3c28a6485006d9eaee70a6 = L.circleMarker(
+                [49.19495139, 16.61014078],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_adae0a8949ca6d79e35422e9388cc3f8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cf6f02352477aa78ce590ccf3e8513e1 = $(`<div id="html_cf6f02352477aa78ce590ccf3e8513e1" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -85 dBm<br>  <b>RSRQ:</b> -14 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_adae0a8949ca6d79e35422e9388cc3f8.setContent(html_cf6f02352477aa78ce590ccf3e8513e1);
+            
+        
+
+        circle_marker_c67648216d3c28a6485006d9eaee70a6.bindPopup(popup_adae0a8949ca6d79e35422e9388cc3f8)
+        ;
+
+        
+    
+    
+            var circle_marker_2d20850a2869a1412943420826c25b3b = L.circleMarker(
+                [49.19475996, 16.61032238],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_84514466dc9f93803508bbee2292dbd4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6fb4716f64145595980b41296bcc50c4 = $(`<div id="html_6fb4716f64145595980b41296bcc50c4" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -85 dBm<br>  <b>RSRQ:</b> -14 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_84514466dc9f93803508bbee2292dbd4.setContent(html_6fb4716f64145595980b41296bcc50c4);
+            
+        
+
+        circle_marker_2d20850a2869a1412943420826c25b3b.bindPopup(popup_84514466dc9f93803508bbee2292dbd4)
+        ;
+
+        
+    
+    
+            var circle_marker_1c3ea71de383c5689b39f2705625320d = L.circleMarker(
+                [49.19455114, 16.61050992],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_20b6dda20163e70b3254858091792890 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3bce996be9cfc4dd6216e48b61466f69 = $(`<div id="html_3bce996be9cfc4dd6216e48b61466f69" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -83 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_20b6dda20163e70b3254858091792890.setContent(html_3bce996be9cfc4dd6216e48b61466f69);
+            
+        
+
+        circle_marker_1c3ea71de383c5689b39f2705625320d.bindPopup(popup_20b6dda20163e70b3254858091792890)
+        ;
+
+        
+    
+    
+            var circle_marker_6ceddf2f17dadb8aa17361ef0b620ef5 = L.circleMarker(
+                [49.19438432, 16.61074154],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_46aa61f992499f4ddbc5254464d398bf = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1e6214a430c54226ba497c54fdfc93ec = $(`<div id="html_1e6214a430c54226ba497c54fdfc93ec" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -82 dBm<br>  <b>RSRQ:</b> -14 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_46aa61f992499f4ddbc5254464d398bf.setContent(html_1e6214a430c54226ba497c54fdfc93ec);
+            
+        
+
+        circle_marker_6ceddf2f17dadb8aa17361ef0b620ef5.bindPopup(popup_46aa61f992499f4ddbc5254464d398bf)
+        ;
+
+        
+    
+    
+            var circle_marker_de3282ea233f97a3d17c39c337e41fd5 = L.circleMarker(
+                [49.19421008, 16.61096143],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_2a3375f538035afc1fd4e39a07b7f6b1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f89a2d30db7c422866a144a528e38c0b = $(`<div id="html_f89a2d30db7c422866a144a528e38c0b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -90 dBm<br>  <b>RSRQ:</b> -20 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_2a3375f538035afc1fd4e39a07b7f6b1.setContent(html_f89a2d30db7c422866a144a528e38c0b);
+            
+        
+
+        circle_marker_de3282ea233f97a3d17c39c337e41fd5.bindPopup(popup_2a3375f538035afc1fd4e39a07b7f6b1)
+        ;
+
+        
+    
+    
+            var circle_marker_725adbc3c6102127e42a8cd7f0301b25 = L.circleMarker(
+                [49.19421008, 16.61096143],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_8921b0de32928cdb11a30f8b16fe790c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e1bcc6aea9e6470b27a47095c4541b20 = $(`<div id="html_e1bcc6aea9e6470b27a47095c4541b20" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -80 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_8921b0de32928cdb11a30f8b16fe790c.setContent(html_e1bcc6aea9e6470b27a47095c4541b20);
+            
+        
+
+        circle_marker_725adbc3c6102127e42a8cd7f0301b25.bindPopup(popup_8921b0de32928cdb11a30f8b16fe790c)
+        ;
+
+        
+    
+    
+            var circle_marker_fb1792172447256ab3c4a8985409be35 = L.circleMarker(
+                [49.19400782, 16.61114083],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_1dde2b3a891723a43578ecfe807ff505 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8e1add38b1013837437fa4355b842d47 = $(`<div id="html_8e1add38b1013837437fa4355b842d47" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -80 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_1dde2b3a891723a43578ecfe807ff505.setContent(html_8e1add38b1013837437fa4355b842d47);
+            
+        
+
+        circle_marker_fb1792172447256ab3c4a8985409be35.bindPopup(popup_1dde2b3a891723a43578ecfe807ff505)
+        ;
+
+        
+    
+    
+            var circle_marker_ce71def71021d98297eede9220216d46 = L.circleMarker(
+                [49.19382479, 16.61135725],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_624205be41d755ba9402fabc47a67f8f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8f50c5a4ab5522ce2ce1789e60ddcc90 = $(`<div id="html_8f50c5a4ab5522ce2ce1789e60ddcc90" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -84 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_624205be41d755ba9402fabc47a67f8f.setContent(html_8f50c5a4ab5522ce2ce1789e60ddcc90);
+            
+        
+
+        circle_marker_ce71def71021d98297eede9220216d46.bindPopup(popup_624205be41d755ba9402fabc47a67f8f)
+        ;
+
+        
+    
+    
+            var circle_marker_80950ff524b5187a1e7c07d7e687b633 = L.circleMarker(
+                [49.1936238, 16.61152788],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_36d7a276421f50fb0fabdf0b80090d67 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e6c39e6dd1860dcfa7b64463904e7fdb = $(`<div id="html_e6c39e6dd1860dcfa7b64463904e7fdb" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -89 dBm<br>  <b>RSRQ:</b> -17 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_36d7a276421f50fb0fabdf0b80090d67.setContent(html_e6c39e6dd1860dcfa7b64463904e7fdb);
+            
+        
+
+        circle_marker_80950ff524b5187a1e7c07d7e687b633.bindPopup(popup_36d7a276421f50fb0fabdf0b80090d67)
+        ;
+
+        
+    
+    
+            var circle_marker_e7237ba2e8e0d123eade14332b716936 = L.circleMarker(
+                [49.1936238, 16.61152788],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_f9e6f4ad16fa381a966572fec0e3bb2e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5294d3f372eba1a4ecf1e6c811e61fb0 = $(`<div id="html_5294d3f372eba1a4ecf1e6c811e61fb0" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -86 dBm<br>  <b>RSRQ:</b> -17 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_f9e6f4ad16fa381a966572fec0e3bb2e.setContent(html_5294d3f372eba1a4ecf1e6c811e61fb0);
+            
+        
+
+        circle_marker_e7237ba2e8e0d123eade14332b716936.bindPopup(popup_f9e6f4ad16fa381a966572fec0e3bb2e)
+        ;
+
+        
+    
+    
+            var circle_marker_9f0314147f4b92a80b2267b1b83eeeee = L.circleMarker(
+                [49.19343212, 16.6117121],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_566b369b7794abe476dc453c8ec27e23 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e1c3aed4915b61f128aac01ffeca2688 = $(`<div id="html_e1c3aed4915b61f128aac01ffeca2688" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -79 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_566b369b7794abe476dc453c8ec27e23.setContent(html_e1c3aed4915b61f128aac01ffeca2688);
+            
+        
+
+        circle_marker_9f0314147f4b92a80b2267b1b83eeeee.bindPopup(popup_566b369b7794abe476dc453c8ec27e23)
+        ;
+
+        
+    
+    
+            var circle_marker_e68ddc1fd0bf709380c3e823573035e1 = L.circleMarker(
+                [49.19322712, 16.61185495],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_aa0c562028eeaed2065dd0b642d59341 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8d5f001bd33222ec6c8a2ad6c53e0560 = $(`<div id="html_8d5f001bd33222ec6c8a2ad6c53e0560" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -79 dBm<br>  <b>RSRQ:</b> -17 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_aa0c562028eeaed2065dd0b642d59341.setContent(html_8d5f001bd33222ec6c8a2ad6c53e0560);
+            
+        
+
+        circle_marker_e68ddc1fd0bf709380c3e823573035e1.bindPopup(popup_aa0c562028eeaed2065dd0b642d59341)
+        ;
+
+        
+    
+    
+            var circle_marker_3c877e5b798d90290557a3460c8be52d = L.circleMarker(
+                [49.19302619, 16.61202144],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_4a11a84e49d83d2c9d280853dcd27d0f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cbc99166400a4ad25b7642a049a0e4b3 = $(`<div id="html_cbc99166400a4ad25b7642a049a0e4b3" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -77 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_4a11a84e49d83d2c9d280853dcd27d0f.setContent(html_cbc99166400a4ad25b7642a049a0e4b3);
+            
+        
+
+        circle_marker_3c877e5b798d90290557a3460c8be52d.bindPopup(popup_4a11a84e49d83d2c9d280853dcd27d0f)
+        ;
+
+        
+    
+    
+            var circle_marker_367d04e1e087ad08c47fb27ddb65a59b = L.circleMarker(
+                [49.19282033, 16.61217581],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_f3f711a17e1a7c5d69150fd63ff16288 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d0ec23028780d2e6a37c778a545d6a84 = $(`<div id="html_d0ec23028780d2e6a37c778a545d6a84" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -74 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_f3f711a17e1a7c5d69150fd63ff16288.setContent(html_d0ec23028780d2e6a37c778a545d6a84);
+            
+        
+
+        circle_marker_367d04e1e087ad08c47fb27ddb65a59b.bindPopup(popup_f3f711a17e1a7c5d69150fd63ff16288)
+        ;
+
+        
+    
+    
+            var circle_marker_24cc339a0cc28f049bc6e6fc572487f9 = L.circleMarker(
+                [49.19262258, 16.61234013],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_f3490c9a3b58c7c44ec7dafd5b9e5877 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e20024793870186b6051874e89d94487 = $(`<div id="html_e20024793870186b6051874e89d94487" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -75 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_f3490c9a3b58c7c44ec7dafd5b9e5877.setContent(html_e20024793870186b6051874e89d94487);
+            
+        
+
+        circle_marker_24cc339a0cc28f049bc6e6fc572487f9.bindPopup(popup_f3490c9a3b58c7c44ec7dafd5b9e5877)
+        ;
+
+        
+    
+    
+            var circle_marker_01bd4bcf274e172cf9b1bccb8cdcfbd9 = L.circleMarker(
+                [49.19239044, 16.6124171],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_5a798e7402fd47b3598ab331e0e4a773 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e3a1d436000ab1cb94c9cf6c7ac8df5f = $(`<div id="html_e3a1d436000ab1cb94c9cf6c7ac8df5f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -77 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_5a798e7402fd47b3598ab331e0e4a773.setContent(html_e3a1d436000ab1cb94c9cf6c7ac8df5f);
+            
+        
+
+        circle_marker_01bd4bcf274e172cf9b1bccb8cdcfbd9.bindPopup(popup_5a798e7402fd47b3598ab331e0e4a773)
+        ;
+
+        
+    
+    
+            var circle_marker_df9f0b39fb58238fa297f1b3ff27aa7b = L.circleMarker(
+                [49.19215631, 16.6123929],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_e3ddf2486df0346d1400b5515512407b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2d17775a8b79e66b657e8bd1558da708 = $(`<div id="html_2d17775a8b79e66b657e8bd1558da708" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -80 dBm<br>  <b>RSRQ:</b> -16 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_e3ddf2486df0346d1400b5515512407b.setContent(html_2d17775a8b79e66b657e8bd1558da708);
+            
+        
+
+        circle_marker_df9f0b39fb58238fa297f1b3ff27aa7b.bindPopup(popup_e3ddf2486df0346d1400b5515512407b)
+        ;
+
+        
+    
+    
+            var circle_marker_796eed1b230cfd277c80b5a42cb020fc = L.circleMarker(
+                [49.19215631, 16.6123929],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_490b61f615032bceb6667bfaf0cbf301 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_45405503c125fe553d25dc0f84c8230b = $(`<div id="html_45405503c125fe553d25dc0f84c8230b" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -73 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_490b61f615032bceb6667bfaf0cbf301.setContent(html_45405503c125fe553d25dc0f84c8230b);
+            
+        
+
+        circle_marker_796eed1b230cfd277c80b5a42cb020fc.bindPopup(popup_490b61f615032bceb6667bfaf0cbf301)
+        ;
+
+        
+    
+    
+            var circle_marker_e0c1a2ae53564372b278419797eb2bf4 = L.circleMarker(
+                [49.19201911, 16.61209471],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_f93f136c5b32bdbae4c03dffd75fda85 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fe49776a0cc76f6c80e69f3e7518418c = $(`<div id="html_fe49776a0cc76f6c80e69f3e7518418c" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -71 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_f93f136c5b32bdbae4c03dffd75fda85.setContent(html_fe49776a0cc76f6c80e69f3e7518418c);
+            
+        
+
+        circle_marker_e0c1a2ae53564372b278419797eb2bf4.bindPopup(popup_f93f136c5b32bdbae4c03dffd75fda85)
+        ;
+
+        
+    
+    
+            var circle_marker_eb0f8b5dbc07468417a9de0b9fe69ff9 = L.circleMarker(
+                [49.1919359, 16.61176537],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_9a9805a4354dfa3ff9638f7409bfc150 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_55045b987ebeacc557b5f6f59b0ed077 = $(`<div id="html_55045b987ebeacc557b5f6f59b0ed077" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -67 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_9a9805a4354dfa3ff9638f7409bfc150.setContent(html_55045b987ebeacc557b5f6f59b0ed077);
+            
+        
+
+        circle_marker_eb0f8b5dbc07468417a9de0b9fe69ff9.bindPopup(popup_9a9805a4354dfa3ff9638f7409bfc150)
+        ;
+
+        
+    
+    
+            var circle_marker_d3b619df46c37f1d6dd2cf1f0dd05b12 = L.circleMarker(
+                [49.19184851, 16.61143261],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_2756d587f638e7e2784abbf9991aec4a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_30fca0bf3878bffc7d466e199857dab5 = $(`<div id="html_30fca0bf3878bffc7d466e199857dab5" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -68 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_2756d587f638e7e2784abbf9991aec4a.setContent(html_30fca0bf3878bffc7d466e199857dab5);
+            
+        
+
+        circle_marker_d3b619df46c37f1d6dd2cf1f0dd05b12.bindPopup(popup_2756d587f638e7e2784abbf9991aec4a)
+        ;
+
+        
+    
+    
+            var circle_marker_194a1be9daa30187b5742f828f93cc66 = L.circleMarker(
+                [49.19178086, 16.61109573],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_d36c72a7e1b9d03ca24cdb663f29a6fd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_81a2c07de45a81bd650d1549fe6e4002 = $(`<div id="html_81a2c07de45a81bd650d1549fe6e4002" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -69 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_d36c72a7e1b9d03ca24cdb663f29a6fd.setContent(html_81a2c07de45a81bd650d1549fe6e4002);
+            
+        
+
+        circle_marker_194a1be9daa30187b5742f828f93cc66.bindPopup(popup_d36c72a7e1b9d03ca24cdb663f29a6fd)
+        ;
+
+        
+    
+    
+            var circle_marker_53b5dfc66406db8bbae92a17f4be4e15 = L.circleMarker(
+                [49.19171146, 16.61075795],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_74936bed5a9df70e4f5077084939df87 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7b6d236d7b0322ba0dd177238ceb5297 = $(`<div id="html_7b6d236d7b0322ba0dd177238ceb5297" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -69 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_74936bed5a9df70e4f5077084939df87.setContent(html_7b6d236d7b0322ba0dd177238ceb5297);
+            
+        
+
+        circle_marker_53b5dfc66406db8bbae92a17f4be4e15.bindPopup(popup_74936bed5a9df70e4f5077084939df87)
+        ;
+
+        
+    
+    
+            var circle_marker_5f29d41c7edf1d85d4eecaaae09c43f0 = L.circleMarker(
+                [49.19192237, 16.61062794],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_162fc4da645ea143474e7fc330e18899 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1480af3ebba52a0f719719a990ecb5d0 = $(`<div id="html_1480af3ebba52a0f719719a990ecb5d0" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -78 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_162fc4da645ea143474e7fc330e18899.setContent(html_1480af3ebba52a0f719719a990ecb5d0);
+            
+        
+
+        circle_marker_5f29d41c7edf1d85d4eecaaae09c43f0.bindPopup(popup_162fc4da645ea143474e7fc330e18899)
+        ;
+
+        
+    
+    
+            var circle_marker_3b2ce8b59d62cb1a38d161de99867731 = L.circleMarker(
+                [49.19192237, 16.61062794],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_057a8d9094bbc2055d897cf159bfa39d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_76121693f49dae930ab93b45f1e4acab = $(`<div id="html_76121693f49dae930ab93b45f1e4acab" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -76 dBm<br>  <b>RSRQ:</b> -14 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_057a8d9094bbc2055d897cf159bfa39d.setContent(html_76121693f49dae930ab93b45f1e4acab);
+            
+        
+
+        circle_marker_3b2ce8b59d62cb1a38d161de99867731.bindPopup(popup_057a8d9094bbc2055d897cf159bfa39d)
+        ;
+
+        
+    
+    
+            var circle_marker_8290cac27009253bac56ddbb30d02ccd = L.circleMarker(
+                [49.19213261, 16.6104693],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_4259910b6ea044a3906621b89c70d38b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7848f8f7e2553c7a9a0e83fb3414bcaf = $(`<div id="html_7848f8f7e2553c7a9a0e83fb3414bcaf" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -80 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_4259910b6ea044a3906621b89c70d38b.setContent(html_7848f8f7e2553c7a9a0e83fb3414bcaf);
+            
+        
+
+        circle_marker_8290cac27009253bac56ddbb30d02ccd.bindPopup(popup_4259910b6ea044a3906621b89c70d38b)
+        ;
+
+        
+    
+    
+            var circle_marker_f2256b8111f76b132c21f68aeb89216a = L.circleMarker(
+                [49.19237125, 16.61045887],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_e9d97cbd103a85be641fe4e2f54d9716 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3b7e7f2c6125b2b16fbbce8d4a8e187a = $(`<div id="html_3b7e7f2c6125b2b16fbbce8d4a8e187a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -84 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_e9d97cbd103a85be641fe4e2f54d9716.setContent(html_3b7e7f2c6125b2b16fbbce8d4a8e187a);
+            
+        
+
+        circle_marker_f2256b8111f76b132c21f68aeb89216a.bindPopup(popup_e9d97cbd103a85be641fe4e2f54d9716)
+        ;
+
+        
+    
+    
+            var circle_marker_442e9e43f23c345ebad409c9dc445ea4 = L.circleMarker(
+                [49.1925881, 16.61034217],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_e99a4c3538a1304420f3d4b2888da539 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a875694ca13bd1ad2d5182752d88c5c3 = $(`<div id="html_a875694ca13bd1ad2d5182752d88c5c3" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -89 dBm<br>  <b>RSRQ:</b> -17 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_e99a4c3538a1304420f3d4b2888da539.setContent(html_a875694ca13bd1ad2d5182752d88c5c3);
+            
+        
+
+        circle_marker_442e9e43f23c345ebad409c9dc445ea4.bindPopup(popup_e99a4c3538a1304420f3d4b2888da539)
+        ;
+
+        
+    
+    
+            var circle_marker_2ea4a4db6ecb37a1ba9c6d3522cde804 = L.circleMarker(
+                [49.1925881, 16.61034217],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_8d6b70197f0260b8beff1ba3f7b6e11e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1f8b5a450c676ac29b7d6068d1edcb21 = $(`<div id="html_1f8b5a450c676ac29b7d6068d1edcb21" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -85 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_8d6b70197f0260b8beff1ba3f7b6e11e.setContent(html_1f8b5a450c676ac29b7d6068d1edcb21);
+            
+        
+
+        circle_marker_2ea4a4db6ecb37a1ba9c6d3522cde804.bindPopup(popup_8d6b70197f0260b8beff1ba3f7b6e11e)
+        ;
+
+        
+    
+    
+            var circle_marker_59d3bb49f4a0f22b15d77b6af0e5452a = L.circleMarker(
+                [49.19279791, 16.61021193],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_1ca851e5a507a8c71e6c09ccc5227086 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ea87b807db6d39e5abacbe58cd4a930f = $(`<div id="html_ea87b807db6d39e5abacbe58cd4a930f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -81 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_1ca851e5a507a8c71e6c09ccc5227086.setContent(html_ea87b807db6d39e5abacbe58cd4a930f);
+            
+        
+
+        circle_marker_59d3bb49f4a0f22b15d77b6af0e5452a.bindPopup(popup_1ca851e5a507a8c71e6c09ccc5227086)
+        ;
+
+        
+    
+    
+            var circle_marker_4799b424f144e8558e544a8b3e6a03b8 = L.circleMarker(
+                [49.19300027, 16.61002943],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_1f8bb7cebbacfea7ab6b36307f43389b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f0970b7a66747839c416a538b131d7d1 = $(`<div id="html_f0970b7a66747839c416a538b131d7d1" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -83 dBm<br>  <b>RSRQ:</b> -14 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_1f8bb7cebbacfea7ab6b36307f43389b.setContent(html_f0970b7a66747839c416a538b131d7d1);
+            
+        
+
+        circle_marker_4799b424f144e8558e544a8b3e6a03b8.bindPopup(popup_1f8bb7cebbacfea7ab6b36307f43389b)
+        ;
+
+        
+    
+    
+            var circle_marker_b142272f42a07a86e5effa392838bc70 = L.circleMarker(
+                [49.19300027, 16.61002943],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_58178a70606f91694ea1f1f648498d40 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1efbea3ecd023e84263d1ccf04a5a976 = $(`<div id="html_1efbea3ecd023e84263d1ccf04a5a976" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -73 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_58178a70606f91694ea1f1f648498d40.setContent(html_1efbea3ecd023e84263d1ccf04a5a976);
+            
+        
+
+        circle_marker_b142272f42a07a86e5effa392838bc70.bindPopup(popup_58178a70606f91694ea1f1f648498d40)
+        ;
+
+        
+    
+    
+            var circle_marker_c5bd6352a18409953b06a9b694fbb998 = L.circleMarker(
+                [49.19320624, 16.60989101],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_9eec9273aa82df5632cc55df1a06848f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_90a92780fbabec1fa16846bd0444e510 = $(`<div id="html_90a92780fbabec1fa16846bd0444e510" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -73 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_9eec9273aa82df5632cc55df1a06848f.setContent(html_90a92780fbabec1fa16846bd0444e510);
+            
+        
+
+        circle_marker_c5bd6352a18409953b06a9b694fbb998.bindPopup(popup_9eec9273aa82df5632cc55df1a06848f)
+        ;
+
+        
+    
+    
+            var circle_marker_3bed3ceeb14c8ed8b1d33dd57dc013a8 = L.circleMarker(
+                [49.19320624, 16.60989101],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_b8da57f484a9d4b3cb513df5388cc27a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b29745033c64829307e33a2a415fbef9 = $(`<div id="html_b29745033c64829307e33a2a415fbef9" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -81 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_b8da57f484a9d4b3cb513df5388cc27a.setContent(html_b29745033c64829307e33a2a415fbef9);
+            
+        
+
+        circle_marker_3bed3ceeb14c8ed8b1d33dd57dc013a8.bindPopup(popup_b8da57f484a9d4b3cb513df5388cc27a)
+        ;
+
+        
+    
+    
+            var circle_marker_0b7e3ffb01e542b654e82502ce2b3155 = L.circleMarker(
+                [49.19339009, 16.6096584],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_dfafa3116c01213bd266d85ad993bf25 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a0cd647ecf90a7fc4f9b8b3136115a88 = $(`<div id="html_a0cd647ecf90a7fc4f9b8b3136115a88" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -81 dBm<br>  <b>RSRQ:</b> -11 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_dfafa3116c01213bd266d85ad993bf25.setContent(html_a0cd647ecf90a7fc4f9b8b3136115a88);
+            
+        
+
+        circle_marker_0b7e3ffb01e542b654e82502ce2b3155.bindPopup(popup_dfafa3116c01213bd266d85ad993bf25)
+        ;
+
+        
+    
+    
+            var circle_marker_1ef52dd61db4e8212f08a4e1a998e744 = L.circleMarker(
+                [49.1935904, 16.60947922],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_2c733c0994a1c34df0533424ab82b6bb = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_102315243ca62ef8e7912916247c3436 = $(`<div id="html_102315243ca62ef8e7912916247c3436" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -77 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_2c733c0994a1c34df0533424ab82b6bb.setContent(html_102315243ca62ef8e7912916247c3436);
+            
+        
+
+        circle_marker_1ef52dd61db4e8212f08a4e1a998e744.bindPopup(popup_2c733c0994a1c34df0533424ab82b6bb)
+        ;
+
+        
+    
+    
+            var circle_marker_c41451d87629b9abbee30272df4afad3 = L.circleMarker(
+                [49.1937759, 16.60927907],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_e85c005de96e6ee501337f67457725a1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_411728d03483b3d6c26b0857d8957779 = $(`<div id="html_411728d03483b3d6c26b0857d8957779" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -71 dBm<br>  <b>RSRQ:</b> -14 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_e85c005de96e6ee501337f67457725a1.setContent(html_411728d03483b3d6c26b0857d8957779);
+            
+        
+
+        circle_marker_c41451d87629b9abbee30272df4afad3.bindPopup(popup_e85c005de96e6ee501337f67457725a1)
+        ;
+
+        
+    
+    
+            var circle_marker_a47dd6f38dfcab8563ccecd87419711b = L.circleMarker(
+                [49.19399563, 16.60913616],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_72fa0d82fd60c7b7c135b64fc5d16826 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bdf17af57e4bdb49262fb2f83a57d7d6 = $(`<div id="html_bdf17af57e4bdb49262fb2f83a57d7d6" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -70 dBm<br>  <b>RSRQ:</b> -15 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_72fa0d82fd60c7b7c135b64fc5d16826.setContent(html_bdf17af57e4bdb49262fb2f83a57d7d6);
+            
+        
+
+        circle_marker_a47dd6f38dfcab8563ccecd87419711b.bindPopup(popup_72fa0d82fd60c7b7c135b64fc5d16826)
+        ;
+
+        
+    
+    
+            var circle_marker_92961a16b68c940e63e1b77d407f891b = L.circleMarker(
+                [49.19418199, 16.60893795],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_760088bf60caadec60261ecb79377fc5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_41ca59df4ef1d9dc7706444192b377fa = $(`<div id="html_41ca59df4ef1d9dc7706444192b377fa" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -66 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_760088bf60caadec60261ecb79377fc5.setContent(html_41ca59df4ef1d9dc7706444192b377fa);
+            
+        
+
+        circle_marker_92961a16b68c940e63e1b77d407f891b.bindPopup(popup_760088bf60caadec60261ecb79377fc5)
+        ;
+
+        
+    
+    
+            var circle_marker_bead9e5403358ae4506d1c83e551c290 = L.circleMarker(
+                [49.19439355, 16.60881361],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_7d75a645e42c239fbeaa87ad4e3d273b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0ef6ded3f8f35c4dff6f2f53e4cb579c = $(`<div id="html_0ef6ded3f8f35c4dff6f2f53e4cb579c" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -65 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_7d75a645e42c239fbeaa87ad4e3d273b.setContent(html_0ef6ded3f8f35c4dff6f2f53e4cb579c);
+            
+        
+
+        circle_marker_bead9e5403358ae4506d1c83e551c290.bindPopup(popup_7d75a645e42c239fbeaa87ad4e3d273b)
+        ;
+
+        
+    
+    
+            var circle_marker_3d505f08e47607511f47c4e2d4bde06c = L.circleMarker(
+                [49.19460956, 16.60869779],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_b1d217ce1e066063913d8e25061419aa = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9cba71baa20fe76020f5ca4107039d05 = $(`<div id="html_9cba71baa20fe76020f5ca4107039d05" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -60 dBm<br>  <b>RSRQ:</b> -13 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_b1d217ce1e066063913d8e25061419aa.setContent(html_9cba71baa20fe76020f5ca4107039d05);
+            
+        
+
+        circle_marker_3d505f08e47607511f47c4e2d4bde06c.bindPopup(popup_b1d217ce1e066063913d8e25061419aa)
+        ;
+
+        
+    
+    
+            var circle_marker_bba5429d3d45901f41c507ce3eaf46ff = L.circleMarker(
+                [49.19481911, 16.60854694],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_485c1a78b36db4f76676cc14f2c131c9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8331130a82b15e8b7e50039a8c9df718 = $(`<div id="html_8331130a82b15e8b7e50039a8c9df718" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -58 dBm<br>  <b>RSRQ:</b> -8 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_485c1a78b36db4f76676cc14f2c131c9.setContent(html_8331130a82b15e8b7e50039a8c9df718);
+            
+        
+
+        circle_marker_bba5429d3d45901f41c507ce3eaf46ff.bindPopup(popup_485c1a78b36db4f76676cc14f2c131c9)
+        ;
+
+        
+    
+    
+            var circle_marker_3f3a5fdc7e00fa6ef1fdc9fc91acd1d7 = L.circleMarker(
+                [49.19503362, 16.60843678],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_cf8634751d4f074550ca46396e63bf6e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a3026a675cde6db31d413cf0f0533d7f = $(`<div id="html_a3026a675cde6db31d413cf0f0533d7f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -61 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_cf8634751d4f074550ca46396e63bf6e.setContent(html_a3026a675cde6db31d413cf0f0533d7f);
+            
+        
+
+        circle_marker_3f3a5fdc7e00fa6ef1fdc9fc91acd1d7.bindPopup(popup_cf8634751d4f074550ca46396e63bf6e)
+        ;
+
+        
+    
+    
+            var circle_marker_124bc069daa10533d48b76334487726d = L.circleMarker(
+                [49.19526196, 16.60835064],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_b5ba132667c9156b51e995d3e15786d8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1c8719c49bf3bae09a77a906808bb692 = $(`<div id="html_1c8719c49bf3bae09a77a906808bb692" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -67 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_b5ba132667c9156b51e995d3e15786d8.setContent(html_1c8719c49bf3bae09a77a906808bb692);
+            
+        
+
+        circle_marker_124bc069daa10533d48b76334487726d.bindPopup(popup_b5ba132667c9156b51e995d3e15786d8)
+        ;
+
+        
+    
+    
+            var circle_marker_e0544c8a961274ced83b2a685b4a6a0f = L.circleMarker(
+                [49.19548163, 16.60822911],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_9878d8df8c5fa14d7199191872fbef6d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_774227cb330726d4c36968c44c8bdf72 = $(`<div id="html_774227cb330726d4c36968c44c8bdf72" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -68 dBm<br>  <b>RSRQ:</b> -18 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_9878d8df8c5fa14d7199191872fbef6d.setContent(html_774227cb330726d4c36968c44c8bdf72);
+            
+        
+
+        circle_marker_e0544c8a961274ced83b2a685b4a6a0f.bindPopup(popup_9878d8df8c5fa14d7199191872fbef6d)
+        ;
+
+        
+    
+    
+            var circle_marker_d4eb91922c7c2eca1427ec09c00ec18a = L.circleMarker(
+                [49.19569959, 16.60812743],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_d3616aedcdc49846213279000c08eac7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_12f7a0bc5b1c7b4550aa9ee5ce678172 = $(`<div id="html_12f7a0bc5b1c7b4550aa9ee5ce678172" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -76 dBm<br>  <b>RSRQ:</b> -17 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_d3616aedcdc49846213279000c08eac7.setContent(html_12f7a0bc5b1c7b4550aa9ee5ce678172);
+            
+        
+
+        circle_marker_d4eb91922c7c2eca1427ec09c00ec18a.bindPopup(popup_d3616aedcdc49846213279000c08eac7)
+        ;
+
+        
+    
+    
+            var circle_marker_16c72953de7810fc0fe913195ee7d3cb = L.circleMarker(
+                [49.19592308, 16.6080593],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_4d8b68719a600c510bdbc1a70128f922 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0006b0df8316fd62c4a8c6c984dd0855 = $(`<div id="html_0006b0df8316fd62c4a8c6c984dd0855" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -88 dBm<br>  <b>RSRQ:</b> -15 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_4d8b68719a600c510bdbc1a70128f922.setContent(html_0006b0df8316fd62c4a8c6c984dd0855);
+            
+        
+
+        circle_marker_16c72953de7810fc0fe913195ee7d3cb.bindPopup(popup_4d8b68719a600c510bdbc1a70128f922)
+        ;
+
+        
+    
+    
+            var circle_marker_0c5e592f6b6cb46d2141e7b116843f94 = L.circleMarker(
+                [49.19592308, 16.6080593],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_a1f2f0d4bb40c6a8a0724f008d0f9b4a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_dc4b9a36e6b90dda28ac452c1305457a = $(`<div id="html_dc4b9a36e6b90dda28ac452c1305457a" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -85 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_a1f2f0d4bb40c6a8a0724f008d0f9b4a.setContent(html_dc4b9a36e6b90dda28ac452c1305457a);
+            
+        
+
+        circle_marker_0c5e592f6b6cb46d2141e7b116843f94.bindPopup(popup_a1f2f0d4bb40c6a8a0724f008d0f9b4a)
+        ;
+
+        
+    
+    
+            var circle_marker_6ca20acb23077d5c5a2f9ff34ae56ed6 = L.circleMarker(
+                [49.19615419, 16.60798028],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_f959c2aaae5b246fc8cebe778c741a9a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8b650b0b4d9dd8eadf5d4535ce280987 = $(`<div id="html_8b650b0b4d9dd8eadf5d4535ce280987" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -85 dBm<br>  <b>RSRQ:</b> -12 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_f959c2aaae5b246fc8cebe778c741a9a.setContent(html_8b650b0b4d9dd8eadf5d4535ce280987);
+            
+        
+
+        circle_marker_6ca20acb23077d5c5a2f9ff34ae56ed6.bindPopup(popup_f959c2aaae5b246fc8cebe778c741a9a)
+        ;
+
+        
+    
+    
+            var circle_marker_bf7b8383bdd3c645d3f718a3a813236c = L.circleMarker(
+                [49.19615419, 16.60798028],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_33193461a648f73fa4d8a951333a6ec8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5fad6e0d4137fde320044d6edad934d6 = $(`<div id="html_5fad6e0d4137fde320044d6edad934d6" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -84 dBm<br>  <b>RSRQ:</b> -17 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_33193461a648f73fa4d8a951333a6ec8.setContent(html_5fad6e0d4137fde320044d6edad934d6);
+            
+        
+
+        circle_marker_bf7b8383bdd3c645d3f718a3a813236c.bindPopup(popup_33193461a648f73fa4d8a951333a6ec8)
+        ;
+
+        
+    
+    
+            var circle_marker_088a4096dc84246558e49445db626ab1 = L.circleMarker(
+                [49.19638333, 16.60792405],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_3db7d401a74a209ccef15a2b71764370 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_717499a2113ca40b2c81a00229e18bed = $(`<div id="html_717499a2113ca40b2c81a00229e18bed" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -84 dBm<br>  <b>RSRQ:</b> -17 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_3db7d401a74a209ccef15a2b71764370.setContent(html_717499a2113ca40b2c81a00229e18bed);
+            
+        
+
+        circle_marker_088a4096dc84246558e49445db626ab1.bindPopup(popup_3db7d401a74a209ccef15a2b71764370)
+        ;
+
+        
+    
+    
+            var circle_marker_3f89c0cff965396e45ab8ac95e787883 = L.circleMarker(
+                [49.19638333, 16.60792405],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_04923a65bf0e88316aebc8d39a6daee2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f4727104e8b1f68f5e03658596215d26 = $(`<div id="html_f4727104e8b1f68f5e03658596215d26" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -83 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_04923a65bf0e88316aebc8d39a6daee2.setContent(html_f4727104e8b1f68f5e03658596215d26);
+            
+        
+
+        circle_marker_3f89c0cff965396e45ab8ac95e787883.bindPopup(popup_04923a65bf0e88316aebc8d39a6daee2)
+        ;
+
+        
+    
+    
+            var circle_marker_453d9d5ecc0d7aac2c0afba9823aa636 = L.circleMarker(
+                [49.19660297, 16.60780665],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_ff36114882c48e491b67a69a0ce4a204 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c1622cb04892fb90e02ce57b1a336564 = $(`<div id="html_c1622cb04892fb90e02ce57b1a336564" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -83 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_ff36114882c48e491b67a69a0ce4a204.setContent(html_c1622cb04892fb90e02ce57b1a336564);
+            
+        
+
+        circle_marker_453d9d5ecc0d7aac2c0afba9823aa636.bindPopup(popup_ff36114882c48e491b67a69a0ce4a204)
+        ;
+
+        
+    
+    
+            var circle_marker_367ba42e45eca8f0e06e492c52488dbf = L.circleMarker(
+                [49.19682192, 16.60770578],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_7f7af451e8bd917aa7f9a4394ff257ed = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_99e0da766dfab4ff36689f9a40f4cc8d = $(`<div id="html_99e0da766dfab4ff36689f9a40f4cc8d" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -79 dBm<br>  <b>RSRQ:</b> -8 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_7f7af451e8bd917aa7f9a4394ff257ed.setContent(html_99e0da766dfab4ff36689f9a40f4cc8d);
+            
+        
+
+        circle_marker_367ba42e45eca8f0e06e492c52488dbf.bindPopup(popup_7f7af451e8bd917aa7f9a4394ff257ed)
+        ;
+
+        
+    
+    
+            var circle_marker_cb6e8038914fa9b20c307a09329de0ff = L.circleMarker(
+                [49.19704381, 16.60760117],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_910a9709010813a136abbb65c6d6322e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_faf6b7f70aa381f42a5c3d0dc39885e8 = $(`<div id="html_faf6b7f70aa381f42a5c3d0dc39885e8" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -90 dBm<br>  <b>RSRQ:</b> -15 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_910a9709010813a136abbb65c6d6322e.setContent(html_faf6b7f70aa381f42a5c3d0dc39885e8);
+            
+        
+
+        circle_marker_cb6e8038914fa9b20c307a09329de0ff.bindPopup(popup_910a9709010813a136abbb65c6d6322e)
+        ;
+
+        
+    
+    
+            var circle_marker_5fe64fbe0e53a940bc98bce3d22ec4bb = L.circleMarker(
+                [49.19704381, 16.60760117],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_1e42703be045aae65a958d2ad3f2d963 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_794fdd8beaa452ff024513652f4a3915 = $(`<div id="html_794fdd8beaa452ff024513652f4a3915" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -90 dBm<br>  <b>RSRQ:</b> -16 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_1e42703be045aae65a958d2ad3f2d963.setContent(html_794fdd8beaa452ff024513652f4a3915);
+            
+        
+
+        circle_marker_5fe64fbe0e53a940bc98bce3d22ec4bb.bindPopup(popup_1e42703be045aae65a958d2ad3f2d963)
+        ;
+
+        
+    
+    
+            var circle_marker_26e99046909f6b82d1c7057507520b9e = L.circleMarker(
+                [49.19726075, 16.60748518],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_5b6f1d7e9b9d216ff2dc9cae01ba55ad = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_83489f129fdda128b60e72bf47eab3e3 = $(`<div id="html_83489f129fdda128b60e72bf47eab3e3" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -91 dBm<br>  <b>RSRQ:</b> -19 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_5b6f1d7e9b9d216ff2dc9cae01ba55ad.setContent(html_83489f129fdda128b60e72bf47eab3e3);
+            
+        
+
+        circle_marker_26e99046909f6b82d1c7057507520b9e.bindPopup(popup_5b6f1d7e9b9d216ff2dc9cae01ba55ad)
+        ;
+
+        
+    
+    
+            var circle_marker_f9ce0bac3d83ce89c243b7a2dee1ef10 = L.circleMarker(
+                [49.19726075, 16.60748518],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_38692a199f3558d8f312544be652011b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a43a0209143ac2b67992afb426eb4640 = $(`<div id="html_a43a0209143ac2b67992afb426eb4640" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -81 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_38692a199f3558d8f312544be652011b.setContent(html_a43a0209143ac2b67992afb426eb4640);
+            
+        
+
+        circle_marker_f9ce0bac3d83ce89c243b7a2dee1ef10.bindPopup(popup_38692a199f3558d8f312544be652011b)
+        ;
+
+        
+    
+    
+            var circle_marker_d50cfabe018e477603213c068371422d = L.circleMarker(
+                [49.19745465, 16.60730601],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_0427ed7ee3dd651ddee1705ae396ebc9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1a4e67d784cca0a29ff19e0e3a08294f = $(`<div id="html_1a4e67d784cca0a29ff19e0e3a08294f" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -81 dBm<br>  <b>RSRQ:</b> -9 dB<br><b>SNR:</b> 0.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_0427ed7ee3dd651ddee1705ae396ebc9.setContent(html_1a4e67d784cca0a29ff19e0e3a08294f);
+            
+        
+
+        circle_marker_d50cfabe018e477603213c068371422d.bindPopup(popup_0427ed7ee3dd651ddee1705ae396ebc9)
+        ;
+
+        
+    
+    
+            var circle_marker_f9d37615106561a115b0f4a2f5d7d17a = L.circleMarker(
+                [49.19765081, 16.60713471],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3b1b8d8285534522548838f535593a5e);
+        
+    
+        var popup_337823912c8e95a73acd2513a7e1f42f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_30c5136c6b7b62a1f6ff292dd14c6494 = $(`<div id="html_30c5136c6b7b62a1f6ff292dd14c6494" style="width: 100.0%; height: 100.0%;"><b>Operátor:</b> Vodafone<br><b>RSRP:</b> -73 dBm<br>  <b>RSRQ:</b> -10 dB<br><b>SNR:</b> 16.0 dB<br><b>Technologie:</b> 4G<br><b>Frekvenční pásmo:</b> L3 (1800 MHz)</div>`)[0];
+                popup_337823912c8e95a73acd2513a7e1f42f.setContent(html_30c5136c6b7b62a1f6ff292dd14c6494);
+            
+        
+
+        circle_marker_f9d37615106561a115b0f4a2f5d7d17a.bindPopup(popup_337823912c8e95a73acd2513a7e1f42f)
+        ;
+
+        
+    
+</script>
+</html>
