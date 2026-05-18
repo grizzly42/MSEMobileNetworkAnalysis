@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSE Mobile Network Analysis</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d1117;
+            color: white;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #58a6ff;
+        }
+
+        p {
+            color: #c9d1d9;
+        }
+
+        .file {
+            display: block;
+            padding: 12px;
+            margin: 8px 0;
+            background: #161b22;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #c9d1d9;
+            transition: 0.2s;
+            border: 1px solid #30363d;
+        }
+
+        .file:hover {
+            background: #21262d;
+            color: #58a6ff;
+        }
+
+        .path {
+            font-size: 12px;
+            color: #8b949e;
+            margin-top: 5px;
+        }
+
+        #loading {
+            margin-top: 20px;
+            color: #8b949e;
+        }
+    </style>
+</head>
+<body>
+
+<h1>MSE Mobile Network Analysis</h1>
+<p>
+Automaticky generovaný seznam HTML reportů z GitHub repozitáře.
+</p>
+
+<div id="files"></div>
+<div id="loading">Načítání HTML souborů...</div>
+
+<script>
+const owner = 'grizzly42';
+const repo = 'MSEMobileNetworkAnalysis';
+const branch = 'main';
+
+const filesDiv = document.getElementById('files');
+const loadingDiv = document.getElementById('loading');
+
+async function getRepoTree() {
+    const url = `https://api.github.com/repos/${owner}/${repo}/git/trees/${branch}?recursive=1`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    return data.tree;
+}
+
+async function loadHtmlFiles() {
+    try {
+        const tree = await getRepoTree();
+
+        const htmlFiles = tree.filter(item =>
+</html>
