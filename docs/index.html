@@ -1,86 +1,119 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MSE Mobile Network Analysis</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSE Mobile Network Analysis</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0d1117;
-            color: white;
-            margin: 0;
-            padding: 40px;
-        }
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#0d1117;
+    color:white;
+    padding:40px;
+    line-height:1.6;
+}
 
-        h1 {
-            color: #58a6ff;
-        }
+h1{
+    color:#58a6ff;
+}
 
-        p {
-            color: #c9d1d9;
-        }
+h2{
+    margin-top:40px;
+    color:#79c0ff;
+    border-bottom:1px solid #30363d;
+    padding-bottom:8px;
+}
 
-        .file {
-            display: block;
-            padding: 12px;
-            margin: 8px 0;
-            background: #161b22;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #c9d1d9;
-            transition: 0.2s;
-            border: 1px solid #30363d;
-        }
+a{
+    display:block;
+    margin:8px 0;
+    padding:10px;
+    background:#161b22;
+    border-radius:8px;
+    text-decoration:none;
+    color:#c9d1d9;
+}
 
-        .file:hover {
-            background: #21262d;
-            color: #58a6ff;
-        }
-
-        .path {
-            font-size: 12px;
-            color: #8b949e;
-            margin-top: 5px;
-        }
-
-        #loading {
-            margin-top: 20px;
-            color: #8b949e;
-        }
-    </style>
+a:hover{
+    background:#21262d;
+    color:#58a6ff;
+}
+</style>
 </head>
+
 <body>
 
 <h1>MSE Mobile Network Analysis</h1>
-<p>
-Automaticky generovaný seznam HTML reportů z GitHub repozitáře.
-</p>
 
-<div id="files"></div>
-<div id="loading">Načítání HTML souborů...</div>
+<h2>Brno - CAR</h2>
 
-<script>
-const owner = 'grizzly42';
-const repo = 'MSEMobileNetworkAnalysis';
-const branch = 'main';
+<a href="Brno/CAR/Reckovice-MoravskeNamesti/HTMLview/T-Mobile_RSRP.html">T-Mobile RSRP</a>
+<a href="Brno/CAR/Reckovice-MoravskeNamesti/HTMLview/T-Mobile_TECH_BAND.html">T-Mobile TECH BAND</a>
+<a href="Brno/CAR/Reckovice-MoravskeNamesti/HTMLview/Vodafone_RSRP.html">Vodafone RSRP</a>
+<a href="Brno/CAR/Reckovice-MoravskeNamesti/HTMLview/Vodafone_TECH_BAND.html">Vodafone TECH BAND</a>
 
-const filesDiv = document.getElementById('files');
-const loadingDiv = document.getElementById('loading');
+<h2>Brno - MHD</h2>
 
-async function getRepoTree() {
-    const url = `https://api.github.com/repos/${owner}/${repo}/git/trees/${branch}?recursive=1`;
+<a href="Brno/MHD/Celni-Kolejni/HTMLview/T-Mobile_RSRP.html">Celni-Kolejni T-Mobile RSRP</a>
+<a href="Brno/MHD/Celni-Kolejni/HTMLview/T-Mobile_TECH_BAND.html">Celni-Kolejni T-Mobile TECH BAND</a>
 
-    const response = await fetch(url);
-    const data = await response.json();
+<a href="Brno/MHD/Kolejni-Vsetinska/HTMLview/T-Mobile_RSRP.html">Kolejni-Vsetinska T-Mobile RSRP</a>
+<a href="Brno/MHD/Kolejni-Vsetinska/HTMLview/T-Mobile_TECH_BAND.html">Kolejni-Vsetinska T-Mobile TECH BAND</a>
 
-    return data.tree;
-}
+<a href="Brno/MHD/Reckovice-MoravskeNamesti/HTMLview/T-Mobile_RSRP.html">Reckovice-MoravskeNamesti T-Mobile RSRP</a>
+<a href="Brno/MHD/Reckovice-MoravskeNamesti/HTMLview/T-Mobile_TECH_BAND.html">Reckovice-MoravskeNamesti T-Mobile TECH BAND</a>
 
-async function loadHtmlFiles() {
-    try {
-        const tree = await getRepoTree();
+<a href="Brno/MHD/Reckovice-MoravskeNamesti/HTMLview/Vodafone_RSRP.html">Reckovice-MoravskeNamesti Vodafone RSRP</a>
+<a href="Brno/MHD/Reckovice-MoravskeNamesti/HTMLview/Vodafone_TECH_BAND.html">Reckovice-MoravskeNamesti Vodafone TECH BAND</a>
 
-        const htmlFiles = tree.filter(item =>
+<h2>Brno - Walk Tests</h2>
+
+<a href="Brno/WalkTests/Medlanky/HTMLview/T-Mobile_RSRP.html">Medlanky T-Mobile RSRP</a>
+<a href="Brno/WalkTests/Medlanky/HTMLview/T-Mobile_TECH_BAND.html">Medlanky T-Mobile TECH BAND</a>
+
+<a href="Brno/WalkTests/NamestiSvobody/HTMLview/T-Mobile_RSRP.html">NamestiSvobody T-Mobile RSRP</a>
+<a href="Brno/WalkTests/NamestiSvobody/HTMLview/T-Mobile_TECH_BAND.html">NamestiSvobody T-Mobile TECH BAND</a>
+
+<a href="Brno/WalkTests/NamestiSvobody/HTMLview/Vodafone_RSRP.html">NamestiSvobody Vodafone RSRP</a>
+<a href="Brno/WalkTests/NamestiSvobody/HTMLview/Vodafone_TECH_BAND.html">NamestiSvobody Vodafone TECH BAND</a>
+
+<a href="Brno/WalkTests/PalackehoVrch/HTMLview/T-Mobile_RSRP.html">PalackehoVrch T-Mobile RSRP</a>
+<a href="Brno/WalkTests/PalackehoVrch/HTMLview/T-Mobile_TECH_BAND.html">PalackehoVrch T-Mobile TECH BAND</a>
+
+<a href="Brno/WalkTests/Ponava/HTMLview/T-Mobile_RSRP.html">Ponava T-Mobile RSRP</a>
+<a href="Brno/WalkTests/Ponava/HTMLview/T-Mobile_TECH_BAND.html">Ponava T-Mobile TECH BAND</a>
+
+<a href="Brno/WalkTests/Ponava/HTMLview/Vodafone_RSRP.html">Ponava Vodafone RSRP</a>
+<a href="Brno/WalkTests/Ponava/HTMLview/Vodafone_TECH_BAND.html">Ponava Vodafone TECH BAND</a>
+
+<h2>Comparison Operators</h2>
+
+<a href="ComparisonOperators/DecinBreclav/HTMLview/O2_PING.html">O2 PING</a>
+<a href="ComparisonOperators/DecinBreclav/HTMLview/O2_RSRP.html">O2 RSRP</a>
+<a href="ComparisonOperators/DecinBreclav/HTMLview/O2_TECH_BAND.html">O2 TECH BAND</a>
+
+<a href="ComparisonOperators/DecinBreclav/HTMLview/T-Mobile_PING.html">T-Mobile PING</a>
+<a href="ComparisonOperators/DecinBreclav/HTMLview/T-Mobile_RSRP.html">T-Mobile RSRP</a>
+<a href="ComparisonOperators/DecinBreclav/HTMLview/T-Mobile_TECH_BAND.html">T-Mobile TECH BAND</a>
+
+<a href="ComparisonOperators/DecinBreclav/HTMLview/Vodafone_PING.html">Vodafone PING</a>
+<a href="ComparisonOperators/DecinBreclav/HTMLview/Vodafone_RSRP.html">Vodafone RSRP</a>
+<a href="ComparisonOperators/DecinBreclav/HTMLview/Vodafone_TECH_BAND.html">Vodafone TECH BAND</a>
+
+<h2>CR - TRAIN</h2>
+
+<a href="CR/TRAIN/DecinBreclav/O2/HTMLview/O2_PING.html">TRAIN O2 PING</a>
+<a href="CR/TRAIN/DecinBreclav/O2/HTMLview/O2_RSRP.html">TRAIN O2 RSRP</a>
+<a href="CR/TRAIN/DecinBreclav/O2/HTMLview/O2_TECH_BAND.html">TRAIN O2 TECH BAND</a>
+
+<a href="CR/TRAIN/DecinBreclav/T-Mobile/HTMLview/T-Mobile_PING.html">TRAIN T-Mobile PING</a>
+<a href="CR/TRAIN/DecinBreclav/T-Mobile/HTMLview/T-Mobile_RSRP.html">TRAIN T-Mobile RSRP</a>
+<a href="CR/TRAIN/DecinBreclav/T-Mobile/HTMLview/T-Mobile_TECH_BAND.html">TRAIN T-Mobile TECH BAND</a>
+
+<a href="CR/TRAIN/DecinBreclav/Vodafone/HTMLview/Vodafone_PING.html">TRAIN Vodafone PING</a>
+<a href="CR/TRAIN/DecinBreclav/Vodafone/HTMLview/Vodafone_RSRP.html">TRAIN Vodafone RSRP</a>
+<a href="CR/TRAIN/DecinBreclav/Vodafone/HTMLview/Vodafone_TECH_BAND.html">TRAIN Vodafone TECH BAND</a>
+
+</body>
 </html>
