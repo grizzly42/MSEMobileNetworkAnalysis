@@ -71,15 +71,6 @@ The project also investigates:
 - prediction of spatial RSRP distribution,
 - comparison of operators and mobility scenarios.
 
----
-
-# Author
-
-Jakub Pachel
-
-Brno University of Technology  
-Faculty of Electrical Engineering and Communication  
-Department of Radio Electronics
 
 
 
@@ -87,66 +78,98 @@ Department of Radio Electronics
 MSEMobileNetworkAnalysis/
 │
 ├── datasets/
+│   │
 │   ├── Brno/
-│   │   ├── WalkTests/
+│   │   │
+│   │   ├── CAR/
+│   │   │   │
+│   │   │   ├── car_reckovice-moravske_namesti_TM.csv
+│   │   │   └── car_reckovice-moravske_namesti_VOD.csv
+│   │   │
 │   │   ├── MHD/
-│   │   └── CAR/
+│   │   │   │
+│   │   │   ├── tram_celni-kolejni_TM.csv
+│   │   │   ├── tram_kolejni-vsetinska_TM.csv
+│   │   │   ├── tram_kolejni-vsetinska-celni-kolejni_TM.csv
+│   │   │   ├── tram_reckovice-moravske_namesti_TM.csv
+│   │   │   └── tram_reckovice-moravske_namesti_VOD.csv
+│   │   │
+│   │   └── WalkTests/
+│   │       │
+│   │       ├── walk_Medlanky_TM.csv
+│   │       ├── walk_nam_Svobody_TM.csv
+│   │       ├── walk_nam_Svobody_VOD.csv
+│   │       ├── walk_Palackeho_Vrch_TM.csv
+│   │       ├── walk_Ponava_TM.csv
+│   │       ├── walk_Ponava_VOD.csv
+│   │       ├── walk_reckovice-moravske_namesti_TM.csv
+│   │       ├── walk_reckovice-moravske_namesti_VOD.csv
+│   │       ├── walk_Technologicke_muzeum-Slovanke_namesti_TM.csv
+│   │       ├── walk_Zabovresky_O2.csv
+│   │       ├── walk_Zabovresky_TM.csv
+│   │       └── walk_Zabovresky_VOD.csv
 │   │
 │   └── CzechRepublic/
+│       │
 │       ├── TRAIN/
+│       │   │
+│       │   ├── train_koridor_Decin_Breclav_O2.csv
+│       │   ├── train_koridor_Decin_Breclav_TM.csv
+│       │   ├── train_koridor_Decin_Breclav_VOD.csv
+│       │   ├── train_UstiNadOrlici_Letohrad_TM.csv
+│       │   └── train_UstiNadOrlici_Letohrad_VOD.csv
+│       │
 │       ├── CAR/
+│       │   │
+│       │   ├── car_Sloupnice_Zamberk_TM.csv
+│       │   ├── car_Tisnov_Mosty_u_Jablunkova_TM_1.csv
+│       │   ├── car_Tisnov_Mosty_u_Jablunkova_TM_2.csv
+│       │   ├── car_Tisnov_Mosty_u_Jablunkova_TM_3.csv
+│       │   ├── car_Zamberk_Konciny_TM.csv
+│       │   ├── car_Zamberk_Konciny_VOD.csv
+│       │   └── car_Zamberk_Sloupnice_TM.csv
+│       │
 │       └── WalkTests/
+│           │
+│           ├── walk_Panska_dolina_O2.csv
+│           ├── walk_Panska_dolina_TM.csv
+│           ├── walk_Zamberk_O2.csv
+│           └── walk_Zamberk_TM.csv
 │
 ├── results/
+│   │
+│   ├── Brno/
+│   │   ├── CAR/
+│   │   ├── MHD/
+│   │   └── WalkTests/
+│   │
+│   ├── CR/
+│   │   ├── CAR/
+│   │   ├── TRAIN/
+│   │   └── WalkTests/
+│   │
+│   ├── ComparisonOperators/
+│   │   ├── DecinBreclav/
+│   │   └── Zabovresky/
+│   │
+│   └── ComparisonOfTransport/
+│       ├── T-Mobile/
+│       └── Vodafone/
 │
-├── src/
+├── FilesBTSlocColors.py
 │
-├── main.py
+├── HTML_maker.py
+│
+├── RSRPpredictionMLandInterpolation.py
+│
+├── ShowDataAndStatictis.py
+│
+├── findBTSlocation.py
+│
 └── README.md
+    │
+    └── Main project documentation and interactive map navigation.
 ```
-
----
-
-# Supported Measurement Scenarios
-
-## Brno
-
-### Walk Tests
-- Palackého vrch
-- Medlánky
-- Ponava
-- Slovanské náměstí
-- Náměstí Svobody
-- Řečkovice → Moravské náměstí
-- Žabovřesky
-
-### Public Transport (MHD)
-- Kolejní → Vsetínská → Celní → Kolejní
-- Řečkovice → Moravské náměstí
-
-### Car Drive Tests
-- Řečkovice → Moravské náměstí
-
----
-
-## Czech Republic
-
-### Walk Tests
-- Žamberk
-- Panská dolina
-
-### Car Drive Tests
-- Žamberk → Končiny
-- Žamberk → Sloupnice
-- Sloupnice → Žamberk
-- Tišnov → Mosty u Jablunkova
-
-### Train Measurements
-- Děčín → Břeclav corridor
-- Ústí nad Orlicí → Letohrad
-
----
-
 
 # Interactive Maps
 Interactive maps are available through GitHub Pages.
