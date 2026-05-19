@@ -4,9 +4,9 @@ Interactive analysis and visualization of 4G/5G mobile network measurements coll
 
 This repository was created as part of the master's thesis:
 
-> **A Comprehensive Analysis of Mobile Signals in 4G/5G Networks**  
-> Brno University of Technology — Faculty of Electrical Engineering and Communication  
-> Author: Jakub Pachel :contentReference[oaicite:0]{index=0}
+- **A Comprehensive Analysis of Mobile Signals in 4G/5G Networks**  
+- Brno University of Technology — Faculty of Electrical Engineering and Communication  
+- Author: Jakub Pachel
 
 The project focuses on:
 - mobile network coverage analysis,
