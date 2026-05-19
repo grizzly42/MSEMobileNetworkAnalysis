@@ -118,13 +118,13 @@ MSEMobileNetworkAnalysis/
 
 ### T-Mobile
 
-- [RSRP](Brno/CAR/Reckovice-MoravskeNamesti/HTMLview/T-Mobile_RSRP.html)
-- [TECH BAND](Brno/CAR/Reckovice-MoravskeNamesti/HTMLview/T-Mobile_TECH_BAND.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/CAR/Reckovice-MoravskeNamesti/HTMLview/T-Mobile_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/CAR/Reckovice-MoravskeNamesti/HTMLview/T-Mobile_TECH_BAND.html)
 
 ### Vodafone
 
-- [RSRP](Brno/CAR/Reckovice-MoravskeNamesti/HTMLview/Vodafone_RSRP.html)
-- [TECH BAND](Brno/CAR/Reckovice-MoravskeNamesti/HTMLview/Vodafone_TECH_BAND.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/CAR/Reckovice-MoravskeNamesti/HTMLview/Vodafone_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/CAR/Reckovice-MoravskeNamesti/HTMLview/Vodafone_TECH_BAND.html)
 
 ---
 
@@ -134,8 +134,8 @@ MSEMobileNetworkAnalysis/
 
 ### T-Mobile
 
-- [RSRP](Brno/MHD/Celni-Kolejni/HTMLview/T-Mobile_RSRP.html)
-- [TECH BAND](Brno/MHD/Celni-Kolejni/HTMLview/T-Mobile_TECH_BAND.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/MHD/Celni-Kolejni/HTMLview/T-Mobile_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/MHD/Celni-Kolejni/HTMLview/T-Mobile_TECH_BAND.html)
 
 ---
 
@@ -143,8 +143,8 @@ MSEMobileNetworkAnalysis/
 
 ### T-Mobile
 
-- [RSRP](Brno/MHD/Kolejni-Vsetinska/HTMLview/T-Mobile_RSRP.html)
-- [TECH BAND](Brno/MHD/Kolejni-Vsetinska/HTMLview/T-Mobile_TECH_BAND.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/MHD/Kolejni-Vsetinska/HTMLview/T-Mobile_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/MHD/Kolejni-Vsetinska/HTMLview/T-Mobile_TECH_BAND.html)
 
 ---
 
@@ -152,13 +152,13 @@ MSEMobileNetworkAnalysis/
 
 ### T-Mobile
 
-- [RSRP](Brno/MHD/Reckovice-MoravskeNamesti/HTMLview/T-Mobile_RSRP.html)
-- [TECH BAND](Brno/MHD/Reckovice-MoravskeNamesti/HTMLview/T-Mobile_TECH_BAND.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/MHD/Reckovice-MoravskeNamesti/HTMLview/T-Mobile_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/MHD/Reckovice-MoravskeNamesti/HTMLview/T-Mobile_TECH_BAND.html)
 
 ### Vodafone
 
-- [RSRP](Brno/MHD/Reckovice-MoravskeNamesti/HTMLview/Vodafone_RSRP.html)
-- [TECH BAND](Brno/MHD/Reckovice-MoravskeNamesti/HTMLview/Vodafone_TECH_BAND.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/MHD/Reckovice-MoravskeNamesti/HTMLview/Vodafone_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/MHD/Reckovice-MoravskeNamesti/HTMLview/Vodafone_TECH_BAND.html)
 
 ---
 
@@ -168,8 +168,8 @@ MSEMobileNetworkAnalysis/
 
 ### T-Mobile
 
-- [RSRP](Brno/WalkTests/Medlanky/HTMLview/T-Mobile_RSRP.html)
-- [TECH BAND](Brno/WalkTests/Medlanky/HTMLview/T-Mobile_TECH_BAND.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/WalkTests/Medlanky/HTMLview/T-Mobile_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/WalkTests/Medlanky/HTMLview/T-Mobile_TECH_BAND.html)
 
 ---
 
@@ -177,13 +177,13 @@ MSEMobileNetworkAnalysis/
 
 ### T-Mobile
 
-- [RSRP](Brno/WalkTests/NamestiSvobody/HTMLview/T-Mobile_RSRP.html)
-- [TECH BAND](Brno/WalkTests/NamestiSvobody/HTMLview/T-Mobile_TECH_BAND.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/WalkTests/NamestiSvobody/HTMLview/T-Mobile_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/WalkTests/NamestiSvobody/HTMLview/T-Mobile_TECH_BAND.html)
 
 ### Vodafone
 
-- [RSRP](Brno/WalkTests/NamestiSvobody/HTMLview/Vodafone_RSRP.html)
-- [TECH BAND](Brno/WalkTests/NamestiSvobody/HTMLview/Vodafone_TECH_BAND.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/WalkTests/NamestiSvobody/HTMLview/Vodafone_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/WalkTests/NamestiSvobody/HTMLview/Vodafone_TECH_BAND.html)
 
 ---
 
@@ -191,8 +191,8 @@ MSEMobileNetworkAnalysis/
 
 ### T-Mobile
 
-- [RSRP](Brno/WalkTests/PalackehoVrch/HTMLview/T-Mobile_RSRP.html)
-- [TECH BAND](Brno/WalkTests/PalackehoVrch/HTMLview/T-Mobile_TECH_BAND.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/WalkTests/PalackehoVrch/HTMLview/T-Mobile_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/WalkTests/PalackehoVrch/HTMLview/T-Mobile_TECH_BAND.html)
 
 ---
 
@@ -200,13 +200,13 @@ MSEMobileNetworkAnalysis/
 
 ### T-Mobile
 
-- [RSRP](Brno/WalkTests/Ponava/HTMLview/T-Mobile_RSRP.html)
-- [TECH BAND](Brno/WalkTests/Ponava/HTMLview/T-Mobile_TECH_BAND.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/WalkTests/Ponava/HTMLview/T-Mobile_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/WalkTests/Ponava/HTMLview/T-Mobile_TECH_BAND.html)
 
 ### Vodafone
 
-- [RSRP](Brno/WalkTests/Ponava/HTMLview/Vodafone_RSRP.html)
-- [TECH BAND](Brno/WalkTests/Ponava/HTMLview/Vodafone_TECH_BAND.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/WalkTests/Ponava/HTMLview/Vodafone_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/Brno/WalkTests/Ponava/HTMLview/Vodafone_TECH_BAND.html)
 
 ---
 
@@ -214,21 +214,21 @@ MSEMobileNetworkAnalysis/
 
 ## O2
 
-- [PING](ComparisonOperators/DecinBreclav/HTMLview/O2_PING.html)
-- [RSRP](ComparisonOperators/DecinBreclav/HTMLview/O2_RSRP.html)
-- [TECH BAND](ComparisonOperators/DecinBreclav/HTMLview/O2_TECH_BAND.html)
+- [PING](https://grizzly42.github.io/MSEMobileNetworkAnalysis/ComparisonOperators/DecinBreclav/HTMLview/O2_PING.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/ComparisonOperators/DecinBreclav/HTMLview/O2_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/ComparisonOperators/DecinBreclav/HTMLview/O2_TECH_BAND.html)
 
 ## T-Mobile
 
-- [PING](ComparisonOperators/DecinBreclav/HTMLview/T-Mobile_PING.html)
-- [RSRP](ComparisonOperators/DecinBreclav/HTMLview/T-Mobile_RSRP.html)
-- [TECH BAND](ComparisonOperators/DecinBreclav/HTMLview/T-Mobile_TECH_BAND.html)
+- [PING](https://grizzly42.github.io/MSEMobileNetworkAnalysis/ComparisonOperators/DecinBreclav/HTMLview/T-Mobile_PING.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/ComparisonOperators/DecinBreclav/HTMLview/T-Mobile_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/ComparisonOperators/DecinBreclav/HTMLview/T-Mobile_TECH_BAND.html)
 
 ## Vodafone
 
-- [PING](ComparisonOperators/DecinBreclav/HTMLview/Vodafone_PING.html)
-- [RSRP](ComparisonOperators/DecinBreclav/HTMLview/Vodafone_RSRP.html)
-- [TECH BAND](ComparisonOperators/DecinBreclav/HTMLview/Vodafone_TECH_BAND.html)
+- [PING](https://grizzly42.github.io/MSEMobileNetworkAnalysis/ComparisonOperators/DecinBreclav/HTMLview/Vodafone_PING.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/ComparisonOperators/DecinBreclav/HTMLview/Vodafone_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/ComparisonOperators/DecinBreclav/HTMLview/Vodafone_TECH_BAND.html)
 
 ---
 
@@ -236,19 +236,18 @@ MSEMobileNetworkAnalysis/
 
 ## O2
 
-- [PING](CR/TRAIN/DecinBreclav/O2/HTMLview/O2_PING.html)
-- [RSRP](CR/TRAIN/DecinBreclav/O2/HTMLview/O2_RSRP.html)
-- [TECH BAND](CR/TRAIN/DecinBreclav/O2/HTMLview/O2_TECH_BAND.html)
+- [PING](https://grizzly42.github.io/MSEMobileNetworkAnalysis/CR/TRAIN/DecinBreclav/O2/HTMLview/O2_PING.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/CR/TRAIN/DecinBreclav/O2/HTMLview/O2_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/CR/TRAIN/DecinBreclav/O2/HTMLview/O2_TECH_BAND.html)
 
 ## T-Mobile
 
-- [PING](CR/TRAIN/DecinBreclav/T-Mobile/HTMLview/T-Mobile_PING.html)
-- [RSRP](CR/TRAIN/DecinBreclav/T-Mobile/HTMLview/T-Mobile_RSRP.html)
-- [TECH BAND](CR/TRAIN/DecinBreclav/T-Mobile/HTMLview/T-Mobile_TECH_BAND.html)
+- [PING](https://grizzly42.github.io/MSEMobileNetworkAnalysis/CR/TRAIN/DecinBreclav/T-Mobile/HTMLview/T-Mobile_PING.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/CR/TRAIN/DecinBreclav/T-Mobile/HTMLview/T-Mobile_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/CR/TRAIN/DecinBreclav/T-Mobile/HTMLview/T-Mobile_TECH_BAND.html)
 
 ## Vodafone
 
-- [PING](CR/TRAIN/DecinBreclav/Vodafone/HTMLview/Vodafone_PING.html)
-- [RSRP](CR/TRAIN/DecinBreclav/Vodafone/HTMLview/Vodafone_RSRP.html)
-- [TECH BAND](CR/TRAIN/DecinBreclav/Vodafone/HTMLview/Vodafone_TECH_BAND.html)
-
+- [PING](https://grizzly42.github.io/MSEMobileNetworkAnalysis/CR/TRAIN/DecinBreclav/Vodafone/HTMLview/Vodafone_PING.html)
+- [RSRP](https://grizzly42.github.io/MSEMobileNetworkAnalysis/CR/TRAIN/DecinBreclav/Vodafone/HTMLview/Vodafone_RSRP.html)
+- [TECH BAND](https://grizzly42.github.io/MSEMobileNetworkAnalysis/CR/TRAIN/DecinBreclav/Vodafone/HTMLview/Vodafone_TECH_BAND.html)
