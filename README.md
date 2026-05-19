@@ -1,51 +1,87 @@
 # MSE Mobile Network Analysis
 
-Framework for analysis and visualization of LTE/5G mobile network measurements collected during walk tests, tram/public transport measurements, car drive tests, and train corridor measurements across the Czech Republic.
+Interactive analysis and visualization of 4G/5G mobile network measurements collected in real environments across the Czech Republic.
+
+This repository was created as part of the master's thesis:
+
+> **A Comprehensive Analysis of Mobile Signals in 4G/5G Networks**  
+> Brno University of Technology — Faculty of Electrical Engineering and Communication  
+> Author: Jakub Pachel :contentReference[oaicite:0]{index=0}
 
 The project focuses on:
-- comparison of mobile operators,
-- comparison of transport types,
-- LTE/5G radio parameter analysis,
-- BTS localization,
+- mobile network coverage analysis,
+- signal quality evaluation,
+- operator comparison,
 - mobility analysis,
-- visualization of measured routes and radio conditions.
+- geographical visualization of measurements,
+- BTS localization,
+- interpolation and machine learning prediction methods.
 
-Repository: https://github.com/grizzly42/MSEMobileNetworkAnalysis
+Measurements were performed using smartphones and the G-NetTrack application during:
+- train measurements,
+- car drive tests,
+- tram/public transport measurements,
+- walk tests.
 
----
-
-# Features
-
-- Processing of measurement datasets from:
-  - walking tests,
-  - tram/public transport measurements,
-  - car drive tests,
-  - train measurements.
-- Support for multiple operators:
-  - T-Mobile,
-  - Vodafone,
-  - O2.
-- Route visualization on maps.
-- BTS position visualization.
-- Heatmap generation.
-- KPI evaluation:
-  - RSRP,
-  - RSRQ,
-  - SINR,
-  - PCI,
-  - EARFCN/NRARFCN,
-  - throughput,
-  - handovers.
-- Comparison of:
-  - operators,
-  - transport types,
-  - routes,
-  - mobility scenarios.
-- Export of generated figures and results.
+Measured and analyzed parameters include:
+- RSRP,
+- RSRQ,
+- SNR,
+- PING,
+- LTE/5G technologies,
+- frequency bands,
+- Timing Advance (TA).
 
 ---
 
-# Project Structure
+# Repository Content
+
+## Python Code
+
+The repository contains Python scripts for:
+- measurement data processing, statistical analysis, plotting and visualization
+- interactive HTML maps,
+- interpolation methods and machine learning prediction models,
+- BTS position estimation.
+
+
+Implemented methods include:
+- nearest neighbor interpolation,
+- bilinear and cubic interpolation,
+- kriging,
+- linear regression,
+- ridge regression,
+- random forest,
+- XGBoost.
+
+---
+# Thesis Overview
+
+The thesis focuses on practical analysis of real mobile network measurements in 4G and 5G networks using commonly available devices.
+
+The work combines:
+- RF signal analysis,
+- statistical processing,
+- geographical visualization,
+- interpolation methods,
+- machine learning approaches.
+
+The project also investigates:
+- BTS localization using Timing Advance,
+- prediction of spatial RSRP distribution,
+- comparison of operators and mobility scenarios.
+
+---
+
+# Author
+
+Jakub Pachel
+
+Brno University of Technology  
+Faculty of Electrical Engineering and Communication  
+Department of Radio Electronics
+
+
 
 ```text
 MSEMobileNetworkAnalysis/
@@ -113,6 +149,7 @@ MSEMobileNetworkAnalysis/
 
 
 # Interactive Maps
+Interactive maps are available through GitHub Pages.
 
 ## Brno — CAR
 
