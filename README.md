@@ -20,7 +20,7 @@ The project focuses on:
 Measurements were performed using smartphones and the G-NetTrack application during:
 - train measurements,
 - car drive tests,
-- tram/public transport measurements,
+- tram drive tests,
 - walk tests.
 
 Measured and analyzed parameters include:
@@ -54,7 +54,12 @@ Implemented methods include:
 - random forest,
 - XGBoost.
 
----
+# Interactive Maps
+
+Interactive maps are available through GitHub Pages:
+
+[Open Interactive Maps](https://grizzly42.github.io/MSEMobileNetworkAnalysis/)
+
 # Thesis Overview
 
 The thesis focuses on practical analysis of real mobile network measurements in 4G and 5G networks using commonly available devices.
@@ -72,7 +77,7 @@ The project also investigates:
 - comparison of operators and mobility scenarios.
 
 
-
+# The directory contains:
 
 ```text
 MSEMobileNetworkAnalysis/
@@ -171,9 +176,5 @@ MSEMobileNetworkAnalysis/
     └── Main project documentation and interactive map navigation.
 ```
 
-# Interactive Maps
 
-Interactive maps are available through GitHub Pages:
-
-[Open Interactive Maps](https://grizzly42.github.io/MSEMobileNetworkAnalysis/)
 
