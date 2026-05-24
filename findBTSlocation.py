@@ -9,6 +9,22 @@ from pathlib import Path
 from pyproj import Transformer
 from matplotlib.ticker import FuncFormatter
 from FilesBTSlocColors import FilesBTSlocColors
+from matplotlib.ticker import MaxNLocator
+
+
+# If you want to set the input data and save location manually uncomment this:
+""" 
+# Define input datasets location
+files = {"O2": "datasets/CzechRepublic/walk_Panska_dolina_O2.csv"}
+# Define location to save results
+SaveFigLoc = "esults/CR/WalkTests/PanskaDolina/O2" 
+real_bts_loc = [
+            {"node": 921521,   "lat": 50.0753778, "lon": 16.5185000},
+            {"node": 922931,   "lat": 50.1186472, "lon": 16.5823417},
+            {"node": 923011,   "lat": 50.1141444, "lon": 16.4914444},
+            {"node": 923801,   "lat": 50.0875000, "lon": 16.4569944},] 
+"""
+
 
 # Suitable datasets for BTS location prediction: PalackehoVrch; Medlanky; PonavaTM; SlovanskeNamesti
            # NamestiSvobodyTM;  KolejniVsetinskaCelniKolejni; ZamberkO2;  PanskaDolinaO2; 
@@ -17,14 +33,17 @@ SaveFigLoc = SaveFigLoc + "/findBTSlocation"
 
 # Here select size of figures 
 FigSizeSet = (16,10)
+
+# Line width Border of heatmap
+HeatedgeLW = 1.5
 # Setting fugure text style to LaTex font and font size
 unitFontSize = 20
 plt.rcParams.update({"font.family": "serif", "mathtext.fontset": "cm", "axes.titlepad": 24, "axes.labelsize": unitFontSize, "axes.titlesize": unitFontSize, 
                      "xtick.labelsize": unitFontSize, "ytick.labelsize": unitFontSize, "legend.fontsize": unitFontSize, "figure.titlesize": unitFontSize})
 colorsetStyle = "tab20b_r"
-# Conversion constant from Timing Advance to meters  https://www.researchgate.net/publication/357642120_Localizing_Basestations_From_End-User_Timing_Advance_Measurements
+# Conversion constant from Timing Advance to meters 
 distTA = 78.125
-# Earth radius used for Haversine distance calculation (in meters)
+# Earth radius used for Haversine distance calculation in meters
 R = 6371000
 
 # Function for preprocessing raw CSV data for each operator
@@ -55,16 +74,17 @@ processed = [processOPTA(file, op) for op, file in files.items()]
 processedAll = pd.concat(processed, ignore_index=True)
 
 
-# Transformer for converting map coordinates (Web Mercator → WGS84)
+# Transformer for converting map coordinates from Web Mercator  to WGS84
 transformer = Transformer.from_crs(3857, 4326, always_xy=True)
-# Formatter for longitude axis (convert meters → degrees)
+# Formatter for longitude axis convert from meters  to degrees
 def foramtLon(x, pos):
     lon, lat = transformer.transform(x, 0)
     return f"{lon:.4f}°"
-# Formatter for latitude axis (convert meters → degrees)
+# Formatter for latitude axis convert from meters  to degrees
 def foramtLat(y, pos):
     lon, lat = transformer.transform(0, y)
     return f"{lat:.4f}°"
+
 
 
 # main loop
@@ -99,10 +119,10 @@ for op, dataOP in processedAll.groupby("Operator"):
     ## estimation of BTS location
     for node, DataNode in dataOP.groupby("NodeByOP"):
         # Skip nodes with low information data (finding location with less than 3 points is nonsence)
-        if len(DataNode) < 2:
+        if len(DataNode) < 3:
             continue
-        # Create radius from measured points
-        DataNode["radius"] = DataNode["TA"] * distTA
+        # Create radius from measured points TA*2 to fix bad measured values
+        DataNode["radius"] = 2*DataNode["TA"] * distTA
 
         # Extract coordinates 
         points_lat = DataNode["Latitude"].values
@@ -111,47 +131,79 @@ for op, dataOP in processedAll.groupby("Operator"):
         countOfTA = pd.Series(radiusTA).value_counts()
         weigth = np.array([1 / countOfTA[r] if r in countOfTA else 1.0 for r in radiusTA])
         weigth /= weigth.sum()
+        
        
         # Define grid boundaries based on measurement spread
         max_radius_m = DataNode["radius"].max()
         margin_deg = max_radius_m / 111000
-        # how many grids are used
-        resolution = 400
-        # Create grid in geographic coordinates
-        lonGrid = np.linspace(DataNode["Longitude"].min() - margin_deg,DataNode["Longitude"].max() + margin_deg, resolution)
-        latGrid = np.linspace(DataNode["Latitude"].min() - margin_deg,DataNode["Latitude"].max() + margin_deg, resolution)
-
+    
+        # make a grid
+        center_lat = np.mean(points_lat)
+        center_lon = np.mean(points_lon)
+        margin_deg = max_radius_m / 111000 * 1.5   
+        lonGrid = np.linspace(center_lon - margin_deg, center_lon + margin_deg, 600)
+        latGrid = np.linspace(center_lat - margin_deg, center_lat + margin_deg, 600) 
         LonGrid, LatGrid = np.meshgrid(lonGrid, latGrid)
         intersection_map = np.ones_like(LonGrid, dtype=float)
+        n = len(radiusTA)
+        log_map = np.zeros_like(LonGrid, dtype=float)
 
-        # Evaluate likelihood contribution for each measurement
         for i, (plat, plon, r) in enumerate(zip(points_lat, points_lon, radiusTA)):
             dlat = np.radians(LatGrid - plat)
             dlon = np.radians(LonGrid - plon)
-
             # Haversine formula for distance
-            a = (np.sin(dlat / 2) ** 2+ np.cos(np.radians(plat))* np.cos(np.radians(LatGrid))* np.sin(dlon / 2) ** 2)
+            a = (np.sin(dlat / 2) ** 2 + np.cos(np.radians(plat))
+                 * np.cos(np.radians(LatGrid)) * np.sin(dlon / 2) ** 2)
             dist = 2 * R * np.arctan2(np.sqrt(a), np.sqrt(1 - a))
+            #gaussian likelyhood
+            TACircleSpread = distTA/ 2
+            sigma_ring = np.sqrt(TACircleSpread**2 + (0.08 * r)**2)
+            likelihood = np.exp(-((dist - r)**2) / (2 * sigma_ring**2))
+            log_map += np.log(likelihood + 1e-300) / n  # průměrný log
 
-            TACircleSpread = distTA / 2  
-            sigma_ring = np.sqrt((0.15 * r)**2 + TACircleSpread**2 + 30**2)
-            # Gaussian likelihood of being on the TA circle
-            likelihood = np.exp(-((dist - r) ** 2) / (2 * sigma_ring ** 2))
-            intersection_map *= likelihood ** weigth[i]
-
-        # Stabilize values 
-        intersection_map = np.log1p(intersection_map)
+        intersection_map = np.exp(log_map)
         intersection_map /= intersection_map.max()
-
-        # Show only most relavant heatmap parts
+        
+        
+        # evaluate distance between real and predicted BTS position
+        max_idx = np.unravel_index(np.argmax(intersection_map), intersection_map.shape)
+        est_lat = LatGrid[max_idx]
+        est_lon = LonGrid[max_idx]
+        node_num = int(float(node.split("_")[1]))
+        matched_bts = [b for b in real_bts_loc if b["node"] == node_num]
+        if matched_bts:
+            real_lat = matched_bts[0]["lat"]
+            real_lon = matched_bts[0]["lon"]
+            dlat = np.radians(est_lat - real_lat)
+            dlon = np.radians(est_lon - real_lon)
+            a_h = (np.sin(dlat / 2)**2 + np.cos(np.radians(real_lat))
+                * np.cos(np.radians(est_lat)) * np.sin(dlon / 2)**2)
+            error_m = 2 * R * np.arctan2(np.sqrt(a_h), np.sqrt(1 - a_h))
+            print(f"Node {node_num:>8}: odhad [{est_lat:.5f}°, {est_lon:.5f}°]  "
+                f"reálná [{real_lat:.5f}°, {real_lon:.5f}°]  "
+                f"→ chyba: {error_m:.0f} m")
+        else:
+            print(f"Node {node_num:>8}: odhad [{est_lat:.5f}°, {est_lon:.5f}°]  "
+                f"(reálná poloha neznámá)")
+            
+        # Show only most relavant heatmap parts (last number is percentile shown heatmap part)
         threshold = np.percentile(intersection_map, 99.5)
         mask = intersection_map >= threshold
-
         heat_df = pd.DataFrame({"Longitude": LonGrid[mask], "Latitude": LatGrid[mask], "score": intersection_map[mask]})
         gdf_heat = gpd.GeoDataFrame(heat_df,geometry=gpd.points_from_xy(heat_df["Longitude"],heat_df["Latitude"]),crs="EPSG:4326").to_crs(epsg=3857)
         heatScale = ax.scatter(gdf_heat.geometry.x, gdf_heat.geometry.y,s=22,alpha=0.15,c=gdf_heat["score"],cmap="inferno")
-
-    # Plot real BTS positions for comparison if BTS position is unknown paint it black
+              
+        # make heatmap border
+        if len(gdf_heat) >= 3:
+            hull_color = cmap_nodes(node_categories.index(node)) if node in node_categories else "white"
+            tr_fwd = Transformer.from_crs(4326, 3857, always_xy=True)
+            x_merc, y_merc = tr_fwd.transform(LonGrid, LatGrid)
+            contour_map = np.where(intersection_map >= threshold, intersection_map, np.nan)
+            filled = np.where(np.isnan(contour_map), 0, contour_map)
+            ax.contour(x_merc, y_merc, filled,levels=[threshold],colors=[hull_color],linewidths=HeatedgeLW,alpha=0.9)
+                
+      
+    # Plot real BTS positions for comparison 
     for bts in real_bts_loc:
         lat_real = bts["lat"]
         lon_real = bts["lon"]
@@ -177,13 +229,22 @@ for op, dataOP in processedAll.groupby("Operator"):
     if heatScale is not None:
        cbar = plt.colorbar(heatScale,ax=ax,orientation="horizontal",pad=0.15,fraction=0.05)
        #cbar = plt.colorbar(heatScale,ax=ax,orientation="vertical",location="left",pad=0.15,fraction=0.05)
+    cbar.locator = MaxNLocator(nbins=5)
+    cbar.update_ticks()   
+
+    cbar.update_ticks()
     cbar.set_label("Pravděpodobnost polohy BTS")
+    
+    # Crop map to measurement points extent with margin
+    #ax.set_xlim(GeoData.geometry.x.min() - 50, GeoData.geometry.x.max() + 50)
+    #ax.set_ylim(GeoData.geometry.y.min() - 50, GeoData.geometry.y.max() + 100)
     cbar.ax.tick_params()
     plt.tight_layout()
     # Save figure as PDF picture
     plt.savefig( f"{SaveFigLoc}/BTS_Heatmap_{op}.pdf", dpi=600, bbox_inches="tight")
     
+    
 # print node categories to find real bts location in CZE on web: https://gsmweb.cz/
-print(node_categories)
+#print(node_categories)
 # Display all plots
 plt.show()

@@ -20,16 +20,18 @@ from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error, r2_score
 from FilesBTSlocColors import FilesBTSlocColors
 
-
+# If you want to set the input data and save location manually uncomment this:
 """ # Define input datasets location
 files = {"Vodafone": "BRNO_data/WALK/VOD_Ponava.csv"}
 # Define location to save results
-SaveFigLoc = "BRNO_vysledky/VOD_Ponava_res" """
+SaveFigLoc = "BRNO_vysledky/VOD_Ponava_res" 
+SplitPoint = 0.65
+Colors = {'Vodafone': 'red'}
+"""
 
 # Suitable datasets for prediction:PonavaTM; PonavaVOD; Ponava; NamestiSvobodyTM; NamestiSvobodyVOD; NamestiSvobody; 
 #                                  ZabovreskyO2; ZabovreskyTM; ZabovreskyVOD; ZabovreskyOperators
-
-files, SaveFigLoc, _ ,colors, SplitPoint= FilesBTSlocColors("ZabovreskyOperators")
+files, SaveFigLoc, _ ,colors, SplitPoint= FilesBTSlocColors("PonavaTM")
 SaveFigLoc = SaveFigLoc + "/PredictRSRPmap"
 
 
@@ -89,13 +91,16 @@ def processOPML(filePath, nameOP):
 
 processed = [processOPML(file, op) for op, file in files.items()]
 
+# Transformer for converting map coordinates from Web Mercator  to WGS84
 trans = Transformer.from_crs("EPSG:3857", "EPSG:4326", always_xy=True)
+# Formatter for longitude axis convert from meters  to degrees
 def formatAxisLon(x, pos):
     lon, lat = trans.transform(x, 0)
-    return f"{lon:.4f}°"
+    return f"{lon:.2f}°"
+# Formatter for latitude axis convert from meters  to degrees
 def formatAxisLat(y, pos):
     lon, lat = trans.transform(0, y)
-    return f"{lat:.4f}°"
+    return f"{lat:.2f}°"
 
 
 

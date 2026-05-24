@@ -7,7 +7,7 @@
 	# WALK: ZamberkO2; ZamberkTM; Zamberk; PanskaDolinaO2; PanskaDolinaTM; PanskaDolina
 	# CAR: ZamberkKoncinyTM; ZamberkKoncinyVOD; ZamberkKonciny; ZamberkSloupnice; SloupniceZamberk; 
            #TisnovMosty1; TisnovMosty2; TisnovMosty3; TisnovMosty
-	#train: DecinBreclavO2; DecinBreclavTM; DecinBreclavVOD; DecinBreclav;	
+	#train: DecinBreclavO2; DecinBreclavTM; DecinBreclavVOD; DecinBreclav; UstiNadOrliciLetohrad; UstiNadOrliciLetohradVOD; UstiNadOrliciLetohradTM	
 # Transports: TransportVOD; TransportTM
 # in thesis: DecinBreclav, ZabovreskyOperators;  TransportVOD, TransportTM
 def FilesBTSlocColors(dataset):
@@ -26,7 +26,7 @@ def FilesBTSlocColors(dataset):
             {"node": 606491, "lat": 49.2320722, "lon": 16.5717556}]
         Colors = {'T-Mobile': 'magenta'}
         
-        SplitPoint = []
+        SplitPoint = None
 
     #-------------------------------------------------------------------------------------
     elif dataset == "Medlanky":
@@ -44,7 +44,7 @@ def FilesBTSlocColors(dataset):
         
         Colors = {'T-Mobile': 'magenta'}
 
-        SplitPoint = []
+        SplitPoint = None
     
     #-------------------------------------------------------------------------------------
     elif dataset == "PonavaTM":
@@ -72,7 +72,7 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/Brno/WalkTests/Ponava/Vodafone"
             
-        RealBTSLocation = []
+        RealBTSLocation = None
         
         Colors = {'Vodafone': 'red'}
         
@@ -84,7 +84,7 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/Brno/WalkTests/Ponava"
             
-        RealBTSLocation = []
+        RealBTSLocation = None
         
         Colors = {'T-Mobile': 'magenta', 'Vodafone': 'red'}
     
@@ -106,7 +106,7 @@ def FilesBTSlocColors(dataset):
         
         Colors = {'T-Mobile': 'magenta'}
         
-        SplitPoint = []
+        SplitPoint = None
     
     #-------------------------------------------------------------------------------------   
     elif dataset == "NamestiSvobodyTM":
@@ -119,7 +119,7 @@ def FilesBTSlocColors(dataset):
             {"node": 600011, "lat": 49.1919111, "lon": 16.6102583},
             {"node": 600061, "lat": 49.1947861, "lon": 16.6078750},
             {"node": 600111, "lat": 49.1939639, "lon": 16.6124750},
-            {"node": 600121, "lat": 49.1959806, "lon": 16.6063444},
+            #{"node": 600121, "lat": 49.1959806, "lon": 16.6063444},
             {"node": 600151, "lat": 49.1935278, "lon": 16.6076111},
             {"node": 600201, "lat": 49.1961667, "lon": 16.6095667},
             {"node": 600391, "lat": 49.1979389, "lon": 16.6059917}]
@@ -134,7 +134,7 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/Brno/WalkTests/NamestiSvobody/Vodafone"
 
-        RealBTSLocation = []
+        RealBTSLocation = None
         
         Colors = {'Vodafone': 'red'}
         
@@ -147,7 +147,7 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/Brno/WalkTests/NamestiSvobody"
 
-        RealBTSLocation = []
+        RealBTSLocation = None
         
         Colors = {'T-Mobile': 'magenta', 'Vodafone': 'red'}
         
@@ -160,11 +160,11 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/Brno/WalkTests/Reckovice-MoravskeNamesti"
 
-        RealBTSLocation = []
+        RealBTSLocation = None
         
         Colors = {'T-Mobile': 'magenta', 'Vodafone': 'red'}
         
-        SplitPoint = []
+        SplitPoint = None
         
     #-------------------------------------------------------------------------------------     
     elif dataset == "ZabovreskyO2":
@@ -172,7 +172,7 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/Brno/WalkTests/Zabovresky/O2"
 
-        RealBTSLocation = []
+        RealBTSLocation = None
         
         Colors = {'O2': 'blue'}
         
@@ -184,7 +184,7 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/Brno/WalkTests/Zabovresky/T-Mobile"
 
-        RealBTSLocation = []
+        RealBTSLocation = None
         
         Colors = {'T-Mobile': 'magenta'}
         
@@ -196,7 +196,7 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/Brno/WalkTests/Zabovresky/Vodafone"
 
-        RealBTSLocation = []
+        RealBTSLocation = None
         
         Colors = {'Vodafone': 'red'}
         
@@ -210,7 +210,7 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/ComparisonOperators/Zabovresky"
 
-        RealBTSLocation = []
+        RealBTSLocation = None
         
         Colors = {'T-Mobile': 'magenta','O2': 'blue','Vodafone': 'red'}
         
@@ -249,7 +249,7 @@ def FilesBTSlocColors(dataset):
         ]
         Colors = {'T-Mobile': 'magenta'}
         
-        SplitPoint = []
+        SplitPoint = None
         
     #-------------------------------------------------------------------------------------
     elif dataset == "KolejniVsetinska":
@@ -257,11 +257,11 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/Brno/MHD/Kolejni-Vsetinska"
 
-        RealBTSLocation = []
+        RealBTSLocation = None
         
         Colors = {'T-Mobile': 'magenta'}
         
-        SplitPoint = []
+        SplitPoint = None
         
     #-------------------------------------------------------------------------------------
     elif dataset == "CelniKolejni":
@@ -269,11 +269,11 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/Brno/MHD/Celni-Kolejni"
 
-        RealBTSLocation = []
+        RealBTSLocation = None
         
         Colors = {'T-Mobile': 'magenta'}
         
-        SplitPoint = []
+        SplitPoint = None
         
     #-------------------------------------------------------------------------------------
     elif dataset == "ReckMoravMHD":
@@ -282,11 +282,11 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/Brno/MHD/Reckovice-MoravskeNamesti"
 
-        RealBTSLocation = []
+        RealBTSLocation = None
         
         Colors = {'T-Mobile': 'magenta','Vodafone': 'red'}
         
-        SplitPoint = []
+        SplitPoint = None
         
         
     #-------------------------------------------------------------------------------------
@@ -298,11 +298,11 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/Brno/CAR/Reckovice-MoravskeNamesti"
 
-        RealBTSLocation = []
+        RealBTSLocation = None
         
         Colors = {'T-Mobile': 'magenta','Vodafone': 'red'}
         
-        SplitPoint = []
+        SplitPoint = None
         
         
         
@@ -321,7 +321,7 @@ def FilesBTSlocColors(dataset):
         
         Colors = {'O2': 'blue'}
         
-        SplitPoint = []
+        SplitPoint = None
         
     #------------------------------------------------------------------------------------- 
     elif dataset == "ZamberkTM":
@@ -329,11 +329,11 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/CR/WalkTests/Zamberk/T-Mobile"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None  
         
         Colors = {'T-Mobile': 'magenta'}
         
-        SplitPoint = []
+        SplitPoint = None
         
      #------------------------------------------------------------------------------------- 
     elif dataset == "Zamberk":
@@ -343,18 +343,18 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/CR/WalkTests/Zamberk"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None  
         
         Colors = {'T-Mobile': 'magenta', 'O2': 'blue'}
         
-        SplitPoint = []
+        SplitPoint = None
     
     #-------------------------------------------------------------------------------------
     elif dataset == "PanskaDolinaO2":
         
         InputFiles = {"O2": "datasets/CzechRepublic/walk_Panska_dolina_O2.csv"}
         
-        ResultsFilesLocation = "results/CR/WalkTests/Zamberk/O2"
+        ResultsFilesLocation = "results/CR/WalkTests/PanskaDolina/O2"
 
         RealBTSLocation = [
             {"node": 921521,   "lat": 50.0753778, "lon": 16.5185000},
@@ -365,20 +365,20 @@ def FilesBTSlocColors(dataset):
         ]  
         Colors = {'O2': 'blue'}
         
-        SplitPoint = []
+        SplitPoint = None
     
     #-------------------------------------------------------------------------------------
     elif dataset == "PanskaDolinaTM":
         
         InputFiles = {"T-Mobile": "datasets/CzechRepublic/walk_Panska_dolina_TM.csv"}
         
-        ResultsFilesLocation = "results/CR/WalkTests/Zamberk/T-Mobile"
+        ResultsFilesLocation = "results/CR/WalkTests/PanskaDolina/T-Mobile"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None  
         
         Colors = {'T-Mobile': 'magenta'}
         
-        SplitPoint = []
+        SplitPoint = None
         
     #-------------------------------------------------------------------------------------
     elif dataset == "PanskaDolina":
@@ -386,13 +386,54 @@ def FilesBTSlocColors(dataset):
         InputFiles = {"T-Mobile": "datasets/CzechRepublic/walk_Panska_dolina_TM.csv",
                       "O2": "datasets/CzechRepublic/walk_Panska_dolina_O2.csv"}
         
-        ResultsFilesLocation = "results/CR/WalkTests/Zamberk"
+        ResultsFilesLocation = "results/CR/WalkTests/PanskaDolina"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None  
         
         Colors = {'T-Mobile': 'magenta', 'O2': 'blue'}
         
-        SplitPoint = []
+        SplitPoint = None
+        
+        
+    #-------------------------------------------------------------------------------------
+    elif dataset == "albertinumO2":
+        
+        InputFiles = {"O2": "datasets/CzechRepublic/walk_Albertinum_Panska_Dolina_O2.csv"}
+        
+        ResultsFilesLocation = "results/CR/WalkTests/Albertinum-Panska Dolina/O2"
+        RealBTSLocation = [
+            {"node": 923802,   "lat": 50.0875000, "lon": 16.4569944},
+            {"node": 925591,   "lat": 50.0776333, "lon": 16.4665222},] 
+         
+        Colors = {'O2': 'blue'}
+        
+        SplitPoint = None
+    
+    #-------------------------------------------------------------------------------------
+    elif dataset == "albertinumTM":
+        InputFiles = {"T-Mobile": "datasets/CzechRepublic/walk_Albertinum_Panska_Dolina_TM.csv"}
+        
+        ResultsFilesLocation = "results/CR/WalkTests/Albertinum-Panska Dolina/T-Mobile"
+
+        RealBTSLocation = None  
+        
+        Colors = {'T-Mobile': 'magenta'}
+        
+        SplitPoint = None
+        
+    #-------------------------------------------------------------------------------------
+    elif dataset == "albertinum":
+        
+        InputFiles = {"T-Mobile": "datasets/CzechRepublic/walk_Albertinum_Panska_Dolina_TM.csv",
+                      "O2": "datasets/CzechRepublic/walk_Albertinum_Panska_Dolina_O2.csv"}
+        
+        ResultsFilesLocation = "results/CR/WalkTests/Albertinum-Panska Dolina"
+
+        RealBTSLocation = None  
+        
+        Colors = {'T-Mobile': 'magenta', 'O2': 'blue'}
+        
+        SplitPoint = None
         
         
     #-------------------------------------------------------------------------------------
@@ -405,11 +446,11 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/CR/CAR/ZamberkKonciny/T-Mobile"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None 
         
         Colors = {'T-Mobile': 'magenta'}
         
-        SplitPoint = []
+        SplitPoint = None
         
     #-------------------------------------------------------------------------------------
     
@@ -419,11 +460,11 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/CR/CAR/ZamberkKonciny/Vodafone"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None  
         
         Colors = {'Vodafone': 'red'}
         
-        SplitPoint = []
+        SplitPoint = None
         
     #-------------------------------------------------------------------------------------
     
@@ -434,11 +475,11 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/CR/CAR/ZamberkKonciny"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None 
         
         Colors = {'T-Mobile': 'magenta','Vodafone': 'red'}
         
-        SplitPoint = []
+        SplitPoint = None
         
     #-------------------------------------------------------------------------------------
     elif dataset == "ZamberkSloupnice":
@@ -447,11 +488,11 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/CR/CAR/ZamberkSloupnice"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None 
         
         Colors = {'T-Mobile': 'magenta'}
         
-        SplitPoint = []
+        SplitPoint = None
         
     #-------------------------------------------------------------------------------------
     elif dataset == "SloupniceZamberk":
@@ -460,11 +501,11 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/CR/CAR/SloupniceZamberk"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None 
         
         Colors = {'T-Mobile': 'magenta'}
         
-        SplitPoint = []
+        SplitPoint = None
         
     #-------------------------------------------------------------------------------------
     elif dataset == "TisnovMosty1":
@@ -473,11 +514,11 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/CR/CAR/Tisnov-Mosty_u_Jablunkova/T-Mobile1"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None 
         
         Colors = {'T-Mobile1': 'magenta'}
         
-        SplitPoint = []
+        SplitPoint = None
     
     #-------------------------------------------------------------------------------------
     elif dataset == "TisnovMosty2":
@@ -486,11 +527,11 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/CR/CAR/Tisnov-Mosty_u_Jablunkova/T-Mobile2"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None 
         
         Colors = {'T-Mobile2': 'magenta'}
         
-        SplitPoint = []
+        SplitPoint = None
     
     #-------------------------------------------------------------------------------------
     elif dataset == "TisnovMosty3":
@@ -499,26 +540,26 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/CR/CAR/Tisnov-Mosty_u_Jablunkova/T-Mobile3"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None  
         
         Colors = {'T-Mobile3': 'magenta'}
         
-        SplitPoint = []
+        SplitPoint = None
         
     #-------------------------------------------------------------------------------------    
     elif dataset == "TisnovMosty":
         
-        InputFiles = {"T-Mobile1": "datasets/CzechRepublic/car_Tisnov_Mosty_u_Jablunkova_TM_3.csv",
+        InputFiles = {"T-Mobile1": "datasets/CzechRepublic/car_Tisnov_Mosty_u_Jablunkova_TM_1.csv",
                       "T-Mobile2": "datasets/CzechRepublic/car_Tisnov_Mosty_u_Jablunkova_TM_2.csv",
                       "T-Mobile3": "datasets/CzechRepublic/car_Tisnov_Mosty_u_Jablunkova_TM_3.csv"}
         
         ResultsFilesLocation = "results/CR/CAR/Tisnov-Mosty_u_Jablunkova"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None 
         
         Colors = {'T-Mobile1': 'green', 'T-Mobile2': 'orange', 'T-Mobile3': 'purple'}
         
-        SplitPoint = []
+        SplitPoint = None
 
         
     #-------------------------------------------------------------------------------------
@@ -530,11 +571,11 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/CR/TRAIN/DecinBreclav/O2"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None  
         
         Colors = {'O2': 'blue'}
         
-        SplitPoint = []
+        SplitPoint = None
         
     #-------------------------------------------------------------------------------------
     elif dataset == "DecinBreclavTM":
@@ -543,11 +584,11 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/CR/TRAIN/DecinBreclav/T-Mobile"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None 
         
         Colors = {'T-Mobile': 'magenta'}
         
-        SplitPoint = []
+        SplitPoint = None
         
     #-------------------------------------------------------------------------------------
     elif dataset == "DecinBreclavVOD":
@@ -556,11 +597,11 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/CR/TRAIN/DecinBreclav/Vodafone"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None  
         
         Colors = {'Vodafone': 'red'}
         
-        SplitPoint = []
+        SplitPoint = None
         
     #-------------------------------------------------------------------------------------
     elif dataset == "DecinBreclav":
@@ -571,11 +612,52 @@ def FilesBTSlocColors(dataset):
         
         ResultsFilesLocation = "results/ComparisonOperators/DecinBreclav"
 
-        RealBTSLocation = []  
+        RealBTSLocation = None  
         
         Colors = {'T-Mobile': 'magenta','O2': 'blue','Vodafone': 'red'}
         
-        SplitPoint = []
+        SplitPoint = None
+        
+     #-------------------------------------------------------------------------------------
+    elif dataset == "UstiNadOrliciLetohrad":
+        
+        InputFiles = {"T-Mobile": "datasets/CzechRepublic/train_UstiNadOrlici_Letohrad_TM.csv",
+                      "Vodafone": "datasets/CzechRepublic/train_UstiNadOrlici_Letohrad_VOD.csv"}
+        
+        ResultsFilesLocation = "results/CR/TRAIN/UstiNadOrlici_Letohrad"
+
+        RealBTSLocation = None 
+        
+        Colors = {'T-Mobile': 'magenta','Vodafone': 'red'}
+        
+        SplitPoint = None
+        
+    #-------------------------------------------------------------------------------------
+    elif dataset == "UstiNadOrliciLetohradTM":
+        
+        InputFiles = {"T-Mobile": "datasets/CzechRepublic/train_UstiNadOrlici_Letohrad_TM.csv"}
+        
+        ResultsFilesLocation = "results/CR/TRAIN/UstiNadOrlici_Letohrad/T-Mobile"
+
+        RealBTSLocation = None  
+        
+        Colors = {'T-Mobile': 'magenta'}
+        
+        SplitPoint = None
+    
+    #-------------------------------------------------------------------------------------
+    elif dataset == "UstiNadOrliciLetohradVOD":
+        
+        InputFiles = {"Vodafone": "datasets/CzechRepublic/train_UstiNadOrlici_Letohrad_VOD.csv"}
+        
+        ResultsFilesLocation = "results/CR/TRAIN/UstiNadOrlici_Letohrad/Vodafone"
+
+        RealBTSLocation = None  
+        
+        Colors = {'Vodafone': 'red'}
+        
+        SplitPoint = None
+        
         
     #-------------------------------------------------------------------------------------
     # comparison of transport types
@@ -588,11 +670,11 @@ def FilesBTSlocColors(dataset):
         }
         ResultsFilesLocation = "results/ComparisonOfTransport/Vodafone"
         
-        RealBTSLocation = []
+        RealBTSLocation = None
         
         Colors = {"automobil": "green", "tramvaj": "orange", "chůze": "purple"}
         
-        SplitPoint = []
+        SplitPoint = None
         
     #-------------------------------------------------------------------------------------
     elif dataset == "TransportTM":
@@ -603,11 +685,11 @@ def FilesBTSlocColors(dataset):
         }
         ResultsFilesLocation = "results/ComparisonOfTransport/T-Mobile"
         
-        RealBTSLocation = []
+        RealBTSLocation = None
         
         Colors = {"automobil": "green", "tramvaj": "orange", "chůze": "purple"}
         
-        SplitPoint = []
+        SplitPoint = None
    
        
     else:

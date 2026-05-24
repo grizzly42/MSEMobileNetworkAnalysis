@@ -22,11 +22,11 @@ from FilesBTSlocColors import FilesBTSlocColors
 	# WALK: ZamberkO2; ZamberkTM; Zamberk; PanskaDolinaO2; PanskaDolinaTM; PanskaDolina
 	# CAR: ZamberkKoncinyTM; ZamberkKoncinyVOD; ZamberkKonciny; ZamberkSloupnice; SloupniceZamberk; 
            #TisnovMosty1; TisnovMosty2; TisnovMosty3; TisnovMosty       
-	#train: DecinBreclavO2; DecinBreclavTM; DecinBreclavVOD; DecinBreclav
+	#train: DecinBreclavO2; DecinBreclavTM; DecinBreclavVOD; DecinBreclav; UstiNadOrliciLetohrad; UstiNadOrliciLetohradVOD; UstiNadOrliciLetohradTM	
 # Transports: TransportVOD; TransportVOD
 # in thesis: DecinBreclav, ZabovreskyOperators;  TransportVOD, TransportTM
 
-files, SaveFigLoc, _ ,colors, _ = FilesBTSlocColors("TransportVOD")
+files, SaveFigLoc, _ ,colors, _ = FilesBTSlocColors("ZabovreskyOperators")
 SaveFigLoc = SaveFigLoc + "/ViewAndStat"
 
 # If you dont wanna use file FilesAndBTS.py you can define your paths here (uncomment and type your paths):
@@ -46,7 +46,11 @@ files = {
 
 # if 0 title is hide / if 1 title is shown
 FlagShowFiguresTitle  = 0
+# if 0 cbar is on right side / if 1 cbar is on bottom
+cbarBot = 1
 
+# DPI of PDF
+DPIset = 600
 # Limit RSRP values
 LevelMaxRSRP = -50
 LevelMinRSRP = -130
@@ -345,10 +349,10 @@ plt.savefig(f"{SaveFigLoc}/ECDF_SNR.pdf", bbox_inches="tight")
 transformer = Transformer.from_crs(3857, 4326, always_xy=True)
 def foramtLon(x, pos):
     lon, lat = transformer.transform(x, 0)
-    return f"{lon:.2f}°"
+    return f"{lon:.3f}°"
 def foramtLat(y, pos):
     lon, lat = transformer.transform(0, y)
-    return f"{lat:.2f}°"
+    return f"{lat:.3f}°"
 
 
 #--------------------------------------------------------------------------------------------------------------------
@@ -358,24 +362,33 @@ for op, dataOP in dataAll.groupby("Operator"):
     # get our gps location and transfer Longitude and Latitude to Web Mercator (meters) --> basemap require this
     gdf = gpd.GeoDataFrame(dataOP, geometry=gpd.points_from_xy(dataOP["Longitude"], dataOP["Latitude"]), crs="EPSG:4326").to_crs(epsg=3857)
     # plot RSRP on location
-    plot = gdf.plot(ax=ax,column="Level",cmap="viridis",markersize=50,legend=False,vmin=dataAll["Level"].min(),vmax=dataAll["Level"].max())
+    
+    
+    plot = gdf.plot(ax=ax,column="Level",cmap="viridis",markersize=50,legend=False,vmin=-130,vmax=-50)
     # add base map undr trace
     ctx.add_basemap(ax, source=ctx.providers.OpenStreetMap.Mapnik)
     divider = make_axes_locatable(ax)
-    cax = divider.append_axes("bottom", size="5%", pad=0.8)
-    cbar = fig.colorbar(plot.collections[0],cax=cax,orientation="horizontal")
+    if cbarBot:
+        cax = divider.append_axes("bottom", size="5%", pad=0.8)
+        cbar = fig.colorbar(plot.collections[0],cax=cax,orientation="horizontal")
+        
+    else:
+        cax = divider.append_axes("right", size="5%", pad=0.8)
+        cbar = fig.colorbar(plot.collections[0],cax=cax,orientation="vertical")
     cbar.set_label("RSRP [dBm]", fontsize=20)
     cbar.ax.tick_params(labelsize=18)
+    
     ax.set_aspect('equal')
     # Show Longitude and Latitude in degrees
     ax.xaxis.set_major_formatter(FuncFormatter(foramtLon))
     ax.yaxis.set_major_formatter(FuncFormatter(foramtLat))
+    #ax.tick_params(axis='y', labelrotation=45)
     if FlagShowFiguresTitle:
         ax.set_title(f"RSRP v závislosti na pozici – {op}")
     ax.set_xlabel("Zeměpisná délka [°]")
     ax.set_ylabel("Zeměpisná šířka [°]")
     # save figure in pdf format
-    plt.savefig(f"{SaveFigLoc}/RSRPmap_{op}.pdf", format="pdf", dpi=600,bbox_inches="tight")
+    plt.savefig(f"{SaveFigLoc}/RSRPmap_{op}.pdf", format="pdf", dpi=DPIset,bbox_inches="tight")
     
     
 #--------------------------------------------------------------------------------------------------------------------
@@ -397,7 +410,7 @@ for op, dataOP in dataAll.groupby("Operator"):
     ax.set_xlabel("Zeměpisná délka [°]")
     ax.set_ylabel("Zeměpisná šířka [°]")
     # save figure in pdf format
-    plt.savefig(f"{SaveFigLoc}/polohaSNR_{op}.pdf", format="pdf", dpi=600, bbox_inches="tight") 
+    plt.savefig(f"{SaveFigLoc}/polohaSNR_{op}.pdf", format="pdf", dpi=DPIset, bbox_inches="tight") 
     
     
 #--------------------------------------------------------------------------------------------------------------------  
@@ -451,7 +464,9 @@ for op, dataOP in dataAll.groupby("Operator"):
     ax.set_aspect("equal")
     # Show Longitude and Latitude in degrees
     ax.xaxis.set_major_formatter(FuncFormatter(foramtLon))
+    ax.locator_params(axis='x', nbins=4)
     ax.yaxis.set_major_formatter(FuncFormatter(foramtLat))
+    ax.tick_params(axis='y', labelrotation=45)
     if FlagShowFiguresTitle:
         ax.set_title(f"Tachnologie a band v závislosti na pozici – {op}")
     ax.set_xlabel("Zeměpisná délka [°]")
@@ -460,9 +475,9 @@ for op, dataOP in dataAll.groupby("Operator"):
     handles = [mpatches.Patch(color=cmap(i), label=cat) for i, cat in enumerate(categories)]
     # set legend
     #ax.legend(handles=handles, loc="upper left", bbox_to_anchor=(1.02, 1), frameon=True)
-    ax.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=1, frameon=True, fontsize=18)   
+    ax.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=2, frameon=True, fontsize=18)   
     # save figure in pdf format
-    plt.savefig(f"{SaveFigLoc}/TechBand_{op}.pdf",format="pdf", dpi=600,bbox_inches="tight")
+    plt.savefig(f"{SaveFigLoc}/TechBand_{op}.pdf",format="pdf", dpi=DPIset,bbox_inches="tight")
  
 
 #--------------------------------------------------------------------------------------------------------------------
@@ -517,7 +532,7 @@ if "PINGAVG" in dataOP.columns and dataOP["PINGAVG"].notna().any():
         # set legend
         ax.legend(handles=handles, loc="upper left", bbox_to_anchor=(1.02, 1), frameon=True)
         # save figure in pdf format
-        plt.savefig(f"{SaveFigLoc}/PING_{op}.pdf",format="pdf", dpi=600,bbox_inches="tight")
+        plt.savefig(f"{SaveFigLoc}/PING_{op}.pdf",format="pdf", dpi=DPIset,bbox_inches="tight")
 else:
     print(f" {op}: žádná PING data, tudíž PING mapa nebyla nevytvořena")
     

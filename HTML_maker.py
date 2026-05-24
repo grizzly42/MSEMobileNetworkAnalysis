@@ -1,3 +1,4 @@
+# Required imports are insert here
 import os
 import matplotlib
 import pandas as pd
@@ -7,7 +8,17 @@ from pathlib import Path
 import matplotlib.colors as mcolors
 from FilesBTSlocColors import FilesBTSlocColors
 
+
+# If you want to set the input data and save location manually uncomment this:
+""" files = {"T-Mobile": "datasets/CzechRepublic/walk_Panska_dolina_TM.csv",
+                      "O2": "datasets/CzechRepublic/walk_Panska_dolina_O2.csv"}      
+SaveFigLoc = "results/CR/WalkTests/PanskaDolina"
+colors = {'T-Mobile': 'magenta', 'O2': 'blue'} """
+
+
+
 # import source data location, results data location a and colors in plot from FilesAndBTS.py
+# Suitable datasets for html maps
 # BRNO
 	# WALK: PalackehoVrch; Medlanky; PonavaTM; PonavaVOD; Ponava; SlovanskeNamesti; NamestiSvobodyTM; 
             #NamestiSvobodyVOD; NamestiSvobody; ReckMoravWalk; ZabovreskyO2; ZabovreskyTM; ZabovreskyVOD; ZabovreskyOperators
@@ -17,13 +28,13 @@ from FilesBTSlocColors import FilesBTSlocColors
 	# WALK: ZamberkO2; ZamberkTM; Zamberk; PanskaDolinaO2; PanskaDolinaTM; PanskaDolina
 	# CAR: ZamberkKoncinyTM; ZamberkKoncinyVOD; ZamberkKonciny; ZamberkSloupnice; SloupniceZamberk; 
            #TisnovMosty1; TisnovMosty2; TisnovMosty3; TisnovMosty
-	#train: DecinBreclavO2; DecinBreclavTM; DecinBreclavVOD; DecinBreclav;	
+	#train: DecinBreclavO2; DecinBreclavTM; DecinBreclavVOD; DecinBreclav; UstiNadOrliciLetohrad; UstiNadOrliciLetohradVOD; UstiNadOrliciLetohradTM		
 # Transports: TransportVOD; TransportTM
 # in thesis: DecinBreclav, ZabovreskyOperators;  TransportVOD, TransportTM
-files, SaveFigLoc, _ ,colors, _ = FilesBTSlocColors("TransportVOD")
+files, SaveFigLoc, _ ,colors, _ = FilesBTSlocColors("PanskaDolina")
 SaveFigLoc = SaveFigLoc + "/HTMLview"
 
-
+# set your RSRP limit values
 LevelMaxRSRP = -50
 LevelMinRSRP = -130
 
@@ -52,7 +63,7 @@ BAND_MHz = {
 "PGSM": "900 MHz",
 }  
 
-
+# function for data preprocesing
 def processOPHTML(file_path, operatorName):
     # loading the file
     data = pd.read_csv(file_path, low_memory=False)
@@ -78,19 +89,20 @@ resultsDirectory.mkdir(parents=True, exist_ok=True)
 
 dataAll = pd.concat([processOPHTML(f, op) for op, f in files.items()], ignore_index=True)
 
+# main loop
 for op, df_op in dataAll.groupby("Operator"):
     print(f"Právě se zpracovává operátor: {op}")
+    # find center for good first view of map
     LatitudeCentr = df_op["Latitude"].median()
     LongitudeCentr = df_op["Longitude"].median()
 
   
-   # ---------- RSRP ----------
+   # make rsrp html maps
     m_rsrp = folium.Map(location=[LatitudeCentr, LongitudeCentr])
     m_rsrp.fit_bounds([[df_op["Latitude"].min(), df_op["Longitude"].min()], [df_op["Latitude"].max(), df_op["Longitude"].max()]])
     cmap = matplotlib.colormaps["viridis"]
     gradient = [mcolors.to_hex(cmap(i / 255)) for i in range(256)]
     gradient_str = ",".join(gradient)
-
     RSRPlegend = f"""
     <div style="position: fixed; bottom: 50px; left: 50px;width: 260px; background-color: white; border:2px solid grey; z-index:9999; padding: 10px; font-size:14px;">
     <b>RSRP [dBm]</b><br>
@@ -109,13 +121,12 @@ for op, df_op in dataAll.groupby("Operator"):
     
     
     
-    # ---------- TECH + BAND  ----------
+    # make technology + bands html maps
     df_tb = df_op[df_op["BAND"].notna()].copy()
     df_tb["TECH_BAND"] = (df_tb["NetworkTech"].astype(str) + " " + df_tb["BAND"].astype(str) + " (" + df_tb["BAND"].map(BAND_MHz).fillna("?") + ")")
     categories = sorted(df_tb["TECH_BAND"].unique())
     base_colors = ["red","blue","green","purple","orange","brown","pink","cyan"]
     combo_colors = { cat: base_colors[i % len(base_colors)] for i, cat in enumerate(categories)}
-
     m_tech = folium.Map(location=[LatitudeCentr, LongitudeCentr])
     m_tech.fit_bounds([[df_tb["Latitude"].min(), df_tb["Longitude"].min()], [df_tb["Latitude"].max(), df_tb["Longitude"].max()]])
     for _, row in df_tb.iterrows():
@@ -129,14 +140,13 @@ for op, df_op in dataAll.groupby("Operator"):
     legend_html = "<b>Technologie + pásmo</b><br>"
     for cat in categories:
         legend_html += f'<i style="color:{combo_colors[cat]};">●</i> {cat}<br>'
-
     m_tech.get_root().html.add_child(folium.Element(f"""<div style="position: fixed; bottom: 50px; right: 50px;width: 300px; background:white; border:2px solid grey;
         padding:10px; z-index:9999;">{legend_html}</div>"""))
     m_tech.save(os.path.join(SaveFigLoc, f"{op}_TECH_BAND.html"))
     print("Techband done")
     
 
-    # ---------- PING ----------
+    # make PING html maps if ping is available
     if "PINGAVG" in df_op.columns and df_op["PINGAVG"].notna().any():
         m_ping = folium.Map(location=[LatitudeCentr, LongitudeCentr])
         m_ping.fit_bounds([[df_op["Latitude"].min(), df_op["Longitude"].min()], [df_op["Latitude"].max(), df_op["Longitude"].max()]])
@@ -146,10 +156,9 @@ for op, df_op in dataAll.groupby("Operator"):
             <i style="color:dodgerblue;">●</i> 100–250 ms<br><i style="color:red;">●</i> 250–500 ms<br><i style="color:purple;">●</i> > 500 ms<br><i style="color:black;">✖</i> invalid</div>"""
         m_ping.get_root().html.add_child(folium.Element(PINGlegend))
         
+        # ping categories
         for _, row in df_op.iterrows():
-
             val = row["PINGAVG"]
-
             if pd.isna(val):
                 color = "black"
                 marker = "x"
@@ -171,15 +180,12 @@ for op, df_op in dataAll.groupby("Operator"):
             else:
                 color = "purple"
                 marker = "o"
-
             if marker == "x":
                 folium.Marker(location=[row["Latitude"], row["Longitude"]],icon=folium.DivIcon( html='<div style="color:black;font-size:14px;">✖</div>'), 
-                              popup=folium.Popup(f"""<b>Operátor:</b> {row['Operator']}<br> <b>RSRP:</b> {row['Level']} dBm<br>  <b>PING:</b> {row['PINGAVG']} ms<br><b>SNR:</b> {row['SNR']} dB<br>""",max_width=250)).add_to(m_ping)
-                
+                              popup=folium.Popup(f"""<b>Operátor:</b> {row['Operator']}<br> <b>RSRP:</b> {row['Level']} dBm<br>  <b>PING:</b> {row['PINGAVG']} ms<br><b>SNR:</b> {row['SNR']} dB<br>""",max_width=250)).add_to(m_ping)           
             else:
                 folium.CircleMarker(location=[row["Latitude"], row["Longitude"]], radius=5, color=color, fill=True, fill_opacity=0.8, 
-                popup=folium.Popup(f"""<b>Operátor:</b> {row['Operator']}<br> <b>RSRP:</b> {row['Level']} dBm<br>  <b>PING:</b> {row['PINGAVG']} ms<br><b>SNR:</b> {row['SNR']} dB<br>""",max_width=250)).add_to(m_ping)
-               
+                popup=folium.Popup(f"""<b>Operátor:</b> {row['Operator']}<br> <b>RSRP:</b> {row['Level']} dBm<br>  <b>PING:</b> {row['PINGAVG']} ms<br><b>SNR:</b> {row['SNR']} dB<br>""",max_width=250)).add_to(m_ping)             
         m_ping.save(os.path.join(SaveFigLoc, f"{op}_PING.html"))
         print("PING done")
     else:
