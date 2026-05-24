@@ -58,7 +58,7 @@ Implemented methods include:
 
 Interactive maps are available through GitHub Pages:
 
-[Open Interactive Maps](https://grizzly42.github.io/MSEMobileNetworkAnalysis/)
+[![Open Maps](https://img.shields.io/badge/Open-HTML_Maps-blue?style=for-the-badge)](https://grizzly42.github.io/MSEMobileNetworkAnalysis/)
 
 # Thesis Overview
 
