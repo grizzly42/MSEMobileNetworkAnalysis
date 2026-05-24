@@ -26,7 +26,7 @@ from FilesBTSlocColors import FilesBTSlocColors
 # Transports: TransportVOD; TransportVOD
 # in thesis: DecinBreclav, ZabovreskyOperators;  TransportVOD, TransportTM
 
-files, SaveFigLoc, _ ,colors, _ = FilesBTSlocColors("ZabovreskyOperators")
+files, SaveFigLoc, _ ,colors, _ = FilesBTSlocColors("UstiNadOrliciLetohradTM")
 SaveFigLoc = SaveFigLoc + "/ViewAndStat"
 
 # If you dont wanna use file FilesAndBTS.py you can define your paths here (uncomment and type your paths):
